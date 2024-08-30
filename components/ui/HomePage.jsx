@@ -75,7 +75,7 @@ const HomePage = () => {
             />
           ))}
           <div className="flex-grow flex flex-col lg:items-start lg:justify-start lg:mt-16 lg:ml-20 items-center justify-center px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="space-y-8 md:space-y-12 lg:space-y-16 mt-10">
+            <div className="space-y-8 md:space-y-12 lg:space-y-16 mt-10 pointer-events-none">
               <div className="">
                 <span
                   className={`${kiteOne.className} text-start text-[28px] sm:text-[32px] md:text-[40px] lg:text-[44px]`}
