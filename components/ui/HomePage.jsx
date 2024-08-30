@@ -78,19 +78,19 @@ const HomePage = () => {
             <div className="space-y-8 md:space-y-12 lg:space-y-16 mt-10 ">
               <div className="">
                 <span
-                  className={`${kiteOne.className} text-start text-[28px] sm:text-[32px] md:text-[40px] lg:text-[44px]`}
+                  className={`${kiteOne.className} text-start text-[28px] sm:text-[32px] md:text-[40px] lg:text-[44px] pointer-events-none`}
                 >
                   Learn &nbsp;
                 </span>
                 <span
-                  className={`${merienda.className} text-center animated-text text-[36px] sm:text-[44px] md:text-[56px] lg:text-[64px]`}
+                  className={`${merienda.className} text-center animated-text text-[36px] sm:text-[44px] md:text-[56px] lg:text-[64px] pointer-events-none`}
                 >
                   {text}
                   <span className="cursor-blink">|</span>
                 </span>
 
                 <div
-                  className={`${kiteOne.className} sm:text-center lg:text-start text-[28px] sm:text-[32px] md:text-[40px] lg:text-[44px]`}
+                  className={`${kiteOne.className} sm:text-center lg:text-start text-[28px] sm:text-[32px] md:text-[40px] lg:text-[44px] pointer-events-none`}
                 >
                   Anytime, Anywhere
                 </div>
