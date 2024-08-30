@@ -9,7 +9,7 @@ const Footer = () => {
         {" "}
         <div className="text-center md:text-left">
           <div
-            className={`${kiteOne.className} text-[24px] sm:text-[26px] md:text-[30px] lg:text-[30px]`}
+            className={`${kiteOne.className} text-[24px] sm:text-[26px] md:text-[30px] lg:text-[30px] pointer-events-none`}
           >
             Made with ❤️ by OC
           </div>
