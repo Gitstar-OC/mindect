@@ -1,4 +1,4 @@
-import { kiteOne, merienda, economica } from "@/lib/fonts";
+import { kiteOne,  economica } from "@/lib/fonts";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 

@@ -4,9 +4,19 @@
 
 @layer components {
   .underlineEffect {
-    @apply absolute left-0 bottom-[2px] h-[2px] w-full bg-gradient-to-r from-[#4C054C] to-[#25AFAA] scale-x-0 group-hover:scale-x-100 transform transition-transform duration-300 origin-left
+    @apply absolute left-0 bottom-[2px] h-[2px] w-full bg-gradient-to-r from-[#4C054C] to-[#25AFAA] scale-x-0 transform transition-transform duration-300 origin-left;
+  }
+
+  .group:hover .underlineEffect {
+    @apply scale-x-100; /* Expands from left to right on hover */
+  }
+
+  .group:not(:hover) .underlineEffect {
+    @apply scale-x-0; /* Retracts from right to left when hover ends */
+    transform-origin: right; /* Changes the origin to right after hover ends */
   }
 }
+
 
 
 @layer base {

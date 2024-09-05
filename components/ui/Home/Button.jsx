@@ -1,8 +1,8 @@
 import { kiteOne } from "@/lib/fonts";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import "./animation.css";
+import "./homepage.css";
 
-const Button2 = () => {
+const Button = () => {
   return (
     <div className="text-center lg:text-start mt-6">
       <button className="text-[20px] sm:text-[24px] md:text-[30px] rounded-[40px] border-[2px] border-[#4C054C] button p-2 pl-6 pr-4">
@@ -21,4 +21,4 @@ const Button2 = () => {
   );
 };
 
-export default Button2;
+export default Button;
