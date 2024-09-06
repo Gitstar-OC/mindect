@@ -17,18 +17,18 @@ const Footer = () => {
           <div
             className={`${economica.className} flex flex-wrap justify-center md:justify-start items-center space-x-4 mt-4 text-[14px] sm:text-[16px] md:text-[18px]`}
           >
-            <Link href="/contribute" className="group relative">
+            <a href="https://github.com/gitstar-oc/learnai" target="_blank" className="group relative">
               Contribute
               <div className="underlineEffect"></div>
-            </Link>
+            </a>
             <Separator orientation="vertical" />
-            <Link href="/support" className="group relative">
+            <a href="https://github.com/gitstar-oc/learnai" className="group relative" target="_blank">
               Support
               <div className="underlineEffect"></div>
-            </Link>
+            </a>
             <Separator orientation="vertical" />
             <Link href="/contact" className="group relative">
-              Contact
+              Resources {/**Contact */} 
               <div className="underlineEffect"></div>
             </Link>
             <Separator orientation="vertical" />
