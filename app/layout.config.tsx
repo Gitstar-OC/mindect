@@ -16,7 +16,7 @@ export const baseOptions: HomeLayoutProps = {
     {
       text: 'Documentation',
       url: '/docs',
-      active: 'nested-url',
+      // active: 'nested-url',
     },
   ],
   githubUrl: "https://github.com/gitstar-oc/learnai"
