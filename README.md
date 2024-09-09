@@ -6,3 +6,98 @@
 - Start creating docs.
 - Start coding other pages.  
 - Add background animation for the intro  (same as qu.ai) and the pagedown effect of (grili)
+
+
+<!-- 
+
+Important MDX things in this 
+
+
+// For keys on keyboard
+<kbd>Ctrl</kbd>+<kbd>V</kbd> 
+
+
+
+// For card and cards 
+<Card href="/" title="Download Introductory Module" />
+<Cards> </Cards> for multiple cards
+
+
+
+// For steps
+<Steps>
+<Step>
+### Clone the repository
+```bash
+git clone https://github.com/ndom91/sveltekasten
+cd sveltekasten
+```
+</Step>
+</Steps>
+
+
+
+// For files 
+```py title="/apps/web/.env"   // other => bash, sql, py, js, ts etc
+DATABASE_URL=postgres://postgres:postgres@database:5432/briefkasten
+```
+
+
+
+// For tabs
+import { Tabs, Tab } from "fumadocs-ui/components/tabs"
+<Tabs items={["npm", "pnpm", "yarn"]}>
+  <Tab value="npm">
+```bash
+npm run dev
+```
+  </Tab>
+  <Tab value="pnpm">
+```bash
+pnpm dev
+```
+  </Tab>
+  <Tab value="yarn">
+```bash
+yarn run dev
+```
+  </Tab>
+</Tabs>
+
+
+
+// Accordian 
+import { Accordion, Accordions } from "fumadocs-ui/components/accordion"
+<Accordions>
+<Accordion title={"Typescript Definition"}>
+```ts
+/**
+ * List of bookmark results
+ */
+export type Response = {
+}[]
+```
+</Accordion>
+</Accordions>
+
+
+<Callout className="shadow-xs">
+  Note: You should have PIP installed on your device
+</Callout> for showing note or something 
+
+// With specail icon and heading 
+
+<Callout icon="🚀" type="info" title="Briefkasten v2" className="shadow-xs" >
+  We're working on a total rewrite of Briefkasten and plan on releasing this
+  `v2` soon. If you want to follow along, get alerted to any updates, or submit
+  some feature requests or complaints, please check out this [GitHub Discussion
+  thread](https://github.com/ndom91/briefkasten/discussions/65).
+
+The below docs are in preparation for that. If you're looking for the v1 docs, check out the [v1 Docs](https://v1.docs.briefkastenhq.com) link in the nav bar.
+
+**Once v2 is stable, we will wipe the temporary development database active
+there now and migrate all data from the current v1 to v2**
+
+</Callout>
+
+-->

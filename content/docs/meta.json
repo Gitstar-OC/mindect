@@ -1,0 +1,14 @@
+{
+    "title": "Get Started",
+    "root": true,
+    "pages": [
+      "index",
+      "introduction-to-machine-learning",
+      "jupyter-notebook",
+      "supervised-learning",
+      "Unsupervised Learning",
+      "Advanced Learning Algorithms",
+      "---Others---"
+    ]
+  }
+  
