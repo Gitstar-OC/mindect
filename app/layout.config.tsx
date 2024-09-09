@@ -14,12 +14,13 @@ export const baseOptions: HomeLayoutProps = {
   },
   links: [
     {
-      text: 'Documentation',
+      text: 'Docs',
       url: '/docs',
       // active: 'nested-url',
     },
   ],
   githubUrl: "https://github.com/gitstar-oc/learnai"
 };
+
 
 

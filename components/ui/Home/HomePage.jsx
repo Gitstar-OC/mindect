@@ -4,6 +4,7 @@ import { kiteOne, merienda } from '@/lib/fonts';
 import './homepage.css';
 import Link from 'next/link';
 import { Button, Footer, bgImages, words } from '@/lib/exports';
+import Balancer from 'react-wrap-balancer'
 
 const HomePage = () => {
   const [text, setText] = useState('');
@@ -58,6 +59,7 @@ const HomePage = () => {
           <div className="flex-grow flex flex-col lg:items-start lg:justify-start lg:mt-16 lg:ml-20 items-center justify-center px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="space-y-8 md:space-y-12 lg:space-y-16 mt-10 ">
               <header>
+              <Balancer>
                 <span
                   className={`${kiteOne.className} text-start text-[28px] sm:text-[32px] md:text-[40px] lg:text-[44px] pointer-events-none`}
                 >
@@ -69,7 +71,7 @@ const HomePage = () => {
                   {text}
                   <span className="cursor-blink">|</span>
                 </span>
-
+                </Balancer>
                 <div
                   className={`${kiteOne.className} sm:text-center lg:text-start text-[28px] sm:text-[32px] md:text-[40px] lg:text-[44px] pointer-events-none mb-20`}
                 >

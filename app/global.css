@@ -17,3 +17,40 @@
       transform-origin: right; /* Changes the origin to right after hover ends */
     }
   }
+
+  /*************  Color of links that are not heading *********/
+  .prose :where(a):not(:where([class~=not-prose],[class~=not-prose] *)) {
+    color: #008aea;
+    text-decoration: none;
+    font-weight: 400;
+    transition: opacity .3s;
+    text-underline-offset: 2px;
+    text-decoration-color: hsl(var(--fd-primary) / 1);
+}
+
+.prose :where(a):not(:where([class~=not-prose],[class~=not-prose] *)):hover {
+  text-decoration: underline;
+  font-weight: 400;
+  transition: opacity .3s;
+  text-underline-offset: 2px;
+  text-decoration-color: hsl(var(--fd-primary) / 1);
+}
+
+
+/******************* Color of heading that are links ***********/ 
+.dark .prose :is(h1,h2,h3,h4,h5,h6) :where(a):not(:where([class~=not-prose] *)) {
+  color: #fff;
+}
+.dark .prose :is(h1,h2,h3,h4,h5,h6) :where(a):not(:where([class~=not-prose] *)):hover {
+  text-decoration: none;
+}
+.prose :is(h1,h2,h3,h4,h5,h6) :where(a):not(:where([class~=not-prose] *)) {
+  color: #000;
+}
+
+.prose :is(h1,h2,h3,h4,h5,h6) :where(a):not(:where([class~=not-prose] *)):hover {
+  text-decoration: none;
+}
+
+
+

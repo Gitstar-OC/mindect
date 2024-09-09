@@ -3,6 +3,9 @@ title: Supervised Learning
 description: The Supervised Learning or Supervised Machine Learning, refers to algorithms that learn x to y or input to output mappings.
 ---
 
+import { IZ } from "@lib/IZ";
+
+
 ## Introduction
 
 Machine learning is creating tremendous economic value today. I think 99 percent of the economic value created by machine learning today is through one type of machine learning, which is called `supervised learning`.
@@ -69,11 +72,14 @@ So when a new patient comes in, the doctor can measure the patient's tumor size 
 
 ![SPL6](/SL/SVL2.6.png)
 
-So the learning algorithm has to decide how to fit a boundary line through this data. The boundary line found by the learning algorithm would help the doctor with the diagnosis. In this case the tumor is more likely to be benign. From this example we have seen how to inputs the patient's age and tumor size can be used. In other machine learning problems often many more input values are required. In the context of breast cancer detection, additional input features such as the thickness of the tumor clump, uniformity of the cell size, and uniformity of the cell shape may be used to enhance the accuracy of the predictions. These features are incorporated into the learning process to create a more comprehensive and reliable model for detecting breast cancer. 
+So the learning algorithm has to decide how to fit a boundary line through this data. The boundary line found by the learning algorithm would help the doctor with the diagnosis. In this case the tumor is more likely to be benign. From this example we have seen how to inputs the patient's age and tumor size can be used. In other machine learning problems often many more input values are required. In the context of breast cancer detection, additional input features such as the thickness of the tumor clump, uniformity of the cell size, and uniformity of the cell shape may be used to enhance the accuracy of the predictions. These features are incorporated into the learning process to create a more comprehensive and reliable model for detecting breast cancer.
 
 ## Conclusion
+
 The two major types of supervised learning our `regression` and `classification`. In a `regression` application like <u> predicting prices of houses, the learning algorithm has to predict numbers from infinitely many possible output numbers</u>. Whereas in `classification` the <u> learning algorithm has to make a prediction of a category, all of a small set of possible outputs</u>.
 
-![SPL7](/SL/SVL2.7.png)
+
+<IZ alt="SPL7" src="/SL/SVL2.7.png" />
+
 
 **So you now know what is supervised learning, including both regression and classification**.
