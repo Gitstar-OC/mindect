@@ -18,7 +18,7 @@ Let's look at some examples. If the input x is an email and the output y is this
 
 Nearly all the large online ad platforms have a learning algorithm that inputs some information about an ad and some information about you and then tries to figure out if you will click on that ad or not. Because by showing you ads they're just slightly more likely to click on, for these large online ad platforms, every click is revenue, this actually drives a lot of revenue for these companies. This maybe not the most inspiring application, but it certainly has a significant economic impact in some countries today. `Or` if you want to build a self-driving car, the learning algorithm would take as input an image and some information from other sensors such as a radar or other things and then try to output the position of, say, other cars so that your self-driving car can safely drive around the other cars. `Or` take manufacturing. You can have a learning algorithm takes as input a picture of a manufactured product, say a cell phone that just rolled off the production line and have the learning algorithm output whether or not there is a scratch, dent, or other defect in the product. This is called visual inspection and it's helping manufacturers reduce or prevent defects in their products.
 
-![Image for Input (X) to Output (Y) and it's application](/SL/SVL1.1.png)
+<IZ alt="Image for Input (X) to Output (Y) and it's application" src="/SL/SVL1.1.png" />
 
 In all of these applications, you will first train your model with examples of inputs x and the right answers, that is the labels y. After the model has learned from these input, output, or x and y pairs, they can then take a brand new input x, something it has never seen before, and try to produce the appropriate corresponding output y.
 
@@ -26,15 +26,15 @@ In all of these applications, you will first train your model with examples of i
 
 Let's dive more deeply into one specific example. Say you want to predict housing prices based on the size of the house. You've collected some data and say you plot the data and it looks like this. Here on the horizontal axis is the size of the house in square feet. Yes, I live in the United States where we still use square feet. I know most of the world uses square meters. Here on the vertical axis is the price of the house in, say, thousands of dollars.
 
-![Regression: Housing Price Prediction Graph](/SL/SVL1.2.png)
+<IZ alt="Regression: Housing Price Prediction Graph" src="/SL/SVL1.2.png" />
 
 With this data, let's say a friend wants to know what's the price for their 750 square foot house. How can the learning algorithm help you? One thing a learning algorithm might be able to do is say, for the straight line to the data and reading off the straight line, it looks like your friend's house could be sold for maybe about, I don't know, $150,000.
 
-![Regression: Housing Price Prediction Graph with a line](/SL/SVL1.3.png)
+<IZ alt="Regression: Housing Price Prediction Graph with a line" src="/SL/SVL1.3.png" />
 
 But fitting a straight line isn't the only learning algorithm you can use. There are others that could work better for this application. For example, routed and fitting a straight line, you might decide that it's better to fit a curve, a function that's slightly more complicated or more complex than a straight line.
 
-![Regression: Housing Price Prediction Graph with a line and curve](/SL/SVL1.4.png)
+<IZ alt="Regression: Housing Price Prediction Graph with a line and curve" src="/SL/SVL1.4.png" />
 
 If you do that and make a prediction here, then it looks like, well, your friend's house could be sold for closer to $200,000. Now, it doesn't seem appropriate to pick the one that gives your friend the best price, but one thing you see is how to get an algorithm to systematically choose the most appropriate line or curve or other thing to fit to this data.
 
@@ -48,29 +48,29 @@ Take breast cancer detection as an example of a classification problem. Say you'
 
 So maybe your dataset has tumors of various sizes. And these tumors are labeled as either benign, which I will designate in this example with a 0 or malignant, which will designate in this example with a 1. You can then plot your data on a graph like this where the horizontal axis represents the size of the tumor and the vertical axis takes on only two values 0 or 1 depending on whether the tumor is benign, 0 or malignant 1.
 
-![SPL1](/SL/SVL2.1.png)
+<IZ alt="SPL1" src="/SL/SVL2.1.png" />
 
 `One reason that this is different from regression is that we're trying to predict only a small number of possible outputs or categories`. In this case two possible outputs 0 or 1, benign or malignant. This is different from regression which tries to predict any number, all of the infinitely many number of possible numbers. And so the fact that there are only two possible outputs is what makes this classification. Because there are only two possible outputs or two possible categories in this example, you can also plot this data set on a line like this.
 
-![SPL2](/SL/SVL2.2.png)
+<IZ alt="SPL2" src="/SL/SVL2.2.png" />
 
 Right now, I'm going to use two different symbols to denote the category using a circle an O to denote the benign examples and a cross to denote the malignant examples. And if new patients walks in for a diagnosis and they have a lump that is this size, then the question is, <u> will your system classify this tumor as benign or malignant? It turns out that in classification problems you can also have more than two possible output categories.</u> Maybe you're learning algorithm can output multiple types of cancer diagnosis if it turns out to be malignant.
 
-![SPL3](/SL/SVL2.3.png)
+<IZ alt="SPL3" src="/SL/SVL2.3.png" />
 
 So let's call two different types of cancer type 1 and type 2. In this case the average would have three possible output categories it could predict. And by the way in classification, the terms output classes and output categories are often used interchangeably. So what I say class or category when referring to the output, it means the same thing. So to summarize classification algorithms predict categories. Categories don't have to be numbers. It could be non numeric for example, it can predict whether a picture is that of a cat or a dog. And it can predict if a tumor is benign or malignant. Categories can also be numbers like 0, 1 or 0, 1, 2.
 
-![SPL4](/SL/SVL2.4.png)
+<IZ alt="SPL4" src="/SL/SVL2.4.png" />
 
 But what makes classification different from regression when you're interpreting the numbers is that classification predicts a small finite limited set of possible output categories such as 0, 1 and 2 but not all possible numbers in between like 0.5 or 1.7. In the example of supervised learning that we've been looking at, we had only one input value the size of the tumor. But you can also use more than one input value to predict an output.
 
 Here's an example, instead of just knowing the tumor size, say you also have each patient's age in years. Your new data set now has two inputs, age and tumor size. What in this new dataset we're going to use circles to show patients whose tumors are benign and crosses to show the patients with a tumor that was malignant.
 
-![SPL5](/SL/SVL2.5.png)
+<IZ alt="SPL5" src="/SL/SVL2.5.png" />
 
 So when a new patient comes in, the doctor can measure the patient's tumor size and also record the patient's age. And so given this, how can we predict if this patient's tumor is benign or malignant? Well, given the day said like this, what the learning algorithm might do is find some boundary that separates out the malignant tumors from the benign ones.
 
-![SPL6](/SL/SVL2.6.png)
+<IZ alt="SPL6" src="/SL/SVL2.6.png" />
 
 So the learning algorithm has to decide how to fit a boundary line through this data. The boundary line found by the learning algorithm would help the doctor with the diagnosis. In this case the tumor is more likely to be benign. From this example we have seen how to inputs the patient's age and tumor size can be used. In other machine learning problems often many more input values are required. In the context of breast cancer detection, additional input features such as the thickness of the tumor clump, uniformity of the cell size, and uniformity of the cell shape may be used to enhance the accuracy of the predictions. These features are incorporated into the learning process to create a more comprehensive and reliable model for detecting breast cancer.
 
