@@ -20,6 +20,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           sizes="128x128"
         />
         <title>LearnAI</title>
+        <meta name="google-site-verification" content="JoujTmv5oh0bgEPDWe-FC_D1gsDCmoxox9a25fkwo-M" />
       </head>
       <body>
         <RootProvider>{children}</RootProvider>
