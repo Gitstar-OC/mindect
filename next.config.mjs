@@ -1,3 +1,14 @@
+// import { createMDX } from 'fumadocs-mdx/next';
+
+// const withMDX = createMDX();
+
+// /** @type {import('next').NextConfig} */
+// const config = {
+//   reactStrictMode: true,
+// };
+
+// export default withMDX(config);  // At the start ( without download option )
+
 import { createMDX } from 'fumadocs-mdx/next';
 
 const withMDX = createMDX();
@@ -5,11 +16,6 @@ const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
-};
-
-export default withMDX(config);
-
-module.exports = {
   async rewrites() {
     return [
       {
@@ -19,3 +25,5 @@ module.exports = {
     ];
   },
 };
+
+export default withMDX(config);
