@@ -1,11 +1,14 @@
 # LearnAI 
 
 
-- Loader just for one time or no loader
-- No theme changer on the navbar for the homepage and just black navbar for the homepage 
-- Start creating docs.
-- Start coding other pages.  
+- reduce width and height of logo
+- not getting images after downloading notebook, package should be downloaded as zip, with image and the notebook
+
+
+// Currently the animation is being removed if added fix the things 
 - Add background animation for the intro  (same as qu.ai) and the pagedown effect of (grili)
+- Loader just for one time or no loader
+- remove the theme changer for the main page
 
 
 <!-- 
