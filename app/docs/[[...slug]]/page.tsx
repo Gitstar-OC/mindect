@@ -14,7 +14,7 @@ import { notFound } from "next/navigation";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { ImageZoom } from "fumadocs-ui/components/image-zoom";
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
-import { Separator } from "@/components/ui/separator"
+import { Separator } from "@/components/ui/separator";
 
 export default async function Page({
   params,
@@ -26,7 +26,7 @@ export default async function Page({
 
   const MDX = page.data.body;
 
-  const path = `/content/docs/${page.file.path}`
+  const path = `/content/docs/${page.file.path}`;
 
   return (
     <DocsPage
@@ -36,30 +36,30 @@ export default async function Page({
         enabled: page.file.path !== "api-reference.mdx",
         footer: (
           <>
-          <div className="">
-          <Separator />
-          <a
-            href={`https://github.com/gitstar-oc/learnai/blob/master${path}`}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="flex items-baseline text-xs text-muted-foreground hover:text-foreground mt-4"
-          >
-            Edit on Github <ArrowSquareOut className="ml-1 size-3" />
-          </a>
-          <a 
-          href="https://github.com/gitstar-oc/learnai/issues/new?title=Feedback%20for%20%E2%80%9Clearnai%E2%80%9D&labels=feedback"
-          target="_blank"
-            rel="noreferrer noopener"
-            className="flex items-baseline text-xs text-muted-foreground hover:text-foreground mt-2"
-          >
-            Question? Give us feedback <FaArrowRightLong className="ml-1 size-3" />
-          </a>
-          </div>
+            <div className="">
+              <Separator />
+              <a
+                href={`https://github.com/gitstar-oc/learnai/blob/master${path}`}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="flex items-baseline text-xs text-muted-foreground hover:text-foreground mt-4"
+              >
+                Edit on Github <ArrowSquareOut className="ml-1 size-3" />
+              </a>
+              <a
+                href="https://github.com/gitstar-oc/learnai/issues/new?title=Feedback%20for%20%E2%80%9Clearnai%E2%80%9D&labels=feedback"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="flex items-baseline text-xs text-muted-foreground hover:text-foreground mt-2"
+              >
+                Question? Give us feedback{" "}
+                <FaArrowRightLong className="ml-1 size-3" />
+              </a>
+            </div>
           </>
         ),
       }}
     >
-      
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
@@ -72,9 +72,7 @@ export default async function Page({
             Tab,
             Accordions,
             Accordion,
-            // MDXTableList,
-            // MDXWeaponGrid,
-            // MDXCallout,
+
             img: (props) => <ImageZoom {...props} />,
           }}
         />
@@ -100,7 +98,10 @@ export function generateMetadata({ params }: { params: { slug?: string[] } }) {
     description: page.data.description,
     openGraph: {
       url: `/docs/${page.slugs.join("/")}`,
-      // images: image,
     },
   } satisfies Metadata;
 }
+
+// MDXTableList,
+// MDXWeaponGrid,
+// MDXCallout,
