@@ -6,7 +6,7 @@ export default {
   content: [
     './components/**/*.{ts,tsxjs,jsx}',
     './app/**/*.{ts,tsx,js,jsx}',
-    './content/**/*.{mdx,tsx,js,jsx}',
+    './content/**/*.{mdx,md,tsx,js,jsx}',
     './mdx-components.tsx',
     './node_modules/fumadocs-ui/dist/**/*.js',
     './node_modules/fumadocs-openapi/dist/**/*.js',

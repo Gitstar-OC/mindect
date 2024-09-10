@@ -1,0 +1,71 @@
+---
+title: Implementing Gradient Descent
+---
+
+Let's take a look at how you can actually implement the gradient descent algorithm. Let me write down the gradient descent algorithm. Here it is. 
+
+![IGD1](/SL/GradientDescent/IGD1.png)
+
+On each step, `w, the parameter`, `is updated to the old value of w minus Alpha times this term d/dw of the cost function J of wb`. What this expression is saying is, `update your parameter w by taking the current value of w and adjusting it a small amount, which is this expression on the right, minus Alpha times this term over here`.
+
+
+If you feel like there's a lot going on in this equation, it's okay, don't worry about it. We'll unpack it together. 
+
+First, this equal notation here. Now, since I said we're assigning w a value using this equal sign, so in this context, this `equal sign is the assignment operator`. Specifically, in this context, if you write code that says `a equals c`, `it means take the value c and store it in your computer, in the variable a`. Or if you write `a equals a plus 1, it means set the value of a to be equal to a plus 1, or increments the value of a by one`. 
+
+The assignment operator encoding is different than truth assertions in mathematics. Where if I write a equals c, I'm asserting, that is, I'm claiming that the values of a and c are equal to each other. Hopefully, I will never write a truth assertion a equals a plus 1 because that just can't possibly be true. 
+
+![IGD2](/SL/GradientDescent/IGD2.png)
+
+`In Python and in other programming languages, truth assertions are sometimes written as equals equals`, so you may see oh, that says `a equals equals c if you're testing whether a is equal to c`. But in math notation, as we conventionally use it, like in these part, the `equal sign can be used for either assignments or for truth assertion`. I try to make sure I was clear when I write an equal sign, whether we're assigning a value to a variable, or whether we're asserting the truth of the equality of two values. 
+
+Now, this dive more deeply into what the symbols in this equation means. The symbol here is the Greek alphabet `Alpha`. In this equation, `Alpha is also called the learning rate`. 
+
+![IGD3](/SL/GradientDescent/IGD3.png)
+
+The `learning rate is usually a small positive number between 0 and 1` and it might be say, 0.01. `What Alpha does is, it basically controls how big of a step you take downhill`. `If Alpha is very large, then that corresponds to a very aggressive gradient descent procedure where you're trying to take huge steps downhill. If Alpha is very small, then you'd be taking small baby steps downhill`. We'll come back later to dive more deeply into how to choose a good learning rate Alpha. 
+
+Finally, this term here, that's the derivative term of the cost function J. 
+
+![IGD4](/SL/GradientDescent/IGD4.png)
+
+Let's not worry about the details of this derivative right now. But later on, you'll get to see more about the derivative term. But for now, you can think of this derivative term that I drew a magenta box around `as telling you in which direction you want to take your baby step`. `In combination with the learning rate Alpha, it also determines the size of the steps you want to take downhill`. 
+
+Now, I do want to mention that derivatives come from calculus. Even if you aren't familiar with calculus, don't worry about it. Even without knowing any calculus, you'd be able to figure out all you need to know about this derivative term in this part and the next. One more thing. 
+
+Remember your model has two parameters, not just w, but also b. You also have an assignment operations update the parameter b that looks very similar. 
+
+![IGD5](/SL/GradientDescent/IGD5.png)
+
+`b is assigned the old value of b minus the learning rate Alpha times this slightly different derivative term`, `d/db of J of wb`. Remember in the graph of the surface plot where you're taking baby steps until you get to the bottom of the value, well, for the gradient descent algorithm, you're going to repeat these two update steps until the algorithm converges. By converges, I mean that you reach the point at a local minimum where the parameters w and b no longer change much with each additional step that you take. 
+
+Now, there's one more subtle detail about how to correctly in semantic gradient descent, you're going to update two parameters, w and b. This update takes place for both parameters, w and b. `One important detail is that for gradient descent, you want to simultaneously update w and b, meaning you want to update both parameters at the same time`. `What I mean by that, is that in this expression, you're going to update w from the old w to a new w, and you're also updating b from its oldest value to a new value of b`. 
+
+![IGD6](/SL/GradientDescent/IGD6.png)
+
+`The way to implement this is to compute the right side, computing this thing for w and b, and simultaneously at the same time, update w and b to the new values`.
+
+Let's take a look at what this means. Here's the correct way to implement gradient descent which does a simultaneous update. `This sets a variable temp_w equal to that expression, which is w minus that term here`. `There's also a set in another variable temp_b to that, which is b minus that term`. 
+
+![IGD7](/SL/GradientDescent/IGD7.png)
+
+`You compute both for hand sides, both updates, and store them into variables temp_w and temp_b. Then you copy the value of temp_w into w, and you also copy the value of temp_b into b`. 
+
+![IGD8](/SL/GradientDescent/IGD8.png)
+
+Now, one thing you may notice is that this value of w is from the for w gets updated. Here, I noticed that the pre-update w is where it goes into the derivative term over here. 
+
+
+In contrast, here is an `incorrect implementation of gradient descent` that does not do a simultaneous update. 
+
+![IGD9](/SL/GradientDescent/IGD9.png)
+
+In this incorrect implementation, we compute temp_w, same as before, so far that's okay. Now here's where things start to differ. We then update w with the value in temp_w before calculating the new value for the other parameter to be. Next, we calculate temp_b as b minus that term here, and finally, we update b with the value in temp_b. 
+
+The difference between the right-hand side and the left-hand side implementations is that if you look over here, this w has already been updated to this new value, and this is updated w that actually goes into the cost function j of w, b. 
+
+![IGD10](/SL/GradientDescent/IGD10.png)
+
+It means that this term here on the right is not the same as this term over here that you see on the left. That also means this temp_b term on the right is not quite the same as the temp b term on the left, and thus this updated value for b on the right is not the same as this updated value for variable b on the left. The way that gradient descent is implemented in code, it actually turns out to be more natural to implement it the correct way with simultaneous updates. When you hear someone talk about gradient descent, they always mean the gradient descents where you perform a simultaneous update of the parameters. 
+
+If however, you were to implement non-simultaneous update, it turns out it will probably work more or less anyway. But doing it this way isn't really the correct way to implement it, is actually some other algorithm with different properties. `I would advise you to just stick to the correct simultaneous update and not use this incorrect version on the right`. `That's gradient descent`. In the next part, we'll go into details of the derivative term which you saw in this part, but that we didn't really talk about in detail. `Derivatives are part of calculus, and again, if you're not familiar with calculus, don't worry about it`. You don't need to know calculus at all in order to understand this notes or this specialization, and you have all the information you need in order to implement gradient descent. Coming up in the next part, you'll go over derivatives together, and you come away with the intuition and knowledge you need to be able to implement and apply gradient descent yourself. I think that'll be an exciting thing for you to know how to implement. Let's go on to the next part to see how to do that.

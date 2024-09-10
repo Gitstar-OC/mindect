@@ -8,7 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 
-// Define the root directory containing the MDX files
+// Define the root directory containing the MDX and MD files
 const docsFolder = './docs';
 
 // Function to replace image paths based on the rules provided
@@ -31,7 +31,7 @@ const replaceImagePaths = (content) => {
   });
 };
 
-// Function to process each .mdx file
+// Function to process each .mdx or .md file
 const processFile = (filePath) => {
   fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
@@ -53,7 +53,7 @@ const processFile = (filePath) => {
   });
 };
 
-// Function to recursively process all .mdx files in a folder
+// Function to recursively process all .mdx and .md files in a folder
 const processFolder = (folderPath) => {
   fs.readdir(folderPath, (err, files) => {
     if (err) {
@@ -75,8 +75,8 @@ const processFolder = (folderPath) => {
         if (stats.isDirectory()) {
           // If it's a directory, recursively process the folder
           processFolder(fullPath);
-        } else if (path.extname(file) === '.mdx') {
-          // If it's an MDX file, process it
+        } else if (['.md', '.mdx'].includes(path.extname(file))) {
+          // If it's an MDX or MD file, process it
           processFile(fullPath);
         }
       });
