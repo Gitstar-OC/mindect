@@ -5,8 +5,24 @@
       "index",
       "introduction-to-machine-learning",
       "jupyter-notebook",
+
+      
+      "---Supervised Learning---",
       "supervised-learning",
+      "regression-model",
+      "gradient-descent",
+      "multiple-linear-regression",
+      "gradient-descent-in-practice",
+      "classification-with-logistic-regression",
+      "cost-function-for-logistic-regression",
+      "gradient-descent-for-logistic-regression",
+      "the-problem-of-overfitting",
+      
+      "---Unsupervised Learning---",
       "unsupervised-learning",
+
+
+      "---Advanced Learning Algorithms---",
       "Advanced Learning Algorithms",
       "---Others---"
     ]
