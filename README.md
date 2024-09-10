@@ -3,6 +3,7 @@
 
 - reduce width and height of logo
 - not getting images after downloading notebook, package should be downloaded as zip, with image and the notebook
+- add scroll to top button and border in between of footer and toc
 
 
 // Currently the animation is being removed if added fix the things 
