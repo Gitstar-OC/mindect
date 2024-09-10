@@ -7,7 +7,7 @@
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
-            <image:loc>https://learnai.theme-verse.com/logo.png</image:loc>
+            <image:loc>https://learnai.theme-verse.com/Logo.png</image:loc>
         </image:image>
     </url>
     <url>
@@ -19,12 +19,6 @@
             <image:loc>https://learnai.theme-verse.com/Logo.png</image:loc>
         </image:image>
     </url>
-    <!-- <url>
-        <loc>https://learnai.theme-verse.com/docs/get-started</loc>
-        <lastmod>2024-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url> -->
     <url>
         <loc>https://learnai.theme-verse.com/docs/introduction-to-machine-learning</loc>
         <lastmod>2024-09-10</lastmod>
@@ -79,10 +73,12 @@
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
-    <url>
-        <loc>https://github.com/gitstar-oc/learnai</loc>
-        <lastmod>2024-09-10</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
+<url>
+    <loc>https://github.com/gitstar-oc/learnai</loc>
+    <lastmod>2024-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://github.com/gitstar-oc/learnai" />
+    <xhtml:link rel="nofollow" href="https://github.com/gitstar-oc/learnai" />
+</url>
 </urlset>
