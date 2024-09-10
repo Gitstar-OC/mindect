@@ -12,7 +12,7 @@ import {
 } from "fumadocs-ui/page";
 import { notFound } from "next/navigation";
 import defaultMdxComponents from "fumadocs-ui/mdx";
-// import { ImageZoom } from "fumadocs-ui/components/image-zoom";
+import { ImageZoom } from "fumadocs-ui/components/image-zoom";
 // import {IZ} from "@lib/IZ" // replacement for Image Zoom as it was throwing errors
 
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
@@ -75,6 +75,7 @@ export default async function Page({
             Tab,
             Accordions,
             Accordion,
+            img: props => <ImageZoom {...props as any} />
             // img: (props: { src: string; alt?: string }) => {
             //   console.log("Image props:", props); // Log props for debugging
             //   const { src, alt = "Image description", ...rest } = props;

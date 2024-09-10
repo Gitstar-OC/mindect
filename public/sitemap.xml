@@ -73,12 +73,4 @@
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
-<url>
-    <loc>https://github.com/gitstar-oc/learnai</loc>
-    <lastmod>2024-09-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://github.com/gitstar-oc/learnai" />
-    <xhtml:link rel="nofollow" href="https://github.com/gitstar-oc/learnai" />
-</url>
 </urlset>
