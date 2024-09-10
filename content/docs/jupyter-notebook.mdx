@@ -3,56 +3,61 @@ title: Jupyter Notebook
 description: The most widely used tool by machine learning and data science practitioners today is the Jupyter Notebook. This is the default environments that a lot of us use to code up and experiment and try things out.
 ---
 
-import { Steps, Step } from "fumadocs-ui/components/steps"
-
+import { Steps, Step } from "fumadocs-ui/components/steps";
+import { Download } from "lucide-react";
 
 ## Introduction
 
 From the notes, you've seen supervised learning and unsupervised learning and also examples of both. For you to more deeply understand these concepts, I'll like to invite you to see, learn and maybe later write codes yourself to implement these concepts.
 
-By reading through and running the code in the notebooks (jupyter notebooks) on your device, you can see how machine learning code runs. You should complete them relatively quickly just by running it one line at a time from top to bottom. 
-
-
+By reading through and running the code in the notebooks (jupyter notebooks) on your device, you can see how machine learning code runs. You should complete them relatively quickly just by running it one line at a time from top to bottom.
 
 ## How to install Jupyter Notebook?
-To install Jupyter Notebook on your machine follow the step below to install it on your machine. 
 
+To install Jupyter Notebook on your machine follow the step below to install it on your machine.
 
 <Callout className="shadow-xs">
   Note: You should have PIP installed on your device
 </Callout>
 
-
-
 <Steps>
 <Step>
  **To install notebook, run the following command**
 
+```bash title="terminal"
+pip install notebook
+```
 
- ```bash title="terminal"
- pip install notebook
- ```
 </Step>
 <Step>
- **To run the notebook, use the following command:** 
+ **To run the notebook, use the following command:**
 
- ````bash title="terminal"
- jupyter notebook
- ````
- 
+```bash title="terminal"
+jupyter notebook
+```
+
  </Step>
  </Steps>
 
- You can learn more about jupyter notebook by [clicking here](https://jupyter.org/). You can also refer to the documentation of [Jupyter notebook](https://jupyter.org/install)
-
-
+You can learn more about jupyter notebook by [clicking here](https://jupyter.org/). You can also refer to the documentation of [Jupyter notebook](https://jupyter.org/install)
 
 ## Downloading Introductory Module
+
 After installing the notebook [click here]() to download the introductory Jupyter Notebook or you can click on the button below
 
-<Card href="/jupyterNotebooks/IntroductiontoJupyterNotebook.ipynb" title="Download Introductory Module" download="IntroductiontoJupyterNotebook.ipynb" target="_blank" />
+<Card
+  href="/jupyterNotebooks/IntroductiontoJupyterNotebook.ipynb"
+  title={
+    <>
+      {" "}
+      <Download className="inline-block mr-2" />
+      Download Introductory Module{" "}
+    </>
+  }
+  download="IntroductiontoJupyterNotebook.ipynb"
+  target="_blank"
+/>
 
 Feel free to scroll up and down and browse and mouseover the different menus and take a look at the different options here.<u> You might notice that there are two types of these blocks</u>, also called `cells` in the notebook and there are <u>two types of cells</u>. One is what's called a `Markdown cell`, <u> which means a bunch of tax, but this is text that describes the code</u> . Then there's a second type of block or cell which looks like this, which has a `code cell`. Here, if want to run this code cell, hitting `Shift Enter` will run the code in this code cell.
 
 **Congrats on installing Jupyter notebook on your device and going through the module, now you know what are jupyter notebook**
-
