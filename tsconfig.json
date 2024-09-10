@@ -18,7 +18,8 @@
     "paths": {
       "@components/*": ["./components/*"],
       "@/*": ["./*"],
-      "@lib/*": ["./lib/*"]
+      "@lib/*": ["./lib/*"],
+      "@Ntb/*": ["./content/jupyterNotebooks/*"]
     },
     "plugins": [
       {

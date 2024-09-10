@@ -8,3 +8,14 @@ const config = {
 };
 
 export default withMDX(config);
+
+module.exports = {
+  async rewrites() {
+    return [
+      {
+        source: '/content/jupyterNotebooks/:path*',
+        destination: '/learnai/content/jupyterNotebooks/:path*'  // Adjust this as necessary for your setup
+      }
+    ];
+  },
+};
