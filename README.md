@@ -5,7 +5,9 @@
 - add scroll to top button and border in between of footer and toc
 
 - make navbar theme to black ( just one theme for the navbar on the homepage)
+
 // Currently the animation is being removed if added fix the things 
+
 - Add background animation for the intro  (same as qu.ai) and the pagedown effect of (grili)
 - Loader just for one time or no loader
 - remove the theme changer for the main page
