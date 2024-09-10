@@ -1,6 +1,7 @@
-// This file checks if there is a space in the name of the folder and then 
-// converts it to dashes for example with this it would convert "I am the greatest man on earth" 
-// to "I-am-the-greatest-man-on-earth"
+// This file checks if there is a space in the name of the folder and if any letter is capital and then 
+// converts it to dashes and small letters for example with this it would convert "I am the Greatest man on earth" 
+// to "i-am-the-greatest-man-on-earth"
+
 
 const fs = require('fs');
 const path = require('path');
@@ -8,10 +9,13 @@ const path = require('path');
 // Define the root directory containing the folders
 const docsFolder = './docs';
 
-// Function to rename folders by replacing spaces with hyphens
+// Function to rename folders by replacing spaces with hyphens and converting to lowercase
 const renameFolder = (folderPath, folderName) => {
-  if (folderName.includes(' ')) {
-    const newFolderName = folderName.replace(/ /g, '-');
+  let newFolderName = folderName;
+
+  if (/[A-Z ]/.test(folderName)) {  // Check if folderName contains any uppercase letters or spaces
+    // Replace spaces with hyphens and convert to lowercase
+    newFolderName = folderName.replace(/ /g, '-').toLowerCase();
     const newFolderPath = path.join(path.dirname(folderPath), newFolderName);
 
     fs.rename(folderPath, newFolderPath, (err) => {
@@ -25,7 +29,7 @@ const renameFolder = (folderPath, folderName) => {
       processFolder(newFolderPath);
     });
   } else {
-    // If no spaces, continue processing the folder
+    // If no uppercase or spaces, continue processing the folder
     processFolder(folderPath);
   }
 };
@@ -49,7 +53,7 @@ const processFolder = (folderPath) => {
         }
 
         if (stats.isDirectory()) {
-          // Rename the folder if it contains spaces
+          // Rename the folder if it contains spaces or uppercase letters
           renameFolder(fullPath, file);
         }
       });

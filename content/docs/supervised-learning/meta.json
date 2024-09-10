@@ -1,4 +1,13 @@
 {
-    "title": "Supervised learning",
-    "pages": ["..."]
-}
+    "title": "supervised learning",
+    "pages": [
+      "regression-model",
+      "gradient-descent",
+      "multiple-linear-regression",
+      "gradient-descent-in-practice",
+      "classification-with-logistic-regression",
+      "cost-function-for-logistic-regression",
+      "gradient-descent-for-logistic-regression",
+      "the-problem-of-overfitting"
+    ]
+  }
