@@ -5,14 +5,14 @@ const Logo = () => {
   return (
     <span className='flex group'>
     <Image
-      src="/Logo.png"
-      width={46}
-      height={28}
+      src="/TransparentLogo.png"
+      width={40}
+      height={0}
       alt="Picture of the author"
       className='group-hover:opacity-100  opacity-80'
     /> 
     <span className='relative'>
-    <p className={`${economica.className} text-[26px] mt-2 ml-1 text-transparent bg-clip-text bg-[linear-gradient(180deg,_#25AFAA_0%,_#4C054C_100%)] opacity-80 group-hover:opacity-100`} >LearnAI </p>
+    <p className={`${economica.className}  mt-2 ml-1 text-transparent bg-clip-text bg-[linear-gradient(180deg,_#25AFAA_0%,_#4C054C_100%)] opacity-80 group-hover:opacity-100`} style={{fontSize : "20px"}} >LearnAI </p>
     <span className="underlineEffect"></span>
     </span>
     </span>

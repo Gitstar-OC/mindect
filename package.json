@@ -9,6 +9,7 @@
     "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.7",
     "baffle": "^0.3.6",
     "fumadocs-core": "13.4.7",
     "fumadocs-mdx": "10.0.1",
