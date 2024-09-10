@@ -73,7 +73,16 @@ export default async function Page({
             Tab,
             Accordions,
             Accordion,
-            img: (props) => <ImageZoom {...props} src={props.src!} />, }}
+            img: (props) => {
+              const { src, alt = 'Image description', ...rest } = props; // Provide a default alt text
+            
+              if (!src) {
+                console.error('Image source is missing!');
+                return null; // Return null or placeholder image if src is missing
+              }
+            
+              return <ImageZoom src={src} alt={alt} {...rest} />;
+            }}}
         />
       </DocsBody>
     </DocsPage>
