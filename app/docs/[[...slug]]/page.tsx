@@ -14,6 +14,7 @@ import { notFound } from "next/navigation";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { ImageZoom } from "fumadocs-ui/components/image-zoom";
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
+import { Separator } from "@/components/ui/separator"
 
 export default async function Page({
   params,
@@ -36,6 +37,7 @@ export default async function Page({
         footer: (
           <>
           <div className="">
+          <Separator />
           <a
             href={`https://github.com/gitstar-oc/learnai/blob/master${path}`}
             target="_blank"

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /private/
+Allow: /
+Sitemap: https://learnai.theme-verse.com/sitemap.xml

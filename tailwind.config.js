@@ -38,7 +38,7 @@ export default {
           primary: '215 100% 50%', // active link color & background on side bar and on this page text
           // 'primary-foreground': '100 100% 100%', // unknown
           // 'secondary': '110 60% 50%', // searchbox color
-           'secondary-foreground': "110 60% 50%", // unknown
+           'secondary-foreground': "215 100% 50%", // color of steps components
           //  ring: '110 60% 50%',
         },
       },
