@@ -15,6 +15,7 @@ import defaultMdxComponents from "fumadocs-ui/mdx";
 import { ImageZoom } from "fumadocs-ui/components/image-zoom";
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
 import { Separator } from "@/components/ui/separator"
+import React from "react";
 
 export default async function Page({
   params,
@@ -72,8 +73,7 @@ export default async function Page({
             Tab,
             Accordions,
             Accordion,
-            img: (props) => <ImageZoom {...props} />,
-          }}
+            img: (props) => <ImageZoom {...props} src={props.src!} />, }}
         />
       </DocsBody>
     </DocsPage>
