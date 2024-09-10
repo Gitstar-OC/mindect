@@ -12,7 +12,8 @@ import {
 } from "fumadocs-ui/page";
 import { notFound } from "next/navigation";
 import defaultMdxComponents from "fumadocs-ui/mdx";
-import { ImageZoom } from "fumadocs-ui/components/image-zoom";
+// import { ImageZoom } from "fumadocs-ui/components/image-zoom";
+
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
 import { Separator } from "@/components/ui/separator"
 import React from "react";
@@ -72,18 +73,19 @@ export default async function Page({
             Tabs,
             Tab,
             Accordions,
-            Accordion,
-            img: (props: { src: string; alt?: string }) => {
-              console.log("Image props:", props); // Log props for debugging
-              const { src, alt = "Image description", ...rest } = props;
+            Accordion
+            // img: (props: { src: string; alt?: string }) => {
+            //   console.log("Image props:", props); // Log props for debugging
+            //   const { src, alt = "Image description", ...rest } = props;
             
-              if (!src) {
-                console.error("Image source is missing!");
-                return null;
-              }
+            //   if (!src) {
+            //     console.error("Image source is missing!");
+            //     return null;
+            //   }
             
-              return <ImageZoom src={src} alt={alt} {...rest} />;
-            }}}
+            //   return <ImageZoom src={src} alt={alt} {...rest} />;
+            // }
+            }}
         />
       </DocsBody>
     </DocsPage>
