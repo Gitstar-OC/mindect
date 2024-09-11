@@ -1,0 +1,8 @@
+baseurl: "https://learnai.theme-verse.com"
+title: "Learn AI"
+description: "Learn Concepts in Machine Learning, Supervised Learning, Unsupervised Learning, Neural Network training etc. At Anytime, From Anywhere."
+paginate: 5
+# google_analytics: "UA-XXXXXXX-X"
+sitemap:
+  changefreq: "daily"
+  priority: 1.0

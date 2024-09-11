@@ -1,0 +1,48 @@
+Name of all the files in the docs repo
+
+- advanced-learning-algorithms.mdx
+classification-with-logistic-regression
+  -- - DecisionBoundary.mdx
+  -- - index.mdx
+  -- - LogisticRegression.mdx
+cost-function-for-logistic-regression
+  -- - index.mdx
+  -- - SimplifiedCostFunctionforLogisticRegression.mdx
+gradient-descent
+  -- - GradientDescentIntuition.mdx
+  -- - GradientDescentLinearRegression.mdx
+  -- - ImplementGradientDescent.mdx
+  -- - index.mdx
+  -- - LearningRate.mdx
+  -- - RunningGradientDescent.mdx
+- gradient-descent-for-logistic-regression.mdx
+gradient-descent-in-practice
+  -- - CheckingGradientDescentforConvergence.mdx
+  -- - ChoosingtheLearningRate.mdx
+  -- - FeatureEngineering.mdx
+  -- - FeatureScalingPart2.mdx
+  -- - index.mdx
+  -- - PolynomialRegression.mdx
+- index.mdx
+- introduction-to-machine-learning.mdx
+- jupyter-notebook.mdx
+multiple-linear-regression
+  -- - GradientDescentforMultipleLinearRegression.mdx
+  -- - index.mdx
+  -- - VectorizationPart1.mdx
+  -- - VectorizationPart2.mdx
+regression-model
+  -- - CostFunctionFormula.mdx
+  -- - CostFunctionIntuition.mdx
+  -- - index.mdx
+  -- - LinearRegressionP2.mdx
+  -- - VisualizationExamples.mdx
+  -- - VisualizingCostFunction.mdx
+- supervised-learning.mdx
+the-problem-of-overfitting
+  -- - AddressingOverfiting.mdx
+  -- - CostFunctionwithRegularization.mdx
+  -- - index.mdx
+  -- - RegularizedLinearRegression.mdx
+  -- - RegularizedLogisticRegression.mdx
+- unsupervised-learning.mdx

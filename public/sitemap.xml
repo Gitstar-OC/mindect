@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Main Pages -->
     <url>
         <loc>https://learnai.theme-verse.com/</loc>
         <lastmod>2024-09-10</lastmod>
@@ -19,6 +21,8 @@
             <image:loc>https://learnai.theme-verse.com/Logo.png</image:loc>
         </image:image>
     </url>
+
+    <!-- Individual Docs Files -->
     <url>
         <loc>https://learnai.theme-verse.com/docs/introduction-to-machine-learning</loc>
         <lastmod>2024-09-10</lastmod>
@@ -49,28 +53,223 @@
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
+
+    <!-- Subfolder Paths -->
+
+    <!-- classification-with-logistic-regression -->
     <url>
-        <loc>https://learnai.theme-verse.com/resources</loc>
+        <loc>https://learnai.theme-verse.com/docs/classification-with-logistic-regression</loc>
         <lastmod>2024-09-10</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.4</priority>
     </url>
     <url>
-        <loc>https://learnai.theme-verse.com/support</loc>
+        <loc>https://learnai.theme-verse.com/docs/classification-with-logistic-regression/DecisionBoundary</loc>
         <lastmod>2024-09-10</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.4</priority>
     </url>
     <url>
-        <loc>https://learnai.theme-verse.com/contribute</loc>
+        <loc>https://learnai.theme-verse.com/docs/classification-with-logistic-regression/LogisticRegression</loc>
         <lastmod>2024-09-10</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.4</priority>
+    </url>
+
+    <!-- cost-function-for-logistic-regression -->
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/cost-function-for-logistic-regression</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
     </url>
     <url>
-        <loc>https://learnai.theme-verse.com/about</loc>
+        <loc>https://learnai.theme-verse.com/docs/cost-function-for-logistic-regression/SimplifiedCostFunctionforLogisticRegression</loc>
         <lastmod>2024-09-10</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.4</priority>
     </url>
+
+    <!-- gradient-descent -->
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/gradient-descent</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/gradient-descent/GradientDescentIntuition</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/gradient-descent/GradientDescentLinearRegression</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/gradient-descent/ImplementGradientDescent</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/gradient-descent/LearningRate</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/gradient-descent/RunningGradientDescent</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+
+    <!-- gradient-descent-for-logistic-regression -->
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/gradient-descent-for-logistic-regression</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+
+    <!-- gradient-descent-in-practice -->
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/gradient-descent-in-practice</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/gradient-descent-in-practice/CheckingGradientDescentforConvergence</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/gradient-descent-in-practice/ChoosingtheLearningRate</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/gradient-descent-in-practice/FeatureEngineering</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/gradient-descent-in-practice/FeatureScalingPart2</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/gradient-descent-in-practice/PolynomialRegression</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+
+    <!-- multiple-linear-regression -->
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/multiple-linear-regression</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/multiple-linear-regression/GradientDescentforMultipleLinearRegression</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/multiple-linear-regression/VectorizationPart1</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/multiple-linear-regression/VectorizationPart2</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+
+    <!-- regression-model -->
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/regression-model</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/regression-model/CostFunctionFormula</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/regression-model/CostFunctionIntuition</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/regression-model/LinearRegressionP2</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/regression-model/VisualizationExamples</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/regression-model/VisualizingCostFunction</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+
+
+
+    <!-- the-problem-of-overfitting -->
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/the-problem-of-overfitting</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/the-problem-of-overfitting/AddressingOverfiting</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/the-problem-of-overfitting/CostFunctionwithRegularization</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/the-problem-of-overfitting/RegularizedLinearRegression</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://learnai.theme-verse.com/docs/the-problem-of-overfitting/RegularizedLogisticRegression</loc>
+        <lastmod>2024-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+
 </urlset>
