@@ -1,6 +1,17 @@
 # Learn AI 
 - Detailed readme about learnai will be added soon!!
 
+- change every name to mindect, add more better description
+- make better seo, using better tools and things
+
+// prepare resume and cover letters and apply for jobs
+
+- modify logo files and docs text along with the seo texts and links. add lisence for the repository
+
+
+In the future, change the homepage. 
+
+
 
 ## Issues and Features. 
 - update MatrixMultiplicationCode file and create a file that changes the name from camel and title case to snake case
