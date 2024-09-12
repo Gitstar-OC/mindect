@@ -1,5 +1,3 @@
-Name of all the files in the docs repo
-
 - advanced-learning-algorithms.mdx
 classification-with-logistic-regression
   -- - DecisionBoundary.mdx
@@ -25,12 +23,24 @@ gradient-descent-in-practice
   -- - PolynomialRegression.mdx
 - index.mdx
 - introduction-to-machine-learning.mdx
+- IsThereAPathToAGI.mdx
 - jupyter-notebook.mdx
 multiple-linear-regression
   -- - GradientDescentforMultipleLinearRegression.mdx
   -- - index.mdx
   -- - VectorizationPart1.mdx
   -- - VectorizationPart2.mdx
+neural-network-implementation-in-python
+  -- - GeneralImplementationofForwardPropagation.mdx
+  -- - index.mdx
+neural-network-intuition
+  -- - DemandPrediction.mdx
+  -- - index.mdx
+  -- - RecognizingImages.mdx
+neural-network-model
+  -- - index.mdxx.md
+  -- - InferenceMakingPredictions.mdx
+  -- - MoreComplexNeuralNetworks.mdx
 regression-model
   -- - CostFunctionFormula.mdx
   -- - CostFunctionIntuition.mdx
@@ -39,6 +49,10 @@ regression-model
   -- - VisualizationExamples.mdx
   -- - VisualizingCostFunction.mdx
 - supervised-learning.mdx
+tensorflow-implementation
+  -- - BuildingaNeuralNetwork.mdx
+  -- - DatainTensorFlow.mdx
+  -- - index.mdx
 the-problem-of-overfitting
   -- - AddressingOverfiting.mdx
   -- - CostFunctionwithRegularization.mdx
@@ -46,3 +60,8 @@ the-problem-of-overfitting
   -- - RegularizedLinearRegression.mdx
   -- - RegularizedLogisticRegression.mdx
 - unsupervised-learning.mdx
+vectorization
+  -- - index.mdx
+  -- - MatrixMultiplication.mdx
+  -- - MatrixMultiplicationCode.mdx
+  -- - MatrixMultiplicationRules.mdx

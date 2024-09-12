@@ -1,10 +1,13 @@
 # Learn AI 
-- Readme will be added soon
+- Detailed readme about learnai will be added soon!!
 
 
 ## Issues and Features. 
+- update MatrixMultiplicationCode file and create a file that changes the name from camel and title case to snake case
+
 - not getting images after downloading notebook, package should be downloaded as zip, with image and the notebook
 - add scroll to top button and border in between of footer and toc
+
 
 - make navbar theme to black ( just one theme for the navbar on the homepage)
 

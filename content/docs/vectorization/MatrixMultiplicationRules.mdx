@@ -1,0 +1,73 @@
+---
+title: Matrix Multiplication Rules
+---
+
+
+So let's take a look at the general form of how you multiply two matrices together. And then in the last part after this one, we'll take this and apply it to the vectorized implementation of a neural network. Let's dive in.
+
+Here's the matrix A, which is a 2 by 3 matrix because it has two rows and three columns. As before I encourage you to think of the columns of this matrix as three vectors, vectors a1, a2 and a3.
+
+![MMR 1](/Algs/Vn/MMR%20(1).png)
+
+And what we're going to do is take A transpose and multiply that with the matrix W. The first, what is A transpose? Well, `A transpose is obtained by taking the first column of A and laying it on the side like this and then taking the second column of A and laying on his side like this. And then the third column of A and laying on the side like that`. And so these rows are now A1 transpose, A2 transpose and A3 transpose.
+
+Next, here's the matrix W.
+![MMR 2](/Algs/Vn/MMR%20(2).png)
+I encourage you to think of W as factors w1, w2, w3, and w4 stacked together.
+
+
+As so let's look at how you then compute A transpose times W.
+
+![MMR 3](/Algs/Vn/MMR%20(3).png)
+
+Now, notice that I've also used slightly different shades of orange to denote the different columns of A, where the same shade corresponds to numbers that we think of as grouped together into a vector. And that same shade is used to indicate different roles of A transpose because the different roles of A transpose are A1 transpose, A2 transpose and A3 transpose.
+
+![MMR 4](/Algs/Vn/MMR%20(4).png)
+And in a similar way, I've used different shades to denote the different columns of W. Because the numbers are the same shade of blue, are the ones that are grouped together to form the vectors w1, w 2, or w3 or w4.
+
+Now, let's look at how you can compute A transpose times W. I'm going to draw vertical bows to the different shades of blue and horizontal bars with the different shades of orange to indicate which elements of Z that is A transpose W are influenced or affected by the different roles of A transpose and which are influenced or affected by the different columns of W.
+
+So for example, let's look at the first Column of W. So that's w1 as indicated by the lightest shade of blue here. So w1 will influence or will correspond to this first column of Z shown here by this lighter shade of blue.
+![MMR 5](/Algs/Vn/MMR%20(5).png)
+And the values of this second column of W that is w2 as indicated by this second lighter shade of blue will affect the values computed into second column of Z and so on for the third and fourth columns.
+
+Correspondingly, let's look at A transpose. A1 transpose is the first row of A transpose as indicated by the lightest shade of orange and A1 transpose will effect or influence or correspond to the values in the first row of Z.
+![MMR 6](/Algs/Vn/MMR%20(6).png)
+And A2 transpose will influence the second row of Z and A3 transports will influence or correspond to this third row of Z.
+
+So let's figure out how to compute the matrix Z, which is going to be a 3 by 4 matrix.
+
+So with 12 numbers altogether. Let's start off and figure out how to compute the number in the first row, in the first column of Z. So this upper left most element here because this is the first row and first column corresponding to the lighter shade of orange and the lighter shade of blue. The way you compute that is to grab the first row of a transpose and the first column of W and take their inner product or the product. And so this number is going to be (1,2) dot product with (3,4) which is (1 * 3) + (2 * 4) = 11.
+![MMR 7](/Algs/Vn/MMR%20(7).png)
+
+Let's look at the second example. How would you compute this element of Z. So this is in the third row, row 1, row 2, row 3. So this is in row 3 and the second column, column 1, column 2. So to compute the number in row 3, column 2 of Z, you would now grab row 3 of A transpose and column 2 of W and dot product those together.
+
+![MMR 8](/Algs/Vn/MMR%20(8).png)
+
+Notice that this corresponds to the darkest shade of orange and the second lightest shade of blue. And to compute this, this is (0.1 * 5) +(0.2 * 6), which is (0.5 + 1.2), which is equal to 1.7. So to compute the number in row 3, column 2 of Z, you grab the third row, row 3 of a transpose and column 2 of W.
+
+Let's look at one more example and let's see if you can figure this one out. This is row 2, column 3 of the matrix Z. Why don't you take a look and see if you can figure out which row and which column to grab the dot product together and therefore what is the number that will go in this element of this matrix. Hopefully you got that. 
+
+You should be grabbing row 2 of A transpose and column 3 of W. And when you dot product that together you have A2 transpose w3 is (-1 * 7) + (-2 * 8), which is (-7 + -16), which is equal to -23. 
+
+![MMR 9](/Algs/Vn/MMR%20(9).png)
+
+And so that's how you compute this element of the matrix Z. And it turns out if you do this for every element of the matrix Z, then you can compute all of the numbers in this matrix which turns out to look like that. 
+
+![MMR 10](/Algs/Vn/MMR%20(10).png)
+
+I just want to point out one last interesting requirement for multiplying matrices together, which is that X transpose here is a 3 by 2 matrix because it has 3 rows and 2 columns, and W here is a 2 by 4 matrix because it has 2 rows and 4 columns.
+
+One requirement in order to multiply two matrices together is that this number must match that number. 
+
+![MMR 11](/Algs/Vn/MMR%20(11).png)
+
+And that's because `You can only take dot products between vectors that are the same length`. So you can take the dot product between a vector with two numbers. And that's because you can take the inner product between the vector of length 2 only with another vector of length 2. You can't take the inner product between vector of length 2 with a vector of length 3, for example. And that's why `matrix multiplication is valid only if the number of columns of the first matrix, that is A transpose here is equal to the number of rolls of the second matrix, that is the number of rolls of W here`. So that when you take dot products during this process, you're taking dot products of vectors of the same size. 
+
+And then the other observation is that the output Z equals a transpose, W. The dimensions of Z is 3 by 4. And so the output of this multiplication will have the same number of rows as X transpose and the same number of columns as W. 
+
+![MMR 12](/Algs/Vn/MMR%20(12).png)
+
+And so that too is another property of matrix multiplication. So that's matrix multiplication. All these parts are optional. So thank you for sticking with me through these.
+
+I have to say the first time I understood the vectorized implementation, I thought that's actually really cool. I've been implementing Neural Networks for a while myself without the vectorized implementation. And when I finally understood the vectorized implementation and implemented it that way for the first time, it ran blazingly much faster than anything I've ever done before. And I thought, wow, I wish I had figured this out earlier. The vectorized implementation, it is a little bit complicated, but it makes your networks run much faster. So let's take a look at that in the next part.
