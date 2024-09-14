@@ -1,29 +1,12 @@
 # Learn AI 
 - Detailed readme about learnai will be added soon!!
 
-- change every name to mindect, add more better description
-- make better seo, using better tools and things
-
-// prepare resume and cover letters and apply for jobs
-
-- modify logo files and docs text along with the seo texts and links. add lisence for the repository
-
-
 In the future, change the homepage. 
-
-
-
 ## Issues and Features. 
-- update MatrixMultiplicationCode file and create a file that changes the name from camel and title case to snake case
-
 - not getting images after downloading notebook, package should be downloaded as zip, with image and the notebook
 - add scroll to top button and border in between of footer and toc
-
-
 - make navbar theme to black ( just one theme for the navbar on the homepage)
-
 // Currently the animation is being removed if added fix the things 
-
 - Add background animation for the intro  (same as qu.ai) and the pagedown effect of (grili)
 - Loader just for one time or no loader
 - remove the theme changer for the main page
