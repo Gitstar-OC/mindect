@@ -1,6 +1,6 @@
 import { type HomeLayoutProps } from "fumadocs-ui/home-layout";
 import Logo from "@/components/ui/Logo";
-import { economica } from "@/lib/fonts";
+
 
 /**
  * Shared layout configurations
@@ -11,26 +11,15 @@ import { economica } from "@/lib/fonts";
  */
 export const baseOptions: HomeLayoutProps = {
   nav: {
-    title: (
-      <>
-        <Logo
-          // className="size-4 [.uwu_&]:hidden [header_&]:size-5"
-          // fill="currentColor"
-        />
-        <span
-          className={`${economica.className} [.uwu_&]:hidden max-md:[header_&]:hidden`}
-        >
-          Mindect
-        </span>
-      </>
-    ),
+    title: <Logo />, 
+    transparentMode: 'top',
   },
   links: [
-    {
-      text: "Docs",
-      url: "/docs",
-      // active: 'nested-url',
-    },
+    // {
+    //   text: "Docs",
+    //   url: "/docs",
+    //   // active: 'nested-url',
+    // },
   ],
   githubUrl: "https://github.com/gitstar-oc/learnai",
 };
