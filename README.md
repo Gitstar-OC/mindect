@@ -1,6 +1,13 @@
-# Learn AI 
-- Detailed readme about learnai will be added soon!!
+# Mindect 
 
+- Mindect are docs for everyone who wants to learn about AI, ML, Supervised Learning and Advanced Learning ALgorithms. 
+
+- Other notes about Deep learning, unsupervised learning and large language models is in progress and Mindect is continuosly under developemnt.
+
+
+### Hope you find this notes useful for you, this learning platform also consists of image, codeblocks and downloadable jupyter notebooks to help you understand concepts at a deeper level. Give it a star if you like it. It really helps me add new content. 
+
+<!-- 
 In the future, change the homepage. 
 ## Issues and Features. 
 - not getting images after downloading notebook, package should be downloaded as zip, with image and the notebook
@@ -12,7 +19,7 @@ In the future, change the homepage.
 - remove the theme changer for the main page
 
 
-<!-- 
+
 
 Important MDX things in this 
 
