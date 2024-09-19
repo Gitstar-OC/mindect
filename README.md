@@ -8,6 +8,10 @@
 ### Hope you find this notes useful for you, this learning platform also consists of image, codeblocks and downloadable jupyter notebooks to help you understand concepts at a deeper level. Give it a star if you like it. It really helps me add new content. 
 
 <!-- 
+- start a blog where various data scientist, analyst and teachers could colaborate on writing.
+- at first can use static pages as it will not require any database, later small database could be used. 
+
+
 In the future, change the homepage. 
 ## Issues and Features. 
 - not getting images after downloading notebook, package should be downloaded as zip, with image and the notebook
