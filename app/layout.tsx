@@ -54,16 +54,16 @@ const inter = Inter({
 
 // export const metadata = createMetadata({
 //   title: {
-//     template: '%s | Fumadocs',
-//     default: 'Fumadocs',
+//     template: '%s | Mindect',
+//     default: 'Mindect',
 //   },
-//   description: 'The Next.js framework for building documentation sites',
+//   description: 'Learn Concepts in ML, AI, Supervised and Unsupervised Learning etc. At Anytime, From Anywhere with Mindect',
 //   metadataBase: baseUrl,
 // });
 
 
 export const viewport: Viewport = {
-  themeColor: [
+  themeColor: [ 
     { media: '(prefers-color-scheme: dark)', color: '#0A0A0A' },
     { media: '(prefers-color-scheme: light)', color: '#fff' },
   ],
@@ -77,7 +77,8 @@ export default function Layout({ children }: { children: ReactNode }) {
         <link rel="icon" href="/Logo.png" sizes="128x128" />
         <link rel="apple-touch-icon" href="/Logo.png" sizes="128x128" />
         <title>Mindect</title>
-        <meta charSet="UTF-8" />
+           <meta charSet="UTF-8" />
+        <meta name="title" content="Mindect" />
         <meta
           name="description"
           content="Learn Concepts in Machine Learning, Supervised Learning, Unsupervised Learning, Neural Network training. At Anytime, From Anywhere with Mindect"
@@ -116,13 +117,14 @@ export default function Layout({ children }: { children: ReactNode }) {
         {/* Favicons */}
         <link rel="icon" type="image/svg+xml" href="/Logo.png" />
         <link rel="shortcut icon" type="image/svg+xml" href="/Logo.png" />
-
-        {/* Verification Tags */}
+  
+        {/* Verification Tags */ }
         <meta name="google-site-verification" content="JoujTmv5oh0bgEPDWe-FC_D1gsDCmoxox9a25fkwo-M" />
         <meta name="google-site-verification" content="6RMOg1ngEZ3TFp12K8vXU8UMjylHTt3B51UnOxzu-os" />
         <meta name="msapplication-TileImage" content="https://mindect.vercel.app/Logo.png" />
         {/* <meta name="theme-color" content="#ffffff" />
-        <meta name="theme-color" content="#000000"/> */}
+        <meta name="theme-color" content="#000000"/>   
+         */}
       </head>
       <body>
         <RootProvider>{children}</RootProvider>

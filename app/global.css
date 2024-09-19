@@ -69,3 +69,10 @@ img, video {
 /* nav {
   background-color: black;
 } */
+
+
+/************ Highlighted text ***********/
+.prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  font-size: 16px;
+
+}
