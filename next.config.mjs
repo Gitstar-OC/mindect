@@ -10,6 +10,8 @@
 // export default withMDX(config);  // At the start ( without download option )
 
 import { createMDX } from 'fumadocs-mdx/next';
+import rehypeKatex from 'rehype-katex';
+import remarkMath from 'remark-math';
 
 const withMDX = createMDX();
 
@@ -27,3 +29,5 @@ const config = {
 };
 
 export default withMDX(config);
+
+

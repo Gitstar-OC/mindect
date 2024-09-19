@@ -1,4 +1,4 @@
 {
     "title": "Regression Model",
-    "pages": ["linear-regression-p2", "...", "visualizing-cost-function", "visualization-examples"]
+    "pages": ["how-supervised-learning-works", "...", "visualizing-cost-function", "visualization-examples"]
 }
