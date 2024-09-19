@@ -1,12 +1,17 @@
 ---
 title: Cost Function Intuition
+description: How the cost function can be used to find the best parameters for your model ? 
 ---
 
+## Introduction
 We're seeing the mathematical definition of the cost function.
 
 ![CFI1](/SL/RegressionModel/CFI1.png)
 
-Now, let's build some intuition about what the cost function is really doing. In this part of intuition, we'll walk through one example to see how the cost function can be used to find the best parameters for your model. To recap, here's what we've seen about the cost function so far. You want to fit a straight line to the training data, so you have this model, `fw, b of x is w times x, plus b`. Here, the model's parameters are `w`, and `b`.
+In this part of intuition, you'll walk through one example to see. You want to fit a straight line to the training data, so you have this model, `fw, b of x is w times x, plus b`. Here, the model's parameters are `w`, and `b`.
+
+## What Cost Function J does ?
+Now, let's build some intuition about what the cost function is really doing. 
 
 Now, depending on the values chosen for these parameters, you get different straight lines like this.
 
@@ -16,13 +21,13 @@ You want to find values for w, and b, so that the straight line fits the trainin
 
 ![CFI3](/SL/RegressionModel/CFI3.png)
 
-
 We want to minimize, J as a function of w, and b. Now, in order for us to better visualize the cost function J, this work of a simplified version of the `linear regression model`. We're going to use the model `fw of x, is w times x`. You can think of this as taking the original model on the left, and getting rid of the parameter b, or `setting the parameter b equal to 0`. It just goes away from the equation, `so f is now just w times x`. You now have just one parameter `w`, and `cost function J`, looks similar to what it was before. Taking the difference, and squaring it, except now, `f is equal to w times xi`, and `J is now a function of just w`. The goal becomes a little bit different as well, because you have just one parameter, `w`, not w and b. With this simplified model, the goal is to find the value for `w`, that minimizes J of w. To see this visually, what this means is that if b is set to 0, then f defines a line that looks like this.
 
 ![CFI5](/SL/RegressionModel/CFI5.png)
 
 You see that the line passes through the origin here, because when `x is 0`, `f of x is 0 too`. Now, using this simplified model, let's see `how the cost function changes as you choose different values for the parameter w`. In particular, let's look at graphs of the model f of x, and the cost function J. I'm going to plot these side-by-side, and you'll be able to see how the two are related. First, notice that for ``f subscript w, when the parameter w is fixed, that is, is always a constant value, then fw is only a function of x, which means that the estimated value of y depends on the value of the input x`. In contrast, looking to the right, the cost function J, is a function of w, where w controls the slope of the line defined by f w. The cost defined by J, depends on a parameter, in this case, the parameter w.
 
+## Plotting this functions 
 Let's go ahead, and plot these functions, fw of x, and J of w side-by-side so you can see how they are related. We'll start with the model, that is the function fw of x on the left. Here are the input feature x is on the horizontal axis, and the output value y is on the vertical axis.
 
 ![CFI6](/SL/RegressionModel/CFI6.png)
@@ -47,7 +52,9 @@ Now, let's look at how F and J change for different values of w. W can take on a
 
 ![CFI9](/SL/RegressionModel/CFI9.png)
 
-Let's also compute the cost J, when w is 0.5. Recall that the cost function is measuring the squared error or difference between the estimator value, that is y hat I, which is F(X^i), and the true value, that is Y^i for each example i. Visually you can see that the error or difference is equal to the height of this vertical line here when x is equal to 1. Because this lower line is the gap between the actual value of y and the value that the function f predicted, which is a bit further down here. For this first example, when x is 1, f(x) is 0.5. The squared error on the first example is 0.5 minus 1 squared. Remember the cost function, we'll sum over all the training examples in the training set. Let's go on to the second training example. When x is 2, the model is predicting f(x) is 1 and the actual value of y is 2. The error for the second example is equal to the height of this little line segment here, and the squared error is the square of the length of this line segment, so you get 1 minus 2 squared. Let's do the third example. Repeating this process, the error here, also shown by this line segment, is 1.5 minus 3 squared. Next, we sum up all of these terms, which turns out to be equal to 3.5. Then we `multiply this term by 1 over 2m`, where `m is the number of training examples`. Since there are three training examples m equals 3, so this is equal to 1 over 2 times 3, where this m here is 3.
+Let's also compute the cost J, when w is 0.5.
+
+Recall that the cost function is measuring the squared error or difference between the estimator value, that is y hat I, which is F(X^i), and the true value, that is Y^i for each example i. Visually you can see that the error or difference is equal to the height of this vertical line here when x is equal to 1. Because this lower line is the gap between the actual value of y and the value that the function f predicted, which is a bit further down here. For this first example, when x is 1, f(x) is 0.5. The squared error on the first example is 0.5 minus 1 squared. Remember the cost function, we'll sum over all the training examples in the training set. Let's go on to the second training example. When x is 2, the model is predicting f(x) is 1 and the actual value of y is 2. The error for the second example is equal to the height of this little line segment here, and the squared error is the square of the length of this line segment, so you get 1 minus 2 squared. Let's do the third example. Repeating this process, the error here, also shown by this line segment, is 1.5 minus 3 squared. Next, we sum up all of these terms, which turns out to be equal to 3.5. Then we `multiply this term by 1 over 2m`, where `m is the number of training examples`. Since there are three training examples m equals 3, so this is equal to 1 over 2 times 3, where this m here is 3.
 
 ![CFI10](/SL/RegressionModel/CFI10.png)
 
@@ -79,4 +86,8 @@ To summarize, you saw plots of both f and J and worked through how the two are r
 
 ![CFI16](/SL/RegressionModel/CFI16.png)
 
-The goal of linear regression is to find the parameters w or w and b that results in the smallest possible value for the cost function J. Now in this part, we worked through our example with a simplified problem using `only w`. In the next part, you'll visualize what the cost function looks like for the full version of linear regression using `both w and b`. You see some `cool 3D plots`.
+## What is the goal of linear regression ?
+The goal of linear regression is to find the parameters w or w and b that results in the smallest possible value for the cost function J. 
+
+## Conclusion
+Now in this part, we worked through our example with a simplified problem using `only w`. In the next part, you'll visualize what the cost function looks like for the full version of linear regression using `both w and b`. You see some `cool 3D plots`.

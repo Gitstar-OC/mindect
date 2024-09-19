@@ -24,8 +24,9 @@
 
       "---Advanced Learning Algorithms---",
       "advanced-learning-algorithm",
-      "neural-network-model",
       "neural-network-intuition",
+      "neural-network-model",
+      "tensorflow-implementation",
       "neural-network-implementation-in-python",
       "is-there-a-path-to-AGI",
       "vectorization",
