@@ -26,16 +26,16 @@ const Footer = () => {
               Support
               <div className="underlineEffect"></div>
             </a>
-            <Separator orientation="vertical" />
+{/*             <Separator orientation="vertical" />
             <Link href="/contact" className="group relative">
-              Resources {/**Contact */} 
+              Resources {/**Contact } 
               <div className="underlineEffect"></div>
             </Link>
             <Separator orientation="vertical" />
             <Link href="/about" className="group relative">
               About
               <div className="underlineEffect"></div>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </footer>
