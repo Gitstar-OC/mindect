@@ -1,7 +1,8 @@
 # Mindect 
 
 - Mindect are docs for everyone who wants to learn about AI, ML, Supervised Learning and Advanced Learning ALgorithms. 
-
+- adding middle ware page for docs like https://fumadocs.vercel.app/docs
+-  add backlins for pages to make the pages go on top with search engines named additioanl resourses, read more at etc.  
 - Other notes about Deep learning, unsupervised learning and large language models is in progress and Mindect is continuosly under developemnt.
 
 
