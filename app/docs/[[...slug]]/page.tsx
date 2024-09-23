@@ -1,9 +1,12 @@
 import { source } from "@/app/source";
 import type { Metadata } from "next";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { IoIosArrowForward } from "react-icons/io";
 import { Steps, Step } from "fumadocs-ui/components/steps";
 import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 import { ArrowSquareOut } from "@phosphor-icons/react/dist/ssr";
+import { TbSettings } from "react-icons/tb";
+import { CardSpotlight } from "@components/ui/Card";
 import {
   DocsPage,
   DocsBody,
@@ -16,7 +19,7 @@ import { ImageZoom } from "fumadocs-ui/components/image-zoom";
 // import {IZ} from "@lib/IZ" // replacement for Image Zoom as it was throwing errors
 
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
-import { Separator } from "@/components/ui/separator"
+import { Separator } from "@/components/ui/separator";
 import React from "react";
 
 export default async function Page({
@@ -29,40 +32,52 @@ export default async function Page({
 
   const MDX = page.data.body;
 
-  const path = `/content/docs/${page.file.path}`
+  const path = `/content/docs/${page.file.path}`;
 
   return (
-    <DocsPage
-      toc={page.data.toc}
-      // lastUpdate={page.data.exports.lastModified}
+    <DocsPage 
+    
+      // lastUpdate={page.data.lastModified}
       tableOfContent={{
         enabled: page.file.path !== "api-reference.mdx",
         footer: (
           <>
-          <div className="">
-          <Separator />
-          <a
-            href={`https://github.com/gitstar-oc/learnai/blob/master${path}`}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="flex items-baseline text-xs text-muted-foreground hover:text-foreground mt-4"
-          >
-            Edit on Github <ArrowSquareOut className="ml-1 size-3" />
-          </a>
-          <a 
-          href="https://github.com/gitstar-oc/learnai/issues/new?title=Feedback%20for%20%E2%80%9Clearnai%E2%80%9D&labels=feedback"
-          target="_blank"
-            rel="noreferrer noopener"
-            className="flex items-baseline text-xs text-muted-foreground hover:text-foreground mt-2"
-          >
-            Question? Give us feedback <FaArrowRightLong className="ml-1 size-3" />
-          </a>
-          </div>
+            <div className="">
+              <Separator />
+              <a
+                href={`https://github.com/gitstar-oc/learnai/blob/master${path}`}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="flex items-baseline text-xs text-muted-foreground hover:text-foreground mt-4"
+              >
+                Edit on Github <ArrowSquareOut className="ml-1 size-3" />
+              </a>
+              <a
+                href="https://github.com/gitstar-oc/learnai/issues/new?title=Feedback%20for%20%E2%80%9Clearnai%E2%80%9D&labels=feedback"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="flex items-baseline text-xs text-muted-foreground hover:text-foreground mt-2"
+              >
+                Question? Give us feedback{" "}
+                <FaArrowRightLong className="ml-1 mb-4 size-3" />
+              </a>
+              {/* <Separator /> */}
+              <span className="opacity-70 hover:opacity-100 cursor-pointer text-sm flex">
+                <TbSettings className="mt-1 ml-1 mr-1" /> Change Appearance{" "}
+              </span>
+              <a href="https://github.com/gitstar-oc/mindect"  rel="noopener noreferrer"  target="_blank" className="group ">
+              <CardSpotlight className="w-auto h-4 mt-4 p-6 ">
+                <h3 className="text-black dark:text-neutral-300 mt-none relative z-20 justify-center items-center bottom-3 flex ">
+                  Contribute to Mindect <FaArrowRightLong className="ml-1 transition-transform duration-300 ease-in-out transform group-hover:translate-x-2" />  
+                </h3>
+              </CardSpotlight>
+              </a>
+            </div>
           </>
         ),
       }}
+      toc={page.data.toc}
     >
-      
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
@@ -75,19 +90,9 @@ export default async function Page({
             Tab,
             Accordions,
             Accordion,
-            img: props => <ImageZoom {...props as any} />
-            // img: (props: { src: string; alt?: string }) => {
-            //   console.log("Image props:", props); // Log props for debugging
-            //   const { src, alt = "Image description", ...rest } = props;
-            
-            //   if (!src) {
-            //     console.error("Image source is missing!");
-            //     return null;
-            //   }
-            
-            //   return <IZ src={src} alt={alt}  />;
-            // }
-            }}
+            img: (props) => <ImageZoom {...(props as any)} />,
+
+          }}
         />
       </DocsBody>
     </DocsPage>
