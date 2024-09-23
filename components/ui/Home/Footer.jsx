@@ -11,7 +11,7 @@ const Footer = () => {
           <div
             className={`${kiteOne.className} text-[24px] sm:text-[26px] md:text-[30px] lg:text-[30px] pointer-events-none`}
           >
-            Made with ❤️ by OC
+{/*             Made with ❤️ by OC */}
           </div>
 
           <div
@@ -26,16 +26,16 @@ const Footer = () => {
               Support
               <div className="underlineEffect"></div>
             </a>
-{/*             <Separator orientation="vertical" />
-            <Link href="/contact" className="group relative">
-              Resources {/**Contact } 
+            <Separator orientation="vertical" />
+            <Link href="/docs#introduction" className="group relative">
+              Intro{/**Contact */} 
               <div className="underlineEffect"></div>
             </Link>
             <Separator orientation="vertical" />
             <Link href="/about" className="group relative">
               About
               <div className="underlineEffect"></div>
-            </Link> */}
+            </Link> 
           </div>
         </div>
       </footer>
