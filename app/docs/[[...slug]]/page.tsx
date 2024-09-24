@@ -59,11 +59,11 @@ export default async function Page({
                 className="flex items-baseline text-xs text-muted-foreground hover:text-foreground mt-2"
               >
                 Question? Give us feedback{" "}
-                <FaArrowRightLong className="ml-1 mb-4 size-3" />
+                <FaArrowRightLong className="ml-1 mb-3 size-3" />
               </a>
               {/* <Separator /> */}
-              <span className="opacity-70 hover:opacity-100 cursor-pointer text-sm flex">
-                <TbSettings className="mt-1 ml-1 mr-1" /> Change Appearance{" "}
+              <span className="opacity-70 hover:opacity-100 cursor-pointer group text-xs flex">
+                <TbSettings className=" size-3 mt-[1px] mr-1 transition-transform duration-300 ease-in-out group-hover:rotate-[360deg] group-hover:scale-125" /> Change Appearance{" "}
               </span>
               <a href="https://github.com/gitstar-oc/mindect"  rel="noopener noreferrer"  target="_blank" className="group ">
               <CardSpotlight className="w-auto h-4 mt-4 p-6 ">
