@@ -72,7 +72,6 @@ export default function Layout({ children }: { children: ReactNode }) {
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <head>
         <link rel="favicon" href="/Favicon.ico" sizes="64x64" />
-        <link rel="icon" href="/Logo.png" sizes="128x128" />
         <link rel="apple-touch-icon" href="/Logo.png" sizes="128x128" />
         <title>Mindect</title>
         <meta charSet="UTF-8" />
