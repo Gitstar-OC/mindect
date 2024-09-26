@@ -40,6 +40,7 @@
 //   );
 // }
 
+import { Banner } from 'fumadocs-ui/components/banner';
 import "./global.css";
 import "katex/dist/katex.css";
 import { RootProvider } from "fumadocs-ui/provider";
@@ -141,7 +142,9 @@ export default function Layout({ children }: { children: ReactNode }) {
          */}
       </head>
       <body>
-        <RootProvider>{children}</RootProvider>
+        <RootProvider>
+        <Banner id="css-styling" variant='rainbow'> Sorry for facing ui problem, Refresh this page after removing the banner</Banner>
+          {children}</RootProvider>
       </body>
     </html>
   );
