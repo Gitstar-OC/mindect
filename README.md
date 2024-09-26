@@ -11,7 +11,7 @@
 ### Hope you find this notes useful for you, this learning platform also consists of image, codeblocks and downloadable jupyter notebooks to help you understand concepts at a deeper level. Give it a star if you like it. It really helps me add new content. 
 
 
-For contributing make sure you have read the [Contribution](./Contribution.md) file
+For contributing make sure you have read the [Contributing Guidelines](./Contribution.md) file
 
 <!-- 
 
