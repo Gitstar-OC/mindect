@@ -1,5 +1,7 @@
 # Mindect 
 
+- [Mindect Image](./public/Banner.png)
+
 - Mindect are docs for everyone who wants to learn about AI, ML, Supervised Learning and Advanced Learning ALgorithms.
 <!--  
 - adding middle ware page for docs like https://fumadocs.vercel.app/docs
