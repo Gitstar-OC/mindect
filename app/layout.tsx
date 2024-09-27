@@ -91,7 +91,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           property="og:description"
           content="Learn Concepts in Machine Learning, Supervised Learning, Unsupervised Learning, Neural Network training. At Anytime, From Anywhere with Mindect"
         />
-        <meta property="og:image" content="/Logo.png" />
+        <meta property="og:image" content="/Banner.png" />
         <meta property="og:url" content="https://mindect.vercel.app/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Mindect" />
@@ -109,7 +109,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         />
         <meta
           name="twitter:image"
-          content="https://mindect.vercel.app/Logo.png"
+          content="https://mindect.vercel.app/Banner.png"
         />
 
         {/* SEO Improvements */}
