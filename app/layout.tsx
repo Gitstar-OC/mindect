@@ -143,7 +143,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <RootProvider>
-        <Banner id="css-styling" variant='rainbow'> Sorry for facing ui problem, Refresh this page after removing the banner</Banner>
+{/*         <Banner id="css-styling" variant='rainbow'> Sorry for facing ui problem, Refresh this page after removing the banner</Banner> */}
           {children}</RootProvider>
       </body>
     </html>
