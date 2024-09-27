@@ -28,7 +28,7 @@ const DocsPage = () => {
            {/* <span className="text-balance"> */}
             I first thought about teaching literature and arts. 
             <br></br>
-            But the thing is they are kind of hard, so here some easy topics for you to learn from!
+            But the thing is those topics are kind of hard, so here some easy topics for you to learn from!
         </div>
         {/* add tooltip as don't take it seriously */}
       </motion.div>
