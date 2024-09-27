@@ -18,7 +18,7 @@ export const CardSpotlight = ({
     currentTarget,
     clientX,
     clientY
-  }) {
+  }) { 
     let { left, top } = currentTarget.getBoundingClientRect();
 
     mouseX.set(clientX - left);

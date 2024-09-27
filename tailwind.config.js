@@ -1,5 +1,8 @@
 // // @ts-check
 // import { createPreset, presets } from 'fumadocs-ui/tailwind-plugin';
+// const {
+//   default: flattenColorPalette,
+// } = require("tailwindcss/lib/util/flattenColorPalette");
 
 // /** @type {import('tailwindcss').Config} */
 // export default {
@@ -46,12 +49,27 @@
 //   ],
 //   theme: {
 //     extend: {
+//       animation: {
+//         aurora: "aurora 60s linear infinite",
+//         spotlight: "spotlight 2s ease .75s 1 forwards",
+//       },
+//       keyframes: {
+//         aurora: {
+//           from: {
+//             backgroundPosition: "50% 50%, 50% 50%",
+//           },
+//           to: {
+//             backgroundPosition: "350% 50%, 350% 50%",
+//           },
+//           },
+//       },
 //       fontFamily: {
 //         sans: ['var(--font-geist-sans)'],
 //         mono: ['var(--font-geist-mono)'],
 //       },
 //     },
 //   },
+//   plugins: [addVariablesForColors]
 // };
 
 // @ts-check
