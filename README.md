@@ -1,6 +1,6 @@
 # Mindect 
 
-- [Mindect Image](./public/Banner.png)
+![Mindect Image](./public/Banner.png)
 
 - Mindect are docs for everyone who wants to learn about AI, ML, Supervised Learning and Advanced Learning ALgorithms.
 <!--  
