@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import { kiteOne, merienda } from '@/lib/fonts';
 import './homepage.css';
 import Link from 'next/link';
-import { Button, Footer, bgImages, words } from '@/lib/exports';
+import { Button,  Footer, bgImages, words } from '@/lib/exports';
 import Balancer from 'react-wrap-balancer'
+// import  Footer  from "@/components/ui/Footer"
 
 const HomePage = () => {
   const [text, setText] = useState('');
@@ -86,6 +87,7 @@ const HomePage = () => {
           <Footer />
         </div>
       </div>
+      {/* <Footer /> */}
     </>
   );
 };
