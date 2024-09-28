@@ -81,3 +81,9 @@ img, video {
 .katex-html {
   font-size: x-large;
 }
+
+@layer base {
+  :root {
+        --radius: 0.5rem;
+    }
+}
