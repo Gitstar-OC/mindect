@@ -1,5 +1,6 @@
 import BaseCard from "@/components/ui/base-card";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
+import { ChevronRightIcon } from "lucide-react";
 
 const SupervisedLearningCard = () => {
   const steps = [
@@ -26,8 +27,18 @@ const SupervisedLearningCard = () => {
       steps={steps}
       statusStyle="" 
       subheading="Here's what you will learn:"
-      buttonText="Start Learning"
+      buttonText={
+        <>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#25AFAA] to-[#4C054C] rounded-lg" />
+              <div className="flex items-center px-8 py-2 bg-black rounded-[6px] relative group transition duration-200 text-white hover:bg-transparent">
+                Start Learning
+                <ChevronRightIcon className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+              </div>
+        </>
+      }
       buttonPath="supervised-learning"
+      buttonStyle=""
+      isDisabled={false}
     />
   );
 };

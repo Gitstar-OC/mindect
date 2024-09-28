@@ -31,6 +31,7 @@ const BaseCard = ({
   buttonText,
   buttonStyle,
   buttonPath,
+  isDisabled
 }) => {
   return (
     <>
@@ -66,13 +67,9 @@ const BaseCard = ({
             passHref
             className="flex justify-center"
           >
-            <button className={cn("relative p-[3px] mt-3", buttonStyle)}>
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-              <div className="flex items-center px-8 py-2 bg-black rounded-[6px] relative group transition duration-200 text-white hover:bg-transparent">
-                {buttonText}
-                <ChevronRightIcon className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-              </div>
-            </button>
+            <button className={cn("relative p-[3px] mt-3", buttonStyle)} disabled={isDisabled}>
+              {buttonText}
+            </button >
             {console.log(buttonPath)}
           </Link>
         </CardSpotlight>
