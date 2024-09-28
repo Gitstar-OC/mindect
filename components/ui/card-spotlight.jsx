@@ -4,6 +4,7 @@ import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 import React, { useState } from "react";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 import { cn } from "@/lib/utils";
+import ShineBorder from "@/components/ui/shine-border";
 
 export const CardSpotlight = ({
   children,
@@ -29,9 +30,11 @@ export const CardSpotlight = ({
   const handleMouseEnter = () => setIsHovering(true);
   const handleMouseLeave = () => setIsHovering(false);
   return (
-    (<div
+    (<ShineBorder className="relative flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
+      color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}>
+    <div
       className={cn(
-        "group/spotlight p-10 rounded-md relative border border-blue-500 dark:border-blue-700 bg-white dark:bg-black hover:border-none",
+        "group/spotlight p-10 rounded-md relative border bg-white dark:bg-black hover:border-none",
         className
       )}
       onMouseMove={handleMouseMove}
@@ -62,6 +65,7 @@ export const CardSpotlight = ({
         )}
       </motion.div>
       {children}
-    </div>)
+    </div>
+    </ShineBorder>)
   );
 };
