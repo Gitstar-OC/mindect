@@ -53,7 +53,9 @@ export default {
   		animation: {
   			aurora: 'aurora 60s linear infinite',
   			spotlight: 'spotlight 2s ease .75s 1 forwards',
-  			shimmer: 'shimmer 2s linear infinite'
+  			shimmer: 'shimmer 2s linear infinite',
+  			gradient: 'gradient 8s linear infinite',
+  			shine: 'shine var(--duration) infinite linear'
   		},
   		keyframes: {
   			aurora: {
@@ -65,11 +67,27 @@ export default {
   				},
   				shimmer: {
   					from: {
-  						'backgroundPosition': '0 0'
+  						backgroundPosition: '0 0'
   					},
   					to: {
-  						'backgroundPosition': '-200% 0'
+  						backgroundPosition: '-200% 0'
   					}
+  				}
+  			},
+  			gradient: {
+  				to: {
+  					backgroundPosition: 'var(--bg-size) 0'
+  				}
+  			},
+  			shine: {
+  				'0%': {
+  					'background-position': '0% 0%'
+  				},
+  				'50%': {
+  					'background-position': '100% 100%'
+  				},
+  				to: {
+  					'background-position': '0% 0%'
   				}
   			}
   		},

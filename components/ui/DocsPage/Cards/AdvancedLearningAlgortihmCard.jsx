@@ -6,7 +6,7 @@ const AdvancedLearningAlgorithmCard = () => {
     <CardSpotlight className="w-full max-w-full sm:max-w-[80vw] xl:w-96 mx-auto relative">
       <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300 relative">In Progress</span>
       <p className="text-xl font-bold relative z-20 mt-2 text-black dark:text-white overflow-hidden lg:whitespace-normal">
-        Advanced Learning Algorithms
+        Learning Algorithms
       </p>
       <div className="dark:text-neutral-300 text-gray-700 mt-4 relative z-20">
         Here's what you will learn:
@@ -21,6 +21,7 @@ const AdvancedLearningAlgorithmCard = () => {
           <Step title="Tree Ensembles" />
           <Step title="Neural Network Intuition" />
           <Step title="Skewed Datasets" />
+          <span>... And More </span> 
         </ul>
       </div>
     </CardSpotlight>
@@ -31,7 +32,7 @@ const Step = ({ title }) => {
   return (
     <li className="flex gap-2 items-start">
       <CheckIcon />
-      <p className="dark:text-neutral-100 text-gray-950 break-words lg:whitespace-normal">{title}</p>
+      <p className="dark:text-neutral-200 text-gray-900 break-words lg:whitespace-normal">{title}</p>
     </li>
   );
 };
