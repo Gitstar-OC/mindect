@@ -6,7 +6,8 @@ const {
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
+    darkMode: ['class'],
+    content: [
     './components/**/*.{ts,tsx, js,jsx}',
     './app/**/*.{ts,tsx,js,jsx}',
     './content/**/*.{mdx,md,tsx,js,jsx}',
@@ -48,25 +49,41 @@ export default {
     }),
   ],
   theme: {
-    extend: {
-      animation: {
-        aurora: "aurora 60s linear infinite",
-        spotlight: "spotlight 2s ease .75s 1 forwards",
-      },
-      keyframes: {
-        aurora: {
-          from: {
-            backgroundPosition: "50% 50%, 50% 50%",
-          },
-          to: {
-            backgroundPosition: "350% 50%, 350% 50%",
-          },
-          },
-      },
-      fontFamily: {
-        sans: ['var(--font-geist-sans)'],
-        mono: ['var(--font-geist-mono)'],
-      },
-    },
+  	extend: {
+  		animation: {
+  			aurora: 'aurora 60s linear infinite',
+  			spotlight: 'spotlight 2s ease .75s 1 forwards',
+  			shimmer: 'shimmer 2s linear infinite'
+  		},
+  		keyframes: {
+  			aurora: {
+  				from: {
+  					backgroundPosition: '50% 50%, 50% 50%'
+  				},
+  				to: {
+  					backgroundPosition: '350% 50%, 350% 50%'
+  				},
+  				shimmer: {
+  					from: {
+  						'backgroundPosition': '0 0'
+  					},
+  					to: {
+  						'backgroundPosition': '-200% 0'
+  					}
+  				}
+  			}
+  		},
+  		fontFamily: {
+  			sans: ['var(--font-geist-sans)'],
+  			mono: ['var(--font-geist-mono)']
+  		},
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		colors: {}
+  	}
   },
+    plugins: [require("tailwindcss-animate")]
 };

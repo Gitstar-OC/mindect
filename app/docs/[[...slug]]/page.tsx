@@ -6,7 +6,7 @@ import { Steps, Step } from "fumadocs-ui/components/steps";
 import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 import { ArrowSquareOut } from "@phosphor-icons/react/dist/ssr";
 import { TbSettings } from "react-icons/tb";
-import { CardSpotlight } from "@components/ui/Card";
+import { CardSpotlight } from "@components/ui/card-spotlight";
 import {
   DocsPage,
   DocsBody,
