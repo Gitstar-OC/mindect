@@ -43,7 +43,7 @@ const DocsPage = () => {
             </div>
 
             {/* Flex container for the cards */}
-            <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 items-center mt-12 mx-6 lg:mx-10 mb-8">
+            <div className="grid xl:grid-cols-3 grid-cols-1 gap-4 items-center mt-12 mx-6  xl:mx-10 mb-8">
               <AdvancedLearningAlgorithmCard />
               <SupervisedLearningCard />
               <UnsupervisedLearningCard />
