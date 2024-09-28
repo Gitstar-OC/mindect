@@ -1,45 +1,3 @@
-// import './global.css';
-// import type { Viewport } from 'next';
-// import { GeistSans } from 'geist/font/sans';
-// import { GeistMono } from 'geist/font/mono';
-// import { baseUrl, createMetadata } from '@/utils/metadata';
-// import { Body } from '@/app/layout.client';
-// import { Provider } from './provider';
-
-// export const metadata = createMetadata({
-//   title: {
-//     template: '%s | Fumadocs',
-//     default: 'Mindect',
-//   },
-//   description: 'Learn Concepts in Machine Learning, Supervised Learning, Unsupervised Learning, Neural Network training. At Anytime, From Anywhere with Mindect',
-//   metadataBase: baseUrl,
-// });
-
-// export const viewport: Viewport = {
-//   themeColor: [
-//     { media: '(prefers-color-scheme: dark)', color: '#0A0A0A' },
-//     { media: '(prefers-color-scheme: light)', color: '#fff' },
-//   ],
-// };
-
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }): React.ReactElement {
-//   return (
-//     <html
-//       lang="en"
-//       className={`${GeistSans.variable} ${GeistMono.variable}`}
-//       suppressHydrationWarning
-//     >
-//       <Body>
-//         <Provider>{children}</Provider>
-//       </Body>
-//     </html>
-//   );
-// }
-
 import { Banner } from 'fumadocs-ui/components/banner';
 import "./global.css";
 import "katex/dist/katex.css";
@@ -51,15 +9,6 @@ import type { Viewport } from "next";
 const inter = Inter({
   subsets: ["latin"],
 });
-
-// export const metadata = createMetadata({
-//   title: {
-//     template: '%s | Mindect',
-//     default: 'Mindect',
-//   },
-//   description: 'Learn Concepts in ML, AI, Supervised and Unsupervised Learning etc. At Anytime, From Anywhere with Mindect',
-//   metadataBase: baseUrl,
-// });
 
 export const viewport: Viewport = {
   themeColor: [

@@ -31,7 +31,7 @@ const CalculusCard = () => {
       buttonText={
         <>
           <div className="absolute inset-0 bg-gradient-to-r from-[#25AFAA] to-[#4C054C]  rounded-lg" />
-          <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white">
+          <div className="px-8 py-2  text-white rounded-[6px]  relative group transition duration-200 ">
             Coming Soon!!
           </div>
         </>
