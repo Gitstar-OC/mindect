@@ -1,10 +1,10 @@
-import AdvancedLearningAlgorithmCard from "../Cards/AdvancedLearningAlgortihmCard";
-import SupervisedLearningCard from "../Cards/SupervisedLearningCard";
-import UnsupervisedLearningCard from "../Cards/UnsupervisedLearningCard";
+import AdvancedLearningAlgorithmCard from "./AdvancedLearningAlgortihmCard";
+import SupervisedLearningCard from "./SupervisedLearningCard";
+import UnsupervisedLearningCard from "./UnsupervisedLearningCard";
 
 const MachineLearningSection = () => {
   return (
-    <div className="lg:mx-10 bg-gray-50 dark:bg-zinc-950 rounded-3xl flex flex-col mt-10 mb-10">
+    <div className="lg:mx-10 bg-gray-50 dark:bg-zinc-950/60 rounded-3xl flex flex-col mt-10 mb-10">
       <div className="text-[26px] md:text-[36px] lg:text-[40px] text-black font-light dark:text-white text-center mt-6">
         Machine Learning
       </div>
@@ -15,7 +15,6 @@ const MachineLearningSection = () => {
         topics for you to learn from!
       </div>
 
-      {/* Flex container for the cards */}
       <div className="grid xl:grid-cols-3 grid-cols-1 gap-4 items-center mt-12 mx-6  xl:mx-10 mb-8">
         <AdvancedLearningAlgorithmCard />
         <SupervisedLearningCard />
