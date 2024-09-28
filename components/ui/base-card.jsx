@@ -32,9 +32,11 @@ const BaseCard = ({
   buttonPath,
 }) => {
   return (
+    <>
+    <div className="flex justify-center">
     <CardSpotlight
       className={cn(
-        "w-full max-w-full sm:min-w-full rounded-3xl xl:w-96 mx-auto relative",
+        "md:w-[80vw] sm:w-full sm:mt-6 xl:mt-0 rounded-3xl xl:w-96 mx-auto relative",
         className
       )}
     >
@@ -68,6 +70,8 @@ const BaseCard = ({
         {console.log(buttonPath)}
       </Link>
     </CardSpotlight>
+    </div>
+    </>
   );
 };
 
