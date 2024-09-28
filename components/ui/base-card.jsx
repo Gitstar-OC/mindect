@@ -1,6 +1,7 @@
 // this file is used as a base card for components in the /docs page to resolve reuse of code
 
 import { CardSpotlight } from "@/components/ui/card-spotlight";
+import { ChevronRightIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
@@ -32,42 +33,51 @@ const BaseCard = ({
   buttonPath,
 }) => {
   return (
-    <CardSpotlight
-      className={cn(
-        "w-full max-w-full sm:min-w-full rounded-3xl xl:w-96 mx-auto relative",
-        className
-      )}
-    >
-      <span
-        className={cn(
-          "text-xs font-medium px-2.5 py-0.5 rounded-full relative",
-          statusStyle
-        )}
-      >
-        {status}
-      </span>
-      <p className="text-xl font-bold relative z-20 mt-2 text-black dark:text-white break-words lg:whitespace-normal">
-        {heading}
-      </p>
-      <div className="dark:text-neutral-300 text-gray-700 mt-4 relative z-20">
-        {subheading}
-        <ul className="list-none mt-2 grid grid-cols-1 xl:grid-cols-1 md:grid-cols-2 gap-x-4">
-          {steps.map((step, index) => (
-            <Step key={index} title={step} />
-          ))}
-          <span>... And More</span>
-        </ul>
-      </div>
-      <Link href={`docs/${buttonPath}`} passHref className="flex justify-center">
-        <button className={cn("relative p-[3px] mt-3 ", buttonStyle)}>
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-          <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-            {buttonText}
+    <>
+      <div className="flex justify-center">
+        <CardSpotlight
+          className={cn(
+            "md:w-[80vw] sm:w-full sm:mt-6 xl:mt-0 rounded-3xl xl:w-96 mx-auto relative",
+            className
+          )}
+        >
+          <span
+            className={cn(
+              "text-xs font-medium px-2.5 py-0.5 rounded-full relative",
+              statusStyle
+            )}
+          >
+            {status}
+          </span>
+          <p className="text-xl font-bold relative z-20 mt-2 text-black dark:text-white break-words lg:whitespace-normal">
+            {heading}
+          </p>
+          <div className="dark:text-neutral-300 text-gray-700 mt-4 relative z-20">
+            {subheading}
+            <ul className="list-none mt-2 grid grid-cols-1 xl:grid-cols-1 md:grid-cols-2 gap-x-4">
+              {steps.map((step, index) => (
+                <Step key={index} title={step} />
+              ))}
+              <span>... And More</span>
+            </ul>
           </div>
-        </button>
-        {console.log(buttonPath)}
-      </Link>
-    </CardSpotlight>
+          <Link
+            href={`docs/${buttonPath}`}
+            passHref
+            className="flex justify-center"
+          >
+            <button className={cn("relative p-[3px] mt-3", buttonStyle)}>
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+              <div className="flex items-center px-8 py-2 bg-black rounded-[6px] relative group transition duration-200 text-white hover:bg-transparent">
+                {buttonText}
+                <ChevronRightIcon className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+              </div>
+            </button>
+            {console.log(buttonPath)}
+          </Link>
+        </CardSpotlight>
+      </div>
+    </>
   );
 };
 
