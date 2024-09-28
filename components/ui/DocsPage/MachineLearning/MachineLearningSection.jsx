@@ -4,7 +4,7 @@ import UnsupervisedLearningCard from "./UnsupervisedLearningCard";
 
 const MachineLearningSection = () => {
   return (
-    <div className="lg:mx-10 bg-gray-50 dark:bg-zinc-950/60 rounded-3xl flex flex-col mt-10 mb-10">
+    <div className="lg:mx-10 bg-gray-50/50 dark:bg-zinc-950/60 rounded-3xl flex flex-col mt-10 mb-10">
       <div className="text-[26px] md:text-[36px] lg:text-[40px] text-black font-light dark:text-white text-center mt-6">
         Machine Learning
       </div>
