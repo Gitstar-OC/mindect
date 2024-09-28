@@ -9,6 +9,8 @@
 - add all the exports in the lib file 
 - add cn in the components that you have made so it will take the styling
 - contribute to navbar to make it visible via props
+- show remaining topics when hovered
+- shorten the path of @/components/ui to @cui
 -->
 - Other notes about Deep learning, unsupervised learning and large language models is in progress and Mindect is continuosly under developemnt.
 

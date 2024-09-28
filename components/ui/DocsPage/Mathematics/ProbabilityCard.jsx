@@ -1,19 +1,23 @@
 import BaseCard from "@/components/ui/base-card";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
 
-const LinearAlgebraCard = () => {
+const ProbabilityCard = () => {
   const steps = [
-    "Introduction to Numpy Arrays",
-    "Linear Systems as Matrices",
-    "Gaussian Elimination",
-    "Webpage navigation model & PCA",
-    "Matrix Multiplication",
-    "Linear Transformation",
-    "Linear Transformations and Neural Networks",
-    "Interpreting Eigenvalues",
-    "Interpreting Eigenvectors",
-    "Application of Eigenvalues & Eigenvectors",
-    "Vector Operations",
+    "Four Birthday and Monty Hall problem",
+    "A/B Testing",
+    "Exploratory Data Analysis (EDA)",
+    "EDA: Intro to pandas",
+    "EDA: Exploring your data",
+    "Naive Bayes",
+    "Summary statistics ",
+    "Visualization of Data Sets",
+    "EDA: Data Visualization and Summary",
+    // "Simulating Dice Rolls with Numpy",
+    // "Loaded Dice",
+    // "EDA: Linear Regression",
+    // "EDA:  Confidence Intervals with Hypoothesis Testing",
+    "Sampling  data from different distribution",
+    // "Studying the distribution of sample mean"
   ];
 
   return (
@@ -25,7 +29,7 @@ const LinearAlgebraCard = () => {
           </span>
         </AnimatedGradientText>
       }
-      heading="Linear Algebra"
+      heading="Probabitly and Statistics"
       steps={steps}
       subheading="Here's what you will learn:"
       statusStyle=""
@@ -44,4 +48,4 @@ const LinearAlgebraCard = () => {
   );
 };
 
-export default LinearAlgebraCard;
+export default ProbabilityCard;

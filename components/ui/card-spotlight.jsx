@@ -31,7 +31,7 @@ export const CardSpotlight = ({
   const handleMouseLeave = () => setIsHovering(false);
   return (
     (<ShineBorder className="relative flex-col items-center justify-center overflow-hidden border bg-background md:shadow-xl"
-      color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}>
+      color={["#25AFAA", "#FE8FB5", "#4C054C"]}>
     <div
       className={cn(
         "group/spotlight p-10 rounded-md relative border bg-white dark:bg-black hover:border-none",

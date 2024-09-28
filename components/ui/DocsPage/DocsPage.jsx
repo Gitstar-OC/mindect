@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import Footer from "../footer"
 import MachineLearningSection from "./MachineLearning/MachineLearningSection";
+import MathematicsSection from "./Mathematics/MathematicsSection"
 
 const DocsPage = () => {
   return (
@@ -30,6 +31,7 @@ const DocsPage = () => {
             </div>
           </header>
           <MachineLearningSection />
+          <MathematicsSection />
         </motion.div>
       </AuroraBackground>
       <Footer />

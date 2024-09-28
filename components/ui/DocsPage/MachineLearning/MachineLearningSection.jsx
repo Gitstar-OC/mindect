@@ -1,4 +1,4 @@
-import AdvancedLearningAlgorithmCard from "./AdvancedLearningAlgortihmCard";
+import AdvancedLearningAlgorithmCard from "./LearningAlgortihmCard";
 import SupervisedLearningCard from "./SupervisedLearningCard";
 import UnsupervisedLearningCard from "./UnsupervisedLearningCard";
 
