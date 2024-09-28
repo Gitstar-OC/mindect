@@ -16,33 +16,26 @@ import {
 import { notFound } from "next/navigation";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { ImageZoom } from "fumadocs-ui/components/image-zoom";
-// import {IZ} from "@lib/IZ" // replacement for Image Zoom as it was throwing errors
-
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
 import { Separator } from "@/components/ui/separator";
 import React from "react";
 
-export default async function Page({
-  params,
-}: {
-  params: { slug?: string[] };
-}) {
+export default async function Page({ params }: { params: { slug?: string[] } }) {
+  const slug = params.slug ? params.slug.join("/") : ""; 
   const page = source.getPage(params.slug);
+  
   if (!page) notFound();
 
   const MDX = page.data.body;
-
-  const path = `/content/docs/${page.file.path}`;
+  const path = `/docs/${page.file.path}`;
 
   return (
     <DocsPage 
-    
-      // lastUpdate={page.data.lastModified}
       tableOfContent={{
         enabled: page.file.path !== "api-reference.mdx",
         footer: (
           <>
-            <div className="">
+            <div>
               <Separator />
               <a
                 href={`https://github.com/gitstar-oc/learnai/blob/master${path}`}
@@ -61,17 +54,16 @@ export default async function Page({
                 Question? Give us feedback{" "}
                 <FaArrowRightLong className="ml-1 mb-3 size-3" />
               </a>
-              {/* <Separator /> */}
               <span className="opacity-70 hover:opacity-100 cursor-pointer group text-xs flex">
-                <TbSettings className=" size-3 mt-[1px] mr-1 transition-transform duration-300 ease-in-out group-hover:rotate-[360deg] group-hover:scale-125" /> Change Appearance{" "}
+                <TbSettings className="size-3 mt-[1px] mr-1 transition-transform duration-300 ease-in-out group-hover:rotate-[360deg] group-hover:scale-125" />
+                Change Appearance
               </span>
-              <a href="https://github.com/gitstar-oc/mindect"  rel="noopener noreferrer"  target="_blank">
-                <RainbowButton > 
-                <h3 className="text-white dark:text-black mt-none text-[16px] justify-center items-center bottom-3 flex ">
-                  Contribute to Mindect <IoIosArrowForward className="ml-1 transition-transform duration-300 ease-in-out transform group-hover:translate-x-1" />  
-                </h3>
+              <a href="https://github.com/gitstar-oc/mindect" rel="noopener noreferrer" target="_blank">
+                <RainbowButton>
+                  <h3 className="text-white dark:text-black mt-none text-[16px] justify-center items-center bottom-3 flex">
+                    Contribute to Mindect <IoIosArrowForward className="ml-1 transition-transform duration-300 ease-in-out transform group-hover:translate-x-1" />
+                  </h3>
                 </RainbowButton>
-
               </a>
             </div>
           </>
@@ -92,7 +84,6 @@ export default async function Page({
             Accordions,
             Accordion,
             img: (props) => <ImageZoom {...(props as any)} />,
-
           }}
         />
       </DocsBody>
@@ -105,19 +96,19 @@ export async function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: { params: { slug?: string[] } }) {
+  const slug = params.slug ? params.slug.join("/") : "index"; // Join slugs for the path
   const page = source.getPage(params.slug);
+  
   if (page == null) notFound();
 
   const description =
-    page.data.description ??
-    "Free Site to learn AI, Machine Learning and Deep Learning. Anytime, Anywhere.";
+    page.data.description ?? "Free Site to learn AI, Machine Learning and Deep Learning. Anytime, Anywhere.";
 
   return {
     title: page.data.title,
-    description: page.data.description,
+    description,
     openGraph: {
-      url: `/docs/${page.slugs.join("/")}`,
-      // images: image,
+      url: `/docs/${slug}`,
     },
   } satisfies Metadata;
 }

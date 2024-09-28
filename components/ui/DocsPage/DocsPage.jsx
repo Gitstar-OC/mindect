@@ -6,6 +6,7 @@ import MachineLearningSection from "./MachineLearning/MachineLearningSection";
 import MathematicsSection from "./Mathematics/MathematicsSection"
 
 const DocsPage = () => {
+  
   return (
     <>
       <AuroraBackground className="justify-start">
