@@ -20,6 +20,9 @@ const UnsupervisedLearningCard = () => {
       heading="Unsupervised Learning"
       steps={steps}
       statusStyle="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
+      subheading="Here's what you will learn:"
+      buttonText="Start Learning"
+      buttonPath="unsupervised-learning"
     />
   );
 };

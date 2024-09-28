@@ -19,7 +19,10 @@ const AdvancedLearningAlgorithmCard = () => {
       status="In Progress"
       heading="Learning Algorithms"
       steps={steps}
+      subheading="Here's what you will learn:"
       statusStyle="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
+      buttonText="Start Learning"
+      buttonPath="advanced-learning-algorithm"
     />
   );
 };

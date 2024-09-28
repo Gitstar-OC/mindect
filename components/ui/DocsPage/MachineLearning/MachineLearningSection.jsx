@@ -8,11 +8,11 @@ const MachineLearningSection = () => {
       <div className="text-[26px] md:text-[36px] lg:text-[40px] text-black font-light dark:text-white text-center mt-6">
         Machine Learning
       </div>
-      <div className="text-center text-[16px] md:text-[18px] lg:text-[20px] text-black dark:text-neutral-200 lg:mx-60 mt-3">
-        I first thought about teaching literature and arts.
+      <div className="text-center text-[16px] md:text-[18px] lg:text-[20px] text-black dark:text-neutral-200 lg:mx-[23rem] mt-3">
+        Well, it's the second easiest thing next to calculus.
         <br />
-        But the thing is those topics are kind of hard, so here are some easy
-        topics for you to learn from!
+        Hope reading this you know and gain more insights about machines. Sorry,
+        not sorry :)
       </div>
 
       <div className="grid xl:grid-cols-3 grid-cols-1 gap-4 items-center mt-12 mx-6  xl:mx-10 mb-8">

@@ -2,6 +2,7 @@
 
 import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const CheckIcon = () => {
   return (
@@ -19,18 +20,37 @@ const CheckIcon = () => {
   );
 };
 
-
-const BaseCard = ({ status, heading, steps, className, statusStyle }) => {
+const BaseCard = ({
+  status,
+  heading,
+  steps,
+  className,
+  statusStyle,
+  subheading,
+  buttonText,
+  buttonStyle,
+  buttonPath,
+}) => {
   return (
-    <CardSpotlight className={cn("w-full max-w-xs sm:max-w-[80vw] rounded-3xl xl:w-96 mx-auto relative", className)}>
-      <span className={cn("text-xs font-medium px-2.5 py-0.5 rounded-full relative", statusStyle)}>
+    <CardSpotlight
+      className={cn(
+        "w-full max-w-full sm:min-w-full rounded-3xl xl:w-96 mx-auto relative",
+        className
+      )}
+    >
+      <span
+        className={cn(
+          "text-xs font-medium px-2.5 py-0.5 rounded-full relative",
+          statusStyle
+        )}
+      >
         {status}
       </span>
       <p className="text-xl font-bold relative z-20 mt-2 text-black dark:text-white break-words lg:whitespace-normal">
         {heading}
       </p>
       <div className="dark:text-neutral-300 text-gray-700 mt-4 relative z-20">
-        Here's what you will learn:
+        {subheading}
         <ul className="list-none mt-2 grid grid-cols-1 xl:grid-cols-1 md:grid-cols-2 gap-x-4">
           {steps.map((step, index) => (
             <Step key={index} title={step} />
@@ -38,6 +58,15 @@ const BaseCard = ({ status, heading, steps, className, statusStyle }) => {
           <span>... And More</span>
         </ul>
       </div>
+      <Link href={`docs/${buttonPath}`} passHref className="flex justify-center">
+        <button className={cn("relative p-[3px] mt-3 ", buttonStyle)}>
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+          <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+            {buttonText}
+          </div>
+        </button>
+        {console.log(buttonPath)}
+      </Link>
     </CardSpotlight>
   );
 };
@@ -46,7 +75,9 @@ const Step = ({ title }) => {
   return (
     <li className="flex gap-2 items-start">
       <CheckIcon />
-      <p className="dark:text-neutral-200 text-gray-900 break-words lg:whitespace-normal">{title}</p>
+      <p className="dark:text-neutral-200 text-gray-900 break-words lg:whitespace-normal">
+        {title}
+      </p>
     </li>
   );
 };

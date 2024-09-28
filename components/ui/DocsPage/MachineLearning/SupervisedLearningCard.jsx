@@ -25,6 +25,9 @@ const SupervisedLearningCard = () => {
       heading="Supervised Learning"
       steps={steps}
       statusStyle="" 
+      subheading="Here's what you will learn:"
+      buttonText="Start Learning"
+      buttonPath="supervised-learning"
     />
   );
 };
