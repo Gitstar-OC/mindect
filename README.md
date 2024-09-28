@@ -7,6 +7,7 @@
 - adding middle ware page for docs like https://fumadocs.vercel.app/docs
 -  add backlins for pages to make the pages go on top with search engines named additioanl resourses, read more at etc.
 - add all the exports in the lib file 
+- add cn in the components that you have made so it will take the styling
 -->
 - Other notes about Deep learning, unsupervised learning and large language models is in progress and Mindect is continuosly under developemnt.
 
