@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import Footer from "../footer"
-import MachineLearningSection from "./Section/MachineLearningSection";
+import MachineLearningSection from "./MachineLearning/MachineLearningSection";
 
 const DocsPage = () => {
   return (
