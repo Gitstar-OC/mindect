@@ -1,7 +1,6 @@
 import { type HomeLayoutProps } from "fumadocs-ui/home-layout";
 import Logo from "@/components/ui/Logo";
 
-
 /**
  * Shared layout configurations
  *
@@ -15,11 +14,20 @@ export const baseOptions: HomeLayoutProps = {
     transparentMode: 'top',
   },
   links: [
-    // {
-    //   text: "Docs",
-    //   url: "/docs",
-    //   // active: 'nested-url',
-    // },
+    {
+      text: "SL",
+      url: "/docs/sl",
+      active: 'nested-url',
+    },
+    {
+      text: "USL",
+      url: "/docs/usl",
+      active: 'nested-url',
+    },{
+      text: "Algs",
+      url: "/docs/algs",
+      active: 'nested-url',
+    }
   ],
   githubUrl: "https://github.com/gitstar-oc/learnai",
 };
