@@ -1,24 +1,53 @@
 ---
-title: Introduction to Advanced Learning Algorithms
-description: What are the things that you will be learning in Advanced Learning Algorithms 
+title: Quick Start 
+description: Getting Started with Mindect.
 ---
 
-Welcome to Advanced Algorithms Section of this machine learning notes. 
+import { RootToggle } from 'fumadocs-ui/components/layout/root-toggle';
 
-{/* Modify this page and divide it into various section to tell what will be learned*/}
+## Introduction
 
-## What will you learn 
-In this section, you'll learn about [neural networks](./neural-network-model), also called `deep learning algorithms`, as well as [decision trees](./decision-trees). These are some of the most powerful and widely used machine learning algorithms and you'd get to implement them and get them to work for yourself. One of the things you see also in this notes is `practical advice on how to build machine learning systems`. 
+This docs are in progress and for now information about various things in Machine Learning including Supervised Learning, Unsupervised Learning and algorithms including Activation Function, Backward Propogation, Decision Trees Etc.
 
-This part of the material is quite unique to this notes. When you're building a practical machine learning system, there are a lot of decisions you have to make, such as `should you spend more time collecting data or should you buy a much bigger GPU to build a much bigger neural network?` Even today, when I visit a leading tech company and talk to the team working there on a machine learning application, unfortunately, sometimes I look at what they've been doing for the last six months and go, see, someone could have told you maybe even six months ago that that approach wasn't going to work that well. With some of the tips that you learn in this notes, I hope that you'll be one or the ones to not waste those six months, but instead, be able to make more systematic and better decisions about how to build practical working machine learning applications. With that, let's dive in. 
+The level of the pages are  marked as <kbd>Beginner Friendly</kbd>, <kbd>Intermidiate</kbd> and <kbd>Advanced</kbd> for the level of the pages.
 
-In detail, this is what you see in the four section of this notes.  At first, we'll go over neural networks and how to carry out [inference or prediction](./neural-network-model/inference-making-predictions). 
+## What is machine learning? 
+You probably use it many times a day without even knowing it. `Anytime you want to find out something like how do I make a sushi roll?` You can do a web search on Google, Bing or Baidu to find out. And that works so well because their machine learning software has figured out how to rank web pages. 
 
-### What is inference
-If you were to go to the Internet and download the parameters of a neural network that someone else had trained and whose parameters that posted on the Internet, then to use that neural network to make predictions would be called inference. 
+Or when you upload pictures to Instagram or Snapchat and think to yourself, I want to tag my friends so they can see their pictures. Well `These apps can recognize your friends in your pictures and label them as well`. That's also machine learning. 
 
-You will learned how neural networks work, and [how to do inference](./tensorflow-implementation/index). In next section, you'll learn [how to train your own neural network](./tensorflow-implementation/buildinga-neural-network). In particular, if you have a training set of labeled examples, X and Y, how do you train the parameters of a neural network for yourself? 
+Or if you've just finished watching a Star Wars movie on the video streaming service and you think `what other similar movies can I watch?` Well the streaming service will likely use machine learning to recommend something that you might like. 
 
-In the third section, we'll then go into practical advice for building machine learning systems and I'll share with you some tips that I think even highly paid engineers building machine learning systems very successfully today don't really always manage to consistently apply and I think that will help you build systems yourself efficiently and quickly. 
+Each time you use voice to text on your phone to write a text message. 
+Hey Sam, how's it going?  Or tell your phone. Hey Siri play a song by Rihanna, or ask your other phone okay Google show me Indian restaurants near me.
+That's also machine learning.
 
-Then in the final section of this notes, you learn about `decision trees`. While decision trees don't get as much buzz in the media, there's local less hype about decision trees compared to neural networks. They are also one of the widely used and very powerful learning algorithms that I think there's a good chance you end up using yourself if you end up building an application. With that, let's jump into neural networks and we're going to start by taking a quick look at how the human brain, that is how the biological brain works. Let's go on to the next part.
+Each time you receive an email titled, Congratulations! You've won a million dollars. Well maybe you're rich, congratulations. Or more likely your email service will probably flag it as spam. That too is an application of machine learning. 
+
+Beyond consumer applications that you might use, AI is also rapidly making its way into big companies and into industrial applications. For example, In climate change, I'm glad to see that machine learning is already hoping to optimize wind turbine power generation. 
+
+Or in healthcare, is starting to make its way into hospitals to help doctors make accurate diagnosis. Or recently at Landing AI have been doing a lot of work, putting computer vision into factories to help inspect if something coming off the assembly line has any defects. 
+
+**That's machine learning, it's the science of getting computers to learn without being explicitly programmed.** 
+
+You can learn further about it by [clicking here](/docs/introduction-to-machine-learning).
+
+## Note
+
+In this Machine Learning Notes a significant emphasis is placed on providing practical advice for the application of learning algorithms. It is crucial to not only possess a comprehensive set of tools but also to have the expertise to apply them effectively. Merely having access to state-of-the-art tools does not guarantee the ability to construct a complex structure, such as a three-story house. Similarly, in the field of machine learning, it is essential to have both the tools and the knowledge to utilize them efficiently. It is a common occurrence for even experienced machine learning teams at top tech companies to struggle with the application of machine learning algorithms to certain problems, sometimes spending six months without significant progress. Often, a different approach to using these tools could have led to a more successful outcome. This knowledge aims to prevent students from experiencing the setbacks of pursuing ineffective strategies for extended periods.
+
+
+## Contributing to Mindect
+
+**Mindect** is in the very initial stages now and any contributions will be greatly valued. To contribute you can [click here](https://github.com/gitstar-oc/mindect) or visit `https://github.com/gitstar-oc/mindect`. 
+
+## Setup 
+
+The most widely used tool by machine learning and data science practitioners today is the Jupyter Notebook. This is the default environments that a lot of skilled data scientist and analyist use to code and experiment and try things out. You can learn more about installing it [here](/docs/jupyter-notebook).
+
+
+## What's Next? 
+<Cards>
+  <Card title="Start Learning about Machine Learning" href="/docs/introduction-to-machine-learning" />
+  <Card title="Installing Jupyter Notebook" href="/docs/jupyter-notebook" />
+</Cards>

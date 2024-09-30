@@ -1,4 +1,25 @@
 {
     "title": "Learning Algorithms",
-    "root": true
+    "root": true,
+    "pages": [
+        "index",
+        "introduction-to-machine-learning",
+        "jupyter-notebook",
+        "---Introduction---",
+        "advanced-learning-algorithms",
+        "---Neural Network Intuition---",
+        "neural-network-intuition",
+        "---Neural Network Model---",
+        "neural-network-model",
+        "---Tensorflow Implementation---",
+        "tensorflow-implementation",
+        "---Neural Network Implementation in Python---",
+        "neural-network-implementation-in-python",
+        "is-there-a-path-to-AGI",
+        "---Vectorization---",
+        "vectorization",
+        "---Neural Network Training---",
+        "neural-network-training",
+        "..."
+    ]
 }
