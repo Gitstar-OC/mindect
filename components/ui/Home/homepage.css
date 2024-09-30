@@ -26,18 +26,12 @@
 .button {
   display: inline-flex;
   position: relative;
-  background-color: #111111;
-  color: #ffffff;
   transition: background-color 0.2s ease-in-out;
   align-items: center;
   box-shadow: #4C054C 0px 0px 5px 1px,
   #25AFAA 0px 0px 10px 1px;
   gap: 1em;
   
-}
-
-.button:hover {
-  background-color: black;
 }
 
 .button:hover {
@@ -135,9 +129,20 @@ button:hover .icon span {
   transition: opacity 2s ease-in-out;
 }
 
+/* Default (dark mode) */
 .bg-image.active {
+  opacity: 0.5;
+}
+
+.bg-image.active.dark {
   opacity: 1;
 }
+
+/* Light theme adjustments */
+/* body.light .bg-image.active {
+  opacity: 0; /* Adjust this value as needed 
+} */
+
 
 
 

@@ -1,4 +1,5 @@
 {
   "title": "Gradient Descent",
-"pages": ["implementing-gradient-descent", "...", "gradient-descent-with-linear-regression", "running-gradient-descent"]
+"pages": ["implementing-gradient-descent", "...", "gradient-descent-with-linear-regression", "running-gradient-descent"],
+"defaultOpen": true
 }

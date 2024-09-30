@@ -1,0 +1,25 @@
+{
+    "title": "Supervised Learning",
+    "root": true,
+    "pages": [
+      "index",
+      "introduction-to-machine-learning",
+      "jupyter-notebook",
+      "supervised-learning",
+      "---Regression Model---",
+      "regression-model",
+      "---Gradient Descent---",
+      "gradient-descent",
+      "---Multiple Linear Regression---",
+      "multiple-linear-regression",
+      "---Gradient Descent in Practice---",
+      "gradient-descent-in-practice",
+      "---Classification with Logistic Regression---",
+      "classification-with-logistic-regression",
+      "---Cost Function for Logistic Regression---",
+      "cost-function-for-logistic-regression",
+      "gradient-descent-for-logistic-regression",
+      "---The Problem Of Overfitting---",
+      "the-problem-of-overfitting"      
+    ]
+}

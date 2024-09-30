@@ -12,10 +12,10 @@
 - show remaining topics when hovered
 - shorten the path of @/components/ui to @cui
 -->
-- Other notes about Deep learning, unsupervised learning and large language models is in progress and Mindect is continuosly under developemnt.
 
-
-### Hope you find this notes useful for you, this learning platform also consists of image, codeblocks and downloadable jupyter notebooks to help you understand concepts at a deeper level. Give it a star if you like it. It really helps me add new content. 
+## Starting the development server
+1. Clone the repository and move to the repo using `cd mindect`
+2. Install all the related dependencies using `npm install` and `npm run dev` to run the development server
 
 
 For contributing make sure you have read the [Contributing Guidelines](./.github/contributing.md) file
