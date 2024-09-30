@@ -5,6 +5,8 @@ import { source } from '@/app/source';
 import React from 'react';
 import { RootToggle } from 'fumadocs-ui/components/layout/root-toggle'
 
+import {USLImage, SLImage, AlgsImage} from "@/components/ui/icons"
+
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <DocsLayout tree={source.pageTree} {...baseOptions}   
@@ -16,19 +18,19 @@ export default function Layout({ children }: { children: ReactNode }) {
               title: 'Algs',
               description: 'Learning Algorithms',
               url: '/docs/algs',
-              icon: ''
+              icon: <AlgsImage />
             },
             {
               title: 'SL',
               description: 'Supervised Learning',
               url: '/docs/sl',
-              icon: ''
+              icon: <SLImage />
             },
             {
               title: 'USL',
               description: 'Unsupervised Learning',
               url: '/docs/usl',
-              icon: ''
+              icon: <USLImage />
             },
           ]}
         />
