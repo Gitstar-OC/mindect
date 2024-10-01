@@ -56,7 +56,7 @@ export default {
   			shimmer: 'shimmer 2s linear infinite',
   			gradient: 'gradient 8s linear infinite',
   			shine: 'shine var(--duration) infinite linear',
-  			rainbow: 'rainbow var(--speed, 2s) infinite linear'
+  			rainbow: 'rainbow var(--speed, 2s) infinite linear',
   		},
   		keyframes: {
   			aurora: {
@@ -98,7 +98,7 @@ export default {
   				'100%': {
   					'background-position': '200%'
   				}
-  			}
+  			},
   		},
   		fontFamily: {
   			sans: ['var(--font-geist-sans)'],
