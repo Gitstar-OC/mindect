@@ -1,0 +1,6 @@
+Multiple Linear Regression => MLR
+Gradient Descent in Practice => GDP
+Classification with Logistic Regression => CLR
+Cost Function for Logistic Regression => CFLR
+Gradient Descent Implementation => GDI 
+The Problem Of Overfitting => PO
