@@ -1,0 +1,17 @@
+{
+    "schedule": "daily",
+    "ignoredFiles": [
+        "Logo.png",
+        "MainLogo.png",
+        "Logo16x16.png",
+        "Logo32x32.png",              
+        "Logo64x64.png",             
+        "Logo128x128.png",              
+        "Banner.png",
+        "Favicon.ico",
+        "TransparentLogo.ico",
+        "TransparentLogo.png"
+    ],
+    "aggressiveCompression": "false",
+    "compressWiki": "true" 
+}
