@@ -1,0 +1,17 @@
+Neural Network Intuition = NNI
+Neural Network Model = NNM 
+TensorFlow Implementation = TFI
+Neural Network Implementation in Python = NNIP
+Vectiorization = Vn
+Neural Network Training = NNT
+Activation Functions = AF
+Multiclass Classification = MC
+Additional Neural Network Concepts = ANNC
+Back Propogation = BP
+Advice for Applying Machine Learning = AAML 
+Bias and Variance = BV
+Machine Learning Development Process = MLDP
+Skewed Datasets = SD
+Decision Trees = DT
+Decision Trees Learning = DTL
+Tree Ensembles = TE
