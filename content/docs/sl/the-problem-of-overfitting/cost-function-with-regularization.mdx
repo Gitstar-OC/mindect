@@ -1,5 +1,87 @@
 ---
 title: Cost Function with Regularization
+description: In this part, we will build on the intuition from the previous section and develop a modified cost function for learning algorithms that apply regularization.
+---
+
+# Introduction
+
+In the last part, we saw that regularization tries to make the parental values W1 through WN small to reduce overfitting. In this part, we'll build on that intuition and develop a modified cost function that you can use to apply regularization effectively.
+
+## Recap: The Quadratic Fit
+
+Let's jump in and recall this example from the previous part, where we saw that if you fit a quadratic function to the data, it provides a good fit.
+
+![CFR (2)](/SL/PO/CFR%20(2).png)
+
+However, fitting a high-order polynomial leads to overfitting. But suppose we had a way to make the parameters W3 and W4 small, say close to 0. Here's what happens: 
+
+## Modifying the Cost Function
+
+Let's modify the cost function by adding terms like 
+
+```math
+1000 \times W_3^2 + 1000 \times W_4^2. 
+```
+
+So instead of minimizing the original objective function, you are penalizing the model if `W_3` and `W_4` are large.
+
+```math
+\text{New Cost Function} = \text{Original Cost Function} + 1000 \times W_3^2 + 1000 \times W_4^2
+```
+
+![CFR (3)](/SL/PO/CFR%20(3).png)
+
+With this new cost function, you'll minimize it when `W_3` and `W_4` are both close to 0.
+
+![CFR (4)](/SL/PO/CFR%20(4).png)
+
+## Generalizing the Regularization Term
+
+In practice, we often don't know which features to penalize, so we penalize all parameters `W_j`. By doing this, you reduce overfitting by minimizing unnecessary complexity.
+
+```math
+\text{Regularization Term} = \lambda \times \sum_{j=1}^{n} W_j^2
+```
+
+Where ` \lambda ` is a regularization parameter, determining the importance of this penalty.
+
+![CFR (6)](/SL/PO/CFR%20(6).png)
+
+## Balancing Regularization
+
+Let's penalize all the parameters `W_1` to `W_{100}` and `B`. A common practice is to scale the regularization term by dividing ` \lambda ` by ` 2m `, where ` m ` is the training set size.
+
+```math
+\text{Final Cost Function} = \frac{1}{2m} \sum_{i=1}^{m} \left( h_\theta(x^{(i)}) - y^{(i)} \right)^2 + \frac{\lambda}{2m} \sum_{j=1}^{n} W_j^2
+```
+
+This scaling ensures the same ` \lambda ` works even if the training set grows larger.
+
+![CFR (7)](/SL/PO/CFR%20(7).png)
+
+## Choosing the Right Lambda Value
+
+Choosing ` \lambda ` is crucial. If ` \lambda = 0 `, the model overfits. If ` \lambda ` is too large, the model underfits. The goal is to find a middle ground.
+
+```math
+\lambda = 0 \quad \Rightarrow \quad \text{Overfitting}
+```
+
+```math
+\lambda \gg 0 \quad \Rightarrow \quad \text{Underfitting}
+```
+
+![CFR (12)](/SL/PO/CFR%20(12).png)
+
+## Conclusion
+
+Regularization helps by striking a balance between fitting the training data and keeping the parameters small to avoid overfitting. In the next section, we will explore how to apply regularization to linear and logistic regression.
+
+![CFR (13)](/SL/PO/CFR%20(13).png)
+
+{/*
+---
+title: Cost Function with Regularization
 ---
 
 
@@ -62,6 +144,6 @@ So that was one extreme of if lambda was 0. Let's now look at the other extreme.
 ![CFR (13)](/SL/PO/CFR%20(13).png)
 
 So `that's how regularization works`. When we talk about model selection, later into specialization will also see a variety of ways to choose good values for lambda. In the next two partS will flesh out how to apply regularization to `linear regression` and `logistic regression`, and how to train these models with great in dissent with that, you'll be able to avoid overfitting with both of these algorithms.
-
+*/}
 
 

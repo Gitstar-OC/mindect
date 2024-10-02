@@ -2,6 +2,88 @@
 title: Regularized Logistic Regression
 ---
 
+## Introduction
+
+In this part, we will see how to implement `regularized logistic regression`. Similar to regularized linear regression, we will modify logistic regression to prevent overfitting. Overfitting happens when the model is too complex and captures noise in the data, which leads to poor generalization to unseen examples.
+
+## Logistic Regression and Overfitting
+
+We saw earlier that logistic regression can be prone to overfitting, especially when using high-order polynomial features. Let’s take a closer look:
+
+![RLOR (1)](/SL/PO/RLOR%20(1).png)
+
+In particular, fitting logistic regression with many features can lead to a complex decision boundary, which risks overfitting the training set. A simpler decision boundary that generalizes better is preferable.
+
+![RLOR (2)](/SL/PO/RLOR%20(2).png)
+
+## Regularized Cost Function
+
+We modify the cost function for logistic regression by adding a regularization term:
+
+```math
+J(w, b) = -\frac{1}{m} \sum_{i=1}^{m} \left[y^{(i)} \log(f^{(i)}) + (1 - y^{(i)}) \log(1 - f^{(i)}) \right] + \frac{\lambda}{2m} \sum_{j=1}^{n} w_j^2
+```
+
+Here, `λ` is the regularization parameter. Regularization discourages large weights by penalizing them in the cost function.
+
+![RLOR (3)](/SL/PO/RLOR%20(3).png)
+
+Minimizing this regularized cost function prevents parameters `w_j` from becoming too large, allowing for better generalization to new examples.
+
+![RLOR (4)](/SL/PO/RLOR%20(4).png)
+
+## Gradient Descent for Regularized Logistic Regression
+
+Just like in regularized linear regression, we can update the weights and bias using gradient descent:
+
+```math
+w_j := w_j - \alpha \left( \frac{1}{m} \sum_{i=1}^{m} (f^{(i)} - y^{(i)}) x_j^{(i)} + \frac{\lambda}{m} w_j \right)
+```
+
+```math
+b := b - \alpha \left( \frac{1}{m} \sum_{i=1}^{m} (f^{(i)} - y^{(i)}) \right)
+```
+
+Note that the update rule for `b` remains unchanged, as we do not regularize `b`.
+
+![RLOR (5)](/SL/PO/RLOR%20(5).png)
+
+## Implementing Regularized Logistic Regression
+
+To implement regularized logistic regression, you apply the gradient descent update rules above. The only difference between regularized linear and logistic regression is that the prediction function `f` is now the sigmoid of `z`, where:
+
+```math
+f^{(i)} = \frac{1}{1 + e^{-z^{(i)}}}
+```
+
+![RLOR (6)](/SL/PO/RLOR%20(6).png)
+
+## Intuition for Regularization
+
+The regularization term shrinks the weights `w_j` by a small amount on every iteration of gradient descent, which helps prevent overfitting.
+
+```math
+w_j := w_j \cdot (1 - \alpha \frac{\lambda}{m}) - \alpha \cdot \left( \text{gradient term} \right)
+```
+
+This helps logistic regression generalize better to new examples.
+
+![RLOR (7)](/SL/PO/RLOR%20(7).png)
+
+## Final Thoughts
+
+By now, you’ve learned how to implement regularized logistic regression to reduce overfitting, even with a large number of features. You should practice this in the upcoming labs and apply regularization to avoid overfitting in logistic regression.
+
+![RLOR (8)](/SL/PO/RLOR%20(8).png)
+
+Congratulations on reaching the end of this section! There’s much more to learn, and in the next part, we’ll explore **Neural Networks** and their fascinating applications in **Deep Learning**.
+
+  
+{/*
+---
+title: Regularized Logistic Regression
+---
+
 
 In this parts, you see how to implement `regularized logistic regression`. Just as the gradient update for logistic regression has seemed surprisingly similar to the gradient update for linear regression, you find that the gradient descent update for regularized logistic regression will also look similar to the update for regularized linear regression. Let's take a look.
 
@@ -48,5 +130,5 @@ In the final notebook of this week, you revisit overfitting. In the interactive 
 I want to say congratulations on how far you've come and I want to say great job for getting through all the way to the end of this parts I hope you also work through the practice labs. Having said that, there are still many more exciting things to learn. In the next section of this specialization, you'll learn about neural networks, also called deep learning algorithms. Neural networks are responsible for many of the latest breakthroughs in the eye today, from practical speech recognition to computers accurately recognizing objects and images, to self-driving cars. The way neural network gets built actually uses a lot of what you've already learned, like cost functions, and gradient descent, and sigmoid functions. 
 
 Again, congratulations on reaching the end of this supervised machine learning . I hope you have fun in the noteboks and I will see you in Advanced Algorithms.
-
+*/}
 

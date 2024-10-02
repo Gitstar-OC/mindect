@@ -2,6 +2,110 @@
 title: The Problem Of Overfitting
 ---
 
+## Introduction
+Now you've seen a couple of different learning algorithms, linear regression and logistic regression. They work well for many tasks. But sometimes in an application, the algorithm can run into a problem called overfitting, which can cause it to perform poorly. 
+
+In this section, we'll explore what overfitting is, as well as the closely related, almost opposite problem called underfitting. In the next section, I'll share with you some techniques for accuracy overfitting, particularly a method called regularization, a very useful technique to minimize overfitting and improve your learning algorithms. 
+
+## What is Overfitting?
+
+To help us understand overfitting, let's revisit our example of predicting housing prices with linear regression, where the goal is to predict the price as a function of the size of a house.
+
+### Example: Housing Prices
+
+Suppose your dataset looks like this:
+
+![TPO (1)](/SL/PO/TPO%20(1).png)
+
+The input feature \(x\) is the size of the house, and \(y\) is the price you're trying to predict. A linear fit to this data might look like this:
+
+![TPO (2)](/SL/PO/TPO%20(2).png)
+
+But this isn't a good model. As house size increases, the prices seem to flatten out. This model does not fit the training data well. The technical term for this is **underfitting**, also known as **high bias**.
+
+### High Bias
+
+Underfitting means the model is too simple to capture the patterns in the training data. This strong preconception that the relationship is linear causes the model to poorly fit the data.
+
+Next, let's look at another model:
+
+![TPO (3)](/SL/PO/TPO%20(3).png)
+
+With quadratic terms \(x\) and \(x^2\), the model fits the data better:
+
+![TPO (4)](/SL/PO/TPO%20(4).png)
+
+This model generalizes better to unseen data:
+
+![TPO (5)](/SL/PO/TPO%20(5).png)
+
+## Overfitting
+
+At the other extreme, fitting a higher-order polynomial (e.g., a fourth-order polynomial) might pass through all the training points, but it overfits:
+
+![TPO (6)](/SL/PO/TPO%20(6).png)
+
+You get a wiggly curve like this:
+
+![TPO (7)](/SL/PO/TPO%20(7).png)
+
+This model fits the training data **too well**, resulting in **overfitting** or **high variance**. It fails to generalize to new examples:
+
+![TPO (8)](/SL/PO/TPO%20(8).png)
+
+Overfitting is like trying to fit every single data point perfectly, even if it leads to a convoluted model that does not generalize well. The goal of machine learning is to strike a balance, finding a model that is **just right**:
+
+![TPO (9)](/SL/PO/TPO%20(9).png)
+
+### Generalization
+
+The quadratic model, for instance, strikes a good balance, fitting the data reasonably well while also generalizing to new examples.
+
+## The Bias-Variance Tradeoff
+
+In machine learning, we aim for models that balance underfitting (high bias) and overfitting (high variance). It's like Goldilocks trying to find the porridge that's just right:
+
+- Too few features → underfitting/high bias
+- Too many features → overfitting/high variance
+- Just the right number of features → good generalization
+
+Now, let's extend this concept to classification.
+
+## Overfitting in Classification
+
+Consider a classification example with two features, \(x_1\) (tumor size) and \(x_2\) (age of the patient). The goal is to classify tumors as malignant or benign:
+
+![TPO (10)](/SL/PO/TPO%20(10).png)
+
+With logistic regression, the decision boundary is a straight line:
+
+![TPO (11)](/SL/PO/TPO%20(11).png)
+
+This straight line may not fit the data perfectly, which is an example of **underfitting** or **high bias**.
+
+Now, if you add quadratic terms, the decision boundary becomes more elliptical:
+
+![TPO (13)](/SL/PO/TPO%20(13).png)
+
+This model fits better, though it doesn't classify every training example correctly. It's a good fit for new examples.
+
+### Extreme Overfitting
+
+However, if you fit a high-order polynomial with many features, the decision boundary becomes overly complex:
+
+![TPO (14)](/SL/PO/TPO%20(14).png)
+
+This is an instance of overfitting and high variance. The model fits the training data too well, leading to poor generalization.
+
+## Conclusion
+
+You've seen how algorithms can underfit (high bias) or overfit (high variance). In the next section, we'll look at techniques to address overfitting, such as **regularization**.
+
+{/*
+---
+title: The Problem Of Overfitting
+---
+
 
 Now you've seen a couple of different learning algorithms, linear regression and logistic regression. They work well for many tasks. But sometimes in an application, the algorithm can run into a problem called overfitting, which can cause it to perform poorly. What I like to do in this video is to show you what is overfitting, as well as a closely-related, almost opposite problem called underfitting. In the next part after this, I'll share with you some techniques for accuracy overfitting. In particular, there's a method called regularization. Very useful technique. I use it all the time. Then regularization will help you minimize this overfitting problem and get your learning algorithms to work much better. Let's take a look at what is overfitting?
 
@@ -78,3 +182,4 @@ Finally, at the other extreme, if you were to fit a very high-order polynomial w
 ![TPO (14)](/SL/PO/TPO%20(14).png)
 
 Having all these higher-order polynomial features allows the algorithm to choose this really over the complex decision boundary. If the features are tumor size in age, and you're trying to classify tumors as malignant or benign, then this doesn't really look like a very good model for making predictions. Once again, this is an instance of overfitting and high variance because its model, despite doing very well on the training set, doesn't look like it'll generalize well to new examples. Now you've seen how an algorithm can underfit or have high bias or overfit and have high variance. You may want to know how you can give get a model that is just right. In the next part, we'll look at some ways you can address the issue of overfitting. We'll also touch on some ideas relevant for using underfitting.
+*/}
