@@ -1,5 +1,105 @@
 ---
 title: Gradient Descent Intuition
+description: This document provides an intuitive understanding of gradient descent, focusing on the learning rate, derivatives, and their impact on parameter updates in machine learning models.
+---
+
+## Introduction
+
+Now let's dive more deeply into **gradient descent** to gain better intuition about what it's doing and why it might make sense. Here's the gradient descent algorithm that you saw in the previous part.
+
+![GDI1](/SL/GradientDescent/GDI1.png)
+
+As a reminder, this variable, this Greek symbol `Alpha`, is the **learning rate**. `The learning rate controls how big of a step you take when updating the model's parameters, w and b.` This term here, this `\frac{d}{dw}`, is a **derivative term**. By convention in math, this d is written with this funny font here. 
+
+![GDI2](/SL/GradientDescent/GDI2.png)
+
+<u> In case anyone watching this has a PhD in math or is an expert in multivariate calculus, they may be wondering, that's not the derivative, that's the partial derivative. Yes, they would be right. But for the purposes of implementing a machine learning algorithm, I'm just going to call it the derivative. Don't worry about these little distinctions. </u> 
+
+## Key Notes
+
+What we're going to focus on now is getting more intuition about what this **learning rate** and what this **derivative** are doing and why when multiplied together like this, it results in updates to parameters `w` and `b`. That makes sense. In order to do this, let's use a slightly simpler example where we work on minimizing just one parameter. 
+
+Let's say that you have a cost function J of just one parameter w with w being a number. 
+
+```math
+W_{new} = W - \alpha \cdot \frac{\partial}{\partial w} J(w)
+```
+
+`You're trying to minimize the cost by adjusting the parameter w.`
+
+![GDI3](/SL/GradientDescent/GDI3.png)
+
+<u>This is similar to our previous example, where we had temporarily set b equal to 0 and worked with just one parameter w instead of two. You can look at two-dimensional graphs of the cost function J, instead of three-dimensional ones.</u> 
+
+## Examples
+
+Let's look at what gradient descent does on just function J of w. 
+
+![GDI4](/SL/GradientDescent/GDI4.png)
+
+Here on the **horizontal axis** is parameter `w`, and on the **vertical axis** is the cost `J(w)`. Now let's initialize gradient descent with some starting value for `w`. Let's initialize it at this location. Imagine that you start off at this point right here on the function J. What gradient descent will do is it will update `w` to be 
+
+```math
+W_{new} = W - \alpha \cdot \frac{\partial}{\partial w} J(w)
+```
+
+Let's look at what this derivative term here means. A way to think about the derivative at this point on the line is to draw a tangent line, which is a straight line that touches this curve at that point. Enough, the slope of this line is the derivative of the function J at this point. To get the slope, you can draw a little triangle like this. 
+
+![GDI5](/SL/GradientDescent/GDI5.png)
+
+If you compute the height divided by the width of this triangle, that is the slope. <u> For example, this slope might be 2 over 1 </u>, which means when the tangent line is pointing up and to the right, the slope is positive, which means that this derivative is a positive number, so it is greater than 0. 
+
+If you take `w` minus a positive number, you end up with a new value for `w`, that's smaller. On the graph, 
+```math
+W_{new} = W - 2
+```
+means that if you started at 5, you would move down to 3. 
+
+## Special Topics
+
+### Visualizing Gradient Descent
+
+When visualizing gradient descent, it's helpful to think about the **topography** of the cost function J. The shape of this function will guide how `w` is updated. 
+
+![GDI6](/SL/GradientDescent/GDI6.png)
+
+Here, the landscape shows peaks and valleys. Gradient descent will follow the slope down to the lowest point, adjusting `w` accordingly.
+
+### Role of Learning Rate
+
+The learning rate is crucial in determining how quickly or slowly gradient descent converges to the minimum. A small learning rate means slow convergence but a high chance of accuracy, while a large learning rate might speed up convergence but can lead to overshooting the minimum.
+
+## Working
+
+To summarize the workings of gradient descent 
+
+1. Start with an initial value for `w`.
+2. Calculate the cost function `J(w)`.
+3. Compute the derivative 
+```math
+\frac{\partial}{\partial w} J(w)\
+```
+4. Update `w` using the learning rate and the derivative.
+5. Repeat the process until `w` converges to a minimum value for `J(w)`.
+
+
+This iterative approach continues until the change in `w` is negligible, indicating convergence.
+
+```math
+\text{Convergence: } \lvert W_{new} - W_{old} \rvert < \epsilon
+```
+
+In this case, \(\epsilon\) is a small threshold value you set, indicating how close to the minimum you want to get before stopping the algorithm.
+
+## Conclusion
+
+Now you have a better understanding of gradient descent, focusing on the learning rate and derivatives, as well as how to visualize and implement the algorithm. This foundational knowledge will be crucial as you delve deeper into more complex machine learning concepts.
+
+Stay tuned for the next section, where we'll explore additional concepts related to gradient descent and their applications!
+
+{/*
+---
+title: Gradient Descent Intuition
 ---
 
 
@@ -51,4 +151,4 @@ This step of gradient descent causes w to increase, which means you're moving to
 ![GDI8](/SL/GradientDescent/GDI8.png)
 
 Again, it looks like gradient descent is doing something reasonable, is getting you closer to the minimum. Hopefully, these last two examples show some of the intuition behind what a derivative term is doing and why this host gradient descent change w to get you closer to the minimum. I hope this part gave you some sense for why the derivative term in gradient descent makes sense. One other key quantity in the gradient descent algorithm is the learning rate `Alpha`. How do you choose it? What happens if it's too small or what happens when it's too big? In the next part, let's take a deeper look at the parameter `Alpha` to help build intuitions about what it does, as well as how to make a good choice for a good value of Alpha for your implementation of gradient descent.
-
+*/}
