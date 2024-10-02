@@ -1,5 +1,231 @@
 ---
 title: Implementing Gradient Descent
+description: Learn how to implement the gradient descent algorithm step-by-step, including the key concepts such as learning rates, derivatives, and simultaneous updates for optimizing machine learning models.
+---
+
+## Introduction to Gradient Descent
+
+In this section, we'll walk through the steps required to implement the **gradient descent algorithm**. Let's start by breaking down the core concepts and equations.
+
+![IGD1](/SL/GradientDescent/IGD1.png)
+
+On each step, the parameter `w` is updated as:
+
+```math
+[
+w = w - \alpha \cdot \frac{\partial}{\partial w} J(w, b)
+]
+```
+
+What this expression means is: _update your parameter_ `w` by adjusting it a small amount, which is the term on the right, `minus Alpha times the derivative of the cost function with respect to w`.
+
+If this equation seems complex, don't worry—we'll break it down step by step.
+
+## Understanding Assignment Operators
+
+The `=` sign in programming is an **assignment operator**. In this context:
+
+- `w = new_value`: Assigns `w` a new value.
+- If you write `a = a + 1`, it **increments** the value of `a` by one.
+
+The assignment operator in programming languages is different from truth assertions in mathematics. For example, `a = c` in code means "store the value of `c` in `a`," but in math, it means "`a` is equal to `c`."
+
+![IGD2](/SL/GradientDescent/IGD2.png)
+
+In programming languages like Python, truth assertions are sometimes written as `a == c` to check if `a` equals `c`. 
+
+## Learning Rate (α) and Its Impact
+
+Now, let’s dive into the role of **Alpha (α)**, also known as the **learning rate**. 
+
+![IGD3](/SL/GradientDescent/IGD3.png)
+
+The **learning rate** is typically a small positive number between 0 and 1, such as 0.01. It controls the **size of the steps** taken during gradient descent:
+
+- A large α results in **aggressive** steps downhill.
+- A small α results in **smaller, more cautious** steps.
+
+Choosing an appropriate learning rate is important to ensure proper convergence.
+
+## The Derivative Term
+
+The next key part of the gradient descent update equation is the **derivative of the cost function**.
+
+![IGD4](/SL/GradientDescent/IGD4.png)
+
+For now, think of this derivative term as indicating the **direction** in which you need to adjust your parameters. Combined with the learning rate, the derivative also determines the **size** of the adjustment.
+
+Although derivatives come from calculus, don't worry if you're not familiar with it. You’ll be able to grasp the key concepts without needing advanced calculus knowledge.
+
+## Updating Both Parameters (w and b)
+
+Remember, your model has **two parameters**: `w` and `b`. The update rule for `b` is similar to that for `w`:
+
+![IGD5](/SL/GradientDescent/IGD5.png)
+
+```math
+[
+b = b - \alpha \cdot \frac{\partial}{\partial b} J(w, b)
+]
+```
+
+Just as with `w`, you'll update `b` until the algorithm **converges**—that is, until changes in `w` and `b` become negligible.
+
+## Simultaneous Updates in Gradient Descent
+
+An important detail in implementing gradient descent is to **simultaneously update** both `w` and `b`.
+
+![IGD6](/SL/GradientDescent/IGD6.png)
+
+In the correct implementation, you compute the updates for both parameters **before** applying them:
+
+1. Compute `temp_w` and `temp_b` using the current values of `w` and `b`.
+2. Apply the updates to `w` and `b` using the values stored in `temp_w` and `temp_b`.
+
+Here’s how this looks in practice:
+
+- `temp_w = w - α * (derivative term)`
+- `temp_b = b - α * (derivative term)`
+
+Once the values are computed, you **simultaneously** update `w` and `b` to their new values.
+
+## Incorrect Implementation: Non-Simultaneous Update
+
+Here’s an **incorrect** way to implement gradient descent that does **not** use simultaneous updates:
+
+![IGD9](/SL/GradientDescent/IGD9.png)
+
+In this incorrect approach:
+
+- `w` is updated **before** computing `temp_b`.
+- When calculating `temp_b`, the updated `w` is already used, leading to different values for `b` and an overall incorrect result.
+
+![IGD10](/SL/GradientDescent/IGD10.png)
+
+While this non-simultaneous method might still work in some cases, it's not the correct way to implement gradient descent. The standard gradient descent algorithm **requires simultaneous updates**.
+
+## Conclusion
+
+That wraps up the overview of how to implement **gradient descent** correctly. You now understand how to update both parameters `w` and `b` simultaneously, as well as the role of the **learning rate** and the **derivative** in the process.
+
+In the next part, we’ll dive deeper into the concept of derivatives and how they affect the gradient descent process. Even if you're not familiar with calculus, you'll be able to grasp the intuition behind derivatives and apply them in gradient descent.
+
+Stay tuned for the next section where we'll cover **derivatives** in more detail!
+
+{/*---
+title: Implementing Gradient Descent
+description: Learn how to implement the gradient descent algorithm step-by-step, including the key concepts such as learning rates, derivatives, and simultaneous updates for optimizing machine learning models.
+---
+
+# Introduction to Gradient Descent
+
+In this section, we'll walk through the steps required to implement the **gradient descent algorithm**. Let's start by breaking down the core concepts and equations.
+
+![IGD1](/SL/GradientDescent/IGD1.png)
+
+On each step, the parameter `w` is updated as:
+
+```math
+[
+w = w - \alpha \cdot \frac{\partial}{\partial w} J(w, b)
+]
+```
+What this expression means is: _update your parameter_ `w` by adjusting it a small amount, which is the term on the right, `minus Alpha times the derivative of the cost function with respect to w`.
+
+If this equation seems complex, don't worry—we'll break it down step by step.
+
+# Understanding Assignment Operators
+
+The `=` sign in programming is an **assignment operator**. In this context:
+
+- `w = new_value`: Assigns `w` a new value.
+- If you write `a = a + 1`, it **increments** the value of `a` by one.
+
+The assignment operator in programming languages is different from truth assertions in mathematics. For example, `a = c` in code means "store the value of `c` in `a`," but in math, it means "`a` is equal to `c`."
+
+![IGD2](/SL/GradientDescent/IGD2.png)
+
+In programming languages like Python, truth assertions are sometimes written as `a == c` to check if `a` equals `c`. 
+
+# Learning Rate (α) and Its Impact
+
+Now, let’s dive into the role of **Alpha (α)**, also known as the **learning rate**. 
+
+![IGD3](/SL/GradientDescent/IGD3.png)
+
+The **learning rate** is typically a small positive number between 0 and 1, such as 0.01. It controls the **size of the steps** taken during gradient descent:
+
+- A large α results in **aggressive** steps downhill.
+- A small α results in **smaller, more cautious** steps.
+
+Choosing an appropriate learning rate is important to ensure proper convergence.
+
+# The Derivative Term
+
+The next key part of the gradient descent update equation is the **derivative of the cost function**.
+
+![IGD4](/SL/GradientDescent/IGD4.png)
+
+For now, think of this derivative term as indicating the **direction** in which you need to adjust your parameters. Combined with the learning rate, the derivative also determines the **size** of the adjustment.
+
+Although derivatives come from calculus, don't worry if you're not familiar with it. You’ll be able to grasp the key concepts without needing advanced calculus knowledge.
+
+# Updating Both Parameters (w and b)
+
+Remember, your model has **two parameters**: `w` and `b`. The update rule for `b` is similar to that for `w`:
+
+![IGD5](/SL/GradientDescent/IGD5.png)
+
+\[
+b = b - \alpha \cdot \frac{\partial}{\partial b} J(w, b)
+\]
+
+Just as with `w`, you'll update `b` until the algorithm **converges**—that is, until changes in `w` and `b` become negligible.
+
+# Simultaneous Updates in Gradient Descent
+
+An important detail in implementing gradient descent is to **simultaneously update** both `w` and `b`.
+
+![IGD6](/SL/GradientDescent/IGD6.png)
+
+In the correct implementation, you compute the updates for both parameters **before** applying them:
+
+1. Compute `temp_w` and `temp_b` using the current values of `w` and `b`.
+2. Apply the updates to `w` and `b` using the values stored in `temp_w` and `temp_b`.
+
+Here’s how this looks in practice:
+
+- `temp_w = w - α * (derivative term)`
+- `temp_b = b - α * (derivative term)`
+
+Once the values are computed, you **simultaneously** update `w` and `b` to their new values.
+
+# Incorrect Implementation: Non-Simultaneous Update
+
+Here’s an **incorrect** way to implement gradient descent that does **not** use simultaneous updates:
+
+![IGD9](/SL/GradientDescent/IGD9.png)
+
+In this incorrect approach:
+
+- `w` is updated **before** computing `temp_b`.
+- When calculating `temp_b`, the updated `w` is already used, leading to different values for `b` and an overall incorrect result.
+
+![IGD10](/SL/GradientDescent/IGD10.png)
+
+While this non-simultaneous method might still work in some cases, it's not the correct way to implement gradient descent. The standard gradient descent algorithm **requires simultaneous updates**.
+
+# Conclusion
+
+That wraps up the overview of how to implement **gradient descent** correctly. You now understand how to update both parameters `w` and `b` simultaneously, as well as the role of the **learning rate** and the **derivative** in the process.
+
+In the next part, we’ll dive deeper into the concept of derivatives and how they affect the gradient descent process. Even if you're not familiar with calculus, you'll be able to grasp the intuition behind derivatives and apply them in gradient descent.
+
+Stay tuned for the next section where we'll cover **derivatives** in more detail!
+
+{/* 
+---
+title: Implementing Gradient Descent
 ---
 
 Let's take a look at how you can actually implement the gradient descent algorithm. Let me write down the gradient descent algorithm. Here it is. 
@@ -69,3 +295,5 @@ The difference between the right-hand side and the left-hand side implementation
 It means that this term here on the right is not the same as this term over here that you see on the left. That also means this temp_b term on the right is not quite the same as the temp b term on the left, and thus this updated value for b on the right is not the same as this updated value for variable b on the left. The way that gradient descent is implemented in code, it actually turns out to be more natural to implement it the correct way with simultaneous updates. When you hear someone talk about gradient descent, they always mean the gradient descents where you perform a simultaneous update of the parameters. 
 
 If however, you were to implement non-simultaneous update, it turns out it will probably work more or less anyway. But doing it this way isn't really the correct way to implement it, is actually some other algorithm with different properties. `I would advise you to just stick to the correct simultaneous update and not use this incorrect version on the right`. `That's gradient descent`. In the next part, we'll go into details of the derivative term which you saw in this part, but that we didn't really talk about in detail. `Derivatives are part of calculus, and again, if you're not familiar with calculus, don't worry about it`. You don't need to know calculus at all in order to understand this notes or this specialization, and you have all the information you need in order to implement gradient descent. Coming up in the next part, you'll go over derivatives together, and you come away with the intuition and knowledge you need to be able to implement and apply gradient descent yourself. I think that'll be an exciting thing for you to know how to implement. Let's go on to the next part to see how to do that.
+*/
+}
