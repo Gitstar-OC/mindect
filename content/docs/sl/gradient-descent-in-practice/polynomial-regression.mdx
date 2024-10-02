@@ -2,6 +2,86 @@
 title: Polynomial Regression
 ---
 
+## Introduction to Polynomial Regression
+
+So far, we've primarily been fitting straight lines to our data. Let's take the ideas of multiple linear regression and feature engineering to develop a new algorithm called `polynomial regression`, which allows you to fit curves, or non-linear functions, to your data.
+
+## Example of Housing Data
+
+Consider a housing dataset that looks like this:
+
+![FEPR6](/SL/GDP/FEPR6.png)
+
+Here, feature \( x \) represents the size in square feet. A straight line doesn't appear to fit this dataset very well.
+
+### Fitting a Quadratic Function
+
+You might want to fit a curve, perhaps a quadratic function, to the data, like this:
+
+![FEPR1](/SL/GDP/FEPR1.png)
+
+This function includes size \( x \) and also \( x^2 \), which is the size raised to the power of two. This could potentially provide a better fit to the data.
+
+### Choosing a Cubic Function
+
+However, you may find that a quadratic model doesn't make sense because a quadratic function eventually decreases. We wouldn't expect housing prices to drop as size increases. 
+
+Thus, you may choose a cubic function that includes not only \( x^2 \) but also \( x^3 \):
+
+![FEPR3](/SL/GDP/FEPR3.png)
+
+This model generates a curve that fits the data better since the size does eventually increase as the size grows. These are examples of polynomial regression, where you take the original feature \( x \) and raise it to different powers, such as two or three.
+
+## Importance of Feature Scaling
+
+It’s essential to note that when you create features like these powers (e.g., the square or cube of the original features), feature scaling becomes increasingly important. 
+
+For example, if the size of the house ranges from 1 to 1,000 square feet, then:
+- The second feature, size squared, will range from 1 to 1,000,000.
+- The third feature, size cubed, will range from 1 to 1,000,000,000.
+
+![FEPR4](/SL/GDP/FEPR4.png)
+
+These features, \( x^2 \) and \( x^3 \), take on very different value ranges compared to the original feature \( x \). `When using gradient descent, it's crucial to apply feature scaling to ensure your features are within comparable ranges.`
+
+## Alternative Features: Square Root
+
+As an alternative to using the size squared and cubed, you could consider using the square root of \( x \):
+
+![FEPR5](/SL/GDP/FEPR5.png)
+
+In this case, your model might look like
+ 
+ ```math
+  w_1 \cdot x + w_2 \cdot \sqrt{x} + b
+ ```
+ The square root function becomes less steep as \( x \) increases but never completely flattens out and does not decrease. This could be another viable feature choice for this dataset.
+
+## Choosing Features
+
+You may wonder how to decide which features to use. In the notes on `Advanced Algorithm`, you will learn how to select different features and models, including which features to include or exclude. A systematic approach for measuring the performance of these models will also be discussed, aiding your feature selection process.
+
+## Conclusion on Feature Engineering
+
+For now, it's essential to recognize that you have the flexibility to choose your features. By utilizing feature engineering and polynomial functions, you can develop a more accurate model for your data.
+
+In the upcoming notebook, you'll see code that implements polynomial regression using features like \( x \), \( x^2 \), and \( x^3 \). Please review and run the code to observe how it functions. 
+
+There is also another notebook that demonstrates how to use `Scikit-learn`, a widely-used open-source machine learning library utilized by many practitioners in top AI and machine learning companies.
+
+If you are using machine learning in your job, there’s a good chance you will utilize tools like `Scikit-learn` to train your models. Working through that notebook will enhance your understanding of linear regression and show how it can be executed in just a few lines of code using a library like `Scikit-learn`.
+
+To gain a solid grasp of these algorithms and their applications, it’s crucial to understand how to implement linear regression independently, rather than merely relying on a `Scikit-learn` function that acts as a black box. Nonetheless, `Scikit-learn` plays a significant role in contemporary machine learning practices.
+
+Congratulations on completing this section! Please explore the practice quizzes and the practice lab, where you can apply the concepts we've discussed. In this week's practice lab, you'll implement linear regression. I hope you enjoy the process of getting this learning algorithm to work for you. Best of luck with that! 
+
+In the next section, we will move beyond regression—predicting numerical values—to discuss our first classification algorithm, which can predict categories.
+
+{/*
+---
+title: Polynomial Regression
+---
+
 
 So far we've just been fitting straight lines to our data. Let's take the ideas of multiple linear regression and feature engineering to come up with a new algorithm called `polynomial regression`, `which will let you fit curves, non-linear functions, to your data`.
 
@@ -41,3 +121,4 @@ In the notebook that follows this part, you will see some code that implements p
 If either now or in the future you're using machine learning in your job, there's a very good chance you'll be using tools like `Scikit-learn` to train your models. Working through that notebook will give you a chance to not only better understand linear regression, but also see how this can be done in just a few lines of code using a library like `Scikit-learn`. For you to have a solid understanding of these algorithms, and be able to apply them, I do think is important that you know how to implement linear regression yourself and not just call some `scikit-learn` function that is a black-box. But `scikit-learn also has an important role in a way machine learning is done in practice today`. 
 
 Congratulations on finishing this section. Please do take a look at the practice quizzes and also the practice lab, which I hope will let you try out and practice ideas that we've discussed. In this week's practice lab, you implement linear regression. I hope you have a lot of fun getting this learning algorithm to work for yourself. Best of luck with that. In the next section we'll go beyond regression, that is predicting numbers, to talk about our first classification algorithm, which can predict categories.
+*/}

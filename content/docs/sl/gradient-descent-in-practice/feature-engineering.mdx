@@ -2,6 +2,75 @@
 title: Feature Engineering
 ---
 
+## Introduction to Feature Engineering
+
+The choice of features can have a huge impact on your learning algorithm's performance. In fact, `for many practical applications, choosing or engineering the right features is a critical step to making the algorithm work well`. In this part, let's take a look at how you can choose or engineer the most appropriate features for your learning algorithm.
+
+## Case Study: Predicting House Prices
+
+Let's revisit the example of predicting the price of a house. 
+
+### Initial Features
+
+Say you have two features for each house: 
+- \( x_1 \): the width of the lot size of the plots of land that the house is built on, commonly referred to as the frontage of the lot. 
+- \( x_2 \): the depth of the lot size of the rectangular plot of land that the house was built on.
+
+![FE1](/SL/GDP/FE1.png)
+
+Given these two features, \( x_1 \) and \( x_2 \), you might build a model like this:
+
+```math
+f(x) = w_1 \cdot x_1 + w_2 \cdot x_2 + b
+```
+
+where \( x_1 \) is the frontage or width, and \( x_2 \) is the depth. This model might work okay.
+
+### Exploring Alternative Features
+
+However, there's another option for how you might choose to use these features in a more effective way. You might notice that the area of the land can be calculated as the frontage or width times the depth.
+
+![FE2](/SL/GDP/FE2.png)
+
+### Creating a New Feature
+
+You may have an intuition that the area of the land is more predictive of the price than the frontage and depth as separate features. Thus, you could define a new feature, \( x_3 \), as:
+
+```math
+x_3 = x_1 \cdot x_2
+```
+
+This new feature \( x_3 \) represents the area of the plot of land. 
+
+With this feature, your model can now be defined as:
+
+```math
+f(x) = w_1 \cdot x_1 + w_2 \cdot x_2 + w_3 \cdot x_3 + b
+```
+
+![FE3](/SL/GDP/FE3.png)
+
+Now, the model can choose parameters \( w_1 \), \( w_2 \), and \( w_3 \) depending on whether the data shows that the frontage, depth, or area \( x_3 \) of the lot is the most important factor in predicting the price of the house.
+
+## Understanding Feature Engineering
+
+What we just did—creating a new feature—is an example of what's called `feature engineering`. In this process, you use your knowledge or intuition about the problem to design new features, usually by transforming or combining the original features. This transformation aims to make it easier for the learning algorithm to make accurate predictions.
+
+![FE4](/SL/GDP/FE4.png)
+
+### The Impact of Feature Engineering
+
+Depending on the insights you may have into the application, rather than just taking the features that you started with, sometimes by defining new features, you might be able to get a much better model. That’s the essence of feature engineering.
+
+## Next Steps: Non-linear Functions
+
+It turns out that one flavor of feature engineering allows you to fit not just straight lines but also curves and non-linear functions to your data. Let’s take a look in the next part at how you can do that.
+
+{/*
+---
+title: Feature Engineering
+---
+
 
 The choice of features can have a huge impact on your learning algorithm's performance. In fact, `for many practical applications, choosing or entering the right features is a critical step to making the algorithm work well`. In this part, let's take a look at how you can choose or engineer the most appropriate features for your learning algorithm. Let's take a look at feature engineering by revisiting the example of predicting the price of a house. 
 
@@ -25,4 +94,4 @@ What we just did, creating a new feature is an example of what's called `feature
 ![FE4](/SL/GDP/FE4.png)
 
 Depending on what insights you may have into the application, rather than just taking the features that you happen to have started off with sometimes by defining new features, you might be able to get a much better model. That's feature engineering. It turns out that this one flavor of feature engineering, that allow you to fit not just straight lines, but curves, non-linear functions to your data. Let's take a look in the next part at how you can do that.
-
+*/}
