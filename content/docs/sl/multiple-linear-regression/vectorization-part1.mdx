@@ -2,6 +2,80 @@
 title: Vectorization Part 1
 ---
 
+## Introduction
+
+In this video, you learn about a very useful concept called `vectorization`. When implementing learning algorithms, `vectorization makes your code both shorter and more efficient`. Learning how to write vectorized code allows you to take advantage of modern numerical linear algebra libraries, and even GPU hardware (graphics processing unit), designed to speed up code execution.
+
+Let’s dive into a concrete example using parameters `w` and `b`, where `w` is a vector with three numbers, and you also have a vector of features `x` with three numbers.
+
+![V1](/SL/MLR/V1.png)
+
+In this example, `n = 3`. Notice that in linear algebra, indexing starts from 1, so the first value is subscripted `w_1` and `x_1`.
+
+### Python Code Implementation
+
+In Python, you can define these variables `w`, `b`, and `x` using arrays like this:
+
+![V2](/SL/MLR/V2.png)
+
+We’re using the `NumPy` library, the most widely used numerical linear algebra library in Python and machine learning. Note that Python indexing starts from 0, so `w[0]` accesses the first value of `w`, and similarly for `x[0]`.
+
+### Non-Vectorized Code Implementation
+
+Here’s an implementation *without vectorization* for computing the model's prediction:
+
+![V3](/SL/MLR/V3.png)
+
+You multiply each parameter `w` with its associated feature. This approach is inefficient, especially when `n` is large.
+
+A more efficient implementation uses a `for` loop. In math, this operation is represented by a summation:
+
+```math
+f(x) = \sum_{j=1}^{n} w_j x_j + b
+```
+
+The code implementation would look like this:
+
+![V4](/SL/MLR/V4.png)
+
+Notice that in Python, the `range(0, n)` means that `j` goes from 0 to `n-1`.
+
+### Vectorized Code Implementation
+
+With vectorization, you can compute the same function with a single line of code:
+
+```math
+f(x) = w^T x + b
+```
+
+This can be implemented in Python as:
+
+```math
+fp = np.dot(w, x) + b
+```
+
+![V5](/SL/MLR/V5.png)
+
+This vectorized implementation is not only shorter but also faster, especially for large `n`. Behind the scenes, the `NumPy` dot function uses parallel hardware, including the CPU and possibly the GPU, to speed up the computation.
+
+### Benefits of Vectorization
+
+1. **Shorter code** – Easier to write and read.
+2. **Faster execution** – The parallel nature of vectorized operations makes them much more efficient.
+
+By using vectorization, your code will be more practical and efficient, especially when `n` is large.
+
+---
+
+## Conclusion
+
+To summarize, vectorization makes your code more concise and faster. This magic behind vectorization is possible because of modern hardware that allows for parallel processing. In the next part, we’ll explore what happens behind the scenes to make vectorized code run faster.
+ 
+{/*
+---
+title: Vectorization Part 1
+---
+
 
 In this video, you see a very useful idea called `vectorization`. When you're implementing a learning algorithm, `using vectorization will both make your code shorter and also make it run much more efficiently`. `Learning how to write vectorized code will allow you to also take advantage of modern numerical linear algebra libraries, as well as maybe even GPU hardware that stands for graphics processing unit`. This is hardware objectively designed to speed up computer graphics in your computer, but turns out can be used when you write vectorized code to also help you execute your code much more quickly. 
 
@@ -38,5 +112,4 @@ I said dot dot because the first dot is the period and the second dot is the fun
 I want to emphasize that vectorization actually has two distinct benefits. `First, it makes code shorter`, `it is now just one line of code`. Isn't that cool? `Second, it also results in your code running much faster than either of the two previous implementations that did not use vectorization`. `The reason that the vectorized implementation is much faster is behind the scenes`. `The NumPy dot function is able to use parallel hardware in your computer and this is true whether you're running this on a normal computer, that is on a normal computer CPU or if you are using a GPU, a graphics processor unit, that's often used to accelerate machine learning jobs`. The ability of the NumPy dot function to use parallel hardware makes it much more efficient than the for loop or the sequential calculation that we saw previously.
 
 Now, this version is much more practical when n is large because you are not typing w0 times x0 plus w1 times x1 plus lots of additional terms like you would have had for the previous version. But while this saves a lot on the typing, is still not that computationally efficient because it still doesn't use vectorization. `To recap, vectorization makes your code shorter, so hopefully easier to write and easier for you or others to read, and it also makes it run much faster`. But to be honest, this is magic behind vectorization that makes this run so much faster. Let's take a look at what your computer is actually doing behind the scenes to make vectorized code run so much faster.
-
-
+*/}
