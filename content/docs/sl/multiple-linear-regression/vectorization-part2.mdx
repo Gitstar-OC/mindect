@@ -2,6 +2,66 @@
 title: Vectorization Part 2
 ---
 
+## Introduction
+
+When I first learned about vectorization, I was amazed at how much faster a vectorized algorithm could run compared to its non-vectorized counterpart. It almost felt like magic! Let’s dive into what makes vectorization so powerful.
+
+### Non-Vectorized Computation
+
+Here’s how a for loop works without vectorization. If `j` ranges from 0 to 15, the loop performs operations one step at a time. At each timestamp, the algorithm computes a single value:
+
+![VD1](/SL/MLR/VD1.png)
+
+```math
+f(x) = \sum_{j=0}^{15} w_j x_j + b
+```
+
+This sequential process is slow, especially as `n` increases.
+
+### Vectorized Computation
+
+With vectorization, the computer can fetch all the values of `w` and `x`, and compute their products all at once. It performs parallel computations, making the process much faster:
+
+![VD2](/SL/MLR/VD2.png)
+
+Vectorized operations allow the computer to calculate many values simultaneously, leading to much faster execution.
+
+### Multiple Linear Regression Example
+
+Consider a linear regression problem with 16 features and 16 parameters. You compute the gradients of these parameters and update each one using gradient descent. Without vectorization, you would update the weights one by one:
+
+![VD3](/SL/MLR/VD3.png)
+
+In code, this looks like:
+
+![VD4](/SL/MLR/VD4.png)
+
+With vectorization, however, you can update all weights in parallel:
+
+```math
+w = w - 0.1 \times d
+```
+
+![VD5](/SL/MLR/VD5.png)
+
+This single line of code achieves the same result as the `for` loop, but much faster!
+
+### Benefits of Vectorized Code
+
+Using a vectorized implementation makes linear regression more efficient, especially when dealing with large datasets or models with many features. The difference can be significant, reducing computation time from hours to minutes.
+
+---
+
+## Conclusion
+
+In this part, we explored the power of vectorization in practice. Using parallel processing, vectorized code significantly speeds up calculations, making it essential for scaling machine learning algorithms. In the next notebook, you'll explore the `NumPy` library in detail and see firsthand how vectorization impacts performance.
+  
+
+{/*
+---
+title: Vectorization Part 2
+---
+
 
 I remember when I first learned about vectorization, I spent many hours on my computer taking an unvectorized version of an algorithm running it, see how long it run, and then running a vectorized version of the code and seeing how much faster that run, and I just spent hours playing with that. And it frankly blew my mind that the same algorithm vectorized would run so much faster. It felt almost like a magic trick to me. In this part, let's figure out how this magic trick really works. 
 
@@ -40,3 +100,4 @@ w is assigned to `w minus 0.1 times d`. Behind the scenes, the computer takes th
 In the notebook that follows this part, you see an introduction to one of the most used Python libraries and Machine Learning, which we've already touched on in this part called `NumPy`. You see how they create vectors encode and these vectors or lists of numbers are called `NumPy arrays`, and you also see how to take the dot product of two vectors using a NumPy function called dot. You also get to see how vectorized code such as using the dot function, can run much faster than a for-loop. In fact, you'd get to time this code yourself, and hopefully see it run much faster. This notebook introduces a fair amount of new NumPy syntax, so when you read through the notebook, please still feel like you have to understand all the code right away, but you can save this notebook and use it as a reference to look at when you're working with data stored in NumPy arrays. 
 
 Congrats on finishing this video on vectorization. You've learned one of the most important and useful techniques in implementing machine learning algorithms. In the next part, we'll put the math of multiple linear regression together with vectorization, so that you will influence gradient descent for multiple linear regression with vectorization.
+*/}

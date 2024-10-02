@@ -1,5 +1,93 @@
 ---
 title: Multiple Features
+description: A detailed explanation of linear regression with multiple features.
+---
+
+## Introduction
+
+Welcome back. In this part, you'll learn to make linear regression much faster and much more powerful. 
+
+Let's start by looking at the version of linear regression that uses not just one feature, but multiple features. 
+
+![MF1](/SL/MLR/MF1.png)
+
+In the original version of linear regression, you had a single feature `x`, the size of the house, and you were able to predict `y`, the price of the house. The model was:
+
+```math
+f(w,b)(x) = w * x + b
+```
+
+But now, what if you had not only the size of the house as a feature, but also the number of bedrooms, the number of floors, and the age of the home in years? This would give you much more information to predict the price.
+
+## Multiple Features in Linear Regression
+
+![MF2](/SL/MLR/MF2.png)
+
+To introduce a bit of new notation, we will use the variables `X_1, X_2, X_3, X_4` to represent the four features. For simplicity, let's introduce even more notation:
+
+We'll write `X_j` (for short) to represent the list of features, where `j` goes from 1 to 4, since we have 4 features. We will use lowercase `n` to denote the total number of features, so in this example, `n = 4`.
+
+### Notation for Features, Training Examples, and Parameters
+
+![MF3](/SL/MLR/MF3.png)
+
+As before, we'll use `X^i` to denote the `i`-th training example, which now will be a list of 4 numbers (a vector of all the features of the `i`-th training example). For example, `X^2` would be the features of the second training example: `[1416, 3, 2, 40]`. If we want to refer to a specific feature, we write `X^i_j`, so:
+
+```math
+X^2_3 = 2
+```
+
+This refers to the number of floors in the second training example.
+
+![MF5](/SL/MLR/MF5.png)
+
+Now that we have multiple features, the model can be defined as follows:
+
+```math
+f(w,b)(X) = w_1 * X_1 + w_2 * X_2 + w_3 * X_3 + w_4 * X_4 + b
+```
+
+> For example, a housing price prediction model might estimate the price as:
+> 
+> ```math
+> 0.1 * X_1 + 4 * X_2 + 10 * X_3 - 2 * X_4 + 80
+> ```
+>
+> If predicting in thousands of dollars, this means that the base price starts at $80,000, increases by $100 for each additional square foot, $4,000 per bedroom, $10,000 per floor, and decreases by $2,000 for every year of age.
+
+In general, if you have `n` features, the model becomes:
+
+```math
+f(w,b)(X) = w_1 * X_1 + w_2 * X_2 + ... + w_n * X_n + b
+```
+
+### Generalization to Vector Form
+
+![MF6](/SL/MLR/MF6.png)
+
+To make this more compact, we define `W` as a vector of the weights `[w_1, w_2, ..., w_n]` and `X` as a vector of the features `[X_1, X_2, ..., X_n]`. This allows us to rewrite the model as a dot product:
+
+```math
+f(w,b)(X) = W \cdot X + b
+```
+
+![MF7](/SL/MLR/MF7.png)
+
+The dot product `W \cdot X` is calculated as:
+
+```math
+w_1 * X_1 + w_2 * X_2 + ... + w_n * X_n
+```
+
+Thus, multiple linear regression can be written compactly using vectors. This is known as **multiple linear regression**, which uses multiple input features.
+
+## Conclusion
+
+In this section, we explored the concept of multiple linear regression, where multiple features are used to predict the target variable. We introduced vector notation and showed how it simplifies the representation of the model. Next, we will see how vectorization can speed up the implementation of such algorithms.
+
+{/*
+---
+title: Multiple Features
 ---
 
 Welcome back. In this part, you'll learn to make linear regression much faster and much more powerful. 
@@ -53,3 +141,4 @@ What is this dot product thing? Well, the dot products of two vectors of two lis
 Writing that out, this means that the dot products is equal to W_1X_1 plus W_2X_2 plus W_3X_3 plus all the way up to W_nX_n. Then finally we add back in the b on top. You notice that this gives us exactly the same expression as we had on top. `The dot traffic notation lets you write the model in a more compact form with fewer characters`. The name for this type of `linear regression model with multiple input features` is `multiple linear regression`. This is in contrast to univariate regression, which has just one feature. `By the way, you might think this algorithm is called multivariate regression, but that term actually refers to something else that we won't be using here`. I'm going to refer to this model as multiple linear regression. That's it for linear regression with multiple features, which is also called multiple linear regression. In order to implement this, there's a really neat trick called vectorization, which will make it much simpler to implement this and many other learning algorithms.
 
 
+*/}

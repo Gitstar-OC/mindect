@@ -1,4 +1,106 @@
 ---
+title: Gradient Descent for Multiple Linear Regression
+description: Explanation and implementation of gradient descent for multiple linear regression using vectorization.
+---
+
+## Introduction
+
+You've learned about gradient descent for multiple linear regression and also vectorization. Let's put it all together to implement gradient descent for multiple linear regression with vectorization. This will be exciting.
+
+Let's quickly review what multiple linear regression looks like. Using our previous notation, we can write it more succinctly with vector notation. We have parameters `w_1` to `w_n` as well as `b`. But instead of thinking of `w_1` to `w_n` as separate numbers, let's collect all of them into a vector `W`, so `W` is a vector of length `n`. We will think of the parameters as a vector `W` and a scalar `b`. Previously, we defined multiple linear regression as:
+
+```math
+f(w, b)(x) = w_1 * x_1 + w_2 * x_2 + ... + w_n * x_n + b
+```
+
+Now, using vector notation:
+
+```math
+f(w, b)(X) = W \cdot X + b
+```
+
+![GDMR1](/SL/MLR/GDMR1.png)
+
+The dot here refers to the dot product.
+
+## Cost Function and Gradient Descent
+
+Our cost function can be defined as:
+
+```math
+J(w, b) = \frac{1}{2m} \sum_{i=1}^m (f(w, b)(X^{(i)}) - y^{(i)})^2
+```
+
+But instead of thinking of `J` as a function of multiple parameters `w_1` through `w_n` and `b`, we write it as:
+
+```math
+J(W, b)
+```
+
+Where `W` is the vector of parameters and `b` is a scalar. 
+
+Here's what gradient descent looks like:
+
+![GDMR2](/SL/MLR/GDMR2.png)
+
+We repeatedly update each parameter `w_j` as:
+
+```math
+w_j = w_j - \alpha \frac{\partial J(W, b)}{\partial w_j}
+```
+
+And for `b`:
+
+```math
+b = b - \alpha \frac{\partial J(W, b)}{\partial b}
+```
+
+The partial derivatives represent the gradient of the cost function with respect to `w_j` and `b`.
+
+## Implementing Gradient Descent
+
+With multiple features, gradient descent is slightly different. Here's what we had with one feature:
+
+![GDMR3](/SL/MLR/GDMR3.png)
+
+We had an update rule for `w` and a separate update rule for `b`.
+
+Now, with `n` features, we have:
+
+```math
+w_j = w_j - \alpha \sum_{i=1}^m (f(w,b)(X^{(i)}) - y^{(i)}) X_j^{(i)}
+```
+
+For each `j = 1, 2, ..., n`.
+
+![GDMR4](/SL/MLR/GDMR4.png)
+
+Similarly, we update `b` as:
+
+```math
+b = b - \alpha \sum_{i=1}^m (f(w,b)(X^{(i)}) - y^{(i)})
+```
+
+This is how gradient descent works for multiple features.
+
+![GDMR5](/SL/MLR/GDMR5.png)
+
+## Normal Equation
+
+An alternative to gradient descent is the **normal equation**, which solves for `W` and `b` directly using linear algebra. The normal equation is:
+
+```math
+W = (X^T X)^{-1} X^T y
+```
+
+This method does not require iterations but can be computationally expensive when the number of features is large.
+
+![GDMR6](/SL/MLR/GDMR6.png)
+
+Although not as generalizable as gradient descent, some machine learning libraries might use this method in the backend for linear regression.
+
+{/*
+---
 title: Gradient Descent for Multipple Linear Regression
 ---
 
@@ -46,3 +148,4 @@ Almost no machine learning practitioners should implement the normal equation me
 In the notebook that follows this part, you'll see how to define a multiple regression model encode and also how to calculate the prediction f of x. You'll also see how to calculate the cost and implement gradient descent for a multiple linear regression model. This will be using Python's `NumPy` library. 
 
 If any of the code looks very new, that's okay but you should feel free also to take a look at the previous notebooks that introduces NumPy and vectorization for a refresher of NumPy functions and how to implement those in code. That's it. You now know `multiple linear regression`. This is probably the single most widely used learning algorithm in the world today. But there's more. With just a few tricks such as `picking and scaling features` appropriately and also choosing the learning rate alpha appropriately, you'd really make this work much better. Just a few more parts.
+*/}
