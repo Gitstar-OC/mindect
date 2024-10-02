@@ -2,6 +2,93 @@
 title: Simplified Cost Function for Logistic Regression
 ---
 
+## Introduction
+
+In the last part, we explored the **loss function** and the **cost function** for logistic regression. In this part, you'll learn a slightly simpler way to express these functions, which will make the implementation smoother when we get to **gradient descent** for fitting the parameters of a logistic regression model.
+
+Let’s begin by revisiting the loss function from the previous section.
+
+![SCFLR (1)](/SL/CFLR/SCFLR%20(1).png)
+
+## Simplifying the Loss Function
+
+Since we're dealing with a **binary classification problem**, where `y` can only take the values `0` or `1`, we can rewrite the loss function in a simpler form. This simpler version still accurately reflects the relationship between the prediction and the target label.
+
+Here’s how the **simplified loss function** looks:
+
+![SCFLR (2)](/SL/CFLR/SCFLR%20(2).png)
+
+Given a prediction `f(x)` and a target label `y`, the **loss** can be defined as:
+
+```math
+Loss = -[y * \log(f(x)) + (1 - y) * \log(1 - f(x))]
+```
+
+This expression, while concise, is equivalent to the more complex formulation we previously used. Let’s break down why this works by considering the possible values of `y`.
+
+## Case 1: When y = 1
+
+Let’s examine the scenario where `y = 1`.
+
+In this case, the first term is `1`, and the second term becomes `0` (because `1 - y = 0`).
+
+The loss reduces to:
+
+```math
+Loss = - \log(f(x))
+```
+
+This is exactly equivalent to the original loss function in this case.
+
+## Case 2: When y = 0
+
+Now let’s look at the case where `y = 0`.
+
+Here, the first term becomes `0`, and the second term is `1 - y = 1`.
+
+The loss function becomes:
+
+```math
+Loss = - \log(1 - f(x))
+```
+
+This is again consistent with the original, more complex formula. As a result, no matter whether `y = 0` or `y = 1`, this simpler loss function yields the correct result.
+
+## The Cost Function for Logistic Regression
+
+We can now apply this simplified loss function to define the **cost function** for logistic regression. As a reminder, the cost function `J` is the **average loss** across the training set of `m` examples.
+
+Here is the **simplified loss function**:
+
+![SCFLR (6)](/SL/CFLR/SCFLR%20(6).png)
+
+The cost function is defined as:
+
+```math
+J(\theta) = \frac{1}{m} \sum_{i=1}^{m} \left[ -y^{(i)} \log(f(x^{(i)})) - (1 - y^{(i)}) \log(1 - f(x^{(i)})) \right]
+```
+
+You can bring out the negative signs and simplify it as follows:
+
+![SCFLR (7)](/SL/CFLR/SCFLR%20(7).png)
+
+This is the cost function used to train logistic regression models. It’s widely adopted because it is derived from the **maximum likelihood estimation** principle from statistics, which ensures that this cost function is **convex**.
+
+![SCFLR (8)](/SL/CFLR/SCFLR%20(8).png)
+
+You don't need to dive into the details of **maximum likelihood estimation** for now. Just know that this cost function has a nice property of being convex, meaning we can apply gradient descent efficiently.
+
+## Next Steps
+
+The upcoming notebook will show how this cost function is implemented in code. I recommend you take a look because you will be implementing it later during the practical lab. The notebook also demonstrates how different parameter choices affect the cost.
+
+The plot shows how the better fitting **blue decision boundary** has a lower cost relative to the **magenta decision boundary**. With this simplified cost function, we are now ready to jump into applying gradient descent to logistic regression.
+
+{/*
+---
+title: Simplified Cost Function for Logistic Regression
+---
+
 
 In the last part you saw the loss function and the cost function for logistic regression. In this part you'll see a slightly simpler way to write out the loss and cost functions, so that the implementation can be a bit simpler when we get to gradient descent for fitting the parameters of a logistic regression model.
 
@@ -41,4 +128,4 @@ But don't worry about learning the details of `maximum likelihood`. It's just a 
 
 
 The upcoming notebook will show you how the logistic cost function is implemented in code. I recommend taking a look at it, because you implement this later into practice lab at the end of the week. This upcoming notebook also shows you how two different choices of the parameters will lead to different cost calculations. You can see in the plot that the better fitting blue decision boundary has a lower cost relative to the magenta decision boundary. So with the simplified cost function, we're now ready to jump into applying gradient descent to logistic regression.
-
+*/}
