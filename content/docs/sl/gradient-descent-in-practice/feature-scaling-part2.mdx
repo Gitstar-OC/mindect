@@ -2,6 +2,64 @@
 title: Feature Scaling Part 2
 ---
 
+## Introduction to Feature Scaling Part 2
+
+Let's look at how you can implement feature scaling, to take features that take on very different ranges of values and skill them to have comparable ranges of values to each other.
+
+How do you actually scale features? Well, if \(x_1\) ranges from 3-2,000, one way to get a scale version of \(x_1\) is to `take each original x_1 value and divide by` 2,000, `the maximum of the range`.
+
+![FSP2.1](/SL/GDP/FSP2.1.png)
+
+The scale \(x_1\) will range from 0.15 up to one.
+
+Similarly, since \(x_2\) ranges from 0-5, you can calculate a scale version of \(x_2\) by taking each original \(x_2\) and dividing by five, which is again the maximum.
+
+![FSP2.2](/SL/GDP/FSP2.2.png)
+
+So the scale \(x_2\) will now range from 0-1. If you plot the scale to \(x_1\) and \(x_2\) on a graph, it might look like this.
+
+![FSP2.3](/SL/GDP/FSP2.3.png)
+
+## Mean Normalization
+
+In addition to dividing by the maximum, you can also do what's called `mean normalization`.
+
+![FSP2.4](/SL/GDP/FSP2.4.png)
+
+`What this looks like is, you start with the original features and then you re-scale them so that both of them are centered around zero`.
+
+![FSP2.5](/SL/GDP/FSP2.5.png)
+
+`Whereas before they only had values greater than zero, now they have both negative and positive values that may be usually between negative one and plus one`.
+
+`To calculate the mean normalization` of \(x_1\), `first find the average`, also called the mean of \(x_1\) on your training set, and let's call this `mean M_1`, with this being the `Greek alphabets Mu`. For example, you may find that the average of feature 1, \(\mu_1\) is 600 square feet.
+
+![FSP2.6](/SL/GDP/FSP2.6.png)
+
+Let's `take each x_1, subtract the mean Mu_1`, and `then` let's `divide by the difference 2,000 - 3`  which is the maximum value minus the minimum value.
+
+`In contrast`, the average for the number of bedrooms may be 3. So similarly, you can calculate the mean normalization for the second feature. 
+
+And it would be:
+
+```math
+\text{scaled } x_2 = \frac{x_2 - \mu_2}{\text{max}(x_2) - \text{min}(x_2)} = \frac{x_2 - 3}{5 - 0}
+```
+
+And now both features, \(x_1\) and \(x_2\), are centered around zero and ready for gradient descent.
+
+## Summary of Scaling Techniques
+
+So to recap, we looked at two techniques for scaling features. The first was `dividing by the maximum value` which allows the features to range between zero and one. The second was `mean normalization` which centers the features around zero. These techniques can help improve the performance of gradient descent and allow the algorithm to converge much more quickly. 
+
+In the next part, we'll look at some implementation tips for scaling features in practice.
+
+
+{/*
+---
+title: Feature Scaling Part 2
+---
+
 
 Let's look at how you can implement feature scaling, to take features that take on very different ranges of values and skill them to have comparable ranges of values to each other. 
 
@@ -72,3 +130,4 @@ But if another feature, like x_3 here, ranges from `negative 100 to plus 100`, `
 ![FSP2.14](/SL/GDP/FSP2.14.png)
 
 There's almost never any harm to carrying out `feature re-scaling`. When in doubt, I encourage you to just carry it out. That's it for `feature scaling`. With this little technique, you'll often be able to get gradient descent to run much faster. That's features scaling. With or without feature scaling, when you run gradient descent, how can you know, how can you check if gradient descent is really working? If it is finding you the global minimum or something close to it. In the next part, let's take a look at how to recognize if `gradient descent is converging`, and then in the later part after that, this will lead to discussion of how to choose a good learning rate for gradient descent.
+*/}
