@@ -11,6 +11,7 @@
 - contribute to navbar to make it visible via props
 - show remaining topics when hovered
 - shorten the path of @/components/ui to @cui
+- remove padding top from mobile view of cards and also make the width of SL card same as of other cards on mobile.
 -->
 
 ## Starting the development server

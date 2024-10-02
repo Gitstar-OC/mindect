@@ -1,5 +1,95 @@
 ---
 title: Regularized Linear Regression
+description: In this part, we'll figure out how to get gradient descent to work with regularized linear regression.
+---
+
+# Introduction
+
+In this part, we'll figure out how to get gradient descent to work with regularized linear regression. Let's jump in.
+
+## Regularized Cost Function
+
+Here is a cost function we've come up with in the last part for regularized linear regression.
+
+![RLIR (1)](/SL/PO/RLIR%20(1).png)
+
+The first part is the usual `squared error cost function`, and now you have this additional `regularization term`, where `Lambda is the regularization parameter`, and you'd like to find parameters w and b that minimize the regularized cost function.
+
+## Gradient Descent for Regularized Linear Regression
+
+Previously we were using gradient descent for the original cost function, just the first term before we added that second regularization term, and previously, we had the following gradient descent algorithm,
+
+![RLIR (2)](/SL/PO/RLIR%20(2).png)
+
+which is that we repeatedly update the parameters w_j and b for j equals 1 through n according to this formula, and b is also updated similarly. `Again, Alpha (&alpha;) is a very small positive number called the learning rate`. In fact, the updates for a regularized linear regression look exactly the same, except that now the cost, J, is defined a bit differently. Previously, the derivative of J with respect to w_j was given by this expression:
+
+![RLIR (3)](/SL/PO/RLIR%20(3).png)
+
+The derivative respect to b was given by this expression. Now that we've added this additional regularization term, the only thing that changes is that the expression for the derivative with respect to w_j ends up with one additional term, this `plus Lambda over m times w_j`.
+
+```math
+\frac{dJ}{dw_j} = \frac{1}{m} \sum (h_\theta(x^{(i)}) - y^{(i)}) x_j^{(i)} + \frac{\lambda}{m} w_j
+```
+
+## Non-Regularized b
+
+Recall that we don't regularize b, so we're not trying to shrink B. That's why the updated B remains the same as before, whereas the updated w changes because the regularization term causes us to try to shrink w_j.
+
+## Gradient Descent Algorithm for Regularized Linear Regression
+
+To implement gradient descent for regularized linear regression, this is what you would have your code do.
+
+![RLIR (5)](/SL/PO/RLIR%20(5).png)
+
+Here is the update for w_j, for j equals 1 through n, and here's the update for b. As usual, please remember to carry out simultaneous updates for all of these parameters. 
+
+## Optional Material: Deeper Intuition
+
+What I'd like to do in the remainder of this part is to go over some optional material to convey a slightly deeper intuition about what this formula is actually doing. 
+
+### Rewriting the Update Rule
+
+Let's take a look at the update rule for w_j and rewrite it in another way.
+
+We're updating w_j as 1 times w_j minus Alpha times Lambda over m times w_j. I've moved the term from the end to the front here.
+
+![RLIR (6)](/SL/PO/RLIR%20(6).png)
+
+If we simplify, then we're saying that w_j is updated as w_j times `1 - Alpha \times Lambda / m`, minus Alpha times the other term.
+
+![RLIR (7)](/SL/PO/RLIR%20(7).png)
+
+### Intuition Behind Regularization
+
+You might recognize the second term as the usual gradient descent update for unregularized linear regression. The effect of this term is that on every single iteration of gradient descent, you're multiplying w_j by a small positive number, just slightly less than one. This gives us another view on why regularization has the effect of shrinking the parameters w_j a little bit on every iteration.
+
+## Optional: Derivative Calculations
+
+Finally, if you're curious about how these derivative terms were computed, let's quickly step through the derivative calculation. 
+
+### Derivative of J with Respect to w_j
+
+The derivative of J with respect to w_j looks like this.
+
+![RLIR (9)](/SL/PO/RLIR%20(9).png)
+
+```math
+\frac{dJ}{dw_j} = \frac{1}{m} \sum (h_\theta(x^{(i)}) - y^{(i)}) x_j^{(i)} + \frac{\lambda}{m} w_j
+```
+
+This is why this expression is used to compute the gradient in regularized linear regression.
+
+![RLIR (12)](/SL/PO/RLIR%20(12).png)
+
+## Conclusion
+
+Using this, you really reduce overfitting when you have a lot of features and a relatively small training set. This should let you get linear regression to work much better on many problems.
+
+In the next part, we'll take this `regularization idea` and apply it to logistic regression to avoid overfitting for logistic regression as well.
+
+{/*
+---
+title: Regularized Linear Regression
 ---
 
 
@@ -72,5 +162,5 @@ This is why this expression is used to compute the gradient in regularized linea
 ![RLIR (12)](/SL/PO/RLIR%20(12).png)
 
 Using this, you really reduce overfitting when you have a lot of features and a relatively small training set. This should let you get linear regression to work much better on many problems. In the next part, we'll take this `regularization idea` and apply it to logistic regression to avoid overfitting for logistic regression as well.
-
+*/}
 
