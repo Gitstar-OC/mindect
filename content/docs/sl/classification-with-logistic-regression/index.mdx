@@ -2,6 +2,100 @@
 title: Motivation
 ---
 
+## Introduction to Classification
+
+In the last part, you learned about `linear regression`, which predicts a number. In this section, you will learn about `classification`, where your output variable \( y \) can take on only one of a small handful of possible values instead of any number in an infinite range. `It turns out that linear regression is not a good algorithm for classification problems`.
+
+Let's explore why this is the case, leading us to a different algorithm called `logistic regression`, which is one of the most popular and widely used learning algorithms today.
+
+## Examples of Classification Problems
+
+Here are some examples of classification problems:
+
+1. **Spam Detection**: The goal is to determine whether an email is spam, with outputs being either `no` or `yes`.
+2. **Fraud Detection**: In online financial transactions, the learning algorithm must decide if a transaction is fraudulent. I once worked on fighting online financial fraud, and it was an exhilarating experience knowing we were stopping forces trying to steal money. The question is: given a financial transaction, can your learning algorithm determine if it's fraudulent, such as if a credit card is stolen? 
+   ![M1 (1)](/SL/CLR/M1%20(1).png)
+3. **Tumor Classification**: Another example is classifying a tumor as malignant or not.
+
+In each of these problems, the variable you want to predict can only be one of two possible values: `no` or `yes`. This type of classification problem, where there are only two possible outputs, is called **binary classification**.
+![M1 (2)](/SL/CLR/M1%20(2).png)
+
+### Understanding Binary Classification
+
+The term `binary` refers to the existence of only two possible classes or categories. In these contexts, I will use the terms **class** and **category** interchangeably, as they essentially mean the same thing.
+
+By convention, we can designate these two classes or categories in several common ways. We often refer to them as `no` or `yes`, or equivalently, `false` or `true`. In many cases, we use the numbers zero or one, following common computer science conventions, with zero denoting false and one denoting true. 
+
+I will typically use the numbers zero and one to represent the answer \( y \) since this format aligns best with the types of learning algorithms we want to implement. However, we may also refer to them as `no` or `yes`, or `false` or `true`.
+
+![M1 (3)](/SL/CLR/M1%20(3).png)
+
+### Positive and Negative Classes
+
+In classification tasks, the class denoted by zero is often called the **negative class**, while the class denoted by one is called the **positive class**. For instance, in spam classification:
+- An email that is not spam is referred to as a **negative example** (output is `no` or zero).
+- An email that is spam is referred to as a **positive training example** (output is `yes` or one).
+
+To clarify, **negative** and **positive** do not inherently indicate bad versus good or evil versus good. 
+![M1 (4)](/SL/CLR/M1%20(4).png)
+
+These terms simply convey the concepts of absence (zero or false) versus presence (true or one) of something, such as the presence of spam or the malignancy of a tumor. The distinction of which category to label as false or zero and which as true or one can be somewhat arbitrary. Different engineers may choose different representations. 
+
+## Building a Classification Algorithm
+
+Consider an example training set for classifying whether a tumor is malignant. Here, class one represents a positive class (malignant), while class zero represents a negative class (benign).
+
+![M1 (5)](/SL/CLR/M1%20(5).png)
+
+I plotted both the tumor size on the horizontal axis and the label \( y \) on the vertical axis. Earlier, when we discussed classification, we visualized it on a number line. Now, we represent the classes as zero and one on the vertical axis.
+
+You could apply linear regression to this training set to fit a straight line to the data. If you do that, the straight line might look something like this:
+
+![M1 (7)](/SL/CLR/M1%20(7).png)
+
+### Limitations of Linear Regression for Classification
+
+Linear regression predicts not just the values zero and one, but all numbers between zero and one, and even below zero or above one. However, here we want to predict categories. 
+
+One possible approach is to set a threshold of 0.5: if the model outputs a value below 0.5, predict \( y = 0 \) (not malignant), and if the output is equal to or greater than 0.5, predict \( y = 1 \) (malignant).
+
+![M1 (8)](/SL/CLR/M1%20(8).png)
+
+Notice that this threshold intersects the best fit straight line at a certain point. By drawing a vertical line at this threshold, everything to the left gets classified as \( y = 0 \), and everything to the right as \( y = 1 \).
+
+![M1 (9)](/SL/CLR/M1%20(9).png)
+
+In this particular dataset, linear regression might yield reasonable results. However, let’s see what happens if we add another training example, positioned further to the right.
+
+![M1 (9)](/SL/CLR/M1%20(9).png)
+
+### Impact of Additional Data
+
+If we extend the horizontal axis, notice that this new training example shouldn’t alter how we classify the data points. The vertical dividing line we drew still makes sense as a cutoff: tumors smaller than this point should be classified as zero, and those larger as one.
+
+However, adding this extra training example on the right shifts the best fit line for linear regression:
+
+![M1 (10)](/SL/CLR/M1%20(10).png)
+
+If you continue using the threshold of 0.5, you will notice that everything to the left of this new point is predicted to be zero (non-malignant), while everything to the right is predicted to be one (malignant). 
+
+This outcome is problematic because adding that example shouldn't change our conclusions about how to classify malignant versus benign tumors. With linear regression, this one additional example can lead to a significantly worse function for classification. Clearly, when the tumor is large, we want the algorithm to classify it as malignant.
+
+## Conclusion and Next Steps
+
+What we've observed is that linear regression causes the best fit line—and consequently the dividing line, also known as the **decision boundary**—to shift right when additional data points are introduced. You will learn more about the **decision boundary** in the next part, along with the **logistic regression** algorithm, where the output value will always be between zero and one, avoiding the issues we've encountered here.
+
+It’s important to note that despite its name, `logistic regression` is primarily used for classification, not regression. The name originates from historical reasons. Logistic regression is employed to solve binary classification problems where the output label \( y \) is either zero or one.
+
+In the upcoming notebook, you will explore what happens when you try to use linear regression for classification. Sometimes it may work out, but often it does not perform well, which is why `I don't use linear regression myself for classification`. 
+
+In the notebook, you will see an interactive plot that attempts to classify two categories. You may notice how this approach often doesn’t work well, which underscores the need for a more suitable model for classification tasks. Please check out this notebook, and afterward, we will move on to the next part to explore logistic regression for classification.
+
+{/*
+---
+title: Motivation
+---
+
 
 In the last part you learned about `linear regression`, `which predicts a number`. In this part, you will  learn about c`lassification where your output variable y can take on only one of a small handful of possible values instead of any number in an infinite range of numbers`. `It turns out that linear regression is not a good algorithm for classification problems`. 
 
@@ -57,4 +151,4 @@ And if you continue using the threshold of 0.5, you now notice that everything t
 It ends up with us learning a much worse function for this classification problem. Clearly, when the tumor is large, we want the algorithm to classify it as malignant. 
 
 So what we just saw was linear regression causes the best fit line. When we added one more example to the right to shift over. And does the dividing line also called the `decision boundary` to shift over to the right. You learn more about the `decision boundary` in the next part, you also learn about an algorithm called `logistic regression`. Where the output value of the outcome will always be between zero and one. And the average will avoid these problems that we're seeing on this slide. By the way one thing confusing about the name `logistic regression` is that even though `it has the word of regression in it is actually used for classification`. Don't be confused by the name which was given for historical reasons. It's actually used to solve binary classification problems with output label y is either zero or one. In the upcoming notebook you also get to take a look at what happens when you try to use linear regression for classification. Sometimes you get lucky and it may work but often it will not work well. Which is why `I don't use linear regression myself for classification`. In the notebook, you see an interactive plot that attempts to classify between two categories. And hopefully notice how this often doesn't work very well. Which is okay because that motivates the need for a different model to do classification talks. So please check out this notebook and after that we're going to the next part to look at logistic regression for classification.
-​
+*/}
