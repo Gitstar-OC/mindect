@@ -2,6 +2,116 @@
 title: Cost Function For Logistic Regression
 ---
 
+## Introduction
+
+The cost function gives us a way to measure how well a specific set of parameters fits the training data. It allows us to evaluate and improve our parameter choices. In this part, we'll explore why the `squared error cost function` is not suitable for logistic regression. We'll also introduce an alternative cost function designed to optimize logistic regression models.
+
+## Training Set Example
+
+Here’s what a sample training set for a logistic regression model might look like:
+
+![CFLR (1)](/SL/CFLR/CFLR%20(1).png)
+
+In this scenario, each row might represent a patient’s medical record, including various features like tumor size, patient age, and other factors. These are our `features X_1 through X_n`. As this is a binary classification problem, the target label `y` takes only two values: 0 or 1.
+
+![CFLR (2)](/SL/CFLR/CFLR%20(2).png)
+
+## Logistic Regression Model
+
+The logistic regression model is defined by the following equation:
+
+![CFLR (3)](/SL/CFLR/CFLR%20(3).png)
+
+## Question of Parameter Choice
+
+The key question we want to answer is: "Given this training set, how can we choose the parameters `w` and `b`?"
+
+![CFLR (4)](/SL/CFLR/CFLR%20(4).png)
+
+## Squared Error Cost Function in Linear Regression
+
+In linear regression, we typically use the `squared error cost function`. Here's the cost function:
+
+![CFLR (5)](/SL/CFLR/CFLR%20(5).png)
+
+This cost function works well for linear regression because it is convex—meaning gradient descent can easily converge to the global minimum. The process of gradient descent would look something like this:
+
+![CFLR (6)](/SL/CFLR/CFLR%20(6).png)
+
+## Non-Convex Cost Function in Logistic Regression
+
+However, if we apply the same cost function to logistic regression, we get a `non-convex cost function`. This creates multiple local minima, which makes gradient descent less effective.
+
+![CFLR (8)](/SL/CFLR/CFLR%20(8).png)
+
+### The Need for a New Cost Function
+
+For logistic regression, the squared error cost function is not ideal. We need a `different cost function` that ensures convexity, allowing gradient descent to reliably find the global minimum.
+
+## Constructing a New Cost Function
+
+We now aim to build a new cost function for logistic regression. This involves redefining the cost function `J(w, b)`.
+
+![CFLR (9)](/SL/CFLR/CFLR%20(9).png)
+
+Let’s denote the loss for a single training example as `L(f(x), y)`. The loss function inputs the prediction `f(x)` and the true label `y`, guiding how well the model is performing on an individual example. By adjusting this loss function, we can ensure the overall cost function remains convex.
+
+### New Loss Function Definition
+
+Here’s the loss function we'll use for logistic regression:
+
+![CFLR (10)](/SL/CFLR/CFLR%20(10).png)
+
+If `y = 1`, the `loss is -log(f(x))`. If `y = 0`, the `loss is -log(1 - f(x))`.
+
+## Intuition Behind the Loss Function
+
+### Case 1: When y = 1
+
+To understand this better, let’s first consider the case when `y = 1`. The loss function can be plotted to give us some intuition:
+
+![CFLR (11)](/SL/CFLR/CFLR%20(11).png)
+
+In this case, if the algorithm predicts a probability close to 1, the loss is minimal. If it predicts a probability far from 1, the loss increases.
+
+Let’s zoom in on the part of the graph that’s relevant:
+
+![CFLR (12)](/SL/CFLR/CFLR%20(12).png)
+
+If the algorithm predicts 0.5, the loss is moderate. But if the prediction is much lower, such as 0.1, the loss is significantly higher:
+
+![CFLR (13)](/SL/CFLR/CFLR%20(13).png)
+
+This incentivizes the algorithm to predict values close to the true label, `y = 1`.
+
+### Case 2: When y = 0
+
+Next, let’s examine the second part of the loss function when `y = 0`:
+
+![CFLR (14)](/SL/CFLR/CFLR%20(14).png)
+
+In this case, the loss is `-log(1 - f(x))`. If the prediction `f(x)` is close to 0, the loss is minimal. But if `f(x)` is far from 0, the loss increases, and can approach infinity as `f(x)` nears 1.
+
+![CFLR (15)](/SL/CFLR/CFLR%20(15).png)
+
+For example, if the model predicts a high probability (say 99.9%) of a malignant tumor, but the true label is 0 (non-malignant), the loss would be extremely high.
+
+![CFLR (16)](/SL/CFLR/CFLR%20(16).png)
+
+## Conclusion
+
+In this part, we’ve discussed why the `squared error cost function` is not suitable for logistic regression. We then introduced a new loss function that ensures the overall cost function is convex, making gradient descent reliable for finding the global minimum.
+
+![CFLR (19)](/SL/CFLR/CFLR%20(19).png)
+
+Proving that this function is convex, it's beyond the scope of this cost. You may remember that the cost function is a function of the entire training set and is, therefore, the average or `1 over m times the sum of the loss function on the individual training examples`. The cost on a certain set of parameters, w and b, is equal to 1 over m times the sum of all the training examples of the loss on the training examples. If you can find the value of the parameters, w and b, that minimizes this, then you'd have a pretty good set of values for the parameters w and b for logistic regression. 
+
+In the upcoming notebook, you'll get to take a look at how the squared error cost function doesn't work very well for classification, because you see that the surface plot results in a very wiggly costs surface with many local minima. Then you'll take a look at the new logistic loss function. As you can see here, this produces a nice and smooth convex surface plot that does not have all those local minima. Please take a look at the cost and the plots after this part. We've seen a lot in this part. In the next part, let's go back and take the loss function for a single train example and use that to define the overall cost function for the entire training set. We'll also figure out a simpler way to write out the cost function, which will then later allow us to run gradient descent to find good parameters for logistic regression. 
+
+{/*
+---
+title: Cost Function For Logistic Regression
+---
 
 Remember that the cost function gives you a way to measure how well a specific set of parameters fits the training data. Thereby gives you a way to try to choose better parameters. In this part, we'll look at how the `squared error cost function is not an ideal cost function for logistic regression`. We'll take a look at a different cost function that can help us choose better parameters for logistic regression. 
 
@@ -89,4 +199,4 @@ In this part, you saw why the `squared error cost function doesn't work well for
 Proving that this function is convex, it's beyond the scope of this cost. You may remember that the cost function is a function of the entire training set and is, therefore, the average or `1 over m times the sum of the loss function on the individual training examples`. The cost on a certain set of parameters, w and b, is equal to 1 over m times the sum of all the training examples of the loss on the training examples. If you can find the value of the parameters, w and b, that minimizes this, then you'd have a pretty good set of values for the parameters w and b for logistic regression. 
 
 In the upcoming notebook, you'll get to take a look at how the squared error cost function doesn't work very well for classification, because you see that the surface plot results in a very wiggly costs surface with many local minima. Then you'll take a look at the new logistic loss function. As you can see here, this produces a nice and smooth convex surface plot that does not have all those local minima. Please take a look at the cost and the plots after this part. We've seen a lot in this part. In the next part, let's go back and take the loss function for a single train example and use that to define the overall cost function for the entire training set. We'll also figure out a simpler way to write out the cost function, which will then later allow us to run gradient descent to find good parameters for logistic regression. 
-
+*/}
