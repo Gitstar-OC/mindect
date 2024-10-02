@@ -2,6 +2,119 @@
 title: Gradient Descent Implementation
 ---
 
+## Introduction
+
+In this section, we will dive deep into how to implement **gradient descent** for a logistic regression model. We aim to find optimal values for the parameters `w` and `b` by minimizing the cost function \(J(w, b)\), using gradient descent.
+
+## Introduction to Logistic Regression
+
+To fit the parameters of a logistic regression model, we're going to try to find the values of the parameters `w` and `b` that minimize the cost function \(J(w, b)\), and we'll again apply gradient descent to do this. Let's take a look at how.
+
+![Gradient Descent Illustration 1](/SL/GDI/GDI%20(1).png)
+
+Once you've trained the model and found suitable parameters, you can use it to make predictions. For instance, given the input \(x\) of a new patient with certain tumor size and age, the model can estimate the probability of the label \(y = 1\) (e.g., diagnosis of a disease).
+
+## Gradient Descent Algorithm for Logistic Regression
+
+The technique we use to minimize the cost function is **gradient descent**. Below is the cost function we wish to minimize:
+
+![Cost Function](/SL/GDI/GDI%20(2).png)
+
+To minimize the cost \(J(w, b)\), we'll use the gradient descent algorithm with the following update rule for each parameter:
+
+```math
+w_j := w_j - \alpha \cdot \frac{\partial J(w, b)}{\partial w_j}
+```
+
+where \(\alpha\) is the learning rate and 
+
+```math
+\frac{\partial J(w, b)}{\partial w_j}
+```
+
+is the gradient of the cost function with respect to \(w_j\).
+
+![Gradient Descent Update Rule](/SL/GDI/GDI%20(3).png)
+
+The gradient descent updates are applied iteratively to optimize the parameters.
+
+### Derivative of the Cost Function with Respect to Parameters
+
+The derivative of \(J(w, b)\) with respect to \(w_j\) is calculated as follows:
+
+```math
+\frac{\partial J(w, b)}{\partial w_j} = \frac{1}{m} \sum_{i=1}^m (f(x^{(i)}) - y^{(i)}) \cdot x_j^{(i)}
+```
+
+where 
+```math
+f(x^{(i)})
+``` 
+is the sigmoid function applied to 
+
+```math
+w \cdot x^{(i)} + b
+```
+
+![Derivative with respect to w_j](/SL/GDI/GDI%20(4).png)
+
+Similarly, the derivative with respect to the bias \(b\) is:
+
+```math
+\frac{\partial J(w, b)}{\partial b} = \frac{1}{m} \sum_{i=1}^m (f(x^{(i)}) - y^{(i)})
+```
+
+![Derivative with respect to b](/SL/GDI/GDI%20(5).png)
+
+## Gradient Descent Update Rule
+
+With the above derivatives in mind, the gradient descent update rules for logistic regression become:
+
+```math
+w_j := w_j - \alpha \cdot \frac{1}{m} \sum_{i=1}^m (f(x^{(i)}) - y^{(i)}) \cdot x_j^{(i)}
+
+
+b := b - \alpha \cdot \frac{1}{m} \sum_{i=1}^m (f(x^{(i)}) - y^{(i)})
+```
+
+![Gradient Descent for Logistic Regression](/SL/GDI/GDI%20(6).png)
+
+### Linear vs. Logistic Regression
+
+You might notice that the update rules look similar to those used in **linear regression**. The key difference lies in the definition of \(f(x)\). For linear regression:
+
+```math
+f(x) = w \cdot x + b
+```
+
+Whereas for logistic regression:
+
+```math
+f(x) = \frac{1}{1 + e^{-(w \cdot x + b)}}
+```
+
+![Comparison of f(x)](/SL/GDI/GDI%20(7).png)
+
+Thus, while the gradient descent algorithm looks the same for both, the underlying functions are different, making the two algorithms distinct.
+
+## Additional Tips: Feature Scaling
+
+When implementing gradient descent, feature scaling can help speed up convergence. Scaling all features to a similar range (e.g., between -1 and 1) helps the algorithm reach the optimal parameters faster.
+
+![Feature Scaling](/SL/GDI/GDI%20(8).png)
+
+## Conclusion
+
+In this section, you've learned how to implement **gradient descent** for logistic regression. The next step is to use the **scikit-learn** library, which simplifies logistic regression implementations, as well as explore **vectorized implementations** to further optimize the performance of your gradient descent algorithm. 
+
+Congratulations on reaching the end of this section. You're now equipped to implement logistic regression using gradient descent!
+
+
+{/*
+---
+title: Gradient Descent Implementation
+---
+
 
 To fit the parameters of a logistic regression model, we're going to try to find the values of the parameters w and b that minimize the cost function J of w and b, and we'll again apply gradient descent to do this. Let's take a look at how. 
 
@@ -51,4 +164,4 @@ Where you saw how `feature scaling`, that is scaling all the features to take on
 
 In the notebooks, you also see how the `gradient for the logistic regression` can be calculated in code. This will be useful to look at because you also implement this in the practice lab at the end of this section. After you run gradient descent in this notebook, there'll be a nice set of animated plots that show gradient descent in action. You see the sigmoid function, the contour plot of the cost, the 3D surface plot of the cost, and the learning curve or evolve as gradient descent runs. There will be another notebook after that, which is short and sweet, but also very useful because they're showing you how to use the popular `scikit-learn library` to train the logistic regression model for classification. Many machine learning practitioners in many companies today use scikit-learn regularly as part of their job. I hope you check out the `scikit-learn` function as well and take a look at how that is used. That's it. You should now know how to implement `logistic regression`. This is a very powerful and very widely used learning algorithm and you now know how to get it to work yourself.
 Congratulations
-
+*/}
