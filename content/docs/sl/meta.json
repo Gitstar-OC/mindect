@@ -19,6 +19,7 @@
       "classification-with-logistic-regression",
       "---Cost Function for Logistic Regression---",
       "cost-function-for-logistic-regression",
+      "---Gradient Descent for Logistic Regression---",
       "gradient-descent-for-logistic-regression",
       "---The Problem Of Overfitting---",
       "the-problem-of-overfitting"      

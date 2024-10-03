@@ -1,7 +1,7 @@
 {
   "title": "Gradient Descent in Practice",
   "pages": [
-    "..."
+    "feature-scaling-part-2","checking-gradient-descent-for-convergence","choosing-the-learning-rate","feature-engineering","polynomial-regression"
   ],
   "defaultOpen": true
 }
