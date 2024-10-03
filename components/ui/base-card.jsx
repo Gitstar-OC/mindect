@@ -63,7 +63,7 @@ const BaseCard = ({
             </ul>
           </div>
           <Link
-            href={`docs/${buttonPath}`}
+            href={`learn/${buttonPath}`}
             passHref
             className="flex justify-center"
           >

@@ -28,17 +28,16 @@ const config = {
     return [
       {
         source: '/content/jupyterNotebooks/:path*',
-        destination: '/learnai/content/jupyterNotebooks/:path*', // Adjust this as necessary for your setup
-      },
-    ];
-  },
-  async redirects() {
-    return [
+        destination: '/mindect/content/jupyterNotebooks/:path*', // Adjust this as necessary for your setup
+      },  
       {
-        source: '/test', 
-        destination: '/docs', 
-        permanent: true, 
+            source: '/docs/:path*',
+            destination: '/learn/:path*',
       },
+      {
+        source: '/docs',
+        destination: '/learn',
+      }
     ];
   },
 };

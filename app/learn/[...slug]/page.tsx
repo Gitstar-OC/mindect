@@ -27,7 +27,7 @@ export default async function Page({ params }: { params: { slug?: string[] } }) 
   if (!page) notFound();
 
   const MDX = page.data.body;
-  const path = `/docs/${page.file.path}`;
+  const path = `/learn/${page.file.path}`;
 
   return (
     <DocsPage 
@@ -108,7 +108,8 @@ export function generateMetadata({ params }: { params: { slug?: string[] } }) {
     title: page.data.title,
     description,
     openGraph: {
-      url: `/docs/${slug}`,
+      url: `/learn/${slug}`,
     },
   } satisfies Metadata;
 }
+

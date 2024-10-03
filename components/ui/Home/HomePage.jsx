@@ -79,7 +79,7 @@ const HomePage = () => {
                   Anytime, Anywhere
                 </div>
               </header>
-              <Link href="/docs">
+              <Link href="/learn">
                 <Button />
               </Link>
             </div>

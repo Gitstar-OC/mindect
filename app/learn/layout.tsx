@@ -17,19 +17,19 @@ export default function Layout({ children }: { children: ReactNode }) {
             {
               title: 'Algs',
               description: 'Learning Algorithms',
-              url: '/docs/algs',
+              url: '/learn/algs',
               icon: <AlgsImage />
             },
             {
               title: 'SL',
               description: 'Supervised Learning',
-              url: '/docs/sl',
+              url: '/learn/sl',
               icon: <SLImage />
             },
             {
               title: 'USL',
               description: 'Unsupervised Learning',
-              url: '/docs/usl',
+              url: '/learn/usl',
               icon: <USLImage />
             },
           ]}
