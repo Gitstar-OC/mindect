@@ -1,7 +1,7 @@
 {
   "title": "Tensorflow Implementation",
   "pages": [
-    "..."
+    "data-in-tensorflow","building-a-neural-network"
   ],
   "defaultOpen": true
 }
