@@ -1,7 +1,7 @@
 {
   "title": "The Problem of Overfitting",
   "pages": [
-    "..."
+    "addressing-overfitting","cost-function-with-regularization","regularized-linear-regression","regularized-logistic-regression"
   ],
   "defaultOpen": true
 }
