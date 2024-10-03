@@ -1,5 +1,99 @@
 ---
 title: Neural Network Layer
+description: Learn how neural network layers work by constructing a layer of neurons and understanding the flow of data from one layer to another.
+---
+
+## Introduction
+
+The fundamental building block of most modern neural networks is a layer of neurons. In this part, you'll learn how to construct a layer of neurons and once you have that down, you'd be able to take those building blocks and put them together to form a large neural network. Let's take a look at how a layer of neurons works.
+
+## Example: Demand Prediction Using a Neural Network Layer
+
+Here's the example we had from the demand prediction example where we had four input features that were set to this layer of three neurons in the hidden layer that then sends its output to this output layer with just one neuron.
+
+![NNL (1)](/Algs/NNM/NNL%20(1).png)
+
+## Zooming Into the Hidden Layer
+
+Let's zoom in to the hidden layer to look at its computations.
+
+![NNL (2)](/Algs/NNM/NNL%20(2).png)
+
+### Inputs to the Neurons
+
+This hidden layer inputs four numbers, and these four numbers are inputs to each of three neurons. Each of these three neurons is just implementing a logistic regression function.
+
+#### First Neuron: Parameters and Activation
+
+Take this first neuron. It has two parameters, w and b.
+
+![NNL (3)](/Algs/NNM/NNL%20(3).png)
+
+To denote that this is the first hidden unit, I'm going to subscript this as w_1, b_1. What it does is output some activation value `a`, which is `g(w_1 * x + b_1)`, where `g(z)` is the logistic function, `1 / (1 + e^(-z))`. Maybe this results in an activation value `a_1` of 0.3, meaning there's a 30% chance of affordability based on the input features.
+
+![NNL (4)](/Algs/NNM/NNL%20(4).png)
+
+#### Second Neuron: Parameters and Activation
+
+Now let's look at the second neuron, which has parameters w_2 and b_2. The second neuron computes `a_2 = g(w_2 * x + b_2)` and might output 0.7, suggesting a 70% chance of awareness of this t-shirt.
+
+#### Third Neuron: Parameters and Activation
+
+Similarly, the third neuron has parameters `w_3, b_3` and computes `a_3 = g(w_3 * x + b_3)`, with an output of 0.2.
+
+![NNL (5)](/Algs/NNM/NNL%20(5).png)
+
+## Passing Activation Values to the Output Layer
+
+In this example, these three neurons output 0.3, 0.7, and 0.2, and this vector of three numbers becomes the vector of activation values `a` that is passed to the final output layer of this neural network.
+
+### Naming Layers
+
+When you build neural networks with multiple layers, it's useful to give the layers different numbers. By convention, this layer is called layer 1, and the next one is layer 2.
+
+![NNL (6)](/Algs/NNM/NNL%20(6).png)
+
+`The input layer is sometimes called layer 0`. Today, there are neural networks with dozens or even hundreds of layers. We'll introduce superscript notation to distinguish between them.
+
+## Using Superscripts to Distinguish Layers
+
+I'll use superscript square brackets to indicate different layers.
+
+### Layer 1 Notation
+
+For example, the output of layer 1 will be denoted as `a^[1]`. Similarly, parameters of the first neuron in layer 1 will be denoted `w_1^[1]`, `b_1^[1]`, and so on for other neurons.
+
+![NNL (7)](/Algs/NNM/NNL%20(7).png)
+
+### Layer 2 Notation
+
+The next layer's output, denoted as `a^[2]`, is the input from the previous layer's output, which is then processed by the neurons in layer 2.
+
+![NNL (8)](/Algs/NNM/NNL%20(8).png)
+
+This notation helps in building large neural networks by making layer-specific parameters clear.
+
+## Output Layer Computation
+
+Now, let's zoom into the computation of layer 2, which is the output layer. The input to layer 2 is the output of layer 1, so `a^[1]` is the vector `0.3, 0.7, 0.2`.
+
+![NNL (9)](/Algs/NNM/NNL%20(9).png)
+
+Since the output layer has only one neuron, it computes a single value, `a^[2]`, based on the inputs from layer 1, using the logistic function again.
+
+![NNL (9)](/Algs/NNM/NNL%20(9).png)
+
+## Final Prediction and Thresholding
+
+The output of layer 2 is a scalar, say 0.84. If we want a binary prediction (1 or 0), we can apply a threshold at 0.5: if the output is greater than 0.5, we predict `y_hat = 1`; otherwise, we predict `y_hat = 0`.
+
+![NNL (12)](/Algs/NNM/NNL%20(12).png)
+
+This is how a neural network layer works. Each layer applies logistic regression units to its input, computes a vector of activation values, and passes that on to the next layer until the final output layer makes a prediction.
+
+{/*
+---
+title: Neural Network Layer
 ---
 
 
@@ -73,4 +167,4 @@ To make the notation consistent, you can also add these superscripts square brac
 ![NNL (12)](/Algs/NNM/NNL%20(12).png)
 
 As you can take the number a superscript square brackets 2 subscript 1, and this is the number 0.84 that we computed, and `threshold this at 0.5. If it's greater than 0.5, you can predict y hat equals 1 and if it is less than 0.5, then predict your y hat equals 0`. We saw this thresholding as well when you learned about logistic regression in the first section of the specialization. If you wish, this then gives you the final prediction y hat as either one or zero, if you don't want just the probability of it being a top seller. So that's how a neural network works. Every layer inputs a vector of numbers and applies a bunch of logistic regression units to it, and then computes another vector of numbers that then gets passed from layer to layer until you get to the final output layers computation, which is the prediction of the neural network. Then you can either threshold at 0.5 or not to come up with the final prediction. With that, let's go on to use this foundation we've built now to look at some even more complex, even larger neural network models. I hope that by seeing more examples, this concept of layers and how to put them together to build a neural network will become even clearer. So let's go on to the next part.
-
+*/}
