@@ -78,9 +78,6 @@ img, video {
 
 }
 
-.katex-html {
-  font-size: x-large;
-}
 
 @layer base {
   :root {
@@ -98,4 +95,11 @@ img, video {
         --color-4: 195 100% 63%;
         --color-5: 90 100% 63%;
     }
+}
+
+/*********************** maths code block *******************/
+.katex-html {
+  font-size: larger;
+  overflow: auto;
+  overflow-y: hidden;
 }
