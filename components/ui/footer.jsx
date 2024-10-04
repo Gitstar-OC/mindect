@@ -16,7 +16,7 @@ const Footer = () => {
             </div>
             <div>
                 <h3 className="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">Support</h3>
-                <ul>
+                <ul>docs
                     
                     <li className="mb-4">
                         <a href="https://github.com/gitstar-oc/mindect" target="_blank"
@@ -32,16 +32,16 @@ const Footer = () => {
                 <h3 className="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">Learn</h3>
                 <ul>
                     <li className="mb-4 ">
-                        <Link href="/docs/sl" 
+                        <Link href="/learn/sl" 
                             className="font-medium text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Supervised Learning </Link>
                             
                     </li>
                     <li className="mb-4">
-                        <Link href="/docs/usl"
+                        <Link href="/learn/usl"
                             className="font-medium text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Unsupervised Learning</Link>
                     </li>
                     <li className="mb-4 flex items-center ">
-                        <Link href="/docs/algs"
+                        <Link href="/learn/algs"
                             className="font-medium text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Learning Algorithms</Link>
                         {/* <span className='bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-2'>
                         New

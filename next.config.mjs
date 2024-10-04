@@ -29,14 +29,6 @@ const config = {
       {
         source: '/content/jupyterNotebooks/:path*',
         destination: '/mindect/content/jupyterNotebooks/:path*', // Adjust this as necessary for your setup
-      },  
-      {
-            source: '/docs/:path*',
-            destination: '/learn/:path*',
-      },
-      {
-        source: '/docs',
-        destination: '/learn',
       }
     ];
   },
