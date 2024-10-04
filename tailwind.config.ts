@@ -27,7 +27,7 @@ export default {
         },
         dark: {
           ...presets.default.dark,
-          background: '0 0% 1%', //background
+          background: '0 0% 0%', //background
           foreground: '0 0% 98%', //complete text on page (except the description and on this page content along with the sidebar)
           popover: '0 0% 4%', // search box background 
           card: '0 0% 4%', // cards, p & n component, sidebar background
