@@ -5,7 +5,7 @@ import Footer from "../footer"
 import MachineLearningSection from "./MachineLearning/MachineLearningSection";
 import MathematicsSection from "./Mathematics/MathematicsSection"
 
-const DocsPage = () => {
+const Learn = () => {
   
   return (
     <>
@@ -40,4 +40,4 @@ const DocsPage = () => {
   );
 };
 
-export default DocsPage;
+export default Learn;

@@ -16,7 +16,7 @@ const Footer = () => {
             </div>
             <div>
                 <h3 className="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">Support</h3>
-                <ul>docs
+                <ul>
                     
                     <li className="mb-4">
                         <a href="https://github.com/gitstar-oc/mindect" target="_blank"

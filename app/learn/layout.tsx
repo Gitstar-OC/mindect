@@ -9,7 +9,7 @@ import {USLImage, SLImage, AlgsImage} from "@/components/ui/icons"
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <DocsLayout tree={source.pageTree} {...baseOptions}   
+    <DocsLayout tree={source.pageTree} {...baseOptions}  
     sidebar={{
       banner: (
         <RootToggle
@@ -35,6 +35,9 @@ export default function Layout({ children }: { children: ReactNode }) {
           ]}
         />
       ),
+      // enabled: false,
+      // defaultOpenLevel: 3,
+      // collapsible: false
     }}>
       {children}
     </DocsLayout>

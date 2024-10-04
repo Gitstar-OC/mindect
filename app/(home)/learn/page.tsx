@@ -1,9 +1,9 @@
-import DocsPage from "@/components/ui/DocsPage/DocsPage"
+import Learn from "@/components/ui/Learn/Learn"
 
 export default function Page() {
 return (
     <>
-    <DocsPage />
+    <Learn />
     </>
 )
 }
