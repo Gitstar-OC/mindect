@@ -27,7 +27,7 @@ export default async function Page({ params }: { params: { slug?: string[] } }) 
   if (!page) notFound();
 
   const MDX = page.data.body;
-  const path = `/docs/${page.file.path}`;
+  const path = `/learn/${page.file.path}`;
 
   return (
     <>
@@ -55,10 +55,10 @@ export default async function Page({ params }: { params: { slug?: string[] } }) 
                 Question? Give us feedback{" "}
                 <FaArrowRightLong className="ml-1 mb-3 size-3" />
               </a>
-              <span className="opacity-70 hover:opacity-100 cursor-pointer group text-xs flex">
+              {/* <span className="opacity-70 hover:opacity-100 cursor-pointer group text-xs flex">
                 <TbSettings className="size-3 mt-[1px] mr-1 transition-transform duration-300 ease-in-out group-hover:rotate-[360deg] group-hover:scale-125" />
                 Change Appearance
-              </span>
+              </span> */}
               <a href="https://github.com/gitstar-oc/mindect" rel="noopener noreferrer" target="_blank">
                 <RainbowButton>
                   <h3 className="text-white dark:text-black mt-none text-[16px] justify-center items-center bottom-3 flex">
@@ -111,7 +111,8 @@ export function generateMetadata({ params }: { params: { slug?: string[] } }) {
     title: page.data.title,
     description,
     openGraph: {
-      url: `/docs/${slug}`,
+      url: `/learn/${slug}`,
     },
   } satisfies Metadata;
 }
+

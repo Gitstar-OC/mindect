@@ -19,16 +19,16 @@ export const baseOptions: HomeLayoutProps = {
   links: [
     {
       text: <SL />,
-      url: "/docs/sl",
+      url: "/learn/sl",
       active: 'nested-url',
     },
     {
       text: <USL/>,
-      url: "/docs/usl",
+      url: "/learn/usl",
       active: 'nested-url',
     },{
       text: <Algs/>,
-      url: "/docs/algs",
+      url: "/learn/algs",
       active: 'nested-url',
     }
   ],
