@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Footer = () => {
     return (
-        <footer className="py-12 bg-white xl:pt-24 dark:bg-black">
+        <footer className="py-12 bg-white xl:pt-24 dark:bg-[hsl(0,0%,4%)] border-t-2 dark:border-t-[hsl(0,0%,14%)]">
     <div className="w-full px-4 mx-auto max-w-8xl">
         <div className="grid gap-8 xl:grid-cols-5 xl:gap-24">
             <div className="col-span-2 lg:ml-6">
@@ -83,7 +83,7 @@ const Footer = () => {
             </div>
         </div>
         <hr className="my-8 border-gray-200 dark:border-gray-700 lg:my-12" />
-        <span className="block text-center text-gray-600 dark:text-gray-400 font-">© <span id="currentYear">2024</span> <a href="/">Mindect™</a> is a registered trademark. All Rights Reserved.
+        <span className="block text-center text-gray-600 dark:text-gray-400 font-">© <span id="currentYear">2024</span> <a href="/">Mindect</a> All Rights Reserved.
         </span>
     </div>
 </footer>) 

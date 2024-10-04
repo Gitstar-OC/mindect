@@ -1,4 +1,67 @@
 ---
+title: Recognizing Images with a Neural Network
+description: Learn how to recognize images using a neural network with forward propagation.
+---
+
+## Introduction
+
+In this example, we are working on recognizing handwritten digits using a neural network. Specifically, we’ll classify the digits zero and one.
+
+## Input Image Representation
+
+We use a simplified 8x8 grayscale image where each pixel intensity ranges from 0 (black) to 255 (white). 
+
+### Example Image of a Digit
+
+This grid represents the digit '1' as a matrix of pixel intensity values:
+
+![IMP (1)](/Algs/NNM/IMP%20(1).png)
+
+### Neural Network Architecture
+
+We use a neural network with:
+
+1. **Input layer**: 64 features (from the 8x8 pixel values).
+2. **Hidden layer 1**: 25 neurons.
+3. **Hidden layer 2**: 15 neurons.
+4. **Output layer**: A single neuron predicting whether the input is a '1' or '0'.
+
+![IMP (2)](/Algs/NNM/IMP%20(2).png)
+
+## Step-by-Step Process
+
+1. **Input Layer**: Takes in the 64 pixels as features.
+2. **Hidden Layer 1**: Uses 25 neurons to process the input, computing activations:
+   
+   ```math
+   a1^{[1]} = g(W^{[1]}X + b^{[1]})
+   ```
+
+3. **Hidden Layer 2**: Uses 15 neurons to compute new activations based on \(a1\):
+   
+   ```math
+   a2^{[2]} = g(W^{[2]}a1 + b^{[2]})
+   ```
+
+4. **Output Layer**: Finally, the output layer computes \(a3\) using just one neuron:
+
+   ```math
+   a3 = g(W^{[3]}a2 + b^{[3]})
+   ```
+
+   This gives the final prediction, which we threshold at 0.5 to determine if the digit is '1'.
+
+## Forward Propagation Summary
+
+The process of calculating activations from input to output is known as `forward propagation`.
+
+### Next Steps
+
+After learning the math and computations, you'll now implement this using TensorFlow in the next section.
+
+
+{/*
+---
 title: Example - Recognizing Images
 ---
 
@@ -54,3 +117,4 @@ Just for fun, let's see what happens if you were to train this neural network on
 Just by feeding it different data, the neural network automatically learns to detect very different features so as to try to make the predictions of car detection or person recognition or whether there's a particular given task that is trained on. That's how a neural network works for computer vision application. In fact, later in following section, you'll see how you can build a neural network yourself and apply it to a handwritten digit recognition application. 
 
 So far we've been going over the description of intuitions of neural networks to give you a feel for how they work. In the next part, let's look more deeply into the concrete mathematics and a concrete implementation of details of how you actually build one or more layers of a neural network, and therefore how you can implement one of these things yourself. 
+*/}

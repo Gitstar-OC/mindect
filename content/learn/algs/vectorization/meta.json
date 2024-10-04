@@ -1,7 +1,7 @@
 {
   "title": "Vectorization",
   "pages": [
-    "..."
+    "matrix-multiplication","matrix-multiplication-rules","matrix-multiplication-code"
   ],
   "defaultOpen": true
 }

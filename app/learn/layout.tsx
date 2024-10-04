@@ -4,12 +4,14 @@ import { baseOptions } from '../layout.config';
 import { source } from '@/app/source';
 import React from 'react';
 import { RootToggle } from 'fumadocs-ui/components/layout/root-toggle'
+import Footer from '@components/ui/footer';
 
 import {USLImage, SLImage, AlgsImage} from "@/components/ui/icons"
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <DocsLayout tree={source.pageTree} {...baseOptions}  
+    <>
+    <DocsLayout tree={source.pageTree} {...baseOptions}   
     sidebar={{
       banner: (
         <RootToggle
@@ -41,5 +43,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     }}>
       {children}
     </DocsLayout>
+    <Footer />
+    </>
   );
 }

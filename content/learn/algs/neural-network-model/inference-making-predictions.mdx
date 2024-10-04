@@ -1,4 +1,86 @@
 ---
+title: Inference Making Predictions (Forward Propagation)
+---
+
+## Introduction
+
+Let's take what we've learned and put it together into an algorithm to let your neural network make inferences or predictions. This will be an algorithm called `forward propagation`. Let's take a look.
+
+## Handwritten Digit Recognition Example
+
+I'm going to use as a motivating example, handwritten digit recognition. For simplicity, we are just going to distinguish between the handwritten digits zero and one. So it's a binary classification problem where we're going to input an image and classify, is this the digit zero or the digit one? You'll also get to play with this yourself later in the notebook.
+
+## Input Image Example
+
+For the example on the slide, I'll use an eight by eight image. This image of a '1' is a grid or matrix of eight by eight (64 pixel intensity values), where 255 denotes a bright white pixel and zero denotes a black pixel.
+
+![IMP (1)](/Algs/NNM/IMP%20(1).png)
+
+Different numbers represent different shades of gray between black and white.
+
+## Neural Network Architecture
+
+Given these 64 input features, we use a neural network with two hidden layers. The first hidden layer has 25 neurons or units. The second hidden layer has 15 neurons or units. Finally, the output layer (or output unit) calculates the chance of this being a '1' versus a '0'.
+
+![IMP (2)](/Algs/NNM/IMP%20(2).png)
+
+## Step-by-Step Computation
+
+Let's step through the sequence of computations your neural network will need to make to go from input \(X\) (the 64 numbers) to the predicted probability \(a3\).
+
+### First Hidden Layer Computation
+
+The first computation is from \(X\) to \(a1\), which is performed by the first hidden layer.
+
+```math
+a1^{[1]} = g(W^{[1]}X + b^{[1]})
+```
+
+Notice that \(a1\) has 25 numbers because the hidden layer has 25 units. Thus, the parameters run from \(W_1^{[1]}\) through \(W_{25}^{[1]}\), as well as \(b_1^{[1]}\) through \(b_{25}^{[1]}\).
+
+![IMP (3)](/Algs/NNM/IMP%20(3).png)
+
+We could also write \(a0\) as equal to the input feature value \(X\). So let's compute \(a1\).
+
+### Second Hidden Layer Computation
+
+Next, we compute \(a2\) by applying the activation function to \(W^{[2]}a1 + b^{[2]}\). This layer has 15 units, so the parameters range from \(W_1^{[2]}\) to \(W_{15}^{[2]}\), and similarly for \(b\).
+
+![IMP (6)](/Algs/NNM/IMP%20(6).png)
+
+Now, we've computed \(a2\).
+
+### Output Layer Computation
+
+The final step is to compute \(a3\), which is a scalar, as the output layer has only one unit. The formula is similar to the previous one.
+
+```math
+a3 = g(W^{[3]}a2 + b^{[3]})
+```
+
+Finally, we threshold \(a3\) at 0.5 to make a binary classification.
+
+![IMP (7)](/Algs/NNM/IMP%20(7).png)
+
+### Forward Propagation Algorithm
+
+The computation steps take input \(X\) and compute \(a1\), then \(a2\), and finally \(a3\), which is the output. We can denote this as \(f(X)\).
+
+![IMP (7)](/Algs/NNM/IMP%20(7).png)
+
+Since these computations proceed from left to right, we call this algorithm `forward propagation`, as we propagate activations in a forward direction. In contrast, backward propagation is used for learning, which you'll learn next week.
+
+## Neural Network Architecture Choices
+
+A neural network with more hidden units in earlier layers and fewer hidden units as you approach the output layer is a typical choice. You'll see more examples in the notebook.
+
+## Implementing Forward Propagation
+
+Now that you've seen the math and algorithm, let's take a look at implementing this in TensorFlow in the next part.
+
+{/*
+
+---
 title: Inference Making Predictions (Forward Propogation)
 ---
 
@@ -41,6 +123,6 @@ Is this the digit 1? Yes or no? So the sequence of computations first takes x an
 Because this computation goes from left to right, you start from x and compute a1, then a2, then a3. This album is also called `forward propagation` because you're propagating the activations of the neurons. So you're making these computations in the forward direction from left to right. And this is in contrast to a different algorithm called backward propagation or back propagation, which is used for learning. And that's something you learn about next week. And by the way, this type of neural network architecture where you have more hidden units initially and then the number of hidden units decreases as you get closer to the output layer. There's also a pretty typical choice when choosing neural network architectures. And you see more examples of this in the notebook as well.
 
 So that's neural network inference using the `forward propagation algorithm`. And with this, you'd be able to download the parameters of a neural network that someone else had trained and posted on the Internet. And you'd be able to carry out inference on your new data using their neural network. Now that you've seen the math and the algorithm, let's take a look at how you can actually implement this in tensorflow. Specifically, let's take a look at this in the next part.
-
+*/}
 
 

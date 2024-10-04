@@ -2,6 +2,78 @@
 title: More Complex Neural Networks
 ---
 
+## Introduction
+
+In the last part, you learned about the neural network layer and how it takes inputs as a vector of numbers and outputs another vector of numbers. In this part, we'll use that layer to build a more complex neural network. Through this, I hope that the notation used for neural networks becomes clearer and more concrete.
+
+![MCNN (1)](/Algs/NNM/MCNN%20(1).png)
+
+## The Neural Network Structure
+
+This neural network has four layers, not counting the input layer (Layer 0). Layers 1, 2, and 3 are hidden layers, and Layer 4 is the output layer. By convention, we don't count the input layer when saying a neural network has four layers. So this network has four layers in total.
+
+### Understanding Layer 3 Computations
+
+Let's zoom in on Layer 3, the third and final hidden layer, to look at the computations. Layer 3 inputs a vector, denoted as \(a^2\), which was computed by the previous layer, and outputs a new vector, \(a_3\).
+
+![MCNN (2)](/Algs/NNM/MCNN%20(2).png)
+
+If Layer 3 has three neurons, it computes activations using the following parameters: \(w_1\), \(b_1\), \(w_2\), \(b_2\), and \(w_3\), \(b_3\). For each neuron, it performs the calculation \(a_1 = sigmoid(w_1 \cdot input + b_1)\). This outputs a vector \(a_3\), consisting of \(a_1\), \(a_2\), and \(a_3\).
+
+### Superscripts and Subscripts
+
+By convention, we add superscripts and subscripts to denote layer-specific parameters and activations. For example, \(w_1^{[3]}\) indicates the weight parameter of neuron 1 in Layer 3, while \(a_2^{[2]}\) is the output of Layer 2, which becomes the input to Layer 3.
+
+![MCNN (3)](/Algs/NNM/MCNN%20(3).png)
+
+Let's check our understanding by hiding the superscripts and subscripts associated with the second neuron. Can you fill in the missing elements?
+
+![MCNN (4)](/Algs/NNM/MCNN%20(4).png)
+
+If you chose the first option, you got it right! The activation for the second neuron in Layer 3 is denoted by \(a_3^2\). The activation function \(g\) uses parameters \(w_2\) and \(b_2\) and the input vector \(a^2\).
+
+### General Form of the Equation
+
+In general, the activation of layer \(l\) for unit \(j\) is:
+
+```math
+a_j^{[l]} = g(w_j^{[l]} \cdot a^{[l-1]} + b_j^{[l]})
+```
+
+Where:
+- \(l\) is the layer number.
+- \(j\) is the unit number in the layer.
+- \(a^[l-1]\) is the output from the previous layer.
+
+![MCNN (5)](/Algs/NNM/MCNN%20(5).png)
+
+### Applying the Activation Function
+
+The activation function, \(g\), can be the sigmoid function or other functions we'll discuss later. In the context of neural networks, the activation function transforms the weighted sum of inputs.
+
+### Consistent Notation
+
+To maintain consistency, we'll call the input vector \(X\) as \(a^0\), so that the same formula applies to the first layer (Layer 1). In Layer 1, \(a_1\) would be:
+
+```math
+a_1 = g(w \cdot a^0 + b)
+```
+
+Where \(a^0\) is just the input feature vector \(X\).
+
+![MCNN (9)](/Algs/NNM/MCNN%20(9).png)
+
+### Summary
+
+With this notation, we can now compute the activation values of any layer based on the parameters and activations of the previous layer. This is crucial when building a neural network for prediction.
+
+Now, let's move on to the next part where we put this into an inference algorithm for making predictions with neural networks.
+
+{/*
+---
+title: More Complex Neural Networks
+---
+
 
 In the last part, you learned about the neural network layer and how that takes this inputs a vector of numbers and in turn, outputs another vector of numbers. In this part, let's use that layer to build a more complex neural network. Through this, I hope that the notation that we're using for neural networks will become clearer and more concrete as well. Let's take a look.
 
@@ -52,3 +124,4 @@ Just one last piece of notation. In order to make all this notation consistent, 
 so this way, the same equation also works for the first layer, where when l is equal to 1, the activations of the first layer, that is a_1, would be the sigmoid times the weights dot-product with a_0, which is just this input feature vector X. 
 
 With this notation, you now know how to compute the activation values of any layer in a neural network as a function of the parameters as well as the activations of the previous layer. You now know how to compute the activations of any layer given the activations of the previous layer. Let's put this into an inference algorithm for a neural network. In other words, how to get a neural network to make predictions. Let's go see that in the next part.
+*/}

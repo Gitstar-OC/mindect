@@ -2,6 +2,123 @@
 title: Demand Prediction
 ---
 
+## Introduction
+
+To illustrate how neural networks work, let's start with an example. We'll use an example from demand prediction in which you look at the product and try to predict, will this product be a top seller or not?
+
+## Example: Predicting T-shirt Sales
+
+Let's take a look. In this example, you're selling T-shirts and you would like to know if a particular T-shirt will be a top seller, yes or no. You have collected data of different T-shirts that were sold at different prices, as well as which ones became a top seller. This type of application is used by retailers today to plan better inventory levels and marketing campaigns.
+
+### Input Feature: Price
+
+The input feature \( x \) is the price of the T-shirt, and that's the input to the learning algorithm. 
+
+### Logistic Regression
+
+If you apply logistic regression to fit a sigmoid function to the data, it might look like:
+
+```math
+f(x) = 1 / (1 + e^{-wx + b})
+```
+
+In previous examples, we wrote this as \( f(x) \) as the output of the learning algorithm.
+
+## Transition to Neural Networks
+
+To set us up to build a neural network, I'm going to switch the terminology a little bit and use the term \( a \) to denote the output of this logistic regression algorithm. 
+
+### Activation
+
+**The term \( a \) stands for activation**, and it's a term from neuroscience. It refers to how much a neuron sends a high output to other neurons downstream. 
+
+### Simplified Neuron Model
+
+We can think of logistic regression units as a very simplified model of a single neuron in the brain.
+
+![DP (2)](/Algs/NNI/DP%20(2).png)
+
+## Building a Neural Network
+
+Building a neural network requires taking a bunch of these neurons and wiring them together.
+
+### Example: Demand Prediction with Multiple Features
+
+Let's now look at a more complex example of demand prediction. In this example, we're going to have four features to predict whether or not a T-shirt is a top seller.
+
+### Features of the Model
+
+1. Price
+2. Shipping Costs
+3. Marketing Amount
+4. Material Quality
+
+### Understanding the Features
+
+- Affordability: Function of price and shipping costs.
+- Awareness: Function of marketing.
+- Perceived Quality: Function of price and material quality.
+
+## Neural Network Layers
+
+We group neurons together into what's called a **layer**.
+
+![DP (5)](/Algs/NNI/DP%20(5).png)
+
+### Layer Structure
+
+- A layer can have multiple neurons or a single neuron.
+- The output layer outputs the probability predicted by the neural network.
+
+### Activations
+
+Affordability, awareness, and perceived quality are activations. These activations represent the degree to which the neural network predicts each factor.
+
+### Simplifying the Network
+
+Rather than manually deciding which neurons take which features as inputs, each neuron in a layer can access all features from the previous layer.
+
+![DP (8)](/Algs/NNI/DP%20(8).png)
+
+## Neural Network Representation
+
+A neural network uses a **vector of features** as inputs and computes activation values through its layers.
+
+### Input, Hidden, and Output Layers
+
+- Input layer: The vector of features.
+- Hidden layer: Intermediate computations (affordability, awareness, and perceived quality).
+- Output layer: Final prediction.
+
+### Hidden Layers
+
+The hidden layer is so named because the values for the intermediate features are **hidden** in the training data.
+
+## Logistic Regression and Feature Learning
+
+The neural network builds upon logistic regression but can learn its own features, making it more powerful.
+
+### Manual Feature Engineering vs Neural Networks
+
+In previous methods, we manually combined features. Neural networks, however, learn to create their own features, reducing the need for manual engineering.
+
+## Example of a Multi-Layer Neural Network
+
+Here's an example of a neural network with multiple hidden layers:
+
+![DP (11)](/Algs/NNI/DP%20(11).png)
+
+### Deciding the Structure of a Neural Network
+
+When building a neural network, you must decide:
+1. How many hidden layers to use.
+2. How many neurons per hidden layer.
+
+{/*
+---
+title: Demand Prediction
+---
+
 
 To illustrate how neural networks work, let's start with an example. We'll use an example from demand prediction in which you look at the product and try to predict, will this product be a top seller or not?
 
@@ -88,3 +205,5 @@ Here's another example.
 Here's a neural network that it's input goes to the first hidden layer, the output of the first hidden layer goes to the second hidden layer, goes to the third hidden layer, and then finally to the output layer. When you're building your own neural network, one of the decisions you need to make is how many hidden layers do you want and how many neurons do you want each hidden layer to have. This question of how many hidden layers and how many neurons per hidden layer is a question of the architecture of the neural network. You'll learn later in this course some tips for choosing an appropriate architecture for a neural network. But choosing the right number of hidden layers and number of hidden units per layer can have an impact on the performance of a learning algorithm as well.
 
 Later in this notes, you'll learn how to choose a good architecture for your neural network as well. By the way, in some of the literature, you see this type of neural network with multiple layers like this called a multilayer perceptron. If you see that, that just refers to a neural network that looks like what you're seeing here on the slide. That's a neural network. I know we went through a lot in this notes. Thank you for sticking with me. But you now know how a neural network works. In the next part, let's take a look at how these ideas can be applied to other applications as well. In particular, we'll take a look at the computer vision application of face recognition. Let's go on to the next part.
+*/}
+

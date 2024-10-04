@@ -30,6 +30,7 @@ export default async function Page({ params }: { params: { slug?: string[] } }) 
   const path = `/learn/${page.file.path}`;
 
   return (
+    <>
     <DocsPage 
       tableOfContent={{
         enabled: page.file.path !== "api-reference.mdx",
@@ -88,6 +89,8 @@ export default async function Page({ params }: { params: { slug?: string[] } }) 
         />
       </DocsBody>
     </DocsPage>
+    
+    </>
   );
 }
 
