@@ -6,18 +6,20 @@ const ProbabilityCard = () => {
     "Four Birthday and Monty Hall problem",
     "A/B Testing",
     "Exploratory Data Analysis (EDA)",
-    "EDA: Intro to pandas",
-    "EDA: Exploring your data",
     "Naive Bayes",
     "Summary statistics ",
     "Visualization of Data Sets",
+    "Studying the distribution of sample mean"
+  ];
+  const extraSteps = [
+    "Simulating Dice Rolls with Numpy",
+    "Loaded Dice",
+    "EDA: Linear Regression",
+    "EDA:  Confidence Intervals with Hypoothesis Testing",
+    "EDA: Intro to pandas",
+    "EDA: Exploring your data",
     "EDA: Data Visualization and Summary",
-    // "Simulating Dice Rolls with Numpy",
-    // "Loaded Dice",
-    // "EDA: Linear Regression",
-    // "EDA:  Confidence Intervals with Hypoothesis Testing",
     "Sampling  data from different distribution",
-    // "Studying the distribution of sample mean"
   ];
 
   return (
@@ -31,6 +33,7 @@ const ProbabilityCard = () => {
       }
       heading="Probabitly and Statistics"
       steps={steps}
+      extraSteps={extraSteps}
       subheading="Here's what you will learn:"
       statusStyle=""
       buttonText={

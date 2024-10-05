@@ -10,9 +10,13 @@ const SupervisedLearningCard = () => {
     "Gradient Descent in Practice",
     "Multiple Linear Regression",
     "Problem of Overfitting",
+    "Cost Function",
+    "Classification"
+  ];
+  const extraSteps = [
     "Cost Function for Logistic Regression",
     "Classification with Logistic Regression"
-  ];
+  ]
 
   return (
     <BaseCard
@@ -25,6 +29,7 @@ const SupervisedLearningCard = () => {
       }
       heading="Supervised Learning"
       steps={steps}
+      
       statusStyle="" 
       subheading="Here's what you will learn:"
       buttonText={
@@ -39,6 +44,7 @@ const SupervisedLearningCard = () => {
       buttonPath="sl"
       buttonStyle=""
       isDisabled={false}
+      extraSteps={extraSteps}
     />
   );
 };

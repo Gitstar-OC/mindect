@@ -7,13 +7,16 @@ const CalculusCard = () => {
     "Classification with Perceptron",
     "Optimizing Functions of One Variable",
     "Neural Network with Two Layers",
-    "Optimization Using Gradient Descent (OUGD)",
+    "Optimization Using Gradient Descent",
+    "Optimization Using Newton's Method",    
+  ];
+  const extraSteps = [
+    "Regression with Perceptron",
     "OUGD in One Variable",
     "OUGD in Two Variable",
-    "Regression with Perceptron",
-    "Optimization Using Newton's Method",
     "OUGD: Linear Regression",
-  ];
+    ,
+  ]
 
   return (
     <BaseCard
@@ -26,6 +29,7 @@ const CalculusCard = () => {
       }
       heading="Calculus"
       steps={steps}
+      extraSteps={extraSteps}
       subheading="Here's what you will learn:"
       statusStyle=""
       buttonText={

@@ -8,11 +8,13 @@ const LinearAlgebraCard = () => {
     "Gaussian Elimination",
     "Webpage navigation model & PCA",
     "Matrix Multiplication",
-    "Linear Transformation",
     "Linear Transformations and Neural Networks",
+    "Application of Eigenvalues & Eigenvectors",
+  ];
+  const extraSteps = [
     "Interpreting Eigenvalues",
     "Interpreting Eigenvectors",
-    "Application of Eigenvalues & Eigenvectors",
+    "Linear Transformation",
     "Vector Operations",
   ];
 
@@ -27,6 +29,7 @@ const LinearAlgebraCard = () => {
       }
       heading="Linear Algebra"
       steps={steps}
+      extraSteps={extraSteps}
       subheading="Here's what you will learn:"
       statusStyle=""
       buttonText={

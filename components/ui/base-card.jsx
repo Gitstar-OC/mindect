@@ -5,11 +5,10 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Info } from "lucide-react";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
 const CheckIcon = () => {
   return (
@@ -30,7 +29,7 @@ const CheckIcon = () => {
 const BaseCard = ({
   status,
   heading,
-  steps,
+  steps = [],
   className,
   statusStyle,
   subheading,
@@ -38,13 +37,14 @@ const BaseCard = ({
   buttonStyle,
   buttonPath,
   isDisabled,
+  extraSteps = [],
 }) => {
   return (
     <>
       <div className="flex justify-center">
         <CardSpotlight
           className={cn(
-            "md:w-[80vw] sm:w-[80vw] xl:mt-0 rounded-3xl xl:w-96 mx-auto relative",
+            "md:w-[80vw] sm:w-[80vw] xl:mt-0 rounded-3xl xl:w-[23rem] xl:h-[30rem] mx-auto relative",
             className
           )}
         >
@@ -66,18 +66,18 @@ const BaseCard = ({
                 <Step key={index} title={step} />
               ))}
 
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger className="inline-flex">
-                    <span className="mt-2">
-                      .. And More <Info className="inline size-5" />
-                    </span>
-                  </TooltipTrigger>
-                  <TooltipContent className="flex">
-                    <p>Supervised Learning</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+              <HoverCard>
+                <HoverCardTrigger asChild>
+                  <span className="mt-2 cursor-default">
+                    .. And More <Info className="inline size-4" />
+                  </span>
+                </HoverCardTrigger>
+                <HoverCardContent className="w-80">
+                  {extraSteps.map((step, index) => (
+                    <Step key={index} title={step} />
+                  ))}
+                </HoverCardContent>
+              </HoverCard>
             </ul>
           </div>
           <Link
