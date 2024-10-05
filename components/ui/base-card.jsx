@@ -1,9 +1,15 @@
 // this file is used as a base card for components in the /docs page to resolve reuse of code
 
 import { CardSpotlight } from "@/components/ui/card-spotlight";
-import { ChevronRightIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { Info } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const CheckIcon = () => {
   return (
@@ -31,7 +37,7 @@ const BaseCard = ({
   buttonText,
   buttonStyle,
   buttonPath,
-  isDisabled
+  isDisabled,
 }) => {
   return (
     <>
@@ -59,7 +65,19 @@ const BaseCard = ({
               {steps.map((step, index) => (
                 <Step key={index} title={step} />
               ))}
-              <span>... And More</span>
+
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger className="inline-flex">
+                    <span className="mt-2">
+                      .. And More <Info className="inline size-5" />
+                    </span>
+                  </TooltipTrigger>
+                  <TooltipContent className="flex">
+                    <p>Supervised Learning</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             </ul>
           </div>
           <Link
@@ -67,9 +85,12 @@ const BaseCard = ({
             passHref
             className="flex justify-center"
           >
-            <button className={cn("relative p-[3px] mt-3", buttonStyle)} disabled={isDisabled}>
+            <button
+              className={cn("relative p-[3px] mt-4", buttonStyle)}
+              disabled={isDisabled}
+            >
               {buttonText}
-            </button >
+            </button>
             {console.log(buttonPath)}
           </Link>
         </CardSpotlight>

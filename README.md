@@ -4,14 +4,13 @@
 
 - Mindect are docs for everyone who wants to learn about AI, ML, Supervised Learning and Advanced Learning ALgorithms.
 <!--  
-- adding middle ware page for docs like https://fumadocs.vercel.app/docs
--  add backlins for pages to make the pages go on top with search engines named additioanl resourses, read more at etc.
+- add backlins for pages to make the pages go on top with search engines named additioanl resourses, read more at etc.
 - add all the exports in the lib file 
 - add cn in the components that you have made so it will take the styling
 - contribute to navbar to make it visible via props
 - show remaining topics when hovered
 - shorten the path of @/components/ui to @cui
-- remove padding top from mobile view of cards and also make the width of SL card same as of other cards on mobile.
+- add icon for index.mdx, what is machine learning and jupyter notebook
 -->
 
 ## Starting the development server

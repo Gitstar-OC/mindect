@@ -3,6 +3,8 @@ title: What is Machine Learning ?
 description: The field of study that gives computers the ability to learn without being explicitly programmed.
 ---
 
+import {USLImage, SLImage} from "@/components/ui/icons"
+
 
 ## Definition 
 
@@ -20,6 +22,19 @@ The two main types of machine learning are **Supervised Learning** and **Unsuper
  In `Unsupervised learning We're given data that isn't associated with any output labels y`, say you're given data on patients and their tumor size and the patient's age. But not whether the tumor was benign or malignant, so the dataset looks like this on the right. `We're not asked to diagnose whether the tumor is benign or malignant, because we're not given any labels. But in the dataset, instead, our job is to find some structure or some pattern or just find something interesting in the data.` **This is unsupervised learning** , we call it `unsupervised because we're not trying to supervise the algorithm`. 
 
 <Cards>
-  <Card title="Learn more about Supervised Learning" href="/docs/supervised-learning" />
-  <Card title="Learn more about Unsupervised Learning" href="/docs/unsupervised-learning" />
-</Cards>
+  <Card
+  title={
+    <>
+      <SLImage className="inline-block mr-2" />
+      Learn more about Supervised Learning
+    </>
+  }
+   href="/learn/sl/supervised-learning" />
+   <Card
+  title={
+    <>
+      <USLImage className="inline-block mr-2" />
+      Learn more about Unsupervised Learning
+    </>
+  }
+   href="/learn/usl/unsupervised-learning" /></Cards>

@@ -6,7 +6,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { Steps, Step } from "fumadocs-ui/components/steps";
 import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 import { ArrowSquareOut } from "@phosphor-icons/react/dist/ssr";
-import { TbSettings } from "react-icons/tb";
+import Appearance from "@/components/ui/Appearance/appearance"
 import {
   DocsPage,
   DocsBody,
@@ -60,31 +60,21 @@ export default async function Page({
                   href={`https://github.com/gitstar-oc/learnai/blob/master${path}`}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="flex items-baseline text-xs text-muted-foreground hover:text-foreground mt-4"
+                  className="flex items-baseline text-xs text-muted-foreground hover:text-foreground mt-4 group"
                 >
-                  Edit on Github <ArrowSquareOut className="ml-1 size-3" />
+                  Edit on Github <ArrowSquareOut className="ml-1 size-3 transition-transform duration-300 ease-in-out transform group-hover:rotate-45" />
                 </a>
                 <a
                   href="https://github.com/gitstar-oc/learnai/issues/new?title=Feedback%20for%20%E2%80%9Clearnai%E2%80%9D&labels=feedback"
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="flex items-baseline text-xs text-muted-foreground hover:text-foreground mt-2 mb-6"
+                  className="flex items-baseline text-xs text-muted-foreground hover:text-foreground mt-2 mb-1 group"
                 >
                   Question? Give us feedback{" "}
-                  <FaArrowRightLong className="ml-1 mb-2 size-3" />
+                  <FaArrowRightLong className="ml-1 mb-2 size-3 transition-transform duration-300 ease-in-out transform group-hover:translate-x-1" />
                 </a>
-                {/* <span className="opacity-70 hover:opacity-100 cursor-pointer group text-xs flex">
-                <TbSettings className="size-3 mt-[1px] mr-1 transition-transform duration-300 ease-in-out group-hover:rotate-[360deg] group-hover:scale-125" />
-                Change Appearance
-              </span> */}
-                {/* <a href="https://github.com/gitstar-oc/mindect" rel="noopener noreferrer" target="_blank">
-                <RainbowButton>
-                  <h3 className="text-white dark:text-black mt-none text-[16px] justify-center items-center bottom-3 flex">
-                    Contribute to Mindect <IoIosArrowForward className="ml-1 transition-transform duration-300 ease-in-out transform group-hover:translate-x-1" />
-                  </h3>
-                </RainbowButton>
-              </a> */}
-              </div>
+                <Appearance className="gap-0 mb-6"/>
+                </div>
             </>
           ),
         }}

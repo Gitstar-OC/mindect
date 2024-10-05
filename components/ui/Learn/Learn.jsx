@@ -28,7 +28,7 @@ const Learn = () => {
               I first thought about teaching literature and arts.
               <br />
               But the thing is those topics are kind of hard, so here are some
-              easy topics for you to learn from!
+              easy topics for you to start with!
             </div>
           </header>
           <MachineLearningSection />
