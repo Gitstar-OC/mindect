@@ -1,0 +1,51 @@
+.prose :is(p) {
+    font-size: var(--h1-size)
+}
+
+/************ Changing Appearance **************/
+/* .prose :is(p) {
+  font-size: 10px;
+} 
+
+.prose :is(h1) {
+  font-size: var(--h1-size);
+  font-size: 80px;
+}
+
+.prose (p {
+  )font-size: var(--p-size);
+}
+
+.prose (h1) {
+  font-size: var(--h1-size);
+}
+
+.prose (h2) {
+  font-size: var(--h2-size);
+}
+
+.prose (h3) {
+  font-size: var(--h3-size);
+}
+
+.prose (h4) {
+  font-size: var(--h4-size);
+}
+
+.prose (h5) {
+  font-size: var(--h5-size);
+}
+
+.prose (h6) {
+  font-size: var(--h6-size);
+}
+
+.prose (p){
+  font-size: var(--p-size);
+}
+
+.prose (div) {
+ font-size: var(--size);
+}
+
+*/

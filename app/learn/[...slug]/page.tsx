@@ -19,6 +19,7 @@ import { ImageZoom } from "fumadocs-ui/components/image-zoom";
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
 import { Separator } from "@/components/ui/separator";
 import React from "react";
+import "../../global.css"
 
 export default async function Page({
   params,
