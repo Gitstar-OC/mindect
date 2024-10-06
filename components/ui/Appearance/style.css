@@ -1,6 +1,6 @@
-.prose :is(p) {
+/* .prose :is(p) {
     font-size: var(--h1-size)
-}
+} */
 
 /************ Changing Appearance **************/
 /* .prose :is(p) {
@@ -49,3 +49,17 @@
 }
 
 */
+
+.prose :where(h2):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  font-size: var(--h2-size);
+  /* font-size: 50px */
+}
+.prose :where(h3):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  font-size: var(--h3-size);
+}
+.prose :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  font-size: var(--p-size);
+}
+.prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  font-size: var(--code);
+}
