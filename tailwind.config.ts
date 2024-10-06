@@ -52,7 +52,7 @@ export default {
   	extend: {
   		animation: {
   			aurora: 'aurora 60s linear infinite',
-			spin: 'spin 5s linear infinite',
+			spin: 'spin 20s linear infinite',
   			spotlight: 'spotlight 2s ease .75s 1 forwards',
   			shimmer: 'shimmer 2s linear infinite',
   			gradient: 'gradient 8s linear infinite',
