@@ -52,6 +52,7 @@ export default {
   	extend: {
   		animation: {
   			aurora: 'aurora 60s linear infinite',
+			spin: 'spin 20s linear infinite',
   			spotlight: 'spotlight 2s ease .75s 1 forwards',
   			shimmer: 'shimmer 2s linear infinite',
   			gradient: 'gradient 8s linear infinite',
@@ -59,6 +60,10 @@ export default {
   			rainbow: 'rainbow var(--speed, 2s) infinite linear',
   		},
   		keyframes: {
+			spin: {
+				'0%': { transform: 'rotate(0deg)' },
+				'100%': { transform: 'rotate(360deg)' },
+			},
   			aurora: {
   				from: {
   					backgroundPosition: '50% 50%, 50% 50%'

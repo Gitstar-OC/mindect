@@ -10,7 +10,7 @@ const Logo = () => {
         width={40}
         height={30}
         alt="Picture of the author"
-        className="group-hover:opacity-100  opacity-80 size-8 [.uwu_&]:hidden [header_&]:size-8 "
+        className="size-8 [.uwu_&]:hidden [header_&]:size-8 hover:animate-spin"
       />
       <span
         className={`${economica.className} group-hover:opacity-100 opacity-80 gap-0 [.uwu_&]:hidden max-md:[header_&]:hidden`}
@@ -23,3 +23,4 @@ const Logo = () => {
 };
 
 export default Logo;
+
