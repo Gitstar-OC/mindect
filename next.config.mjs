@@ -17,8 +17,7 @@
 
 // export default withMDX(config);
 
-
-import { createMDX } from 'fumadocs-mdx/next';
+import { createMDX } from "fumadocs-mdx/next";
 const withMDX = createMDX();
 
 /** @type {import('next').NextConfig} */
@@ -27,9 +26,13 @@ const config = {
   async rewrites() {
     return [
       {
-        source: '/content/jupyterNotebooks/:path*',
-        destination: '/mindect/content/jupyterNotebooks/:path*', // Adjust this as necessary for your setup
-      }
+        source: "/docs/:path*",
+        destination: "/learn/:path*",
+      },
+      {
+        source: "/docs",
+        destination: "/learn",
+      },
     ];
   },
 };
