@@ -11,6 +11,7 @@
 - show remaining topics when hovered
 - shorten the path of @/components/ui to @cui
 - add icon for index.mdx, what is machine learning and jupyter notebook
+- add a slider instead of radio button along with a box that shows the font size from 1 to 10
 -->
 
 ## Starting the development server
