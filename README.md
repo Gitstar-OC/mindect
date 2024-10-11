@@ -9,6 +9,7 @@
 - add cn in the components that you have made so it will take the styling
 - contribute to navbar to make it visible via props
 - show remaining topics when hovered
+- fix the seo of mindect
 - shorten the path of @/components/ui to @cui
 - add icon for index.mdx, what is machine learning and jupyter notebook
 - add a slider instead of radio button along with a box that shows the font size from 1 to 10
