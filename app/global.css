@@ -108,3 +108,8 @@ img, video {
 .prose :where(ul):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   margin-left: 1rem;
 }
+
+/*********** gap between lines in code block ***************/ 
+.fd-codeblock code {
+  row-gap: 5px;
+}

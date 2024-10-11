@@ -39,8 +39,8 @@ const Appearance = ({ className }) => {
       // "--h5-size": "10px",
       // data-radix-scroll-area-viewport
       // "--h6-size": "8px",
-      "--code": "18px", //16px
-      "--code-block": "18px"
+      "--code": "17px", //16px
+      "--code-block": "17px"
       // "--size": "16px",
       /// overflow of the code component is hidden 
     },
