@@ -104,3 +104,7 @@ img, video {
   overflow-y: hidden;
 }
 
+/***************** For UL lists styling in mdx **************/
+.prose :where(ul):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  margin-left: 1rem;
+}
