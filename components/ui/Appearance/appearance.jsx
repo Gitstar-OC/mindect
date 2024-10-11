@@ -1,3 +1,4 @@
+// this component is used to change the appearance of the app
 "use client";
 import React, { useState, useEffect } from "react";
 import "../../../app/global.css"; // Global CSS file
@@ -11,9 +12,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogFooter,
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Slider } from "@/components/ui/slider";
 
 const Appearance = ({ className }) => {
   const [fontSize, setFontSize] = useState("medium");
@@ -123,6 +126,12 @@ const Appearance = ({ className }) => {
             </RadioGroup>
           </DialogDescription>
         </DialogHeader>
+          <DialogDescription className="justify-start">
+            <div className="flex mb-2 mt-2">
+              Or use a slider instead to set it
+            </div>
+            <Slider defaultValue={[55]} max={100} step={11} className="flex" />
+          </DialogDescription>
       </DialogContent>
     </Dialog>
   );
