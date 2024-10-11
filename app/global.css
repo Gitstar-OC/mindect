@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer components {
     .underlineEffect {
       @apply absolute left-0 bottom-[3px] h-[2px] w-full bg-gradient-to-r from-[#4C054C] to-[#25AFAA] scale-x-0 transform transition-transform duration-300 origin-left;
@@ -59,25 +57,6 @@
 img, video {
   border-radius: 10px; 
 }
-
-/*************** Navbar ******************/ 
-
-/* #nd-nav {
-  background-color: black;
-  background: black;
-} */
-
-/* nav {
-  background-color: black;
-} */
-
-
-/************ Highlighted text ***********/
-/* .prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-  font-size: 16px;
-
-} */
-
 
 @layer base {
   :root {

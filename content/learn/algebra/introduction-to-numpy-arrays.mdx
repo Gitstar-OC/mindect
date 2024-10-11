@@ -1,6 +1,6 @@
 ---
 title: Introduction to Python Matrices and NumPy 
-description: In this
+description: In this section you can learn about Numpy, Numpy Arrays, Indexing and Slicing in Numpy, Stacking, Multidimensional Array and many more.
 ---
 
 Welcome to your first notebook of this notes. As mentioned in the lecture videos, you will use Python for the labs and programming assignments in this specializiation. In this course, most of your work will be inside a library called NumPy. NumPy (Numerical Python) is an open-source package that is widely used in science and engineering. You can check out the official [NumPy documentaion here](https://numpy.org/doc/stable/index.html). In this notebook, you will use NumPy to create 2-D arrays and easily compute mathematical operations.  Feel free to skip this notebook if you are already fluent with NumPy.
@@ -342,7 +342,7 @@ print(horz_stack)
 
 
 
-```py
+````python
 # Split the horizontally stacked array into 2 separate arrays of equal size
 horz_split_two = np.hsplit(horz_stack,2)
 print(horz_split_two)
@@ -354,7 +354,7 @@ print(horz_split_four)
 # Split the horizontally stacked array after the first column
 horz_split_first = np.hsplit(horz_stack,[1])
 print(horz_split_first)
-```
+````
 
 ```py
 # Split the vertically stacked array into 2 separate arrays of equal size
