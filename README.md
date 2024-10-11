@@ -14,6 +14,8 @@
 - add a slider instead of radio button along with a box that shows the font size from 1 to 10
 - add main file for all 3 mathematics files. 
 - fix the seo of mindect.
+- give option to select what to learn on the mainpage mathematics, deep learning or machine learning. 
+- add the hover effect to items in navbar like the one vercel has use this for additional info and configuration https://github.com/fuma-nama/fumadocs/discussions/936
 -->
 
 ## Starting the development server
