@@ -23,32 +23,26 @@ const Appearance = ({ className }) => {
       "--h2-size": "20px",
       "--h3-size": "16px",
       "--p-size": "12px",
-      "--code": "12px",
+      "--not-prose": "10px"
     },
     medium: {
-      // "--h1-size": "28px", // 3xl or 1.875 rem & 2.25 height article h1
-      // "--p-size": "16px", //text-lg or 1.125 $ 1.75 article p
-      // "--h1-size": "29px", //same
-      "--h2-size": "24px", //1.5 em & 1.33333
-      "--h3-size": "20px", //1.25em & 1.6
-      "--p-size": "16px", //16px & 1.75
-      // "--h4-size": "12px",
-      // "--h5-size": "10px",
-      // "--h6-size": "8px",
-      "--code": "16px", //16px
-      // "--size": "16px",
+      "--h2-size": "26px", 
+      "--h3-size": "20px", 
+      "--p-size": "18px", 
+      "--not-prose": "15px"
     },
     large: {
       "--h2-size": "28px",
       "--h3-size": "24px",
       "--p-size": "20px",
-      "--code": "20px",
+      "--not-prose": "18px"
+
     },
     larger: {
       "--h2-size": "32px",
       "--h3-size": "28px",
       "--p-size": "24px",
-      "--code": "24px",
+      "--not-prose": "21px"
     },
   };
 
