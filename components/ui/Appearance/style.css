@@ -63,3 +63,7 @@
 .prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   font-size: var(--code);
 }
+
+.fd-codeblock code {
+  font-size: var(--code-block)
+}
