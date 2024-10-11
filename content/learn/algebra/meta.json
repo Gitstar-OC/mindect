@@ -2,6 +2,7 @@
     "title": "Algebra",
     "root": true,
     "pages": [
-        "index"
+        "index",
+        "introduction-to-numpy-arrays"
     ]
 }
