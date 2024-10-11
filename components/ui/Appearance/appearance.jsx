@@ -12,7 +12,6 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogFooter,
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -26,35 +25,26 @@ const Appearance = ({ className }) => {
       "--h2-size": "20px",
       "--h3-size": "16px",
       "--p-size": "12px",
-      "--code": "12px",
+      "--not-prose": "10px"
     },
     medium: {
-      // "--h1-size": "28px", // 3xl or 1.875 rem & 2.25 height article h1
-      // "--p-size": "16px", //text-lg or 1.125 $ 1.75 article p
-      // "--h1-size": "29px", //same
-      "--h2-size": "26px", //1.5 em & 1.33333
-      "--h3-size": "20px", //1.25em & 1.6
-      "--p-size": "18px", //16px & 1.75
-      // "--h4-size": "12px",
-      // "--h5-size": "10px",
-      // data-radix-scroll-area-viewport
-      // "--h6-size": "8px",
-      "--code": "17px", //16px
-      "--code-block": "17px"
-      // "--size": "16px",
-      /// overflow of the code component is hidden 
+      "--h2-size": "26px", 
+      "--h3-size": "20px", 
+      "--p-size": "18px", 
+      "--not-prose": "15px"
     },
     large: {
       "--h2-size": "28px",
       "--h3-size": "24px",
       "--p-size": "20px",
-      "--code": "20px",
+      "--not-prose": "18px"
+
     },
     larger: {
       "--h2-size": "32px",
       "--h3-size": "28px",
       "--p-size": "24px",
-      "--code": "24px",
+      "--not-prose": "21px"
     },
   };
 
