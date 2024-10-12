@@ -28,21 +28,21 @@ const Appearance = ({ className }) => {
       "--not-prose": "10px"
     },
     medium: {
-      "--h2-size": "26px", 
-      "--h3-size": "20px", 
+      "--h2-size": "28px", 
+      "--h3-size": "25px", 
       "--p-size": "18px", 
       "--not-prose": "15px"
     },
     large: {
-      "--h2-size": "28px",
-      "--h3-size": "24px",
+      "--h2-size": "31px",
+      "--h3-size": "28px",
       "--p-size": "20px",
       "--not-prose": "18px"
 
     },
     larger: {
-      "--h2-size": "32px",
-      "--h3-size": "28px",
+      "--h2-size": "34px",
+      "--h3-size": "31px",
       "--p-size": "24px",
       "--not-prose": "21px"
     },

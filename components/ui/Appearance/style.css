@@ -6,12 +6,13 @@
   font-size: var(--h3-size);
 }
 .prose :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)),
-.prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)), 
 .prose :where(ul):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   font-size: var(--p-size);
 }
 
 .fd-codeblock code,
+.prose-no-margin > p,
+.prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)),
 .not-prose{
   font-size: var(--not-prose)
 }
