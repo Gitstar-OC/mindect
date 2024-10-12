@@ -17,7 +17,7 @@ Welcome to your first notebook of this notes. As mentioned in the lecture videos
 - Follow along the cells using `Shift`+`Enter`. Alternatively, you can press `Run` in the menu. 
 */}
 
-## About Jupyter Notebooks ##
+## About Jupyter Notebooks
 
 Jupyter Notebooks are interactive coding journals that integrate live code, explanatory text, equations, visualizations and other multimedia resources, all in a single document. As a first exercise, run the test snippet below and the print statement cell for "Hello World".
 
@@ -25,7 +25,7 @@ Jupyter Notebooks are interactive coding journals that integrate live code, expl
 
 NumPy is the main package for scientific computing in Python. It performs a wide variety of advanced mathematical operations with high efficiency. In this practice lab you will learn several key NumPy functions that will help you in future assignments, such as creating arrays, slicing, indexing, reshaping and stacking.
 
-## Packages
+### Packages
 
 Before you get started, you have to import NumPy to load its functions. As you may notice, even though there is no expected output, when you run this cell, the Jupyter Notebook imports the package (often referred to as the library) and its functions. Try it for yourself and run the following cell.
 
@@ -34,7 +34,7 @@ import numpy as np
 ```
 
 
-## Advantages of using Numpy arrays
+### Advantages of using Numpy arrays
 
 Arrays are one of the core data structures of the NumPy library, essential for organizing your data. You can think of them as a grid of values, all of the same type. Arrays are analogous to the matrices you saw in the video lessons. If you have used Python lists before, you may remember that they are convenient, as you can store different data types. However, Python lists are limited in functions and take up more space and time to process than NumPy arrays.
 
@@ -49,7 +49,7 @@ one_dimensional_arr = np.array([10, 12])
 print(one_dimensional_arr)
 ```
 
-## How to create Numpy Array
+### How to create Numpy Array
 
 There are several ways to create an array in NumPy. You can create a 1-D array by simply using the function `array()` which takes in a list of values as an argument and returns a 1-D array.
 
@@ -108,7 +108,7 @@ print(char_arr.dtype) # Prints the data type of the array
 Did you notice that the output of the data type of the `char_arr` array is `<U23`? 
 This means that the string (`'Welcome to Math for ML!'`) is a 23-character (23) unicode string (`U`) on a little-endian architecture (`<`). You can learn more about data types [here](https://numpy.org/doc/stable/user/basics.types.html).
 
-## More on NumPy arrays ##
+### More on NumPy arrays ##
 
 One of the advantages of using NumPy is that you can easily create arrays with built-in functions such as: 
 - `np.ones()` - Returns a new array setting values to one.
@@ -166,7 +166,7 @@ multi_dim_arr = np.reshape(
 print(multi_dim_arr)
 ```
 
-## Finding size, shape and dimension.
+### Finding size, shape and dimension.
 
 In future assignments, you will need to know how to find the size, dimension and shape of an array. These are all atrributes of a `ndarray` and can be accessed as follows:
 - `ndarray.ndim` - Stores the number dimensions of the array. 
@@ -211,7 +211,7 @@ multiplication = arr_1 * arr_2
 print(multiplication)
 ```
 
-## Multiplying vector with a scalar (broadcasting) 
+### Multiplying vector with a scalar (broadcasting) 
 Suppose you need to convert miles to kilometers. To do so, you can use the NumPy array functions that you've learned so far. You can do this by carrying out an operation between an array (miles) and a single number (the conversion rate which is a scalar). Since, 1 mile = 1.6 km, NumPy computes each multiplication within each cell. 
 
 This concept is called **broadcasting**, which allows you to perform operations specifically on arrays of different shapes.
@@ -224,7 +224,7 @@ vector * 1.6
 ## Indexing and slicing 
 Indexing is very useful as it allows you to select specific elements from an array. It also lets you select entire rows/columns or planes as you'll see in future assignments for multidimensional arrays. 
 
-## Indexing
+### Indexing
 Let us select specific elements from the arrays as given. 
 
 ```py
@@ -252,7 +252,7 @@ print(two_dim[2][1])
 print(two_dim[2,1])
 ```
 
-## Slicing 
+### Slicing 
 Slicing gives you a sublist of elements that you specify from the array. The slice notation specifies a start and end value, and copies the list from start up to but not including the end (end-exclusive). 
 
 The syntax is:
@@ -311,7 +311,7 @@ sliced_two_dim_cols = two_dim[:,1]
 print(sliced_two_dim_cols)
 ```
 
-## Stacking #
+## Stacking
 Finally, stacking is a feature of NumPy that leads to increased customization of arrays. It means to join two or more arrays, either horizontally or vertically, meaning that it is done along a new axis. 
 
 - `np.vstack()` - stacks vertically

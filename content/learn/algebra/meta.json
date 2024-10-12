@@ -3,6 +3,8 @@
     "root": true,
     "pages": [
         "index",
-        "introduction-to-numpy-arrays"
+        "introduction-to-numpy-arrays",
+        "linear-systems-as-matrices",
+        "..."
     ]
 }

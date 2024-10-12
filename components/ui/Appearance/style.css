@@ -12,6 +12,7 @@
 }
 
 .fd-codeblock code,
+.prose-no-margin > p,
 .not-prose{
   font-size: var(--not-prose)
 }
