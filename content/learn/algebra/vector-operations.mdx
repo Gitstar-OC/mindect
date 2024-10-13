@@ -110,7 +110,7 @@ $$
 x\cdot y = \sum_{i=1}^{n} x_iy_i = x_1y_1+x_2y_2+\ldots+x_ny_n \tag{1}
 $$
 
-### 2.2 - Dot Product using Python
+### Dot Product using Python
 
 The simplest way to calculate dot product in Python is to take the sum of element by element multiplications. You can define the vectors $x$ and $y$ by listing their coordinates:
 
@@ -164,7 +164,7 @@ x = np.array(x)
 y = np.array(y)
 ```
 
-### 2.3 - Speed of Calculations in Vectorized Form
+### Speed of Calculations in Vectorized Form
 
 Dot product operations in Machine Learning applications are applied to the large vectors with hundreds or thousands of coordinates (called **high dimensional vectors**). Training models based on large datasets often takes hours and days even on powerful machines. Speed of calculations is crucial for the training and deployment of your models. 
 
@@ -210,7 +210,7 @@ print ("Time for the vectorized version, @ function: " + str(1000*(toc-tic)) + "
 
 You can see that vectorization is extremely beneficial in terms of the speed of calculations!
 
-### 2.4 - Geometric Definition of the Dot Product
+### Geometric Definition of the Dot Product
 
 In [Euclidean space](https://en.wikipedia.org/wiki/Euclidean_space), a Euclidean vector has both magnitude and direction. The dot product of two vectors $x$ and $y$ is defined by:
 
@@ -231,7 +231,7 @@ j = np.array([0, 1, 0])
 print("The dot product of i and j is", dot(i, j))
 ```
 
-### 2.5 - Application of the Dot Product: Vector Similarity
+### Application of the Dot Product: Vector Similarity
 
 Geometric definition of a dot product is used in one of the applications - to evaluate **vector similarity**. In Natural Language Processing (NLP) words or phrases from vocabulary are mapped to a corresponding vector of real numbers. Similarity between two vectors can be defined as a cosine of the angle between them. When they point in the same direction, their similarity is 1 and it decreases with the increase of the angle. 
 
@@ -244,5 +244,7 @@ $$
 Zero value corresponds to the zero similarity between vectors (and words corresponding to those vectors). Largest value is when vectors point in the same direction, lowest value is when vectors point in the opposite directions.
 
 This example of vector similarity is given to link the material with the Machine Learning applications. There will be no actual implementation of it in this Course. Some examples of implementation can be found in the Natual Language Processing Specialization.
+
+## Conclusion
 
 Well done, you have finished this lab!
