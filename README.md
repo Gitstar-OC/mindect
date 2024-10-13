@@ -15,8 +15,10 @@
 - add main file for all 3 mathematics files.
 - fix the seo of mindect.
 - create an option to run the code like the web3 school has to run and customize it using the persons own machine resources and ram. Can be done using C, python, C+.
+- add complete code for jupyter notebook below the file so the user can download and run it. 
 - give option to select what to learn on the mainpage mathematics, deep learning or machine learning.
 - add the hover effect to items in navbar like the one vercel has use this for additional info and configuration https://github.com/fuma-nama/fumadocs/discussions/936
+- add images in algebra readme
 
 -->
 
