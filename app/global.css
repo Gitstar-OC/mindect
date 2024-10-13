@@ -78,7 +78,7 @@ img, video {
 
 /*********************** maths code block *******************/
 .katex-html {
-  font-size: larger;
+  font-size: x-large;
   overflow: auto;
   overflow-y: hidden;
 }
