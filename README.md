@@ -20,6 +20,45 @@
 - add the hover effect to items in navbar like the one vercel has use this for additional info and configuration https://github.com/fuma-nama/fumadocs/discussions/936
 - add images in algebra readme
 
+
+- ### Linear Algebra for Machine Learning and Data Science
+  - `B` [Introduction to Numpy Arrays](Mathematics/IntroductionToNumpyArrays.ipynb)
+  - `B` [Linear Systems as Matrices](Mathematics/LinearSystemsOnMatrices.ipynb)
+  - `B` [Introduction to the Numpy.lanalg sub-library](Mathematics/IntroductionToNumpy.linalgSub-Library.ipynb)
+  - `I` [Gaussian Elimination]()
+  - `B` [Vector Operations: Scalar Multiplication, Sum and Dot Product of Vectors]()
+  - `B` [Matrix Multiplication]()
+  - `B` [Linear Transformation]()
+  - `I` [Linear Transformatins and Neural Networks]() 
+  - `B` [Interpreting Eigenvalues and Eigenvectors]()
+  - `I` [Application of Eigenvalues and Eigenvectors: Webpage navigation model and PCA]()
+
+- ### Calculus for Machine Learning and Data Science
+  - `B` [Differentiation in Python: Symbolic, Numerical and Automatic]()
+  - `B` [Optimizing Functions of One Variable: Cost Minimization]()
+  - `B` [Optimization Using Gradient Descent in One Variable]()
+  - `B` [Optimization Using Gradient Descent in Two Variables]()
+  - `I` [Optimization Using Gradient Descent: Linear Regression]()
+  - `B` [Regression with Perceptron]()
+  - `B` [Classification with Perceptron]()
+  - `B` [Optimization Using Newton's Method]()
+  - `I` [Neural Network with Two Layers]()
+
+- ### Probablity and Statistics for Machine Learning and Data Science
+  - `B` [Four Birthday Problems]()
+  - `B` [Monty Hall Problem]() 
+  - `B` [Exploratory Data Analysis: Intro to pandas]() 
+  - `B` [Exploratory Data Analysis: Exploring your data]() 
+  - `B` [Naive Bayes]() 
+  - `B` [Summary statistics and visualization of Data Sets]() 
+  - `B` [Exploratory Data Analysis: Data Visualization and Summary]()
+  - `B` [Simulating Dice Rolls with Numpy]() 
+  - `B` [Loaded ]()
+  - `B` [Sampling data from different distribution and studying the distribution of sample mean]()
+  - `B` [Exploratory Data Analysis: Linear Regression]()
+  - `B` [Exploratory Data Analysis: Confidence Intervals with Hypoothesis Testing]() 
+  - `B` [A/B Testing]()
+
 -->
 
 ## Starting the development server
