@@ -25,13 +25,13 @@
   - `B` [Introduction to Numpy Arrays](Mathematics/IntroductionToNumpyArrays.ipynb)
   - `B` [Linear Systems as Matrices](Mathematics/LinearSystemsOnMatrices.ipynb)
   - `B` [Introduction to the Numpy.lanalg sub-library](Mathematics/IntroductionToNumpy.linalgSub-Library.ipynb)
-  - `I` [Gaussian Elimination]()
+  - `I` [Gaussian Elimination]() /a2 
   - `B` [Vector Operations: Scalar Multiplication, Sum and Dot Product of Vectors]()
   - `B` [Matrix Multiplication]()
   - `B` [Linear Transformation]()
-  - `I` [Linear Transformatins and Neural Networks]() 
+  - `I` [Linear Transformatins and Neural Networks]()  /a3
   - `B` [Interpreting Eigenvalues and Eigenvectors]()
-  - `I` [Application of Eigenvalues and Eigenvectors: Webpage navigation model and PCA]()
+  - `I` [Application of Eigenvalues and Eigenvectors: Webpage navigation model and PCA]() /a4
 
 - ### Calculus for Machine Learning and Data Science
   - `B` [Differentiation in Python: Symbolic, Numerical and Automatic]()
