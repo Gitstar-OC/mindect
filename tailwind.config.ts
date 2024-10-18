@@ -27,7 +27,7 @@ export default {
           background: '0 0% 0%', //background
           foreground: '0 0% 98%', //complete text on page (except the description and on this page content along with the sidebar)
           popover: '0 0% 4%', // search box background 
-          card: '0 0% 4%', // cards, p & n component, sidebar background
+          card: '0 0 0%', // cards, p & n component, sidebar background
           muted: '0 0% 8%', //muted text or text in mdx wrapped in ``  ``
           border: '0 0% 14%', // borders on page, sidebar and searchbox along with seperator
           accent: '0 0% 15%', // hover on sidebar, searchbox results background and theme
