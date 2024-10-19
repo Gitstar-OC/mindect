@@ -35,14 +35,14 @@
 
 - ### Calculus for Machine Learning and Data Science
   - `B` [Differentiation in Python: Symbolic, Numerical and Automatic]()
-  - `B` [Optimizing Functions of One Variable: Cost Minimization]()
+  - `B` [Optimizing Functions of One Variable: Cost Minimization]() /a1 
   - `B` [Optimization Using Gradient Descent in One Variable]()
   - `B` [Optimization Using Gradient Descent in Two Variables]()
-  - `I` [Optimization Using Gradient Descent: Linear Regression]()
+  - `I` [Optimization Using Gradient Descent: Linear Regression]() /a2
   - `B` [Regression with Perceptron]()
   - `B` [Classification with Perceptron]()
   - `B` [Optimization Using Newton's Method]()
-  - `I` [Neural Network with Two Layers]()
+  - `I` [Neural Network with Two Layers]() /a3
 
 - ### Probablity and Statistics for Machine Learning and Data Science
   - `B` [Four Birthday Problems]()
