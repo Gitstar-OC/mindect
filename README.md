@@ -19,6 +19,7 @@
 - give option to select what to learn on the mainpage mathematics, deep learning or machine learning.
 - add the hover effect to items in navbar like the one vercel has use this for additional info and configuration https://github.com/fuma-nama/fumadocs/discussions/936
 - add images in algebra readme
+- update scroller for math functions and formulas
 
 
 - ### Linear Algebra for Machine Learning and Data Science

@@ -19,7 +19,7 @@ from w2_tools import (plot_f_cont_and_surf, gradient_descent_two_variables,
 %matplotlib widget
 ```
 
-## 1 - Function with One Global Minimum
+## Function with One Global Minimum
 
 Let's explore a simple example of a function in two variables $f\left(x, y\right)$ with one global minimum. Such a function was discussed in the videos, it is predefined and uploaded into this notebook as `f_example_3` with its partial derivatives `dfdx_example_3` and `dfdy_example_3`. At this stage, you do not need to worry about the exact expression for that function and its partial derivatives, so you can focus on the implementation of gradient descent and the choice of the related parameters. Run the following cell to plot the function.
 
@@ -70,7 +70,7 @@ gd_example_3 = gradient_descent_two_variables([0, 5], [0, 5], [74, 85],
                                               cmap='coolwarm', view={'azim':-60,'elev':28})
 ```
 
-## 2 - Function with Multiple Minima
+## Function with Multiple Minima
 
 Let's investigate a more complicated case of a function, which was also shown in the videos:
 
