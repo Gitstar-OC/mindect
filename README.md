@@ -50,15 +50,15 @@
   - `B` [Monty Hall Problem]() 
   - `B` [Exploratory Data Analysis: Intro to pandas]() 
   - `B` [Exploratory Data Analysis: Exploring your data]() 
-  - `B` [Naive Bayes]() 
+  - `B` [Naive Bayes]() /a
   - `B` [Summary statistics and visualization of Data Sets]() 
   - `B` [Exploratory Data Analysis: Data Visualization and Summary]()
   - `B` [Simulating Dice Rolls with Numpy]() 
-  - `B` [Loaded ]()
+  - `B` [Loaded ]() /a
   - `B` [Sampling data from different distribution and studying the distribution of sample mean]()
   - `B` [Exploratory Data Analysis: Linear Regression]()
   - `B` [Exploratory Data Analysis: Confidence Intervals with Hypoothesis Testing]() 
-  - `B` [A/B Testing]()
+  - `B` [A/B Testing]() /a
 
 -->
 
