@@ -70,11 +70,6 @@
 For contributing make sure you have read the [Contributing Guidelines](./.github/contributing.md) file
 
 <!--
-
-
-
-
-
 - arrange pages properly like the neural network model is showing neural network layer, you have to fix it.
 
 - start a blog where various data scientist, analyst and teachers could colaborate on writing.
@@ -134,8 +129,6 @@ export type Response = {
 <Callout className="shadow-xs">
   Note: You should have PIP installed on your device
 </Callout> for showing note or something
-
-// With specail icon and heading
 
 <Callout icon="🚀" type="info" title="Briefkasten v2" className="shadow-xs" >
   We're working on a total rewrite of Briefkasten and plan on releasing this
