@@ -1,0 +1,95 @@
+---
+title: Summary Statistics
+---
+
+In this notebook, you will be working with two distinct datasets. You will notice that relying solely on the main statistical measures such as mean, variance (or standard deviation), and correlation may not always effectively describe the datasets. Therefore, it is always advisable to supplement these measures with visualization techniques and/or other statistical measures to gain a deeper understanding of the data.
+
+You will be working with two well-known datasets: Anscombe's quartet and the Datasaurus Dozen dataset. These datasets are artificially generated and are used to illustrate the fact that some metrics can fail to capture important information present in a dataset. More specifically, these datasets are used to demonstrate how relying solely on metrics can sometimes be misleading. If you're interested, you can read more about Anscombe's quartet and the Datasaurus Dozen dataset at their respective [Wikipedia](https://en.wikipedia.org/wiki/Anscombe%27s_quartet) page and [Autodesk Research](https://damassets.autodesk.net/content/dam/autodesk/research/publications-assets/pdf/same-stats-different-graphs.pdf) article.
+
+```py
+import numpy as np
+import pandas as pd
+import os
+import matplotlib.pyplot as plt
+import utils
+%matplotlib widget
+```
+
+## First data set - Anscombe's quartet
+
+This first dataset was initially constructed by the statistician Francis Anscombe to demonstrate both the importance of graphing data when analyzing it, and the effect of outliers and other influential observations on statistical properties. (From wikipedia)
+
+To read the dataset, which is stored in a `.csv file`, you can use the read_csv function in pandas. This function enables you to load a DataFrame immediately. For further information on this function, you can type help(pd.read_csv) in your code editor.
+
+```py
+# This line of code reads the dataset named 'df_anscombe.csv', which is stored in the same directory as this notebook.
+df_anscombe = pd.read_csv('df_anscombe.csv')
+```
+
+The call `df_anscombe.head()` will show you the first five rows of the data set, so you can have a look on its data.
+
+```py
+df_anscombe.head()
+```
+
+```py
+# Let's determine the number of groups present in this dataset.
+df_anscombe.group.nunique()
+```
+
+This dataset comprises of four groups of data, each containing two components - `x` and `y`. To analyze the data, you can obtain the mean and variance of each group, as well as the correlation between x and y within each group. Pandas provides a built-in function called `DataFrame.describe` that displays common statistics for each variable. To group the data by the group column, you can use the `DataFrame.groupby` function.
+
+The next block of code first groups the `DataFrame` based on the group column, and then applies the describe function to obtain the common statistics for each variable in each group.
+
+```py
+df_anscombe.groupby('group').describe()
+```
+
+The groups appear to be quite similar, as evidenced by the identical mean and standard deviation values for both `x` and `y` within each group.
+
+Additionally, you can analyze the correlation between `x` and `y` within each group.
+
+To obtain the correlation matrix for each group, you can follow the same approach as before. First, group the data by the `group` column using `DataFrame.groupby`, and then apply the `.corr` function.
+
+```py
+df_anscombe.groupby('group').corr()
+```
+
+As observed, the correlation between `x` and `y` is identical within each group up to three decimal places. Moreover, the high correlation coefficient values suggest a strong linear correlation between `x` and `y` within each group.
+
+Despite the similarities in the statistical measures for the groups, it is still necessary to visualize the data to get a better understanding of the differences, if any.
+
+```py
+utils.plot_anscombes_quartet()
+```
+
+Upon visualizing the data, the four groups appear to be quite distinct:
+
+1. The first group shows a clear linear relationship between `x` and `y`.
+2. The second group, on the other hand, exhibits a non-linear pattern, indicating that the usual Pearson correlation may not be appropriate to describe the dataset.
+3. The third group would be linear if it were not for a single outlier.
+4. The fourth group demonstrates that `y` can have different values for the same `x`, suggesting that there is no clear relationship between `x` and `y`. However, there is also an outlier in this group.
+
+These four groups illustrate that summary statistics alone are not sufficient for investigating data. Visualizing the data, analyzing possible outliers, and identifying more complex relationships are essential to gain a better understanding of the underlying patterns in the data.
+
+## Second data set - Datasaurus Dozen
+
+The creation of Anscombe's quartet inspired other authors to generate datasets that have different relationships among its points but share the same summary statistics. One such dataset is the Datasaurus Dozen, which was created by AutoDesk. 
+
+In this case, you will take a different approach. Instead of analyzing summary statistics and then plotting the data points, you will compare two datasets from the dozen and compute their statistics.
+
+```py
+df_datasaurus = pd.read_csv("datasaurus.csv")
+```
+
+The next cell will run a widget where you can investigate this dataset, which has different groups in it.
+
+```py
+utils.display_widget()
+```
+
+As you have observed, the first dataset was not an anomaly; it is possible to have different datasets with the same summary statistics. Hence, it is essential to keep in mind while analyzing data that the summary statistics alone may not provide a complete picture of the underlying patterns and relationships.
+
+## Conclusion 
+
+Congratulations! You have completed this ungraded lab and now understand that summary statistics may not capture all the necessary information to describe your data accurately. Keep in mind that visualizations and more in-depth analyses are often needed to get a better understanding of your data.
