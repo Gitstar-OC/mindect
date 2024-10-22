@@ -3,6 +3,11 @@
     "root": true,
     "pages": [
         "index",
-        "..."
+        "differentiation-in-python-symbolic-numerical-and-automatic",
+        "optimization-using-gradient-descent-in-one-variable",
+        "optimization-using-gradient-descent-in-two-variables",
+        "regression-with-perceptron",
+        "classification-with-perceptron",
+        "optimization-using-newtons-method"
     ]
 }
