@@ -48,6 +48,7 @@ const BaseCard = ({
             className
           )}
         >
+          {/* <div className="md:w-[80vw] sm:w-[80vw] xl:mt-0 rounded-3xl xl:w-[23rem] xl:h-[30rem] mx-auto relative"> */}
           <span
             className={cn(
               "text-xs font-medium px-2.5 py-0.5 rounded-full relative",
@@ -93,6 +94,7 @@ const BaseCard = ({
             </button>
             {console.log(buttonPath)}
           </Link>
+          {/* </div> */}
         </CardSpotlight>
       </div>
     </>
