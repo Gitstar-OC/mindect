@@ -1,6 +1,7 @@
 // this file is used as a base card for components in the /docs page to resolve reuse of code
 
-import { CardSpotlight } from "@/components/ui/card-spotlight";
+import { ChevronRightIcon } from "lucide-react";
+import ShineBorder from "@/components/ui/shine-border";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Info } from "lucide-react";
@@ -41,28 +42,24 @@ const BaseCard = ({
 }) => {
   return (
     <>
-      <div className="flex justify-center">
-        <CardSpotlight
-          className={cn(
-            "md:w-[80vw] sm:w-[80vw] xl:mt-0 rounded-3xl xl:w-[23rem] xl:h-[30rem] mx-auto relative",
-            className
-          )}
-        >
-          {/* <div className="md:w-[80vw] sm:w-[80vw] xl:mt-0 rounded-3xl xl:w-[23rem] xl:h-[30rem] mx-auto relative"> */}
-          <span
+      {/* <div className="flex relative flex-col mx-auto py-8 px-4 rounded-xl items-center sm:mt-4 justify-center overflow-hidden border bg-background md:shadow-xl"> */}
+      <ShineBorder className="relative flex-col md:w-[80vw] sm:w-[80vw] xl:mt-0 rounded-3xl xl:w-[23rem] xl:h-[29rem] mx-auto  items-center sm:mt-4 justify-center overflow-hidden border bg-background md:shadow-xl" 
+       color={["#25AFAA", "#FE8FB5", "#4C054C"]}  > 
+           {/* <span 
             className={cn(
-              "text-xs font-medium px-2.5 py-0.5 rounded-full relative",
+              "text-xs font-medium  px-2.5 py-0.5 rounded-full relative",
               statusStyle
             )}
           >
             {status}
-          </span>
-          <p className="text-xl font-bold relative z-20 mt-2 text-black dark:text-white break-words lg:whitespace-normal">
+          </span> */}
+          <div>
+          <p className="text-xl font-bold ml-6 text-black dark:text-white break-words lg:whitespace-normal">
             {heading}
           </p>
-          <div className="dark:text-neutral-300 text-gray-700 mt-4 relative z-20">
+          <div className="dark:text-neutral-300 ml-6 text-gray-700 mt-2 relative ">
             {subheading}
-            <ul className="list-none mt-2 grid grid-cols-1 xl:grid-cols-1 md:grid-cols-2 gap-x-4">
+            <ul className="list-none mt-2 ml-4 mr-10 grid grid-cols-1 xl:grid-cols-1 md:grid-cols-2 gap-x-4">
               {steps.map((step, index) => (
                 <Step key={index} title={step} />
               ))}
@@ -87,16 +84,21 @@ const BaseCard = ({
             className="flex justify-center"
           >
             <button
-              className={cn("relative p-[3px] mt-4", buttonStyle)}
+              className={cn("relative p-[3px] mt-6 mb-6", buttonStyle)}
               disabled={isDisabled}
             >
-              {buttonText}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#25AFAA] to-[#4C054C] rounded-lg" />
+              <div className="flex items-center px-8 py-2 rounded-[6px] text-white relative group transition duration-200 ">
+                Start Learning
+                <ChevronRightIcon className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+              </div>
+              {/* {buttonText} */}
             </button>
             {console.log(buttonPath)}
           </Link>
-          {/* </div> */}
-        </CardSpotlight>
-      </div>
+          </div>
+         </ShineBorder>
+      {/* </div> */}
     </>
   );
 };
