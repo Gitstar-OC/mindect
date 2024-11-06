@@ -4,6 +4,7 @@
 
 - Mindect are docs for everyone who wants to learn about AI, ML, Supervised Learning and Advanced Learning ALgorithms.
 <!--
+- use media query for special navigation bar so that it only appears on pc and not on mobile or tablet
 - add backlins for pages to make the pages go on top with search engines named additioanl resourses, read more at etc.
 - add all the exports in the lib file
 - add cn in the components that you have made so it will take the styling

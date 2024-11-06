@@ -44,7 +44,7 @@ const BaseCard = ({
     <>
       {/* <div className="flex relative flex-col mx-auto py-8 px-4 rounded-xl items-center sm:mt-4 justify-center overflow-hidden border bg-background md:shadow-xl"> */}
       <ShineBorder className="relative flex-col md:w-[80vw] sm:w-[80vw] xl:mt-0 rounded-3xl xl:w-[23rem] xl:h-[29rem] mx-auto  items-center sm:mt-4 justify-center overflow-hidden border bg-background md:shadow-xl" 
-       color={["#25AFAA", "#FE8FB5", "#4C054C"]}  > 
+       color={["#25AFAA", "#FE8FB5"]}  > 
            {/* <span 
             className={cn(
               "text-xs font-medium  px-2.5 py-0.5 rounded-full relative",

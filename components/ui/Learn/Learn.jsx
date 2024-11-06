@@ -1,40 +1,33 @@
 "use client";
-import { motion } from "framer-motion";
-import { AuroraBackground } from "@/components/ui/aurora-background";
-import Footer from "../footer"
+import Footer from "../footer";
 import MachineLearningSection from "./MachineLearning/MachineLearningSection";
-import MathematicsSection from "./Mathematics/MathematicsSection"
+import MathematicsSection from "./Mathematics/MathematicsSection";
 
 const Learn = () => {
-  
   return (
     <>
-      <AuroraBackground className="justify-start">
-        <motion.div
-          initial={{ opacity: 0.0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.2,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="relative flex flex-col gap-4 px-4 mt-10"
-        >
-          <header>
-            <div className="text-[30px] md:text-[40px] lg:text-[48px] text-black font-light dark:text-white text-center">
-              What would you like to learn today?
-            </div>
-            <div className="text-center text-[18px] md:text-[22px] lg:text-[26px] text-black dark:text-neutral-200 lg:mx-60">
-              I first thought about teaching literature and arts.
-              <br />
-              But the thing is those topics are kind of hard, so here are some
-              easy topics for you to start with!
-            </div>
-          </header>
-          <MachineLearningSection />
-          <MathematicsSection />
-        </motion.div>
-      </AuroraBackground>
+      <header className="relative mt-10 mb-10 xl:mt-28 xl:mb-20">
+        {/* Light theme background gradient circle */}
+        <div className="absolute inset-0 flex justify-center items-center">
+          <div className="w-[28rem] h-[28rem] bg-gradient-to-r bg-gradient-radial from-blue-300 via-purple-400 to-transparent dark:from-blue-800/80 dark:via-purple-900/80 rounded-full opacity-50 blur-3xl shadow-2xl "></div>
+        </div>
+        {/* Dark theme background gradient circle */}
+        <div className="absolute inset-0 flex justify-center items-center">
+          <div className="w-[28rem] h-[28rem] bg-gradient-radial from-blue-900 via-purple-800 to-transparent rounded-full opacity-30 blur-3xl shadow-2xl hidden dark:block"></div>
+        </div>
+        {/* Content */}
+        <div className="relative text-[28px] md:text-[34px] lg:text-[40px] text-black font-light dark:text-white text-center z-10">
+          What would you like to learn today?
+        </div>
+        <div className="relative text-center text-[16px] md:text-[20px] lg:text-[22px] text-black dark:text-neutral-200 lg:mx-60 z-10">
+          I first thought about teaching literature and arts.
+          <br />
+          But the thing is those topics are kind of hard, so here are some easy
+          topics for you to start with!
+        </div>
+      </header>
+      <MachineLearningSection />
+      <MathematicsSection />
       <Footer />
     </>
   );
