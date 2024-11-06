@@ -32,5 +32,5 @@ export const baseOptions: HomeLayoutProps = {
       active: 'nested-url',
     }
   ],
-  githubUrl: "https://github.com/gitstar-oc/learnai",
+  githubUrl: "https://github.com/gitstar-oc/mindect",
 };

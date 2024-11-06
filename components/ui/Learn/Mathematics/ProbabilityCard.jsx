@@ -1,5 +1,7 @@
 import BaseCard from "@/components/ui/base-card";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
+import { ChevronRightIcon } from "lucide-react";
+
 
 const ProbabilityCard = () => {
   const steps = [
@@ -36,16 +38,7 @@ const ProbabilityCard = () => {
       extraSteps={extraSteps}
       subheading="Here's what you will learn:"
       statusStyle=""
-      buttonText={
-        <>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#25AFAA] to-[#4C054C]  rounded-lg" />
-          <div className="px-8 py-2  text-white rounded-[6px]  relative group transition duration-200 ">
-            Coming Soon!!
-          </div>
-        </>
-      }
-      buttonPath=""
-      buttonStyle="cursor-not-allowed"
+      buttonPath="probability"
       isDisabled={true}
     />
   );

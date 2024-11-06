@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer components {
     .underlineEffect {
       @apply absolute left-0 bottom-[3px] h-[2px] w-full bg-gradient-to-r from-[#4C054C] to-[#25AFAA] scale-x-0 transform transition-transform duration-300 origin-left;
@@ -60,6 +58,8 @@ img, video {
   border-radius: 10px; 
 }
 
+<<<<<<< HEAD
+=======
 /*************** Navbar ******************/ 
 
 /* #nd-nav {
@@ -79,6 +79,7 @@ img, video {
 } */
 
 
+>>>>>>> f35fd001fbd24d08dd819bb0b8da3c1939353576
 @layer base {
   :root {
         --radius: 0.5rem;
@@ -99,7 +100,7 @@ img, video {
 
 /*********************** maths code block *******************/
 .katex-html {
-  font-size: larger;
+  font-size: x-large;
   overflow: auto;
   overflow-y: hidden;
 }
@@ -112,4 +113,8 @@ img, video {
 /*********** gap between lines in code block ***************/ 
 .fd-codeblock code {
   row-gap: 5px;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f35fd001fbd24d08dd819bb0b8da3c1939353576
