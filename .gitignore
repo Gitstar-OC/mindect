@@ -26,3 +26,9 @@ yarn-error.log*
 .env*.local
 .vercel
 next-env.d.ts
+
+/content/learn/probability/exploratory-data-analysis-confidence-intervals-with-hypoothesis-testing.mdx
+/content/learn/probability/exploratory-data-analysis-exploring-your-data.mdx
+/content/learn/probability/sampling-data-from-different-distribution-and-studying-the-distribution-of-sample-mean.mdx
+/public/Probablity/C3_W1_Lab_2_Birthday_Problems.ipynb
+/public/Probablity/Rideshare_Project_Week2.ipynb

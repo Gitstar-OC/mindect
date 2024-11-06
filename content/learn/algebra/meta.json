@@ -1,0 +1,10 @@
+{
+    "title": "Algebra",
+    "root": true,
+    "pages": [
+        "index",
+        "introduction-to-numpy-arrays",
+        "linear-systems-as-matrices",
+        "..."
+    ]
+}

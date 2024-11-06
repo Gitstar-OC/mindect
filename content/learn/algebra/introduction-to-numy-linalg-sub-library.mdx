@@ -1,0 +1,155 @@
+---
+title: Introduction to the Numpy.linalg sub-library
+description: This 
+---
+
+In this lab, you will keep developing your skills using Python to solve systems of linear equations by using the sub-libraby [numpy.linalg](https://numpy.org/doc/stable/reference/routines.linalg.html). In this notebook you will:
+
+- Use `NumPy` linear algebra package to find the solutions to the system of linear equations
+- Evaluate the determinant of the matrix to see again the connection between matrix singularity and the number of solutions of the linear system
+- Explore the numpy.linalg sub-library to get to know its properties
+
+**Packages**
+
+Load the `NumPy` package to access its functions.
+
+```py
+import numpy as np 
+```
+
+## Representing and Solving a System of Linear Equations using Matrices
+
+### System of Linear Equations
+
+Here is a **system of linear equations** (or **linear system**) with three equations and three unknown variables:
+
+
+$$
+\begin{cases} 
+4x_1-3x_2+x_3=-10, \\ 2x_1+x_2+3x_3=0, \\ -x_1+2x_2-5x_3=17, \end{cases}\tag{1}
+$$
+
+**To solve** this system of linear equations means to find such values of the variables $x_1$, $x_2$, $x_3$, that all of its equations are simultaneously satisfied.
+
+### Solving Systems of Linear Equations using Matrices
+
+Let's prepare to solve the linear system $(1)$ using `NumPy`. $A$ will be a matrix, each row will represent one equation in the system and each column will correspond to the variable $x_1$, $x_2$, $x_3$. And $b$ is a 1-D array of the free (right side) coefficients:
+
+```py
+A = np.array([
+        [4, -3, 1],
+        [2, 1, 3],
+        [-1, 2, -5]
+    ], dtype=np.dtype(float))
+
+b = np.array([-10, 0, 17], dtype=np.dtype(float))
+
+print("Matrix A:")
+print(A)
+print("\nArray b:")
+print(b)
+```
+
+Check the dimensions of $A$ and $b$ using `shape()` function:
+
+```py
+print(f"Shape of A: {np.shape(A)}")
+print(f"Shape of b: {np.shape(b)}")
+```
+
+Now use `np.linalg.solve(A, b)` function to find the solution of the system $(1)$. The result will be saved in the 1-D array $x$. The elements will correspond to the values of $x_1$, $x_2$ and $x_3$:
+
+```py
+x = np.linalg.solve(A, b)
+
+print(f"Solution: {x}")
+```
+
+Try to substitute those values of $x_1$, $x_2$ and $x_3$ into the original system of equations to check its consistency.
+
+### Evaluating the Determinant of a Matrix
+
+Matrix $A$ corresponding to the linear system $(1)$ is a **square matrix** - it has the same number of rows and columns. In the case of a square matrix it is possible to calculate its determinant - a real number that characterizes some properties of the matrix. A linear system containing three equations with three unknown variables will have one solution if and only if the matrix $A$ has a non-zero determinant.
+
+Let's calculate the determinant using `np.linalg.det(A)` function:
+
+```py 
+d = np.linalg.det(A)
+
+print(f"Determinant of matrix A: {d:.2f}")
+```
+<Callout>
+Please, note that its value is non-zero, as expected.
+</Callout>
+
+### What happens if the system has no unique solution?
+
+Let's explore what happens if we use `np.linalg.solve` in a system with no unique solution (no solution at all or infinitely many solutions).
+
+Given another system of linear equations:
+
+$$
+\begin{cases} 
+x_1+x_2+x_3=2, \\ x_2-3x_3=1, \\ 2x_1+x_2+5x_3=0, \end{cases}\tag{2}
+$$
+
+Let's find the determinant of the corresponding matrix.
+
+
+<Tabs groupId='python-output' persist items={['python', 'output']}> 
+
+```py tab="python" 
+A_2= np.array([
+        [1, 1, 1],
+        [0, 1, -3],
+        [2, 1, 5]
+    ], dtype=np.dtype(float))
+
+b_2 = np.array([2, 1, 0], dtype=np.dtype(float))
+
+print(np.linalg.solve(A_2, b_2))
+```
+
+```py tab="output"
+LinAlgError                               Traceback (most recent call last)
+Cell In[6], line 9
+      1 A_2= np.array([
+      2         [1, 1, 1],
+      3         [0, 1, -3],
+      4         [2, 1, 5]
+      5     ], dtype=np.dtype(float))
+      7 b_2 = np.array([2, 1, 0], dtype=np.dtype(float))
+----> 9 print(np.linalg.solve(A_2, b_2))
+
+File c:\Users\mouse\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\linalg\_linalg.py:413, in solve(a, b)
+    410 signature = 'DD->D' if isComplexType(t) else 'dd->d'
+    411 with errstate(call=_raise_linalgerror_singular, invalid='call',
+    412               over='ignore', divide='ignore', under='ignore'):
+--> 413     r = gufunc(a, b, signature=signature)
+    415 return wrap(r.astype(result_t, copy=False))
+
+File c:\Users\mouse\AppData\Local\Programs\Python\Python312\Lib\site-packages\numpy\linalg\_linalg.py:104, in _raise_linalgerror_singular(err, flag)
+    103 def _raise_linalgerror_singular(err, flag):
+--> 104     raise LinAlgError("Singular matrix")
+
+LinAlgError: Singular matrix
+
+
+```
+
+</Tabs>
+
+As you can see, it throws a `LinAlgError` because the matrix is singular. You can check it by yourself by computing the determinant of the matrix:
+
+```py
+d_2 = np.linalg.det(A_2)
+
+print(f"Determinant of matrix A_2: {d_2:.2f}")
+```
+The sub-library np.linalg has several linear algebra functions to help linear algebra tasks and we have exhausted so far the functions you have learned in class. 
+
+Once you learn more theory, the functions in this library will become clearer. You also will be using them in the assignments in week 3 and 4, but do not worry because you will be guided through them.
+
+## Conclusion
+
+Well done! You used the `NumPy` functions to solve a system of equations. As expected, using a predefined function is much easier, but gives much less insight into what is happening under the hood. **This is why the next assignment will be in Gaussian Elimination, a method to solve linear systems**. Remember that `np.linalg.solve` gives an error if there are no or infinitely many solutions, thus when implementing it you will have to think carefully so not to make your program crash!

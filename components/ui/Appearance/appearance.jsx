@@ -1,3 +1,4 @@
+// this component is used to change the appearance of the app
 "use client";
 import React, { useState, useEffect } from "react";
 import "../../../app/global.css"; // Global CSS file
@@ -14,6 +15,7 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Slider } from "@/components/ui/slider";
 
 const Appearance = ({ className }) => {
   const [fontSize, setFontSize] = useState("medium");
@@ -26,21 +28,26 @@ const Appearance = ({ className }) => {
       "--not-prose": "10px"
     },
     medium: {
+<<<<<<< HEAD
+      "--h2-size": "28px", 
+      "--h3-size": "25px", 
+=======
       "--h2-size": "26px", 
       "--h3-size": "20px", 
+>>>>>>> f35fd001fbd24d08dd819bb0b8da3c1939353576
       "--p-size": "18px", 
       "--not-prose": "15px"
     },
     large: {
-      "--h2-size": "28px",
-      "--h3-size": "24px",
+      "--h2-size": "31px",
+      "--h3-size": "28px",
       "--p-size": "20px",
       "--not-prose": "18px"
 
     },
     larger: {
-      "--h2-size": "32px",
-      "--h3-size": "28px",
+      "--h2-size": "34px",
+      "--h3-size": "31px",
       "--p-size": "24px",
       "--not-prose": "21px"
     },
@@ -114,6 +121,12 @@ const Appearance = ({ className }) => {
             </RadioGroup>
           </DialogDescription>
         </DialogHeader>
+          <DialogDescription className="justify-start">
+            <div className="flex mb-2 mt-2">
+              Or use a slider instead to set it
+            </div>
+            <Slider defaultValue={[55]} max={100} step={11} className="flex" />
+          </DialogDescription>
       </DialogContent>
     </Dialog>
   );
