@@ -28,8 +28,13 @@ const Appearance = ({ className }) => {
       "--not-prose": "10px"
     },
     medium: {
+<<<<<<< HEAD
       "--h2-size": "28px", 
       "--h3-size": "25px", 
+=======
+      "--h2-size": "26px", 
+      "--h3-size": "20px", 
+>>>>>>> f35fd001fbd24d08dd819bb0b8da3c1939353576
       "--p-size": "18px", 
       "--not-prose": "15px"
     },

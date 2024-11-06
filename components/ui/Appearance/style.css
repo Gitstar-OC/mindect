@@ -6,6 +6,7 @@
   font-size: var(--h3-size);
 }
 .prose :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+<<<<<<< HEAD
 .prose :where(ul):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   font-size: var(--p-size);
 }
@@ -17,3 +18,14 @@
   font-size: var(--not-prose)
 }
 
+=======
+.prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)), 
+.prose :where(ul):not(:where([class~="not-prose"], [class~="not-prose"] *)), 
+.fd-codeblock code {
+  font-size: var(--p-size);
+}
+
+.not-prose{
+  font-size: var(--not-prose)
+}
+>>>>>>> f35fd001fbd24d08dd819bb0b8da3c1939353576
