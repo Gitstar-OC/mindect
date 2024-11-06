@@ -95,7 +95,6 @@ const BaseCard = ({
               </div>
               {/* {buttonText} */}
             </button>
-            {console.log(buttonPath)}
           </Link>
           </div>
          </ShineBorder>
