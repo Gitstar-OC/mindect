@@ -58,28 +58,6 @@ img, video {
   border-radius: 10px; 
 }
 
-<<<<<<< HEAD
-=======
-/*************** Navbar ******************/ 
-
-/* #nd-nav {
-  background-color: black;
-  background: black;
-} */
-
-/* nav {
-  background-color: black;
-} */
-
-
-/************ Highlighted text ***********/
-/* .prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-  font-size: 16px;
-
-} */
-
-
->>>>>>> f35fd001fbd24d08dd819bb0b8da3c1939353576
 @layer base {
   :root {
         --radius: 0.5rem;
@@ -113,8 +91,4 @@ img, video {
 /*********** gap between lines in code block ***************/ 
 .fd-codeblock code {
   row-gap: 5px;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> f35fd001fbd24d08dd819bb0b8da3c1939353576

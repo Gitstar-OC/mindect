@@ -14,7 +14,6 @@
 - shorten the path of @/components/ui to @cui
 - add icon for index.mdx, what is machine learning and jupyter notebook
 - add a slider instead of radio button along with a box that shows the font size from 1 to 10
-<<<<<<< HEAD
 - add main file for all 3 mathematics files.
 - fix the seo of mindect.
 - create an option to run the code like the web3 school has to run and customize it using the persons own machine resources and ram. Can be done using C, python, C+.
@@ -63,8 +62,6 @@
   - `B` [Exploratory Data Analysis: Confidence Intervals with Hypoothesis Testing]() 
   - `B` [A/B Testing]() /a
 
-=======
->>>>>>> f35fd001fbd24d08dd819bb0b8da3c1939353576
 -->
 
 ## Starting the development server
