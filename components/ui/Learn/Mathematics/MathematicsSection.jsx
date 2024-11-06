@@ -4,8 +4,8 @@ import ProbabilityCard from "./ProbabilityCard";
 
 const MathematicsSection = () => {
   return (
-    <div className="xl:mx-8 bg-gray-50/50 dark:bg-zinc-950/70 rounded-xl flex flex-col mt-10 mb-10">
-      <div className="text-[26px] md:text-[36px] lg:text-[40px] text-black font-light dark:text-white text-center mt-6">
+    <div className="xl:mx-8 bg-gradient-radial bg-gradient-to-b from-purple-100 via-purple-300 bg-gradient-radial dark:from-purple-900/10 dark:via-purple-600/20 rounded-xl flex flex-col mt-10 mb-10">
+      <div className="text-[26px] md:text-[34px] lg:text-[38px] text-black font-light dark:text-white text-center mt-6">
         Mathematics
       </div>
       <div className="text-center text-balance text-[16px] md:text-[18px] lg:text-[20px] text-gray-800 dark:text-neutral-300  mt-3">
@@ -24,4 +24,6 @@ const MathematicsSection = () => {
 };
 
 export default MathematicsSection;
+
+// previous color bg-gradient-conic from-purple-200 via-pink-200 to-blue-200  bg-gradient-to-b dark:bg-gradient-to-b dark:bg-gradient-conic dark:from-purple-500/50 dark:via-pink-600/50 dark:to-blue-700/50
 
