@@ -39,7 +39,6 @@ const ProbabilityCard = () => {
       subheading="Here's what you will learn:"
       statusStyle=""
       buttonPath="probability"
-      isDisabled={true}
     />
   );
 };
