@@ -1,55 +1,124 @@
 import Link from "next/link";
 
 const Footer = () => {
-    return (
-        <footer className="py-12 bg-white xl:pt-24 dark:bg-[hsl(0,0%,4%)] border-t-2 dark:border-t-[hsl(0,0%,14%)]">
-    <div className="w-full px-4 mx-auto max-w-8xl">
+  return (
+    <footer className="py-12 bg-white xl:pt-24 dark:bg-[hsl(0,0%,4%)] border-t-2 dark:border-t-[hsl(0,0%,14%)]">
+      <div className="w-full px-4 mx-auto max-w-8xl">
         <div className="grid gap-8 xl:grid-cols-5 xl:gap-24">
-            <div className="col-span-2 lg:ml-6">
-                <a href="{{ .Site.Params.homepage }}/" className="flex mb-5">
-                    <img src="/TransparentLogo.png" className="h-8 mr-3" alt="Mindect Logo" />
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Mindect</span>
+          <div className="col-span-2 lg:ml-6">
+            <a href="{{ .Site.Params.homepage }}/" className="flex mb-5">
+              <img
+                src="/TransparentLogo.png"
+                className="h-8 mr-3"
+                alt="Mindect Logo"
+              />
+              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                Mindect
+              </span>
+            </a>
+            <p className="max-w-lg mb-3 text-gray-600 dark:text-gray-400">
+              Mindect is a collection of various notes and resources made for
+              people to learn Machine Learning, AI, Training Algorithms, Machine
+              Learning Libraries along with Python and Mathematics.{" "}
+            </p>
+            <p className="max-w-lg text-gray-600 dark:text-gray-400">
+              Code licensed{" "}
+              <a
+                href="https://github.com/gitstar-oc/mindect/blob/main/LICENSE.md"
+                className="text-blue-600 dark:text-blue-500 hover:underline"
+                rel="nofollow"
+              >
+                MIT
+              </a>
+              , docs{" "}
+              <a
+                href="https://creativecommons.org/licenses/by/3.0/"
+                className="text-blue-600 hover:underline dark:text-blue-500"
+                rel="nofollow"
+              >
+                CC BY 3.0
+              </a>
+              .
+            </p>
+            <p className="max-w-lg text-gray-600 dark:text-gray-400  mt-2">
+              {" "}
+              Credits -{" "}
+              <a
+                href="https://deeplearning.ai"
+                className="text-blue-600 dark:text-blue-500 hover:underline"
+                target="_blank"
+              >
+                DeepLearningAI , 
+              </a>{" "}
+              <a
+                href="https://fumadocs.vercel.app/"
+                className="text-blue-600 dark:text-blue-500 hover:underline"
+                target="_blank"
+              >
+                Fumadocs
+              </a>{" "}
+            </p>
+          </div>
+          <div>
+            <h3 className="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">
+              Support
+            </h3>
+            <ul>
+              <li className="mb-4">
+                <a
+                  href="https://github.com/gitstar-oc/mindect"
+                  target="_blank"
+                  className="font-medium text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline"
+                >
+                  Contribute
                 </a>
-                <p className="max-w-lg mb-3 text-gray-600 dark:text-gray-400">Mindect is a collection of various notes and resources made for people to learn Machine Learning, AI, Training Algorithms, Machine Learning Libraries along with Python and Mathematics. </p>
-                <p className="max-w-lg text-gray-600 dark:text-gray-400">Code licensed <a href="https://github.com/gitstar-oc/mindect/blob/main/LICENSE.md" className="text-blue-600 dark:text-blue-500 hover:underline" rel="nofollow">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" className="text-blue-600 hover:underline dark:text-blue-500" rel="nofollow">CC BY 3.0</a>.</p>
-                <p className="max-w-lg text-gray-600 dark:text-gray-400  mt-2"> Credits - <a href="https://deeplearning.ai" className="text-blue-600 dark:text-blue-500 hover:underline"  target="_blank" >DeepLearningAI</a> </p>
-            </div>
-            <div>
-                <h3 className="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">Support</h3>
-                <ul>
-                    
-                    <li className="mb-4">
-                        <a href="https://github.com/gitstar-oc/mindect" target="_blank"
-                            className="font-medium text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Contribute</a>
-                    </li>
-                    <li className="mb-4">
-                        <a href="https://github.com/gitstar-oc/mindect"  target="_blank"
-                            className="font-medium text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Sponsor</a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h3 className="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">Learn</h3>
-                <ul>
-                    <li className="mb-4 ">
-                        <Link href="/learn/sl" 
-                            className="font-medium text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Supervised Learning </Link>
-                            
-                    </li>
-                    <li className="mb-4">
-                        <Link href="/learn/usl"
-                            className="font-medium text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Unsupervised Learning</Link>
-                    </li>
-                    <li className="mb-4 flex items-center ">
-                        <Link href="/learn/algs"
-                            className="font-medium text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Learning Algorithms</Link>
-                        {/* <span className='bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-2'>
+              </li>
+              <li className="mb-4">
+                <a
+                  href="https://github.com/gitstar-oc/mindect"
+                  target="_blank"
+                  className="font-medium text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline"
+                >
+                  Sponsor
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">
+              Learn
+            </h3>
+            <ul>
+              <li className="mb-4 ">
+                <Link
+                  href="/learn/sl"
+                  className="font-medium text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline"
+                >
+                  Supervised Learning{" "}
+                </Link>
+              </li>
+              <li className="mb-4">
+                <Link
+                  href="/learn/usl"
+                  className="font-medium text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline"
+                >
+                  Unsupervised Learning
+                </Link>
+              </li>
+              <li className="mb-4 flex items-center ">
+                <Link
+                  href="/learn/algs"
+                  className="font-medium text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline"
+                >
+                  Learning Algorithms
+                </Link>
+                {/* <span className='bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-2'>
                         New
                         </span> */}
-                    </li>
-                </ul>
-            </div>
-            {/* <div>
+              </li>
+            </ul>
+          </div>
+          {/* <div>
                 <h3 className="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">Follow</h3>
                 <ul>
                     <li className="mb-4">
@@ -66,28 +135,46 @@ const Footer = () => {
                     </li>
                 </ul>
             </div> */}
-            <div>
-                <h3 className="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">Coming Soon</h3>
-                <ul className="pointer-events-none">
-                    <li className="mb-4">
-                        <p className="font-medium text-gray-600 dark:text-gray-400 group relative ">Calculus</p>
-                    </li>
-                    <li className="mb-4">
-                        <p className="font-medium text-gray-600 dark:text-gray-400 ">Probability</p> 
-                    </li>
-                    <li className="mb-4">
-                        <p
-                            className="font-medium text-gray-600 dark:text-gray-400">Linear Algebra</p>
-                    </li>
-                </ul>
-            </div>
+          <div>
+            <h3 className="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">
+              Mathematics
+            </h3>
+            <ul>
+              <li className="mb-4">
+                <Link
+                  href="/learn/calculus"
+                  className="font-medium text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline"
+                >
+                  Calculus{" "}
+                </Link>
+              </li>
+              <li className="mb-4">
+                <Link
+                  href="/learn/algebra"
+                  className="font-medium text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline"
+                >
+                  Linear Algebra{" "}
+                </Link>
+              </li>
+              <li className="mb-4">
+                <Link
+                  href="/learn/probability"
+                  className="font-medium text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline"
+                >
+                  Probability & Statistics{" "}
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
         <hr className="my-8 border-gray-200 dark:border-gray-700 lg:my-12" />
-        <span className="block text-center text-gray-600 dark:text-gray-400 font-">© <span id="currentYear">2024</span> <a href="/">Mindect</a> All Rights Reserved.
+        <span className="block text-center text-gray-600 dark:text-gray-400 font-">
+          © <span id="currentYear">2024</span> <a href="/">Mindect</a> All
+          Rights Reserved.
         </span>
-    </div>
-</footer>) 
-
-}
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;
