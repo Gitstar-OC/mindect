@@ -39,6 +39,7 @@ const ProbabilityCard = () => {
       subheading="Here's what you will learn:"
       statusStyle=""
       buttonPath="probability"
+      iconColor="text-purple-500"
     />
   );
 };

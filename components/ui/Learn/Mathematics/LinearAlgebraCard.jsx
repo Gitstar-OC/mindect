@@ -43,6 +43,7 @@ const LinearAlgebraCard = () => {
       //   </>
       // }
       buttonPath="algebra"
+      iconColor="text-purple-500"
     />
   );
 };

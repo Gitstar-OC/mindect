@@ -35,6 +35,7 @@ const CalculusCard = () => {
       statusStyle=""
 
       buttonPath="calculus"
+      iconColor="text-purple-500"
     />
   );
 };
