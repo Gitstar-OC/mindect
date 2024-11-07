@@ -86,7 +86,7 @@ const BaseCard = ({
           >
             <button
               className={cn("relative p-[3px] mt-6 mb-6", buttonStyle)}
-              disabled={isDisabled}
+              // disabled={isDisabled}
             >
               <div className="absolute inset-0 dark:border-white dark:border-[0.01px] border-white bg-gradient-to-r rounded-lg" />
               <div className="flex items-center px-8 py-2 rounded-[6px] text-black dark:text-white relative group transition duration-200 ">
