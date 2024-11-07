@@ -35,7 +35,6 @@ const CalculusCard = () => {
       statusStyle=""
 
       buttonPath="calculus"
-      isDisabled={true}
     />
   );
 };

@@ -43,7 +43,6 @@ const LinearAlgebraCard = () => {
       //   </>
       // }
       buttonPath="algebra"
-      isDisabled={true}
     />
   );
 };
