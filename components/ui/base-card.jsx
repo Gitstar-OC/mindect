@@ -91,24 +91,18 @@ const BaseCard = ({
           </div>
           <div className="flex justify-center mt-6">
             <Link href={`learn/${buttonPath}`} passHref>
-              <motion.button
-                className={cn("relative p-[3px]", buttonStyle)}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              <button
+                className={cn(
+                  "relative p-[3px] group",
+                  buttonStyle
+                )}
               >
                 <div className="absolute inset-0 dark:border-white dark:border-[0.01px] border-white bg-gradient-to-r rounded-lg" />
                 <div className="flex items-center px-8 py-2 rounded-[6px] text-black dark:text-white relative transition duration-200">
                   Start Learning
-                  <motion.div
-                    className="ml-2"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <ChevronRightIcon />
-                  </motion.div>
+                  <ChevronRightIcon className="ml-2 transition-transform duration-200 group-hover:translate-x-1" />
                 </div>
-              </motion.button>
+              </button>
             </Link>
           </div>
         </div>
