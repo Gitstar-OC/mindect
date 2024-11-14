@@ -1,6 +1,6 @@
-import BaseCard from "@/components/ui/base-card";
+import BaseCard from "../base-card";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
-import { ChevronRightIcon } from "lucide-react";
+
 
 const SupervisedLearningCard = () => {
   const steps = [

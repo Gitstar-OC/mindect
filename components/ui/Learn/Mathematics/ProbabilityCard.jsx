@@ -1,7 +1,5 @@
-import BaseCard from "@/components/ui/base-card";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
-import { ChevronRightIcon } from "lucide-react";
-
+import BaseCard from "../base-card";
 
 const ProbabilityCard = () => {
   const steps = [

@@ -1,13 +1,8 @@
-import { Kite_One, Merienda, Economica, Island_Moments, Inter } from "next/font/google"
+// required in Logo.jsx file
 
-export const islandMoments = Island_Moments({
-  weight: '400',
-  subsets: ['latin'],
-});
-export const kiteOne = Kite_One({ subsets: ["latin"], weight: ['400'] });
-export const merienda = Merienda({ subsets: ["latin"] });
+import { Economica} from "next/font/google"
+
 export const economica = Economica({
   weight: ['400', '700'],
   subsets: ['latin'],
 });
-// export const inter = Inter({subsets: ["latin"]})

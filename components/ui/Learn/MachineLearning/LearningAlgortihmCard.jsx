@@ -1,5 +1,5 @@
-import BaseCard from "@/components/ui/base-card";
-import { ChevronRightIcon } from "lucide-react";
+import BaseCard from "../base-card";
+
 
 const LearningAlgorithmCard = () => {
   const steps = [

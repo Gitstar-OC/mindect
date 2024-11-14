@@ -1,12 +1,11 @@
 'use client'
-import { useState, useEffect } from "react";
-import Home from "@/components/ui/Home/HomePage";
+import Test from "@components/ui/Home/Home";
 
-export default function HomePage() {
+export default function TestPage() {
 
 return (
     <>
-      <Home />
+      <Test />
     </>
   );
 }

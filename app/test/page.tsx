@@ -1,5 +1,5 @@
 'use client'
-import Test from "@/components/test";
+import Test from "@components/ui/Home/Home";
 
 export default function TestPage() {
 
