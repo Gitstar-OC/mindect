@@ -12,13 +12,13 @@ export default function Homepage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-gray-800 dark:text-gray-100">
-      {/* <Navbar />
-      <Header /> */}
+      <Navbar />
+      <Header />
       <CTA />
       {/* <CTA /> */}
-      {/* <Mission />
+      <Mission />
       <Reviews />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }

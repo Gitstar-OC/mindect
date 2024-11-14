@@ -1,5 +1,5 @@
 'use client'
-
+import Navbar from '../Navbar/navbar'
 import { useEffect, useState } from 'react'
 import Footer from "../footer"
 import MachineLearningSection from "./MachineLearning/MachineLearningSection"
@@ -15,6 +15,7 @@ const Learn = () => {
 
   return (
     <>
+    <Navbar />
       <header className="relative mt-10 mb-10 xl:mt-28 xl:mb-20">
         {/* Light theme background gradient circle */}
         <div className="absolute inset-0 flex justify-center items-center">

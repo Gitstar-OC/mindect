@@ -63,3 +63,48 @@ Untracked files:
         public/Illustration2.png
         public/Illustration3.png
         public/Illustration4.png
+
+
+///
+[probability 7550fc8] Added more components along with some other things, will be preview only and will not go to production
+ 52 files changed, 9219 insertions(+), 1388 deletions(-)
+ rename app/{testing => test}/page.tsx (68%)
+ delete mode 100644 components/not-found.tsx
+ delete mode 100644 components/test.jsx
+ rename components/ui/{ => Appearance}/dialog.tsx (100%)
+ rename components/ui/{ => Appearance}/label.tsx (100%)
+ rename components/ui/{ => Appearance}/radio-group.tsx (100%)
+ rename components/ui/{ => Appearance}/slider.tsx (100%)
+ delete mode 100644 components/ui/Home/Button.jsx
+ create mode 100644 components/ui/Home/Home.jsx
+ delete mode 100644 components/ui/Home/HomePage.jsx
+ delete mode 100644 components/ui/Home/LoadingComponent.jsx
+ create mode 100644 components/ui/Home/cta.jsx
+ create mode 100644 components/ui/Home/header.jsx
+ delete mode 100644 components/ui/Home/homepage.css
+ create mode 100644 components/ui/Home/mission.jsx
+ create mode 100644 components/ui/Home/reviews.jsx
+ rename components/ui/{ => Learn}/base-card.jsx (98%)
+ rename components/ui/{ => Learn}/hover-card.tsx (60%)
+ rename components/ui/{ => Learn}/shine-border.tsx (100%)
+ create mode 100644 components/ui/Navbar/navbar.tsx
+ create mode 100644 components/ui/Navbar/navigation-menu.tsx
+ create mode 100644 components/ui/Navbar/popover.tsx
+ create mode 100644 components/ui/Navbar/theme-changer.jsx
+ delete mode 100644 components/ui/aurora-background.tsx
+ create mode 100644 components/ui/background-gradient-animation.jsx
+ create mode 100644 components/ui/button.tsx
+ delete mode 100644 components/ui/canvas-reveal-effect.jsx
+ delete mode 100644 components/ui/card-spotlight.jsx
+ create mode 100644 components/ui/input.tsx
+ create mode 100644 env.jsx
+ create mode 100644 hello.md
+ delete mode 100644 lib/constant.js
+ delete mode 100644 lib/exports.js
+ create mode 100644 pastcommit.txt
+ create mode 100644 pnpm-lock.yaml
+ create mode 100644 public/Illustration1.png
+ create mode 100644 public/Illustration2.png
+ create mode 100644 public/Illustration3.png
+ create mode 100644 public/Illustration4.png
+PS C:\Users\chand\Mindect\mindect> git push 
