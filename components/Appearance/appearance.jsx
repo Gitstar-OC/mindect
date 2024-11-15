@@ -1,7 +1,7 @@
 // this component is used to change the appearance of the app
 "use client";
 import React, { useState, useEffect } from "react";
-import "../../../app/global.css"; // Global CSS file
+import "@/app/global.css"; // Global CSS file
 import "./style.css"; // Your custom styles
 import { TbSettings } from "react-icons/tb";
 import { cn } from "@/lib/utils";
