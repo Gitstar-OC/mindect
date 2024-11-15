@@ -6,7 +6,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { Steps, Step } from "fumadocs-ui/components/steps";
 import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 import { ArrowSquareOut } from "@phosphor-icons/react/dist/ssr";
-import Appearance from "@/components/Appearance/appearance"
+import Appearance from "@/components/ui/Appearance/appearance"
 import {
   DocsPage,
   DocsBody,
@@ -24,7 +24,7 @@ import "../../global.css"
 export default async function Page({
   params,
 }: {
-  params: { slug?: string[] };
+  params;
 }) {
   const slug = params.slug ? params.slug.join("/") : "";
   const page = source.getPage(params.slug);
