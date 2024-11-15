@@ -40,7 +40,7 @@ const Learn = () => {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="relative text-[28px] md:text-[34px] lg:text-[40px] text-black font-light dark:text-white text-center z-10"
+          className="relative text-balance text-[28px] md:text-[34px] lg:text-[40px] text-black font-light dark:text-white text-center z-10"
         >
           What would you like to learn today?
         </motion.div>
@@ -48,7 +48,7 @@ const Learn = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="relative text-center text-[16px] md:text-[20px] lg:text-[22px] text-black dark:text-neutral-200 lg:mx-60 z-10"
+          className="relative text-center text-balance text-[16px] md:text-[20px] lg:text-[22px] text-black dark:text-neutral-200 lg:mx-60 z-10"
         >
           I first thought about teaching literature and arts.
           <br />
