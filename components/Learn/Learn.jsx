@@ -1,7 +1,7 @@
 'use client'
-import Navbar from '../Navbar/navbar'
+import Navbar from '@/components/Navbar/navbar'
 import { useEffect, useState } from 'react'
-import Footer from "../footer"
+import Footer from "@/components/ui/footer"
 import MachineLearningSection from "./MachineLearning/MachineLearningSection"
 import MathematicsSection from "./Mathematics/MathematicsSection"
 import { motion } from 'framer-motion'

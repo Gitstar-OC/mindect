@@ -1,5 +1,11 @@
 import Image from "next/image";
-import { economica } from "@/lib/fonts";
+
+import { Economica} from "next/font/google"
+
+const economica = Economica({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+});
 
 const Logo = () => {
   return (

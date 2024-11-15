@@ -1,4 +1,4 @@
-import Learn from "@/components/ui/Learn/Learn"
+import Learn from "@/components/Learn/Learn"
 
 export default function Page() {
 return (

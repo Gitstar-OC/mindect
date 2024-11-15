@@ -12,10 +12,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@components/ui/Appearance/dialog";
-import { Label } from "@components/ui/Appearance/label";
-import { RadioGroup, RadioGroupItem } from "@components/ui/Appearance/radio-group";
-import { Slider } from "./slider";
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/Appearance/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/Appearance/radio-group";
+import { Slider } from "@/components/ui/slider";
 
 const Appearance = ({ className }) => {
   const [fontSize, setFontSize] = useState("medium");

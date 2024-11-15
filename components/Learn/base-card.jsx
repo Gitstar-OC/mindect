@@ -4,13 +4,13 @@ import { ChevronRightIcon, ArrowIcon, Info } from "lucide-react";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import ShineBorder from "./shine-border";
+import ShineBorder from "@/components/ui/shine-border";
 import { cn } from "@/lib/utils";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "./hover-card";
+} from "@/components/ui/hover-card";
 
 const CheckIcon = ({ className }) => {
   return (

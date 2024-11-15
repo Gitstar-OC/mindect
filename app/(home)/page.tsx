@@ -1,11 +1,11 @@
 'use client'
-import Test from "@components/ui/Home/Home";
+import Home from "@components/Home/Home";
 
 export default function TestPage() {
 
 return (
     <>
-      <Test />
+      <Home/>
     </>
   );
 }

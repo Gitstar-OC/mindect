@@ -1,13 +1,14 @@
 
 "use client";
-import Footer from "../footer";
+import Footer from "@/components/ui/footer";
 import Header from "./header"
 import CTA from "./cta"
+import CTA2 from "./cta2"
 import Mission from "./mission"
 import Reviews from "./reviews"
-import Navbar from "../Navbar/navbar"
+import Navbar from "@/components/Navbar/navbar"
 
-export default function Homepage() {
+export default function Home() {
 
 
   return (
@@ -15,7 +16,7 @@ export default function Homepage() {
       <Navbar />
       <Header />
       <CTA />
-      {/* <CTA /> */}
+      <CTA2 />
       <Mission />
       <Reviews />
       <Footer />

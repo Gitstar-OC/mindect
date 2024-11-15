@@ -10,8 +10,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "./navigation-menu";
-import Logo from "../Logo";
+} from "@/components/ui/navigation-menu";
+import Logo from "@/components/ui/Logo";
 import {
   Github,
   Sigma,
@@ -42,7 +42,7 @@ const ListItem = ({ title, description, icon: Icon, className }) => {
             </div>
             <div className="text-sm font-medium leading-none">{title}</div>
           </div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <p className="line-clamp-2 group-hover:text-black group-hover:dark:text-white text-sm leading-snug text-muted-foreground">
             {description}
           </p>
         </a>
@@ -140,6 +140,7 @@ export default function Navbar() {
           href="https://github.com/gitstar-oc/mindect"
           target="_blank"
           rel="noopener noreferrer"
+          className="p-2 rounded-md hover:bg-accent  transition-colors"
         >
           <Github className="w-5 h-5" />
         </a>
