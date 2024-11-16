@@ -20,17 +20,14 @@ const Reviews = () => {
                 className="rounded-full mr-4"
               />
               <div>
-                <h3 className="font-semibold text-lg">Alex Johnson</h3>
+                <h3 className="font-semibold text-lg">Shreyash </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
                   Data Scientist
                 </p>
               </div>
             </div>
             <p className="text-lg italic">
-              "Mindect has been a game-changer for my career. The comprehensive
-              curriculum and hands-on projects have given me the confidence to
-              tackle complex AI challenges in my work. It's more than just a
-              learning platform; it's a launchpad for innovation."
+              "I was part thrilled part saddened after seeing it. It was so amazing I just loved it intensely but melancholic because I wish I could have that resource while learning Machine Learning then the journey wouldn't have been that hard."
             </p>
           </div>
           <div className="space-y-6">
