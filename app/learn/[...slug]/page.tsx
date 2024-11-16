@@ -115,9 +115,8 @@ export async function generateStaticParams() {
   const params = await source.generateParams();
   return params.map((param) => ({ slug: param.slug }));
 }
-
 export function generateMetadata({ params }: { params: { slug?: string[] } }) {
-  const slug = params.slug ? params.slug.join("/") : "index"; // Join slugs for the path
+  const slug = params.slug ? params.slug.join("/") : "index";
   const page = source.getPage(params.slug);
 
   if (page == null) notFound();
