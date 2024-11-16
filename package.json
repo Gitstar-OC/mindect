@@ -46,7 +46,7 @@
     "three": "^0.168.0"
   },
   "devDependencies": {
-    "@shikijs/rehype": "^1.22.0",
+    "@shikijs/rehype": "^1.23.0",
     "@types/mdx": "^2.0.13",
     "@types/node": "22.5.4",
     "@types/react": "^18.3.5",
