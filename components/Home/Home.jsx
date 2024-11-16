@@ -3,7 +3,6 @@
 import Footer from "@/components/ui/footer";
 import Header from "./header"
 import CTA from "./cta"
-import CTA2 from "./cta2"
 import Mission from "./mission"
 import Reviews from "./reviews"
 import Navbar from "@/components/Navbar/navbar"
@@ -16,7 +15,6 @@ export default function Home() {
       <Navbar />
       <Header />
       <CTA />
-      <CTA2 />
       <Mission />
       <Reviews />
       <Footer />
