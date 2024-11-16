@@ -1,4 +1,4 @@
-import { source } from "@/app/source";
+import { source } from "@/lib/source";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import type { Metadata } from "next";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -6,7 +6,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { Steps, Step } from "fumadocs-ui/components/steps";
 import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 import { ArrowSquareOut } from "@phosphor-icons/react/dist/ssr";
-import Appearance from "@/components/Appearance/appearance"
+import Appearance from "@/components/Appearance/appearance";
 import {
   DocsPage,
   DocsBody,
@@ -19,15 +19,14 @@ import { ImageZoom } from "fumadocs-ui/components/image-zoom";
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
 import { Separator } from "@/components/ui/separator";
 import React from "react";
-import "../../global.css"
+import "../../global.css";
 
-export default async function Page({
-  params,
-}: {
-  params;
+export default async function Page(props: {
+  params: Promise<{ slug?: string[] }>;
 }) {
-  const slug = params.slug ? params.slug.join("/") : "";
-  const page = source.getPage(params.slug);
+  const resolvedParams = await props.params; // Await the promise
+  const slug = resolvedParams.slug ? resolvedParams.slug.join("/") : "";
+  const page = source.getPage(resolvedParams.slug);
 
   if (!page) notFound();
 
@@ -50,7 +49,7 @@ export default async function Page({
                   <IoIosArrowForward className="ml-1 transition-transform duration-300 ease-in-out transform group-hover:translate-x-1" />
                 </h3>
               </RainbowButton>
-            </a> // add this instead in the navbar only visible on pc
+            </a>
           ),
           enabled: page.file.path !== "api-reference.mdx",
           footer: (
@@ -63,7 +62,8 @@ export default async function Page({
                   rel="noreferrer noopener"
                   className="flex items-baseline text-xs text-muted-foreground hover:text-foreground mt-4 group"
                 >
-                  Edit on Github <ArrowSquareOut className="ml-1 size-3 transition-transform duration-300 ease-in-out transform group-hover:rotate-45" />
+                  Edit on Github{" "}
+                  <ArrowSquareOut className="ml-1 size-3 transition-transform duration-300 ease-in-out transform group-hover:rotate-45" />
                 </a>
                 <a
                   href="https://github.com/gitstar-oc/learnai/issues/new?title=Feedback%20for%20%E2%80%9Clearnai%E2%80%9D&labels=feedback"
@@ -74,8 +74,8 @@ export default async function Page({
                   Question? Give us feedback{" "}
                   <FaArrowRightLong className="ml-1 mb-2 size-3 transition-transform duration-300 ease-in-out transform group-hover:translate-x-1" />
                 </a>
-                <Appearance className="gap-0 mb-6"/>
-                </div>
+                <Appearance className="gap-0 mb-6" />
+              </div>
             </>
           ),
         }}
@@ -103,7 +103,8 @@ export default async function Page({
 }
 
 export async function generateStaticParams() {
-  return source.generateParams();
+  const params = await source.generateParams();
+  return params.map((param) => ({ slug: param.slug }));
 }
 
 export function generateMetadata({ params }: { params: { slug?: string[] } }) {
@@ -122,5 +123,5 @@ export function generateMetadata({ params }: { params: { slug?: string[] } }) {
     openGraph: {
       url: `/learn/${slug}`,
     },
-  } satisfies Metadata;
+  } as Metadata;
 }

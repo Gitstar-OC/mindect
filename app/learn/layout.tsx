@@ -1,7 +1,7 @@
 import { DocsLayout } from 'fumadocs-ui/layout';
 import type { ReactNode } from 'react';
 import { baseOptions } from '../layout.config';
-import { source } from '@/app/source';
+import { source } from '@/lib/source';
 import React from 'react';
 import { RootToggle } from 'fumadocs-ui/components/layout/root-toggle'
 import Footer from '@components/ui/footer';
