@@ -21,12 +21,21 @@ import { Separator } from "@/components/ui/separator";
 import React from "react";
 import "../../global.css";
 
-export default async function Page(props: {
-  params: Promise<{ slug?: string[] }>;
-}) {
-  const resolvedParams = await props.params; // Await the promise
-  const slug = resolvedParams.slug ? resolvedParams.slug.join("/") : "";
-  const page = source.getPage(resolvedParams.slug);
+// export default async function Page(props: {
+//   params: Promise<{ slug?: string[] }>;
+// }) {
+//   const resolvedParams = await props.params; // Await the promise
+//   const slug = resolvedParams.slug ? resolvedParams.slug.join("/") : "";
+//   const page = source.getPage(resolvedParams.slug);
+
+//   if (!page) notFound();
+
+//   const MDX = page.data.body;
+//   const path = `/learn/${page.file.path}`;
+
+export default async function Page(props: { params: { slug?: string[] } }) {
+  const slug = props.params.slug ? props.params.slug.join("/") : "";
+  const page = source.getPage(props.params.slug);
 
   if (!page) notFound();
 
