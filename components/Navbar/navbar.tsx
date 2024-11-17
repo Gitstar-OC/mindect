@@ -231,7 +231,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 px-16 transition-all ${
+      className={`sticky top-0 lg:px-16 sm:px-4 transition-all ${
         isScrolled
           ? "bg-transparent backdrop-blur-md border-b border-b-slate-300 dark:border-b-slate-700/40"
           : "bg-transparent"
@@ -242,7 +242,7 @@ export default function Navbar() {
           <Logo />
         </Link>
 
-        <NavigationMenu>
+        <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Machine Learning</NavigationMenuTrigger>
@@ -298,7 +298,7 @@ export default function Navbar() {
         </NavigationMenu>
       </div>
 
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-1">
         <ThemeChanger />
         <a
           href="https://github.com/gitstar-oc/mindect"
