@@ -26,7 +26,7 @@
     "baffle": "^0.3.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.9.0",
+    "framer-motion": "^11.11.17",
     "fumadocs-core": "13.4.7",
     "fumadocs-mdx": "10.0.1",
     "fumadocs-ui": "13.4.7",
