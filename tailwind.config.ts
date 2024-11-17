@@ -101,6 +101,23 @@ export default {
   					'background-position': '200%'
   				}
   			},
+			  moveCircle: {
+				'0%': {
+				  transform: 'translate(0, 0)',
+				},
+				'25%': {
+				  transform: 'translate(50vw, -30vh)',
+				},
+				'50%': {
+				  transform: 'translate(-30vw, 40vh)',
+				},
+				'75%': {
+				  transform: 'translate(20vw, -20vh)',
+				},
+				'100%': {
+				  transform: 'translate(0, 0)',
+				},
+			  },
   		},
   		fontFamily: {
   			sans: ['var(--font-geist-sans)'],
