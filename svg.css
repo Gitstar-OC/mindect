@@ -1,0 +1,49 @@
+// final svg thing done!! 
+<style> 
+@keyframes draw {
+  0% { stroke-dashoffset: 1000; stroke-width: 5; }
+  100% { stroke-dashoffset: 0; stroke-width: 5; }
+}
+
+@keyframes gradualFill {
+  0% { stop-color: transparent; stroke-width: 5; }
+  100% { stop-color: black; stroke-width: 0; }
+}
+
+@keyframes remove {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+path {
+  fill: url(#gradualFillGradient); /* Reference the gradient for the fill */
+  stroke: black;
+  stroke-width: 5; /* Initial stroke width for drawing */
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: 
+    draw 4s linear forwards,              /* Stroke drawing over 4 seconds */
+    gradualFill 4s ease-in-out 4s forwards, /* Gradual fill starts after 4 seconds */
+    remove 2s ease-in 8s forwards;        /* Fade out starts at 8 seconds */
+}
+
+/* Define the gradient for gradual filling */
+linearGradient {
+  stop {
+    stop-color: transparent;
+    animation: gradualFill 4s ease-in-out 4s forwards; /* Gradual fill starts after 4s */
+  }
+}
+</style>
+
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="gradualFillGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="transparent">
+        <animate attributeName="stop-color" from="transparent" to="black" dur="4s" begin="4s" fill="freeze" />
+      </stop>
+      <stop offset="100%" stop-color="black" />
+    </linearGradient>
+  </defs>
+</svg>
