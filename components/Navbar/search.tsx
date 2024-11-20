@@ -47,7 +47,7 @@ export default function SearchBar() {
           variant='outline'
           role="combobox"
           aria-expanded={open}
-          className="hidden rounded-xl lg:inline-flex items-center justify-between w-full text-sm text-muted-foreground h-10 px-4 py-2"
+          className="hidden rounded-xl lg:inline-flex items-center justify-between w-full text-sm text-muted-foreground h-9 px-4 py-2"
           onClick={simulateCtrlK}
         >
           <div className="inline-flex mr-20 items-center">
