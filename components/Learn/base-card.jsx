@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronRightIcon, ArrowIcon, Info } from "lucide-react";
+import {  Info } from "lucide-react";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
