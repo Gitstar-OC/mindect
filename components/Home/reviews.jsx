@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Users } from "lucide-react";
 
+//https://ui.aceternity.com/components/meteors for the review one
 
 const Reviews = () => {
   return (

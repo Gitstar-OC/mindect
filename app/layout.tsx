@@ -12,11 +12,11 @@ const inter = Inter({
 export async function generateMetadata() {
   return {
     title: "Mindect",
-    description: "Learn Concepts in Machine Learning, Supervised Learning, Unsupervised Learning, Neural Network training. At Anytime, From Anywhere with Mindect",
-    keywords: "Learn Machine Learning, What is Supervised Learning, What is Unsupervised Learning, Advanced Learning Algorithms, Neural Network with Mindect",
+    description: "Learn Concepts in Machine Learning, Supervised Learning, Unsupervised Learning, Mathematics. At Anytime, From Anywhere with Mindect",
+    keywords: "Learn, Learning, Machine, Supervised, Unsupervised, Algorithms, Calculus, Linear Algebra, Statistics, Probability, Mathematics, Mindect",
     openGraph: {
       title: "Mindect",
-      description: "Learn Concepts in Machine Learning, Supervised Learning, Unsupervised Learning, Neural Network training. At Anytime, From Anywhere with Mindect",
+      description: "Learn Concepts in Machine Learning, Supervised Learning, Unsupervised Learning, Mathematics. At Anytime, From Anywhere with Mindect",
       url: "https://mindect.vercel.app/",
       type: "website",
       siteName: "Mindect",
@@ -31,7 +31,7 @@ export async function generateMetadata() {
     },
     twitter: {
       title: "Mindect",
-      description: "Learn Concepts in Machine Learning, Supervised Learning, Unsupervised Learning, Neural Network training etc. At Anytime, From Anywhere with Mindect",
+      description: "Learn Concepts in Machine Learning, Supervised Learning, Unsupervised Learning, Mathematics. At Anytime, From Anywhere with Mindect",
       image: "https://mindect.vercel.app/Banner.png",
     },
     robots: "index, follow",
@@ -42,13 +42,13 @@ export async function generateMetadata() {
     canonical: "https://mindect.vercel.app",
     icons: {
       icon: [
-        { url: "/logo16x16.png", sizes: "16x16", type: "image/png" },
-        { url: "/logo32x32.png", sizes: "32x32", type: "image/png" },
-        { url: "/logo64x64.png", sizes: "64x64", type: "image/png" },
-        { url: "/logo128x128.png", sizes: "128x128", type: "image/png" },
+        { url: "/Logo/16x16.png", sizes: "16x16", type: "image/png" },
+        { url: "/Logo/32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/Logo/64x64.png", sizes: "64x64", type: "image/png" },
+        { url: "/Logo/128x128.png", sizes: "128x128", type: "image/png" },
       ],
-      apple: "/Logo128x128.png",
-      shortcut: "/Logo.png",
+      apple: "/Logo/128x128.png",
+      shortcut: "/Logo/Logo.png",
     },
     verification: {
       google: ["JoujTmv5oh0bgEPDWe-FC_D1gsDCmoxox9a25fkwo-M", "6RMOg1ngEZ3TFp12K8vXU8UMjylHTt3B51UnOxzu-os"],

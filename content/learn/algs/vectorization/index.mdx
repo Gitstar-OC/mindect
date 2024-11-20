@@ -1,9 +1,10 @@
+ 
 ---
 title: How Neural Network are Implemented Efficiently
 ---
 
 
-One of the reasons that deep learning researchers have been able to scale up neural networks, and thought really large neural networks over the last decade, is because `neural networks can be vectorized`. They can be implemented very efficiently using matrix multiplications. It turns out that parallel computing hardware, including GPUs, but also some CPU functions are very good at doing very large matrix multiplications.
+One of the reasons that deep learning researchers have been able to scale up neural networks, and thought really large neural networks over the last decade, is because neural networks can be vectorized. They can be implemented very efficiently using matrix multiplications. It turns out that parallel computing hardware, including GPUs, but also some CPU functions are very good at doing very large matrix multiplications.
 
 In this part, we'll take a look at how these vectorized implementations of neural networks work. Without these ideas, I don't think deep learning would be anywhere near a success and scale today.
 
@@ -18,7 +19,7 @@ It turns out you can develop a vectorized implementation of this function as fol
 
 This is now a 2D array, like in TensorFlow. W is the same as before, and B, I'm now using B, is also a one by three 2D array.
 
-Then it turns out that all of these steps, this for loop inside, can be replaced with just a couple of lines of code, Z equals np.matmul. `Matmul` is how NumPy carries out matrix multiplication.
+Then it turns out that all of these steps, this for loop inside, can be replaced with just a couple of lines of code, Z equals np.matmul. Matmul is how NumPy carries out matrix multiplication.
 
 ![HNNIE 3](/Algs/Vn/HNNIE%20(3).png)
 
@@ -35,4 +36,287 @@ It multiplies two matrices together, and then adds the matrix B to it. Then A ou
 This turns out to be a very efficient implementation of one step of forward propagation through a dense layer in the neural network. This is code for a vectorized implementation of forward prop in a neural network.
 
 But what is this code doing and how does it actually work? What is this matmul actually doing? In the next two part, both also optional, we'll go over matrix multiplication and how that works. If you're familiar with linear algebra, if you're familiar with vectors, matrices, transposes, and matrix multiplications, you can safely just quickly skim over these two part and jump to the last pRt of this section. Then in the last part of this section, also optional, we'll dive into more detail to explain how matmul gives you this vectorized implementation. Let's go onto the next part, where we'll take a look at what matrix multiplication is.
+ 
+---
+title: How Neural Network are Implemented Efficiently
+---
 
+
+One of the reasons that deep learning researchers have been able to scale up neural networks, and thought really large neural networks over the last decade, is because neural networks can be vectorized. They can be implemented very efficiently using matrix multiplications. It turns out that parallel computing hardware, including GPUs, but also some CPU functions are very good at doing very large matrix multiplications.
+
+In this part, we'll take a look at how these vectorized implementations of neural networks work. Without these ideas, I don't think deep learning would be anywhere near a success and scale today.
+
+Here on the left is the code that you had seen previously of how you would implement forward prop, or forward propagation, in a single layer.
+
+![HNNIE 1](/Algs/Vn/HNNIE%20(1).png)
+
+X here is the input, W, the weights of the first, second, and third neurons, say, parameters B, and then this is the same code as which we saw before. This will output three numbers, say, like that. If you actually implement this computation, you get 1, 0, 1.
+
+It turns out you can develop a vectorized implementation of this function as follows. Set X to be equal to this. Notice the double square brackets.
+![HNNIE 2](/Algs/Vn/HNNIE%20(2).png)
+
+This is now a 2D array, like in TensorFlow. W is the same as before, and B, I'm now using B, is also a one by three 2D array.
+
+Then it turns out that all of these steps, this for loop inside, can be replaced with just a couple of lines of code, Z equals np.matmul. Matmul is how NumPy carries out matrix multiplication.
+
+![HNNIE 3](/Algs/Vn/HNNIE%20(3).png)
+
+Where now X and W are both matrices, and so you just multiply them together. It turns out that this for loop, all of these lines of code can be replaced with just a couple of lines of code, which gives a vectorized implementation of this function.
+
+You compute Z, which is now a matrix again, as numpy.matmul between A in and W, where here A in and W are both matrices, and matmul is how NumPy carries out a matrix multiplication.
+
+![HNNIE 4](/Algs/Vn/HNNIE%20(4).png)
+
+It multiplies two matrices together, and then adds the matrix B to it. Then A out is equal to the activation function g, that is the sigmoid function, applied element-wise to this matrix Z, and then you finally return A out. This is what the code looks like. Notice that in the vectorized implementation, all of these quantities, x, which is fed into the value of A in as well as W, B, as well as Z and A out, all of these are now 2D arrays. All of these are matrices.
+
+![HNNIE 5](/Algs/Vn/HNNIE%20(5).png)
+
+This turns out to be a very efficient implementation of one step of forward propagation through a dense layer in the neural network. This is code for a vectorized implementation of forward prop in a neural network.
+
+But what is this code doing and how does it actually work? What is this matmul actually doing? In the next two part, both also optional, we'll go over matrix multiplication and how that works. If you're familiar with linear algebra, if you're familiar with vectors, matrices, transposes, and matrix multiplications, you can safely just quickly skim over these two part and jump to the last pRt of this section. Then in the last part of this section, also optional, we'll dive into more detail to explain how matmul gives you this vectorized implementation. Let's go onto the next part, where we'll take a look at what matrix multiplication is.
+ 
+---
+title: How Neural Network are Implemented Efficiently
+---
+
+
+One of the reasons that deep learning researchers have been able to scale up neural networks, and thought really large neural networks over the last decade, is because neural networks can be vectorized. They can be implemented very efficiently using matrix multiplications. It turns out that parallel computing hardware, including GPUs, but also some CPU functions are very good at doing very large matrix multiplications.
+
+In this part, we'll take a look at how these vectorized implementations of neural networks work. Without these ideas, I don't think deep learning would be anywhere near a success and scale today.
+
+Here on the left is the code that you had seen previously of how you would implement forward prop, or forward propagation, in a single layer.
+
+![HNNIE 1](/Algs/Vn/HNNIE%20(1).png)
+
+X here is the input, W, the weights of the first, second, and third neurons, say, parameters B, and then this is the same code as which we saw before. This will output three numbers, say, like that. If you actually implement this computation, you get 1, 0, 1.
+
+It turns out you can develop a vectorized implementation of this function as follows. Set X to be equal to this. Notice the double square brackets.
+![HNNIE 2](/Algs/Vn/HNNIE%20(2).png)
+
+This is now a 2D array, like in TensorFlow. W is the same as before, and B, I'm now using B, is also a one by three 2D array.
+
+Then it turns out that all of these steps, this for loop inside, can be replaced with just a couple of lines of code, Z equals np.matmul. Matmul is how NumPy carries out matrix multiplication.
+
+![HNNIE 3](/Algs/Vn/HNNIE%20(3).png)
+
+Where now X and W are both matrices, and so you just multiply them together. It turns out that this for loop, all of these lines of code can be replaced with just a couple of lines of code, which gives a vectorized implementation of this function.
+
+You compute Z, which is now a matrix again, as numpy.matmul between A in and W, where here A in and W are both matrices, and matmul is how NumPy carries out a matrix multiplication.
+
+![HNNIE 4](/Algs/Vn/HNNIE%20(4).png)
+
+It multiplies two matrices together, and then adds the matrix B to it. Then A out is equal to the activation function g, that is the sigmoid function, applied element-wise to this matrix Z, and then you finally return A out. This is what the code looks like. Notice that in the vectorized implementation, all of these quantities, x, which is fed into the value of A in as well as W, B, as well as Z and A out, all of these are now 2D arrays. All of these are matrices.
+
+![HNNIE 5](/Algs/Vn/HNNIE%20(5).png)
+
+This turns out to be a very efficient implementation of one step of forward propagation through a dense layer in the neural network. This is code for a vectorized implementation of forward prop in a neural network.
+
+But what is this code doing and how does it actually work? What is this matmul actually doing? In the next two part, both also optional, we'll go over matrix multiplication and how that works. If you're familiar with linear algebra, if you're familiar with vectors, matrices, transposes, and matrix multiplications, you can safely just quickly skim over these two part and jump to the last pRt of this section. Then in the last part of this section, also optional, we'll dive into more detail to explain how matmul gives you this vectorized implementation. Let's go onto the next part, where we'll take a look at what matrix multiplication is.
+ 
+---
+title: How Neural Network are Implemented Efficiently
+---
+
+
+One of the reasons that deep learning researchers have been able to scale up neural networks, and thought really large neural networks over the last decade, is because neural networks can be vectorized. They can be implemented very efficiently using matrix multiplications. It turns out that parallel computing hardware, including GPUs, but also some CPU functions are very good at doing very large matrix multiplications.
+
+In this part, we'll take a look at how these vectorized implementations of neural networks work. Without these ideas, I don't think deep learning would be anywhere near a success and scale today.
+
+Here on the left is the code that you had seen previously of how you would implement forward prop, or forward propagation, in a single layer.
+
+![HNNIE 1](/Algs/Vn/HNNIE%20(1).png)
+
+X here is the input, W, the weights of the first, second, and third neurons, say, parameters B, and then this is the same code as which we saw before. This will output three numbers, say, like that. If you actually implement this computation, you get 1, 0, 1.
+
+It turns out you can develop a vectorized implementation of this function as follows. Set X to be equal to this. Notice the double square brackets.
+![HNNIE 2](/Algs/Vn/HNNIE%20(2).png)
+
+This is now a 2D array, like in TensorFlow. W is the same as before, and B, I'm now using B, is also a one by three 2D array.
+
+Then it turns out that all of these steps, this for loop inside, can be replaced with just a couple of lines of code, Z equals np.matmul. Matmul is how NumPy carries out matrix multiplication.
+
+![HNNIE 3](/Algs/Vn/HNNIE%20(3).png)
+
+Where now X and W are both matrices, and so you just multiply them together. It turns out that this for loop, all of these lines of code can be replaced with just a couple of lines of code, which gives a vectorized implementation of this function.
+
+You compute Z, which is now a matrix again, as numpy.matmul between A in and W, where here A in and W are both matrices, and matmul is how NumPy carries out a matrix multiplication.
+
+![HNNIE 4](/Algs/Vn/HNNIE%20(4).png)
+
+It multiplies two matrices together, and then adds the matrix B to it. Then A out is equal to the activation function g, that is the sigmoid function, applied element-wise to this matrix Z, and then you finally return A out. This is what the code looks like. Notice that in the vectorized implementation, all of these quantities, x, which is fed into the value of A in as well as W, B, as well as Z and A out, all of these are now 2D arrays. All of these are matrices.
+
+![HNNIE 5](/Algs/Vn/HNNIE%20(5).png)
+
+This turns out to be a very efficient implementation of one step of forward propagation through a dense layer in the neural network. This is code for a vectorized implementation of forward prop in a neural network.
+
+But what is this code doing and how does it actually work? What is this matmul actually doing? In the next two part, both also optional, we'll go over matrix multiplication and how that works. If you're familiar with linear algebra, if you're familiar with vectors, matrices, transposes, and matrix multiplications, you can safely just quickly skim over these two part and jump to the last pRt of this section. Then in the last part of this section, also optional, we'll dive into more detail to explain how matmul gives you this vectorized implementation. Let's go onto the next part, where we'll take a look at what matrix multiplication is.
+ 
+---
+title: How Neural Network are Implemented Efficiently
+---
+
+
+One of the reasons that deep learning researchers have been able to scale up neural networks, and thought really large neural networks over the last decade, is because neural networks can be vectorized. They can be implemented very efficiently using matrix multiplications. It turns out that parallel computing hardware, including GPUs, but also some CPU functions are very good at doing very large matrix multiplications.
+
+In this part, we'll take a look at how these vectorized implementations of neural networks work. Without these ideas, I don't think deep learning would be anywhere near a success and scale today.
+
+Here on the left is the code that you had seen previously of how you would implement forward prop, or forward propagation, in a single layer.
+
+![HNNIE 1](/Algs/Vn/HNNIE%20(1).png)
+
+X here is the input, W, the weights of the first, second, and third neurons, say, parameters B, and then this is the same code as which we saw before. This will output three numbers, say, like that. If you actually implement this computation, you get 1, 0, 1.
+
+It turns out you can develop a vectorized implementation of this function as follows. Set X to be equal to this. Notice the double square brackets.
+![HNNIE 2](/Algs/Vn/HNNIE%20(2).png)
+
+This is now a 2D array, like in TensorFlow. W is the same as before, and B, I'm now using B, is also a one by three 2D array.
+
+Then it turns out that all of these steps, this for loop inside, can be replaced with just a couple of lines of code, Z equals np.matmul. Matmul is how NumPy carries out matrix multiplication.
+
+![HNNIE 3](/Algs/Vn/HNNIE%20(3).png)
+
+Where now X and W are both matrices, and so you just multiply them together. It turns out that this for loop, all of these lines of code can be replaced with just a couple of lines of code, which gives a vectorized implementation of this function.
+
+You compute Z, which is now a matrix again, as numpy.matmul between A in and W, where here A in and W are both matrices, and matmul is how NumPy carries out a matrix multiplication.
+
+![HNNIE 4](/Algs/Vn/HNNIE%20(4).png)
+
+It multiplies two matrices together, and then adds the matrix B to it. Then A out is equal to the activation function g, that is the sigmoid function, applied element-wise to this matrix Z, and then you finally return A out. This is what the code looks like. Notice that in the vectorized implementation, all of these quantities, x, which is fed into the value of A in as well as W, B, as well as Z and A out, all of these are now 2D arrays. All of these are matrices.
+
+![HNNIE 5](/Algs/Vn/HNNIE%20(5).png)
+
+This turns out to be a very efficient implementation of one step of forward propagation through a dense layer in the neural network. This is code for a vectorized implementation of forward prop in a neural network.
+
+But what is this code doing and how does it actually work? What is this matmul actually doing? In the next two part, both also optional, we'll go over matrix multiplication and how that works. If you're familiar with linear algebra, if you're familiar with vectors, matrices, transposes, and matrix multiplications, you can safely just quickly skim over these two part and jump to the last pRt of this section. Then in the last part of this section, also optional, we'll dive into more detail to explain how matmul gives you this vectorized implementation. Let's go onto the next part, where we'll take a look at what matrix multiplication is.
+ 
+---
+title: How Neural Network are Implemented Efficiently
+---
+
+
+One of the reasons that deep learning researchers have been able to scale up neural networks, and thought really large neural networks over the last decade, is because neural networks can be vectorized. They can be implemented very efficiently using matrix multiplications. It turns out that parallel computing hardware, including GPUs, but also some CPU functions are very good at doing very large matrix multiplications.
+
+In this part, we'll take a look at how these vectorized implementations of neural networks work. Without these ideas, I don't think deep learning would be anywhere near a success and scale today.
+
+Here on the left is the code that you had seen previously of how you would implement forward prop, or forward propagation, in a single layer.
+
+![HNNIE 1](/Algs/Vn/HNNIE%20(1).png)
+
+X here is the input, W, the weights of the first, second, and third neurons, say, parameters B, and then this is the same code as which we saw before. This will output three numbers, say, like that. If you actually implement this computation, you get 1, 0, 1.
+
+It turns out you can develop a vectorized implementation of this function as follows. Set X to be equal to this. Notice the double square brackets.
+![HNNIE 2](/Algs/Vn/HNNIE%20(2).png)
+
+This is now a 2D array, like in TensorFlow. W is the same as before, and B, I'm now using B, is also a one by three 2D array.
+
+Then it turns out that all of these steps, this for loop inside, can be replaced with just a couple of lines of code, Z equals np.matmul. Matmul is how NumPy carries out matrix multiplication.
+
+![HNNIE 3](/Algs/Vn/HNNIE%20(3).png)
+
+Where now X and W are both matrices, and so you just multiply them together. It turns out that this for loop, all of these lines of code can be replaced with just a couple of lines of code, which gives a vectorized implementation of this function.
+
+You compute Z, which is now a matrix again, as numpy.matmul between A in and W, where here A in and W are both matrices, and matmul is how NumPy carries out a matrix multiplication.
+
+![HNNIE 4](/Algs/Vn/HNNIE%20(4).png)
+
+It multiplies two matrices together, and then adds the matrix B to it. Then A out is equal to the activation function g, that is the sigmoid function, applied element-wise to this matrix Z, and then you finally return A out. This is what the code looks like. Notice that in the vectorized implementation, all of these quantities, x, which is fed into the value of A in as well as W, B, as well as Z and A out, all of these are now 2D arrays. All of these are matrices.
+
+![HNNIE 5](/Algs/Vn/HNNIE%20(5).png)
+
+This turns out to be a very efficient implementation of one step of forward propagation through a dense layer in the neural network. This is code for a vectorized implementation of forward prop in a neural network.
+
+But what is this code doing and how does it actually work? What is this matmul actually doing? In the next two part, both also optional, we'll go over matrix multiplication and how that works. If you're familiar with linear algebra, if you're familiar with vectors, matrices, transposes, and matrix multiplications, you can safely just quickly skim over these two part and jump to the last pRt of this section. Then in the last part of this section, also optional, we'll dive into more detail to explain how matmul gives you this vectorized implementation. Let's go onto the next part, where we'll take a look at what matrix multiplication is.
+ 
+---
+title: How Neural Network are Implemented Efficiently
+---
+
+
+One of the reasons that deep learning researchers have been able to scale up neural networks, and thought really large neural networks over the last decade, is because neural networks can be vectorized. They can be implemented very efficiently using matrix multiplications. It turns out that parallel computing hardware, including GPUs, but also some CPU functions are very good at doing very large matrix multiplications.
+
+In this part, we'll take a look at how these vectorized implementations of neural networks work. Without these ideas, I don't think deep learning would be anywhere near a success and scale today.
+
+Here on the left is the code that you had seen previously of how you would implement forward prop, or forward propagation, in a single layer.
+
+![HNNIE 1](/Algs/Vn/HNNIE%20(1).png)
+
+X here is the input, W, the weights of the first, second, and third neurons, say, parameters B, and then this is the same code as which we saw before. This will output three numbers, say, like that. If you actually implement this computation, you get 1, 0, 1.
+
+It turns out you can develop a vectorized implementation of this function as follows. Set X to be equal to this. Notice the double square brackets.
+![HNNIE 2](/Algs/Vn/HNNIE%20(2).png)
+
+This is now a 2D array, like in TensorFlow. W is the same as before, and B, I'm now using B, is also a one by three 2D array.
+
+Then it turns out that all of these steps, this for loop inside, can be replaced with just a couple of lines of code, Z equals np.matmul. Matmul is how NumPy carries out matrix multiplication.
+
+![HNNIE 3](/Algs/Vn/HNNIE%20(3).png)
+
+Where now X and W are both matrices, and so you just multiply them together. It turns out that this for loop, all of these lines of code can be replaced with just a couple of lines of code, which gives a vectorized implementation of this function.
+
+You compute Z, which is now a matrix again, as numpy.matmul between A in and W, where here A in and W are both matrices, and matmul is how NumPy carries out a matrix multiplication.
+
+![HNNIE 4](/Algs/Vn/HNNIE%20(4).png)
+
+It multiplies two matrices together, and then adds the matrix B to it. Then A out is equal to the activation function g, that is the sigmoid function, applied element-wise to this matrix Z, and then you finally return A out. This is what the code looks like. Notice that in the vectorized implementation, all of these quantities, x, which is fed into the value of A in as well as W, B, as well as Z and A out, all of these are now 2D arrays. All of these are matrices.
+
+![HNNIE 5](/Algs/Vn/HNNIE%20(5).png)
+
+This turns out to be a very efficient implementation of one step of forward propagation through a dense layer in the neural network. This is code for a vectorized implementation of forward prop in a neural network.
+
+But what is this code doing and how does it actually work? What is this matmul actually doing? In the next two part, both also optional, we'll go over matrix multiplication and how that works. If you're familiar with linear algebra, if you're familiar with vectors, matrices, transposes, and matrix multiplications, you can safely just quickly skim over these two part and jump to the last pRt of this section. Then in the last part of this section, also optional, we'll dive into more detail to explain how matmul gives you this vectorized implementation. Let's go onto the next part, where we'll take a look at what matrix multiplication is.
+ 
+---
+title: How Neural Network are Implemented Efficiently
+---
+
+
+One of the reasons that deep learning researchers have been able to scale up neural networks, and thought really large neural networks over the last decade, is because neural networks can be vectorized. They can be implemented very efficiently using matrix multiplications. It turns out that parallel computing hardware, including GPUs, but also some CPU functions are very good at doing very large matrix multiplications.
+
+In this part, we'll take a look at how these vectorized implementations of neural networks work. Without these ideas, I don't think deep learning would be anywhere near a success and scale today.
+
+Here on the left is the code that you had seen previously of how you would implement forward prop, or forward propagation, in a single layer.
+
+![HNNIE 1](/Algs/Vn/HNNIE%20(1).png)
+
+X here is the input, W, the weights of the first, second, and third neurons, say, parameters B, and then this is the same code as which we saw before. This will output three numbers, say, like that. If you actually implement this computation, you get 1, 0, 1.
+
+It turns out you can develop a vectorized implementation of this function as follows. Set X to be equal to this. Notice the double square brackets.
+![HNNIE 2](/Algs/Vn/HNNIE%20(2).png)
+
+This is now a 2D array, like in TensorFlow. W is the same as before, and B, I'm now using B, is also a one by three 2D array.
+
+Then it turns out that all of these steps, this for loop inside, can be replaced with just a couple of lines of code, Z equals np.matmul. Matmul is how NumPy carries out matrix multiplication.
+
+![HNNIE 3](/Algs/Vn/HNNIE%20(3).png)
+
+Where now X and W are both matrices, and so you just multiply them together. It turns out that this for loop, all of these lines of code can be replaced with just a couple of lines of code, which gives a vectorized implementation of this function.
+
+You compute Z, which is now a matrix again, as numpy.matmul between A in and W, where here A in and W are both matrices, and matmul is how NumPy carries out a matrix multiplication.
+
+![HNNIE 4](/Algs/Vn/HNNIE%20(4).png)
+
+It multiplies two matrices together, and then adds the matrix B to it. Then A out is equal to the activation function g, that is the sigmoid function, applied element-wise to this matrix Z, and then you finally return A out. This is what the code looks like. Notice that in the vectorized implementation, all of these quantities, x, which is fed into the value of A in as well as W, B, as well as Z and A out, all of these are now 2D arrays. All of these are matrices.
+
+![HNNIE 5](/Algs/Vn/HNNIE%20(5).png)
+
+This turns out to be a very efficient implementation of one step of forward propagation through a dense layer in the neural network. This is code for a vectorized implementation of forward prop in a neural network.
+
+But what is this code doing and how does it actually work? What is this matmul actually doing? In the next two part, both also optional, we'll go over matrix multiplication and how that works. If you're familiar with linear algebra, if you're familiar with vectors, matrices, transposes, and matrix multiplications, you can safely just quickly skim over these two part and jump to the last pRt of this section. Then in the last part of this section, also optional, we'll dive into more detail to explain how matmul gives you this vectorized implementation. Let's go onto the next part, where we'll take a look at what matrix multiplication is.
+ 
+---
+title: How Neural Network are Implemented Efficiently
+---
+
+
+One of the reasons that deep learning researchers have been able to scale up neural networks, and thought really large neural networks over the last decade, is because neural networks can be vectorized. They can be implemented very efficiently using matrix multiplications. It turns out that parallel computing hardware, including GPUs, but also some CPU functions are very good at doing very large matrix multiplications.
+
+In this part, we'll take a look at how these vectorized implementations of neural networks work. Without these ideas, I don't think deep learning would be anywhere near a success and scale today.
+
+Here on the left is the code that you had seen previously of how you would implement forward prop, or forward propagation, in a single layer.
+
+![HNNIE 1](/Algs/Vn/HNNIE%20(1).png)
+
+X here is the input, W, the weights of the first, second, and third neurons, say, parameters B, and then this is the same code as which we saw before. This will output three numbers, say, like that. If you actually implement this computation, you get 1, 0, 1.
+
+It turns out you can develop a vectorized implementation of this function as follows. Set X to be equal to this. Notice the double square brackets.
+![HNNIE 2](/Algs/Vn/HNNIE
