@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="col-span-2 lg:ml-6">
             <a href="{{ .Site.Params.homepage }}/" className="flex mb-5">
               <img
-                src="/TransparentLogo.png"
+                src="/Logo/Logo.png"
                 className="h-8 mr-3"
                 alt="Mindect Logo"
               />
