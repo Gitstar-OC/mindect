@@ -58,7 +58,7 @@ const BaseCard = ({
       <ShineBorder
         className={cn(
           "relative flex-col w-full md:w-[90vw] lg:w-[80vw] xl:w-[22rem] mx-auto",
-          "rounded-3xl overflow-hidden border bg-background shadow-xl",
+          "rounded-2xl overflow-hidden border bg-background shadow-xl",
           "h-auto min-h-[24rem] sm:min-h-[26rem] md:min-h-[28rem] lg:min-h-[29rem]",
           "my-4 sm:my-6 md:my-2",
           className

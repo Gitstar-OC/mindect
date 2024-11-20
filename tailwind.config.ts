@@ -19,12 +19,13 @@ export default {
         ...presets.default,
         light: {
           ...presets.default.light,
+		//   background: '0 0% 100%', //background
           primary: '215 100% 50%', // active link color & background on side bar and on this page text
            'secondary-foreground': "110 60% 50%", // unknown
         },
         dark: {
           ...presets.default.dark,
-          background: '0 0% 0%', //background
+        //   background: '0 0% 0%', //background
           foreground: '0 0% 98%', //complete text on page (except the description and on this page content along with the sidebar)
           popover: '0 0% 4%', // search box background 
           card: '0 0 0%', // cards, p & n component, sidebar background
