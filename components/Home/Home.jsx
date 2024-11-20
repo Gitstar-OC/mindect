@@ -12,8 +12,8 @@ export default function Home() {
       <Navbar />
       <Header/>
       <CTA />
-      <Mission />
-      <Reviews />
+      {/* <Mission /> */}
+      {/* <Reviews /> */}
       <Footer />
     </div>
   );
