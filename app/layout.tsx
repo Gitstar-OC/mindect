@@ -63,14 +63,6 @@ export async function generateViewport() {
   };
 }
 
-export async function generateThemeColor() {
-  return {
-    themeColor: [
-      { media: "(prefers-color-scheme: dark)", color: "#0A0A0A" },
-      { media: "(prefers-color-scheme: light)", color: "#fff" },
-    ],
-  };
-}
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
