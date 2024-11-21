@@ -12,7 +12,7 @@ const Logo = () => {
     <>
       <header className="inline-flex items-center gap-[4px] font-semibold group"> 
       <Image
-        src="/TransparentLogo.png"
+        src="/Logo/Logo.png"
         width={40}
         height={30}
         alt="Picture of the author"
