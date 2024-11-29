@@ -31,6 +31,7 @@ interface ListItemProps {
   description: string; // Description of the item
   icon: React.ComponentType<{ className?: string }>; // Icon component
   className?: string; // Additional className for styling
+  href: string; // Route for navigation
 }
 
 const ListItem: React.FC<ListItemProps> = ({
@@ -38,6 +39,7 @@ const ListItem: React.FC<ListItemProps> = ({
   description,
   icon: Icon,
   className,
+  href,
 }) => {
   if (!Icon) {
     console.error(`Icon component is undefined for title: ${title}`);
@@ -47,9 +49,9 @@ const ListItem: React.FC<ListItemProps> = ({
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
+        <Link
+          href={href}
           className="block group select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-          href="#"
         >
           <div className="flex items-center gap-2">
             <Button
@@ -66,7 +68,7 @@ const ListItem: React.FC<ListItemProps> = ({
           <p className="line-clamp-2 group-hover:text-black group-hover:dark:text-white text-sm leading-snug text-muted-foreground">
             {description}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   );
@@ -109,18 +111,24 @@ export default function Navbar() {
                     title="Supervised Learning"
                     description="Learn about algorithms that use labeled data to make predictions."
                     icon={Binary}
+                    href="learn/sl"
+//                    href="/machine-learning/supervised"
                     className="group-hover:from-blue-50 group-hover:to-blue-200 dark:group-hover:from-blue-900/30 dark:group-hover:to-blue-600/50"
                   />
                   <ListItem
                     title="Unsupervised Learning"
                     description="Explore techniques for finding patterns in unlabeled data."
                     icon={Fingerprint}
+                    href="learn/usl"
+//                    href="/machine-learning/unsupervised"
                     className="group-hover:from-blue-50 group-hover:to-blue-200 dark:group-hover:from-blue-900/30 dark:group-hover:to-blue-600/50"
                   />
                   <ListItem
                     title="Learning Algorithms"
                     description="Dive into various machine learning algorithms and their applications."
                     icon={Dna}
+                    href="/learn/algs"
+//                    href="/machine-learning/algorithms"
                     className="group-hover:from-blue-50 group-hover:to-blue-200 dark:group-hover:from-blue-900/30 dark:group-hover:to-blue-600/50"
                   />
                 </ul>
@@ -130,24 +138,28 @@ export default function Navbar() {
               <NavigationMenuTrigger>Mathematics</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="flex flex-col gap-3 p-4 w-[300px] lg:grid-cols-[.75fr_1fr]">
-                  {" "}
-                  {/*<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">*/}
                   <ListItem
                     title="Linear Algebra"
                     description="Study vector spaces, matrices, and linear transformations."
                     icon={Sigma}
+                    href="/learn/algebra"
+//                    href="/mathematics/linear-algebra"
                     className="group-hover:from-purple-100 group-hover:to-purple-300 dark:group-hover:from-purple-900/30 dark:group-hover:to-purple-600/50"
                   />
                   <ListItem
                     title="Calculus"
                     description="Explore limits, derivatives, integrals, and their applications."
                     icon={PiSquare}
+                    href="/learn/calculus"
+//                    href="/mathematics/calculus"
                     className="group-hover:from-purple-100 group-hover:to-purple-300 dark:group-hover:from-purple-900/30 dark:group-hover:to-purple-600/50"
                   />
                   <ListItem
                     title="Probability"
                     description="Learn about random events, distributions, and statistical inference."
                     icon={Infinity}
+                    href="/learn/probability"
+//                    href="/mathematics/probability"
                     className="group-hover:from-purple-100 group-hover:to-purple-300 dark:group-hover:from-purple-900/30 dark:group-hover:to-purple-600/50"
                   />
                 </ul>
