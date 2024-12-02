@@ -26,7 +26,7 @@ const cards = [
     icon: <Book className="w-8 h-8 text-green-500" />,
     title: "Deep Learning",
     description: "Dive into the world of artificial neural networks and their applications in computer vision, natural language processing, and more.",
-    image: "/CTA/Illustration1.png",
+    image: "/CTA/Image3.png",
     features: ["Convolutional Neural Networks", "Recurrent Neural Networks", "Generative Adversarial Networks"],
   },
 ]
