@@ -8,7 +8,6 @@ export default function ThemeChanger() {
   const { theme, setTheme, systemTheme } = useTheme();
 
   useEffect(() => {
-    // Apply the theme on initial load
     const currentTheme = theme === "system" ? systemTheme : theme;
     applyTheme(currentTheme);
   }, [theme, systemTheme]);
