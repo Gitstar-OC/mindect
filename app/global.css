@@ -119,7 +119,7 @@ img, video {
   }
 }
 
-#nd-sidebar > div > button:first-child  {
+#nd-sidebar > div:first-child > button:first-child  {
   display: none;
 }
 
