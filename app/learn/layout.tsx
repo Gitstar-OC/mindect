@@ -99,7 +99,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         </span>
         {children}
       </DocsLayout>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
