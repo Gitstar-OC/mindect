@@ -9,7 +9,7 @@ import Navbar from "@/components/Navbar/navbar";
 export default function Home() {
   return (
     <div className="min-h-screen text-gray-800 dark:text-gray-100">
-      <Navbar />
+      {/* <Navbar /> */}
       <Header/>
       <CTA />
       {/* <Mission /> */}

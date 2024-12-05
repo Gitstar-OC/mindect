@@ -15,7 +15,7 @@ const Learn = () => {
 
   return (
     <>
-    <Navbar />
+    {/* <Navbar /> */}
       <header className="relative mt-10 mb-10 xl:mt-28 xl:mb-20">
         {/* Light theme background gradient circle */}
         <div className="absolute inset-0 flex justify-center items-center">
