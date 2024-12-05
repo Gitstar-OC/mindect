@@ -1,8 +1,6 @@
 import { source } from "@/lib/source";
-import { RainbowButton } from "@/components/ui/rainbow-button";
 import type { Metadata } from "next";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { IoIosArrowForward } from "react-icons/io";
 import { Steps, Step } from "fumadocs-ui/components/steps";
 import { Tabs, Tab } from "fumadocs-ui/components/tabs";
 import { ArrowSquareOut } from "@phosphor-icons/react/dist/ssr";
@@ -35,20 +33,6 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
     <>
       <DocsPage
         tableOfContent={{
-          header: (
-            <a
-              href="https://github.com/gitstar-oc/mindect"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <RainbowButton>
-                <h3 className="text-black dark:text-white mt-none text-[16px] justify-center items-center bottom-3 flex">
-                  Contribute to Mindect{" "}
-                  <IoIosArrowForward className="ml-1 transition-transform duration-300 ease-in-out transform group-hover:translate-x-1" />
-                </h3>
-              </RainbowButton>
-            </a>
-          ),
           enabled: page.file.path !== "api-reference.mdx",
           footer: (
             <>
