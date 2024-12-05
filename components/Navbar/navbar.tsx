@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -76,6 +77,8 @@ const ListItem: React.FC<ListItemProps> = ({
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isLearnPath = pathname.startsWith("/learn/");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,11 +93,15 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 lg:px-16 sm:px-4 transition-all ${
-        isScrolled
-          ? "bg-neutral-50/50 dark:bg-neutral-950/20 backdrop-blur-xl border-b border-b-slate-300 dark:border-b-slate-700/40"
-          : "bg-transparent"
-      } p-4 h-14 flex items-center justify-between z-50`}
+      className={`${
+        isLearnPath
+          ? "relative lg:px-16 sm:px-4"
+          : `sticky top-0 lg:px-16 sm:px-4 transition-all ${
+              isScrolled
+                ? "bg-neutral-50/50 dark:bg-neutral-950/20 backdrop-blur-xl border-b border-b-slate-300 dark:border-b-slate-700/40"
+                : "bg-transparent"
+            }`
+      } p-4 h-14 flex items-center justify-between`}
     >
       <div className="flex items-center space-x-4">
         <Link href="/" className="flex items-center space-x-2">
@@ -112,7 +119,7 @@ export default function Navbar() {
                     description="Learn about algorithms that use labeled data to make predictions."
                     icon={Binary}
                     href="learn/sl"
-//                    href="/machine-learning/supervised"
+                    //                    href="/machine-learning/supervised"
                     className="group-hover:from-blue-50 group-hover:to-blue-200 dark:group-hover:from-blue-900/30 dark:group-hover:to-blue-600/50"
                   />
                   <ListItem
@@ -120,7 +127,7 @@ export default function Navbar() {
                     description="Explore techniques for finding patterns in unlabeled data."
                     icon={Fingerprint}
                     href="learn/usl"
-//                    href="/machine-learning/unsupervised"
+                    //                    href="/machine-learning/unsupervised"
                     className="group-hover:from-blue-50 group-hover:to-blue-200 dark:group-hover:from-blue-900/30 dark:group-hover:to-blue-600/50"
                   />
                   <ListItem
@@ -128,7 +135,7 @@ export default function Navbar() {
                     description="Dive into various machine learning algorithms and their applications."
                     icon={Dna}
                     href="/learn/algs"
-//                    href="/machine-learning/algorithms"
+                    //                    href="/machine-learning/algorithms"
                     className="group-hover:from-blue-50 group-hover:to-blue-200 dark:group-hover:from-blue-900/30 dark:group-hover:to-blue-600/50"
                   />
                 </ul>
@@ -143,7 +150,7 @@ export default function Navbar() {
                     description="Study vector spaces, matrices, and linear transformations."
                     icon={Sigma}
                     href="/learn/algebra"
-//                    href="/mathematics/linear-algebra"
+                    //                    href="/mathematics/linear-algebra"
                     className="group-hover:from-purple-100 group-hover:to-purple-300 dark:group-hover:from-purple-900/30 dark:group-hover:to-purple-600/50"
                   />
                   <ListItem
@@ -151,7 +158,7 @@ export default function Navbar() {
                     description="Explore limits, derivatives, integrals, and their applications."
                     icon={PiSquare}
                     href="/learn/calculus"
-//                    href="/mathematics/calculus"
+                    //                    href="/mathematics/calculus"
                     className="group-hover:from-purple-100 group-hover:to-purple-300 dark:group-hover:from-purple-900/30 dark:group-hover:to-purple-600/50"
                   />
                   <ListItem
@@ -159,7 +166,7 @@ export default function Navbar() {
                     description="Learn about random events, distributions, and statistical inference."
                     icon={Infinity}
                     href="/learn/probability"
-//                    href="/mathematics/probability"
+                    //                    href="/mathematics/probability"
                     className="group-hover:from-purple-100 group-hover:to-purple-300 dark:group-hover:from-purple-900/30 dark:group-hover:to-purple-600/50"
                   />
                 </ul>
