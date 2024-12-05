@@ -92,3 +92,13 @@ img, video {
 .fd-codeblock code {
   row-gap: 5px;
 }
+
+
+@media screen and (min-width: 761px) {
+  #nd-docs-layout {
+    /* position: fixed; */
+    top: 60px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+}
