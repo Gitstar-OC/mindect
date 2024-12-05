@@ -116,12 +116,12 @@ const Appearance = ({ className }) => {
             </RadioGroup>
           </DialogDescription>
         </DialogHeader>
-          <DialogDescription className="justify-start">
+          {/* <DialogDescription className="justify-start">
             <div className="flex mb-2 mt-2">
               Or use a slider instead to set it
             </div>
             <Slider defaultValue={[55]} max={100} step={11} className="flex" />
-          </DialogDescription>
+          </DialogDescription> */}
       </DialogContent>
     </Dialog>
   );
