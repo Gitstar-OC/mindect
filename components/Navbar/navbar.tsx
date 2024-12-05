@@ -35,6 +35,9 @@ interface ListItemProps {
   href: string; // Route for navigation
 }
 
+const className1 = "group-hover:from-blue-50 group-hover:to-blue-200 dark:group-hover:from-blue-900/30 dark:group-hover:to-blue-600/50";
+const className2 = "group-hover:from-purple-100 group-hover:to-purple-300 dark:group-hover:from-purple-900/30 dark:group-hover:to-purple-600/50";
+
 const ListItem: React.FC<ListItemProps> = ({
   title,
   description,
@@ -81,6 +84,7 @@ export default function Navbar() {
   const isLearnPath = pathname.startsWith("/learn/");
   const hasContentAfterLearn = pathname.split("/learn/")[1]?.length > 0;
 
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -123,7 +127,7 @@ export default function Navbar() {
                     icon={Binary}
                     href="/learn/sl"
                     //                    href="/machine-learning/supervised"
-                    className="group-hover:from-blue-50 group-hover:to-blue-200 dark:group-hover:from-blue-900/30 dark:group-hover:to-blue-600/50"
+                    className={className1}
                   />
                   <ListItem
                     title="Unsupervised Learning"
@@ -131,15 +135,15 @@ export default function Navbar() {
                     icon={Fingerprint}
                     href="/learn/usl"
                     //                    href="/machine-learning/unsupervised"
-                    className="group-hover:from-blue-50 group-hover:to-blue-200 dark:group-hover:from-blue-900/30 dark:group-hover:to-blue-600/50"
+                    className={className1}
                   />
                   <ListItem
                     title="Learning Algorithms"
                     description="Dive into various machine learning algorithms and their applications."
                     icon={Dna}
                     href="/learn/algs"
-                    //                    href="/machine-learning/algorithms"
-                    className="group-hover:from-blue-50 group-hover:to-blue-200 dark:group-hover:from-blue-900/30 dark:group-hover:to-blue-600/50"
+                    //                    href="/machine-learning/algorithms" 
+                    className={className1}
                   />
                 </ul>
               </NavigationMenuContent>
@@ -154,7 +158,7 @@ export default function Navbar() {
                     icon={Sigma}
                     href="/learn/algebra"
                     //                    href="/mathematics/linear-algebra"
-                    className="group-hover:from-purple-100 group-hover:to-purple-300 dark:group-hover:from-purple-900/30 dark:group-hover:to-purple-600/50"
+                    className={className2}
                   />
                   <ListItem
                     title="Calculus"
@@ -162,7 +166,7 @@ export default function Navbar() {
                     icon={PiSquare}
                     href="/learn/calculus"
                     //                    href="/mathematics/calculus"
-                    className="group-hover:from-purple-100 group-hover:to-purple-300 dark:group-hover:from-purple-900/30 dark:group-hover:to-purple-600/50"
+                    className={className2}
                   />
                   <ListItem
                     title="Probability"
@@ -170,7 +174,7 @@ export default function Navbar() {
                     icon={Infinity}
                     href="/learn/probability"
                     //                    href="/mathematics/probability"
-                    className="group-hover:from-purple-100 group-hover:to-purple-300 dark:group-hover:from-purple-900/30 dark:group-hover:to-purple-600/50"
+                    className={className2}
                   />
                 </ul>
               </NavigationMenuContent>
