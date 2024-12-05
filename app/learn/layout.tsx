@@ -1,3 +1,4 @@
+"use client"
 import { DocsLayout } from "fumadocs-ui/layout";
 import type { ReactNode } from "react";
 import { baseOptions } from "../layout.config";
