@@ -121,7 +121,7 @@ export default function Navbar() {
                     title="Supervised Learning"
                     description="Learn about algorithms that use labeled data to make predictions."
                     icon={Binary}
-                    href="learn/sl"
+                    href="/learn/sl"
                     //                    href="/machine-learning/supervised"
                     className="group-hover:from-blue-50 group-hover:to-blue-200 dark:group-hover:from-blue-900/30 dark:group-hover:to-blue-600/50"
                   />
@@ -129,7 +129,7 @@ export default function Navbar() {
                     title="Unsupervised Learning"
                     description="Explore techniques for finding patterns in unlabeled data."
                     icon={Fingerprint}
-                    href="learn/usl"
+                    href="/learn/usl"
                     //                    href="/machine-learning/unsupervised"
                     className="group-hover:from-blue-50 group-hover:to-blue-200 dark:group-hover:from-blue-900/30 dark:group-hover:to-blue-600/50"
                   />
