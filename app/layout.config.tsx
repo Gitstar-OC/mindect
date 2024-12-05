@@ -11,8 +11,8 @@ import Logo from "@/components/ui/Logo";
  */
 export const baseOptions: HomeLayoutProps = {
   
-  nav: {
-    title: <Logo />, 
-    transparentMode: 'top',
-  },
+  // nav: {
+  //   title: <Logo />, 
+  //   transparentMode: 'top',
+  // },
 };
