@@ -38,7 +38,7 @@ interface ListItemProps {
 const class1 = "group-hover:from-blue-50 group-hover:to-blue-200 dark:group-hover:from-blue-900/30 dark:group-hover:to-blue-600/50";
 const class2 = "group-hover:from-purple-100 group-hover:to-purple-300 dark:group-hover:from-purple-900/30 dark:group-hover:to-purple-600/50";
 const active1 = "bg-gradient-to-br from-blue-50 to-blue-200 dark:from-blue-900/30 dark:to-blue-600/50"
-const active2 = "bg-gradient-to-br from-purple-100 to-purple-300 dark:from-purple-900/30 dark:to-purple-600/50"
+const active2 = "bg-gradient-to-br note from-purple-100 to-purple-300 dark:from-purple-900/30 dark:to-purple-600/50"
 
 const ListItem: React.FC<ListItemProps> = ({
   title,
@@ -129,7 +129,7 @@ export default function Navbar() {
                     icon={Binary}
                     href="/learn/sl"
                     //                    href="/machine-learning/supervised"
-                    className={cn(class1, pathname === "/learn/sl" && active1)}
+                    className={cn(class1, pathname.startsWith("/learn/sl") && active1)}
                   />
                   <ListItem
                     title="Unsupervised Learning"
@@ -137,7 +137,7 @@ export default function Navbar() {
                     icon={Fingerprint}
                     href="/learn/usl"
                     //                    href="/machine-learning/unsupervised"
-                    className={cn(class1, pathname === "/learn/usl" && active1)}
+                    className={cn(class1, pathname.startsWith("/learn/usl") && active1)}
                   />
                   <ListItem
                     title="Learning Algorithms"
@@ -145,7 +145,7 @@ export default function Navbar() {
                     icon={Dna}
                     href="/learn/algs"
                     //                    href="/machine-learning/algorithms" 
-                    className={cn(class1, pathname === "/learn/algs" && active1)}
+                    className={cn(class1, pathname.startsWith("/learn/algs") && active1)}
                   />
                 </ul>
               </NavigationMenuContent>
@@ -160,7 +160,7 @@ export default function Navbar() {
                     icon={Sigma}
                     href="/learn/algebra"
                     //                    href="/mathematics/linear-algebra"
-                    className={cn(class2, pathname === "/learn/algebra" && active2)}
+                    className={cn(class2, pathname.startsWith("/learn/algebra") && active2)}
                   />
                   <ListItem
                     title="Calculus"
@@ -168,7 +168,7 @@ export default function Navbar() {
                     icon={PiSquare}
                     href="/learn/calculus"
                     //                    href="/mathematics/calculus"
-                    className={cn(class2, pathname === "/learn/calculus" && active2)}
+                    className={cn(class2, pathname.startsWith("/learn/calculus") && active2)}
                   />
                   <ListItem
                     title="Probability"
@@ -176,7 +176,7 @@ export default function Navbar() {
                     icon={Infinity}
                     href="/learn/probability"
                     //                    href="/mathematics/probability"
-                    className={cn(class2, pathname === "/learn/probability" && active2)}
+                    className={cn(class2, pathname.startsWith("/learn/probability") && active2)}
                   />
                 </ul>
               </NavigationMenuContent>
