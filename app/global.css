@@ -119,6 +119,10 @@ img, video {
   }
 }
 
+#nd-sidebar > div > button {
+  display: none;
+}
+
 #nd-docs-layout::-webkit-scrollbar {
   display: none;
 }
