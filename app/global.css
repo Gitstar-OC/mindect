@@ -131,7 +131,7 @@ img, video {
   #nd-docs-layout aside {
     /* position: fixed; */
     /* top: 60px; */
-    height: calc(100vh - 60px);
+    height: calc(100vh - 80px);
     /* overflow-y: auto; */
   }
 }
