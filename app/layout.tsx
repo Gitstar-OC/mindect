@@ -4,7 +4,6 @@ import { RootProvider } from "fumadocs-ui/provider";
 import { Inter } from "next/font/google";
 import type { ReactNode } from "react";
 import { ThemeProvider } from "next-themes";
-import Navbar from "@/components/Navbar/navbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -72,7 +71,6 @@ export default function Layout({ children }: { children: ReactNode }) {
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <RootProvider>
-            <Navbar />
             {children}
           </RootProvider>
         </ThemeProvider>
