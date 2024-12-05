@@ -47,8 +47,6 @@ const ListItem: React.FC<ListItemProps> = ({
     return null;
   }
 
-
-
   return (
     <li>
       <NavigationMenuLink asChild>
@@ -81,6 +79,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const isLearnPath = pathname.startsWith("/learn/");
+  const hasContentAfterLearn = pathname.split("/learn/")[1]?.length > 0;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,16 +93,19 @@ export default function Navbar() {
   }, []);
 
   return (
-<nav
-  className={`${
-    isLearnPath 
-      ? 'relative lg:px-16 sm:px-4'
-      : `sticky top-0 lg:px-16 sm:px-4 transition-all ${
-          isScrolled
-            ? "bg-neutral-50/50 dark:bg-neutral-950/20 backdrop-blur-xl border-b border-b-slate-300 dark:border-b-slate-700/40"
-            : "bg-transparent"
-        }`
-  } p-4 h-14 flex items-center justify-between z-50`} >
+    <nav
+      className={`${
+        isLearnPath
+          ? `relative lg:px-16 sm:px-4 ${
+              hasContentAfterLearn ? "hidden md:flex" : "flex"
+            }`
+          : `sticky top-0 lg:px-16 sm:px-4 transition-all ${
+              isScrolled
+                ? "bg-neutral-50/50 dark:bg-neutral-950/20 backdrop-blur-xl border-b border-b-slate-300 dark:border-b-slate-700/40"
+                : "bg-transparent"
+            }`
+      } p-4 h-14 items-center justify-between z-50`}
+    >
       <div className="flex items-center space-x-4">
         <Link href="/" className="flex items-center space-x-2">
           <Logo />
