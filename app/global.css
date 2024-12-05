@@ -118,8 +118,12 @@ img, video {
     overflow-y: auto;
   }
 }
-
+/* 
 #nd-sidebar > div:first-child > button:first-child  {
+  display: none;
+} */
+
+#nd-docs-layout button[data-search-full] {
   display: none;
 }
 

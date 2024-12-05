@@ -10,9 +10,9 @@ import Logo from "@/components/ui/Logo";
  * Docs Layout: app/docs/layout.tsx
  */
 export const baseOptions: HomeLayoutProps = {
+  
   nav: {
     title: <Logo />, 
     transparentMode: 'top',
   },
-  githubUrl: "https://github.com/gitstar-oc/mindect",
 };
