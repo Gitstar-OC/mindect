@@ -24,7 +24,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         {...baseOptions}
         sidebar={{
           banner: (
-            <div className="md:hidden block">
+            <div className="md:hidden grid">
             <RootToggle
               options={[
                 {
