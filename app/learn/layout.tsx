@@ -22,53 +22,53 @@ export default function Layout({ children }: { children: ReactNode }) {
       <DocsLayout
         tree={source.pageTree}
         {...baseOptions}
-        sidebar={{
-          banner: (
-            <RootToggle
-              options={[
-                {
-                  title: "Algs",
-                  description: "Learning Algorithms",
-                  url: "/learn/algs",
-                  icon: <AlgsIcon className="m-0" />,
-                },
-                {
-                  title: "SL",
-                  description: "Supervised Learning",
-                  url: "/learn/sl",
-                  icon: <SLIcon className="m-0" />,
-                },
-                {
-                  title: "USL",
-                  description: "Unsupervised Learning",
-                  url: "/learn/usl",
-                  icon: <USLIcon className="m-0" />,
-                },
-                {
-                  title: "Algebra",
-                  description: "Linear Algebra",
-                  url: "/learn/algebra",
-                  icon: <AlgebraIcon className="m-0" />,
-                },
-                {
-                  title: "P & S",
-                  description: "Probability & Statistics",
-                  url: "/learn/probability",
-                  icon: <ProbabilityIcon className="m-0" />,
-                },
-                {
-                  title: "Calculus",
-                  description: "Calculus",
-                  url: "/learn/calculus",
-                  icon: <CalculusIcon className="m-0" />,
-                },
-              ]}
-            />
-          ),
-          // enabled: false,
-          // defaultOpenLevel: 3,
-          // collapsible: false
-        }}
+        // sidebar={{
+        //   banner: (
+        //     <RootToggle
+        //       options={[
+        //         {
+        //           title: "Algs",
+        //           description: "Learning Algorithms",
+        //           url: "/learn/algs",
+        //           icon: <AlgsIcon className="m-0" />,
+        //         },
+        //         {
+        //           title: "SL",
+        //           description: "Supervised Learning",
+        //           url: "/learn/sl",
+        //           icon: <SLIcon className="m-0" />,
+        //         },
+        //         {
+        //           title: "USL",
+        //           description: "Unsupervised Learning",
+        //           url: "/learn/usl",
+        //           icon: <USLIcon className="m-0" />,
+        //         },
+        //         {
+        //           title: "Algebra",
+        //           description: "Linear Algebra",
+        //           url: "/learn/algebra",
+        //           icon: <AlgebraIcon className="m-0" />,
+        //         },
+        //         {
+        //           title: "P & S",
+        //           description: "Probability & Statistics",
+        //           url: "/learn/probability",
+        //           icon: <ProbabilityIcon className="m-0" />,
+        //         },
+        //         {
+        //           title: "Calculus",
+        //           description: "Calculus",
+        //           url: "/learn/calculus",
+        //           icon: <CalculusIcon className="m-0" />,
+        //         },
+        //       ]}
+        //     />
+        //   ),
+        //   // enabled: false,
+        //   // defaultOpenLevel: 3,
+        //   // collapsible: false
+        // }}
       >
         <span
           className="absolute inset-0 z-[-1] h-[64rem] max-h-screen overflow-hidden"
