@@ -106,8 +106,7 @@ img, video {
 */
 
 #nd-docs-layout aside {
-  /* background-color: hsl(var(--background)); */
-  background-color: transparent;
+  background-color: hsl(var(--background));
   border-right: 1px solid hsl(var(--border));
 }
 
