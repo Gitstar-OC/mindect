@@ -119,7 +119,7 @@ img, video {
   }
 }
 
-#nd-sidebar > div > button {
+#nd-sidebar > div > button:first-child  {
   display: none;
 }
 
@@ -131,7 +131,7 @@ img, video {
   #nd-docs-layout aside {
     /* position: fixed; */
     /* top: 60px; */
-    height: calc(100vh - 80px);
+    height: calc(100vh - 60px);
     /* overflow-y: auto; */
   }
 }
