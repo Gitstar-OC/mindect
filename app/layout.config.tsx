@@ -1,5 +1,5 @@
 import { type HomeLayoutProps } from "fumadocs-ui/home-layout";
-// import Logo from "@/components/ui/Logo";
+import Logo from "@/components/ui/Logo";
 
 
 /**
@@ -10,9 +10,9 @@ import { type HomeLayoutProps } from "fumadocs-ui/home-layout";
  * Docs Layout: app/docs/layout.tsx
  */
 export const baseOptions: HomeLayoutProps = {
-  // nav: {
-  //   title: <Logo />, 
-  //   transparentMode: 'top',
-  // },
-  // githubUrl: "https://github.com/gitstar-oc/mindect",
+  nav: {
+    title: <Logo />, 
+    transparentMode: 'top',
+  },
+  githubUrl: "https://github.com/gitstar-oc/mindect",
 };
