@@ -21,7 +21,7 @@ export default {
           ...presets.default.light,
 		//   background: '0 0% 100%', //background
           primary: '215 100% 50%', // active link color & background on side bar and on this page text
-           'secondary-foreground': "110 60% 50%", // unknown
+           'secondary-foreground': "215 100% 50%", // unknown
         },
         dark: {
           ...presets.default.dark,
